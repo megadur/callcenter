@@ -1,0 +1,36 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Fehler on {{getMode()}}</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="sr-only" id="errors">Error</h1>
+    </div>
+  </div>
+  <!-- Suche -->
+  <div class="row">
+    <div class="col-md-12">
+      <app-error-suche [xerrorFltIn]="xerrorFlt" (xerrorListOut)="hasXErrorList($event)"></app-error-suche>
+    </div>
+  </div>
+  <!-- Liste -->
+  <div class="row">
+    <div class="col-md-12">
+      <app-error-list [xerrorListIn]="xerrorList" (xerrorOut)="hasXError($event)"></app-error-list>
+    </div>
+  </div>
+  <!-- Detail -->
+  <div class="row">
+    <div class="col-md-12">
+      <app-error-detail [xerrorIn]="xerror"></app-error-detail>
+    </div>
+  </div>
+
+</div>

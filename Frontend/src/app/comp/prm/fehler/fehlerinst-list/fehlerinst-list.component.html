@@ -1,0 +1,140 @@
+<!-- Fehlerliste -->
+
+<div *ngIf="dbgLevel>0">
+  <div class="col-md-12">
+    <h4 class="sr-only">FehlerListe</h4>
+    <pre>{{diagnostic}}</pre>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">FehlerListe</div>
+  <div class="panel-body ">
+    <div class="col-md-12">
+      <table class="table table-grid">
+        <caption class="sr-only">FehlerListe</caption>
+        <thead>
+          <tr>
+            <th id="error-id-th">
+              <a class="sort-toggle active" href="#" id="error-id" autofocus="autofocus">
+                <span class="caption">ID</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                  <!--  -->
+                </span>
+                <span class="sr-only">Absteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-code-int-th">
+              <a class="sort-toggle" id="error-code-int" href="#">
+                <span class="caption">CODE_INT</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                  <!--  -->
+                </span>
+
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-task-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-task" href="#">
+                <span class="caption">SO_TYPE_ID</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                  <!--  -->
+                </span>
+
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-created-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-created" href="#">
+                <span class="caption">STATUS</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                  <!--  -->
+                </span>
+
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-closed-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-closed" href="#">
+                <span class="caption">SYS</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                  <!--  -->
+                </span>
+
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-system-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-system" href="#">
+                <span class="caption">TS_CREATED</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                  <!--  -->
+                </span>
+
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--
+            -->
+          <tr *ngFor="let a of pagedItems" [class.selected]="a === xerrorSel" (click)="onSelect(a)">
+            <td headers="error-id-th">
+              <a routerLink="/fehlerbild">
+                <span class="badge">{{a.ID}}</span>
+              </a>
+            </td>
+            <td headers="error-code-int-th">{{a.CODE_INT}}</td>
+            <td headers="error-created-th">{{a.SO_TYPE_ID}}</td>
+            <td headers="error-task-th">{{a.STATUS}}</td>
+            <td headers="error-system-th">{{a.SYS}}</td>
+            <td headers="error-closed-th">{{a.TS_CREATED}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <div id="size-lbl" class="control-label">Anzahl pro Seite</div>
+
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination" aria-labelledby="size-lbl">
+        <li>
+          <a (click)="setPageSize(5)">5</a>
+        </li>
+        <li>
+          <a (click)="setPageSize(15)">15</a>
+        </li>
+        <li>
+          <a (click)="setPageSize(25)">25</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <div class="pull-right">
+
+        <div for="flpages" class="control-label"> &nbsp;</div>
+        <!-- items being paged -->
+        <div *ngFor="let item of pagedItems" id="flpages">{{item.name}}</div>
+
+        <!-- pager -->
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">First</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Last</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

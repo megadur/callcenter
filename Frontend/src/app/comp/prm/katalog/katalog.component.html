@@ -1,0 +1,45 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Katalog on {{getMode()}}</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+<!-- Suchfeld -->
+<div class="row">
+  <div class="col-md-4">
+    <app-katalog-suche [prdFltIn]="prdFlt" (prdemListOut)="hasEmList($event)"></app-katalog-suche>
+
+  </div>
+  <div class="col-md-4">
+
+  </div>
+</div>
+
+<!-- Liste + Details -->
+<div class="row" style="margin-top:1.5em">
+  <!-- Liste -->
+  <div class="col-md-8">
+    <app-katalog-liste [prdemListIn]="prdemList" (prdemOut)="hasPrdEm($event)"></app-katalog-liste>
+  </div>
+
+  <!-- Details -->
+  <div class="col-md-4">
+    <app-katalog-detail [prdemIn]="prdem"></app-katalog-detail>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseEdit" aria-expanded="false" aria-controls="collapseEdit">
+      Edit
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseReload" aria-expanded="false"
+      aria-controls="collapseReload">
+      Reload
+    </button>
+    <div class="collapse" id="collapseEdit">
+      <app-katalog-edit></app-katalog-edit>
+    </div>
+    <div class="collapse" id="collapseReload">
+      <app-katalog-reload></app-katalog-reload>
+    </div>
+  </div>
+</div>

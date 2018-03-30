@@ -1,0 +1,26 @@
+[
+    {
+        "TBL": "ACCOUNT",
+        "GUID": "100049012081112430100001",
+        "TO_NR": "208111243010",
+        "KDNR": "2081112430",
+        "KDNR_NEW": null,
+        "KDNR_OLD": null,
+        "SYSTEL": "70024804",
+        "STATUS": "aktiviert",
+        "ACCOUNT_TYPE_ID": 1,
+        "TS_BESTELLT": "2017-11-08T11:43:33.674Z",
+        "TS_LAST_UPDATE": "2017-11-08T11:43:33.674Z",
+        "TS_DEAKTIVIERT": null,
+        "SO_AKTIVIERT": "IDM000000636994",
+        "SO_INAKTIV": null,
+        "SO_DEAKTIVIERT": null,
+        "TS_INAKTIV": null,
+        "TS_AKTIVIERT": "2017-11-08T11:45:39.106Z",
+        "TS_STORNIERT": null,
+        "LAST_UPD": "2017-11-08T11:46:18.000Z",
+        "PRIVACY": null,
+        "PRIVACY_NEW": null,
+        "PRIVACY_OLD": null
+    }
+]

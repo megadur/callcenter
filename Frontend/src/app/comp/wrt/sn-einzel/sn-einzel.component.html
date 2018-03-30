@@ -1,0 +1,179 @@
+<div class="container-fluid" role="main" aria-labelledBy="konfig" id="content">
+
+  <div class="row">
+    <div class="col">
+      <h1 class="sr-only">Sofortnutzung</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">SN-Inkonsistenzen</h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label for="EM-Matno" class="control-label col-md-2">EM-Matno</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="EM-Matno" name="EM-Matno" placeholder="EM-Matno">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="TO-Nummer" class="control-label col-md-2">TO-Nummer</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="TO-Nummer" name="TO-Nummer" placeholder="TO-Nummer">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Status" class="control-label col-md-2">Status</label>
+
+              <div class="col-md-8">
+                <!-- This is a new div -->
+                <div class="dropdown ">
+                  <button class="btn btn-default dropdown-toggle col-md-6" type="button" id="Status" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    Alle
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>
+                      <a href="#"> Alle</a>
+                    </li>
+                    <li>
+                      <a href="#"> -2: undurchführbar (final = Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> -1: in Aktivierung </a>
+                    </li>
+                    <li>
+                      <a href="#"> 0: Warten auf Bestätigung</a>
+                    </li>
+                    <li>
+                      <a href="#"> 1: Bestätigt (final = Gutfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 2: Inkonsistenz / anderer Buchungs-Auftrag empfangen (Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 3: Inkonsistenz / abweichendes Auftragsdelta zwischen Sofortnutzungsauftrag und Buchungsauftrag (Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 4: Inkonsistenz / Timeout = Ausbleiben der Bestätigung (Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 5: Fehler bei Sofortaktivierung (Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 6: Rückabgewickelt durch BSY im Rahmen eines Incident-Managements (final)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 7: Bestandskorrektur in CRM-T im Rahmen eines Incident-Managements (final)</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="#"> 10: PUT erfolgreich</a>
+                    </li>
+                    <li>
+                      <a href="#"> 11: PUT erfolglos / Fehler</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Checkbox Group !-->
+              <label class="control-label  col-md-2">Zeitraum von</label>
+              <div class="col-md-8">
+                <label for="date_from" class="control-label">Datum</label>
+                <input type="date" id="date_from" />
+                <label for="time_from" class="control-label">Uhrzeit</label>
+                <input type="time" id="time_from" />
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Checkbox Group !-->
+              <label class="control-label  col-md-2">Zeitraum</label>
+              <div class="col-md-8">
+                <label for="date" class="control-label">Datum</label>
+                <input type="date" id="date" />
+                <label for="time" class="control-label">Uhrzeit</label>
+                <input type="time" id="time" />
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Checkbox Group !-->
+              <label class="control-label  col-md-2">Status</label>
+              <div class="col-md-8">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">Alle</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">-2: undurchführbar (final = Schlechtfall)</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">-1: in Aktivierung </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">0: Warten auf Bestätigung</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">1: Bestätigt (final = Gutfall)</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">2: Inkonsistenz / anderer Buchungs-Auftrag empfangen (Schlechtfall)</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">3: Inkonsistenz / abweichendes Auftragsdelta zwischen Sofortnutzungsauftrag und Buchungsauftrag (Schlechtfall)</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">4: Inkonsistenz / Timeout = Ausbleiben der Bestätigung (Schlechtfall)</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">5: Fehler bei Sofortaktivierung (Schlechtfall)</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">6: Rückabgewickelt durch BSY im Rahmen eines Incident-Managements (final)</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">7: Bestandskorrektur in CRM-T im Rahmen eines Incident-Managements (final)</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">10: PUT erfolgreich</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="fav_foods" value="pizza">11: PUT erfolglos / Fehler</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

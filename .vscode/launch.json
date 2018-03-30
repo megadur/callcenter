@@ -1,0 +1,89 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Frontend Launch",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "port": 9223,
+            "sourceMaps": true,
+            "trace": true,
+            "webRoot": "${workspaceRoot}/Frontend",
+            "runtimeArgs": [
+                "--disable-session-crashed-bubble",
+                "--disable-infobars"
+            ],
+            "userDataDir": "${workspaceRoot}/Frontend/.vscode/chrome"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Frontend nodemon",
+            "runtimeExecutable": "nodemon",
+            "program": "${workspaceFolder}/Frontend/index.js",
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Frontend ng serve",
+            "cwd": "${workspaceRoot}/Frontend/",
+             "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceRoot}/Frontend/"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Frontend ng test",
+            "url": "http://localhost:9876/debug.html",
+            "webRoot": "${workspaceRoot}/Frontend/"
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Programmdatei starten",
+            "program": "${file}"
+        },
+        {
+            "name": "Backend Run mocha",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/Backend/node_modules/mocha/bin/_mocha",
+            "stopOnEntry": false,
+            "sourceMaps": true,
+            "args": [
+                "test/**/*.js",
+                "--no-timeouts",
+                "--watch"
+            ],
+            "cwd": "${workspaceRoot}/Backend",
+            "runtimeExecutable": null,
+            "env": {
+                "NODE_ENV": "testing"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Backend debug nodemon",
+            "runtimeExecutable": "nodemon",
+            "program": "${workspaceFolder}/Backend/index.js",
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+    ]
+}

@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">Auftrag IDM-Adapter Extern: {{xauftrag.EO_ID}} </div>
+      <div class="panel-body">
+        <div class="col-md-6">
+
+          <dl class="dl-horizontal dl-horizontal-left">
+            <dt id="toNr">TO-Nummer</dt>
+            <dd role="defintion" aria-labelledby="toNr">{{xauftrag.TO_NR}}</dd>
+
+            <dt id="idma">IDM-Adapter extern</dt>
+            <dd role="defintion" aria-labelledby="idma">
+              <a [routerLink]="['/auftrag']" [queryParams]="{EOID: xauftrag.EO_ID}">{{xauftrag.EO_ID}}</a>
+            </dd>
+            <dt id="smf">SMK-FF</dt>
+            <dd role="defintion" aria-labelledby="smf">{{xauftrag.ORDER_ID_SMF}}</dd>
+
+            <dt id="crm">CRM-T</dt>
+            <dd role="defintion" aria-labelledby="crm">{{xauftrag.ORDER_ID_CRM}}</dd>
+
+            <dt id="bssoe">BSSOE</dt>
+            <dd role="defintion" aria-labelledby="bssoe">{{xauftrag.ORDER_ID_BSSOE}}</dd>
+          </dl>
+        </div>
+
+        <div class="col-md-6">
+          <dl class="dl-horizontal dl-horizontal-left">
+            <dt id="kdNr">Kundennummer</dt>
+            <dd role="defintion" aria-labelledby="kdNr">{{xauftrag.ORDER_ID_CRM}}</dd>
+
+            <dt id="dkk">DKK</dt>
+            <dd role="defintion" aria-labelledby="dkk">{{xauftrag.ORDER_ID_DKK}}</dd>
+
+            <dt id="snr">Sofortnutzungsref.</dt>
+            <dd role="defintion" aria-labelledby="snr">{{xauftrag.ORDER_ID_SNR}}</dd>
+
+            <dt id="misc">Sonstiges</dt>
+            <dd role="defintion" aria-labelledby="misc">{{xauftrag.ORDER_ID_MISC}}</dd>
+
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 ">
+    <div *ngIf="dbgLevel>0">
+      <div class="row">
+        <div class="col-md-12 ">
+          <h4 class="sr-only1">auftrag-ext-detail</h4>
+          <pre>{{diagnostic}}</pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

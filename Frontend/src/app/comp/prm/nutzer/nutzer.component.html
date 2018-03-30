@@ -1,0 +1,33 @@
+
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+        <div class="row">
+          <div class="col-md-12 ">
+            <h4 class="sr-only1">Nutzermanagement</h4>
+            <pre>{{diagnostic}}</pre>
+          </div>
+        </div>
+      </div>
+<div class="row">
+
+  <div class="col-md-4">
+      <app-nutzer-suche></app-nutzer-suche>
+  </div>
+  <div class="col-md-2">
+<app-nutzer-status></app-nutzer-status>
+  </div>
+
+  <div class="col-md-6">
+    <div class="well">
+      Hier werden die Nutzermanagement Produktionspläne angezeigt, die sich noch im Produktionbuffer befinden. Selektierte Produktionspläne
+      können gelöscht werden.
+      <br/> Die Anzeige/Suche kann über dies Kriterien eingeschränkt werden.
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <app-nutzer-liste [nmauftragListIn]="nmauftragList" (nutzerOut)="hasXAuftragList($event)"></app-nutzer-liste>
+  </div>
+</div>

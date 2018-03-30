@@ -1,0 +1,142 @@
+<div class="container-fluid" role="main" aria-labelledBy="order" id="content">
+
+  <div class="row">
+    <div class="col">
+      <H1 class="sr-only">
+        Auswertung
+      </H1>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">SN-Inkonsistenzen</h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label for="EM-Matno" class="control-label col-md-2">EM-Matno</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="EM-Matno" name="EM-Matno" placeholder="EM-Matno">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="TO-Nummer" class="control-label col-md-2">TO-Nummer</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="TO-Nummer" name="TO-Nummer" placeholder="TO-Nummer">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Status" class="control-label col-md-2">Status</label>
+
+              <div class="col-md-8">
+                <!-- This is a new div -->
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="Status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Alle...
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>
+                      <a href="#"> -2: undurchführbar (final = Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> -1: in Aktivierung </a>
+                    </li>
+                    <li>
+                      <a href="#"> 0: Warten auf Bestätigung</a>
+                    </li>
+                    <li>
+                      <a href="#"> 1: Bestätigt (final = Gutfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 2: Inkonsistenz / anderer Buchungs-Auftrag empfangen (Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 3: Inkonsistenz / abweichendes Auftragsdelta zwischen Sofortnutzungsauftrag und Buchungsauftrag (Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 4: Inkonsistenz / Timeout = Ausbleiben der Bestätigung (Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 5: Fehler bei Sofortaktivierung (Schlechtfall)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 6: Rückabgewickelt durch BSY im Rahmen eines Incident-Managements (final)</a>
+                    </li>
+                    <li>
+                      <a href="#"> 7: Bestandskorrektur in CRM-T im Rahmen eines Incident-Managements (final)</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="#"> 10: PUT erfolgreich</a>
+                    </li>
+                    <li>
+                      <a href="#"> 11: PUT erfolglos / Fehler</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <form class="form-inline">
+        <div class="form-group mx-4">
+          <label class="sr-only" for="ID">GUID, SO-ID</label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="ID" placeholder="...">
+        </div>
+        <div class="form-group mx-4">
+          <label class="my-1 mr-2" for="Status">Status</label>
+          <select class="custom-select my-1 mr-sm-2" id="Status">
+            <option selected>...</option>
+            <option value="1">Created</option>
+            <option value="10">ErrorInCommit</option>
+            <option value="11">InCancellation</option>
+            <option value="12">Aborted</option>
+            <option value="13">ErrorInCancellation</option>
+            <option value="14">InRollback</option>
+            <option value="15">ErrorInRollback</option>
+            <option value="2">InCompletion</option>
+            <option value="3">Completed</option>
+            <option value="4">ErrorInCompletion</option>
+            <option value="5">InExecution</option>
+            <option value="6">Executed</option>
+            <option value="7">ErrorInExecution</option>
+            <option value="8">InCommit</option>
+            <option value="9">Commited</option>
+          </select>
+        </div>
+        <div class="form-group mx-4 ">
+          <label for="date">Example date</label>
+          <input type="date" id="date" />
+        </div>
+        <div class="form-group mx-4 ">
+          <label for="time">Example Time</label>
+          <input type="time" id="time" />
+        </div>
+        <div class="form-group mx-4 ">
+          <label class="sr-only" for="Suchen">Suchen</label>
+          <button type="submit" class="btn" id="Suchen">Suchen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

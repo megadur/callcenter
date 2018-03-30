@@ -1,0 +1,66 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Fehlerdetail</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Katalogdetails</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-10">
+        <b id="title">{{getTitle()}}</b>
+      </div>
+    </div>
+
+    <!-- Attribute EM_MATNO, CAPTION, DESCRIPTION, PRODUCT_STATUS, EM_TYPE_ID, INID_TYPE_ID, SUSP_GROUP_ID, IS_DELETED, TS_DELETION, LAST_UPD -->
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngIf="prdemIn">
+          <div *ngIf="prdemIn.EM_MATNO">
+            <dl class="dl-horizontal dl-horizontal-left dl-horizontal-gap-lg">
+              <dt id="catalog-em-dt">ID:</dt>
+              <dd aria-labelledby="catalog-em-dt">{{prdemIn.EM_MATNO}}</dd>
+
+              <dt id="catalog-type-dt">Typ:
+                <dd aria-labelledby="catalog-type-dt">{{prdemIn.EM_TYPE_ID}}</dd>
+
+                <dt id="catalog-inid-dt">INID-Typ:</dt>
+                <dd aria-labelledby="catalog-inid-dt">{{prdemIn.INID_TYPE_ID}}</dd>
+
+                <dt id="catalog-requires-ik-dt">IK_REQUIRED:</dt>
+                <dd aria-labelledby="catalog-requires-ik-dt">{{prdemIn.IK_REQUIRED}}</dd>
+
+                <dt id="catalog-multiple-inids-allowed-dt">MULTI_INIDS_ALLOWED</dt>
+                <dd aria-labelledby="catalog-multiple-inids-allowed-dt">{{prdemIn.MULTI_INIDS_ALLOWED}}</dd>
+
+                <dt id="catalog-keep-alive-dt">Keep-Alive:</dt>
+                <dd aria-labelledby="catalog-keep-alive-dt">{{prdemIn.IS_KEPT_ALIVE}}</dd>
+
+                <dt id="catalog-keep-alive-dt">last Update:</dt>
+                <dd aria-labelledby="catalog-keep-alive-dt">{{prdemIn.LAST_UPD}}</dd>
+            </dl>
+            <dl class="dl-horizontal dl-horizontal-left dl-horizontal-gap-lg">
+              <dt id="catalog-em-dt">Regeln:</dt>
+              <div *ngFor="let a of prdemrList()" class="list-unstyled">
+                <dd>({{a.EM_RULE_ID}})-{{a.CAPTION}}</dd>
+              </div>
+            </dl>
+            <dl class="dl-horizontal dl-horizontal-left dl-horizontal-gap-lg">
+              <dt id="catalog-em-dt">LSI:</dt>
+              <div *ngFor="let a of prdlsiList()" class="list-unstyled">
+                <dd>({{a.LSI_ID}})-{{a.CAPTION}}</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

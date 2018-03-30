@@ -1,0 +1,537 @@
+<div class="container-fluid" role="main" aria-labelledBy="order" id="content">
+
+  <div class="row">
+    <div class="col">
+      <h1 class="sr-only">Kampagnenmanagement</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Einzelreprovisionierung
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            <form class="form-horizontal">
+
+              <div class="form-group">
+                <label for="TO-Nummer" class="control-label col-md-2">TO-Nummer</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+                  <input type="text" class="form-control" id="TO-Nummer" name="TO-Nummer" placeholder="TO-Nummer">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="Type" class="control-label col-md-2">Ausprägung</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+                  <div class="dropdown" id="Type">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="true">
+                      alles reprovisionieren
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li>
+                        <a href="#">alles reprovisionieren</a>
+                      </li>
+                      <li>
+                        <a href="#">Nur EM reprovisionieren</a>
+                      </li>
+                      <li>
+                        <a href="#">EM und Sperren reprovisionieren</a>
+                      </li>
+                      <li role="separator" class="divider"></li>
+                      <li>
+                        <a href="#">nur Rufnummern reprovisionieren</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-md-offset-2  col-md-8">
+                  <!--New div, offset because there is no label -->
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+              aria-controls="collapseTwo">
+              Kampagnenliste
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <form class="form-horizontal" role="form">
+              <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                  <div class="form-group">
+                    <label for="dropdownStatus" class="col-md-4 control-label">Filter:</label>
+                    <div class="col-md-8">
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownStatus" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="true">
+                          nicht abgeschlossen
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownStatus">
+                          <li>
+                            <a href="#">nicht abgeschlossen</a>
+                          </li>
+                          <li>
+                            <a href="#">aktiv</a>
+                          </li>
+                          <li>
+                            <a href="#">abgeschlossen</a>
+                          </li>
+                          <li>
+                            <a href="#">abgebrochen</a>
+                          </li>
+                          <li>
+                            <a href="#">erstellt</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                  <div class="form-group">
+                    <label for="dropdownAktion" class="col-md-4 control-label"></label>
+                    <div class="col-md-8">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                  <div class="form-group">
+                  </div>
+                </div>
+              </div>
+            </form>
+            <table class="table" aria-labelledby="external-ids">
+              <caption class="sr-only">Vorgangsnummern externer Systeme</caption>
+              <thead>
+                <tr>
+                  <th>CAMPAIGN_ID</th>
+                  <th>SERVICE</th>
+                  <th>TICKET</th>
+                  <th>TS_CREATION</th>
+                  <th>SP</th>
+                  <th>EM</th>
+                  <th>RNR</th>
+                  <th>PRM</th>
+                  <th>STATUS</th>
+                  <th>ANZ</th>
+                  <th>DELAY</th>
+                  <th>WAITD</th>
+                  <th>Aktion:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>KorrICCIDMSISDN</td>
+                  <td>KorrICCID/MSISDN</td>
+                  <td>[NULL]</td>
+                  <td>2017-08-18 15:05:45</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownAktion" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="true">
+                      Kampagne modifizieren
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownAktion">
+                      <li>
+                        <a href="#">Kampagne modifizieren</a>
+                      </li>
+                      <li>
+                        <a href="#">csv Template generieren</a>
+                      </li>
+                      <li>
+                        <a href="#">Account-Liste importieren</a>
+                      </li>
+                      <li>
+                        <a href="#">Einen Account importieren</a>
+                      </li>
+                      <li>
+                        <a href="#">Kampagne stoppen</a>
+                      </li>
+                      <li>
+                        <a href="#">Error-Liste bearbeiten</a>
+                      </li>
+                      <li>
+                        <a href="#">Statistik anzeigen</a>
+                      </li>
+                      <li>
+                        <a href="#">Report erstellen</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>AccDel</td>
+                  <td>AccDel</td>
+                  <td>[NULL]</td>
+                  <td>2017-08-25 10:24:06</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>TestAdam</td>
+                  <td>Repro</td>
+                  <td>[NULL]</td>
+                  <td>2017-06-21 09:50:11</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>erstellt</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HauptnutzerResync</td>
+                  <td>HauptnutzerResync</td>
+                  <td>[NULL]</td>
+                  <td>2017-09-06 10:56:50</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>AccDel_Final</td>
+                  <td>AccDel_Final</td>
+                  <td>[NULL]</td>
+                  <td>2017-09-06 10:55:45</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>erstellt</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Repro</td>
+                  <td>Repro</td>
+                  <td>[NULL]</td>
+                  <td>2017-09-06 10:57:11</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>StartCommit</td>
+                  <td>StartCommit</td>
+                  <td>[NULL]</td>
+                  <td>2017-09-06 10:57:30</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>StartExecution</td>
+                  <td>StartExecution</td>
+                  <td>[NULL]</td>
+                  <td>2017-09-06 10:57:44</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>StartRollback</td>
+                  <td>StartRollback</td>
+                  <td>[NULL]</td>
+                  <td>2017-09-06 13:38:06</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>StartStorno</td>
+                  <td>StartStorno</td>
+                  <td>[NULL]</td>
+                  <td>2017-09-06 13:38:26</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>EntspAcc</td>
+                  <td>EntspAcc</td>
+                  <td>[NULL]</td>
+                  <td>2017-09-06 13:39:01</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>aktiv</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>TwTest</td>
+                  <td>StartStorno</td>
+                  <td>[NULL]</td>
+                  <td>2017-11-10 15:14:48</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>erstellt</td>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>5.000</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+              aria-controls="collapseThree">
+              Kampagne erstellen
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            <form class="form-horizontal">
+
+              <div class="form-group">
+                <label for="KampID" class="control-label col-md-2">KampagnenID</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+                  <input type="text" class="form-control" id="KampID" name="KampID" placeholder="KampID">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="TicketID" class="control-label col-md-2">TicketID</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+                  <input type="text" class="form-control" id="TicketID" name="TicketID" placeholder="TicketID">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="Status" class="control-label col-md-2">Status</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+                  <div class="dropdown" id="Status" name="Status">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownStatus" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="true">
+                      Auswahl ...
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownStatus">
+                      <li>
+                        <a href="kampagne">abgebrochen</a>
+                      </li>
+                      <li>
+                        <a href="kampagne">aktiv</a>
+                      </li>
+                      <li>
+                        <a href="kampagne">abgeschlossen</a>
+                      </li>
+                      <li>
+                        <a href="kampagne">erstellt</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="Service" class="control-label col-md-2">Service</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+                  <div class="dropdown" id="Service" name="Service">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownService" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="true">
+                      Auswahl ...
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownService">
+                      <li>
+                        <a href="">AccDel</a>
+                      </li>
+                      <li>
+                        <a href="">AccDel_Final</a>
+                      </li>
+                      <li>
+                        <a href="">HauptnutzerResync</a>
+                      </li>
+                      <li>
+                        <a href="">Repro</a>
+                      </li>
+                      <li>
+                        <a href="">StartCommit</a>
+                      </li>
+                      <li>
+                        <a href="">StartExecution</a>
+                      </li>
+                      <li>
+                        <a href="">StartRollback</a>
+                      </li>
+                      <li>
+                        <a href="">StartStorno</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Operation" class="control-label col-md-2">Operation</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value=""> Rufnummern reprovisionieren
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value=""> Sperren reprovisionieren
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value=""> Einzelmodule reprovisionieren
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value=""> Parameter reprovisionieren
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="AnzahlJobs" class="control-label col-md-2">Anzahl der Jobs</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+                  <input type="text" class="form-control" id="AnzahlJobs" name="AnzahlJobs" placeholder="1...10">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="Verz" class="control-label col-md-2">Verzögerung</label>
+
+                <div class="col-md-4">
+                  <!-- This is a new div -->
+                  <input type="text" class="form-control" id="Verz" name="Verz" placeholder="1...3600">
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <div class="col-md-offset-2  col-md-8">
+                  <!--New div, offset because there is no label -->
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

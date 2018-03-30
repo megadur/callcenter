@@ -1,0 +1,126 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Fehlerliste</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Katalog</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-condensed table-hover">
+      <caption class="sr-only">Katalog</caption>
+      <thead>
+        <tr>
+          <th id="catalog-em-th">
+            <a class="sort-toggle" href="#">
+              <span class="caption">EM-MatNo</span>
+              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                <!--  -->
+              </span>
+              <span class="sr-only">Absteigend sortieren</span>
+            </a>
+          </th>
+          <th id="catalog-title-th">
+            <a class="sort-toggle active" href="#" id="catalog-title">
+              <span class="caption">EM-Bezeichnung</span>
+              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                <!--  -->
+              </span>
+
+              <span class="sr-only">Aufsteigend sortieren</span>
+            </a>
+          </th>
+          <th id="catalog-title-th">
+            <a class="sort-toggle active" href="#" id="catalog-title">
+              <span class="caption">last Update</span>
+              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                <!--  -->
+              </span>
+
+              <span class="sr-only">Aufsteigend sortieren</span>
+            </a>
+          </th>
+          <th id="catalog-em-th">
+            <a class="sort-toggle" href="#">
+              <span class="caption">MP-MatNo</span>
+              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                <!--  -->
+              </span>
+              <span class="sr-only">Absteigend sortieren</span>
+            </a>
+          </th>
+          <th id="catalog-title-th">
+            <a class="sort-toggle active" href="#" id="catalog-title">
+              <span class="caption">MP-Bezeichnung</span>
+              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                <!--  -->
+              </span>
+
+              <span class="sr-only">Aufsteigend sortieren</span>
+            </a>
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of prdemList()" [class.selected]="a === prdem" (click)="onSelect(a)">
+          <td>{{a.EM_MATNO}}</td>
+          <td>{{a.CAPTION}}</td>
+          <td>{{a.LAST_UPD}}</td>
+          <td>{{a.MP_MATNO}}</td>
+          <td>{{a.MP_NAME}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="col-md-4">
+      <div for="size-lbl" class="control-label">Anzahl pro Seite</div>
+
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination" aria-labelledby="size-lbl" id="size-lbl">
+        <li>
+          <a (click)="setPageSize(5)">5</a>
+        </li>
+        <li>
+          <a (click)="setPageSize(15)">15</a>
+        </li>
+        <li>
+          <a (click)="setPageSize(25)">25</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <div class="pull-right">
+        <div for="fblpages" class="control-label"> &nbsp;</div>
+
+        <!-- items being paged -->
+        <div *ngFor="let item of pagedItems">{{item.name}}</div>
+
+        <!-- pager -->
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination" id="fblpages">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">First</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Last</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

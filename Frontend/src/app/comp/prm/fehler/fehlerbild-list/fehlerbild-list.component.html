@@ -1,0 +1,140 @@
+<div *ngIf="dbgLevel>0">
+  <!-- Fehlerliste -->
+  <div class="row">
+    <div class="col-md-12 sr-only1">
+      <h2 class="sr-only">FehlerBildListe</h2>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" id="error-int">Fehlerfilter</h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10">
+      <table class="table table-grid">
+        <caption class="sr-only">FehlerBildListe</caption>
+        <thead>
+          <tr>
+            <th id="error-id-th">
+              <a class="sort-toggle active" href="#" id="error-id" autofocus="autofocus">
+                <span class="caption">BILDNUMMER</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                <span class="sr-only">Absteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-code-int-th">
+              <a class="sort-toggle" id="error-code-int" href="#">
+                <span class="caption">SO_TYPE_ID</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-task-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-task" href="#">
+                <span class="caption">CODE_INT</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-created-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-created" href="#">
+                <span class="caption">BESCHREIBUNG</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-closed-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-closed" href="#">
+                <span class="caption">AUSLOESER</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-system-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-system" href="#">
+                <span class="caption">PRIO</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+            <th id="error-system-th">
+              <a aria-hidden="true" class="sort-toggle" id="error-system" href="#">
+                <span class="caption">ERSTELLT_TS</span>
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                <span class="sr-only">Aufsteigend sortieren</span>
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of pagedItems" [class.selected]="a === fehlerbildSel" (click)="onSelect(a)">
+            <td>
+              <a routerLink="/fehlerbild">
+                <span class="badge">{{a.ID}}</span>
+              </a>
+            </td>
+            <td>{{a.BILDNUMMER}}</td>
+            <td>{{a.FLT_SO_TYPE_ID}}</td>            
+            <td>{{a.FLT_CODE_INT}}</td>
+            <td>{{a.BESCHREIBUNG}}</td>
+            <td>{{a.AUSLOESER}}</td>
+            <td>{{a.PRIO}}</td>
+            <td>{{a.ERSTELLT_TS}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <div for="size-lbl" class="control-label">Anzahl pro Seite</div>
+
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination" aria-labelledby="size-lbl" id="size-lbl">
+        <li>
+          <a (click)="setPageSize(5)">5</a>
+        </li>
+        <li>
+          <a (click)="setPageSize(15)">15</a>
+        </li>
+        <li>
+          <a (click)="setPageSize(25)">25</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <div class="pull-right">
+        <div for="fblpages" class="control-label"> &nbsp;</div>
+
+        <!-- items being paged -->
+        <div *ngFor="let item of pagedItems">{{item.name}}</div>
+
+        <!-- pager -->
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination" id="fblpages">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">First</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Last</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Dummy -->
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="sr-only" id="errors">Fehler</h1>
+    <!--xerror={{xerror}} count={{count}}-->
+  </div>
+</div>

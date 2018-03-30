@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+
+  <div class="row">
+    <div class="col">
+      <h1 class="sr-only">Sofortnutzung Liste</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Sofortnutzung Liste</h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <div class="form-group">
+                <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                <label class="control-label col-md-2 "> csv Datei </label>
+                <div class="col-md-4">
+                  <label class="btn btn-default" for="my-file-selector">
+                    <input id="my-file-selector" type="file" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> auswählen...
+                  </label>
+                  <span class='control-label text-info' id="upload-file-info">Noch keine Datei ausgewählt.</span>
+                  <p class="help-text">Die Datei zunächst auswählen und dann hochladen.</p>
+                </div>
+                <label for="Upload" class="control-label sr-only">Upload CSV</label>
+                <div class="col-md-4">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="container-fluid" role="main" aria-labelledBy="order" id="content">
+
+  <div class="row">
+    <div class="col">
+      <h1 class="sr-only">Katalog</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">statisches Mapping: EmMatNo - MpMatNo</h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+
+            <div class="row">
+              <div class="form-group">
+                <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                <label class="control-label col-md-2 "> csv Datei importieren</label>
+                <div class="col-md-4">
+                  <label class="btn btn-primary" for="my-file-selector">
+                    <input id="my-file-selector" type="file" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> auswählen...
+                  </label>
+                  <span class='label label-info' id="upload-file-info"></span>
+                  <p class="help-text">Die Datei zunächst auswählen und dann hochladen.</p>
+                </div>
+                <label for="Upload" class="control-label sr-only">Upload CSV</label>
+                <div class="col-md-4">
+                  <button type="submit" class="btn" id="Upload">Hochladen</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label class="control-label col-md-2 " for="Download">csv Datei exportieren</label>
+                <div class="col-md-6 ">
+                  <button type="submit" class="btn" id="Download">Download CSV</button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Katalog aktualisieren</h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+            <div class="row">
+              <div class="form-group">
+                <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                <label for="Upload" class="control-label col-md-2 "> Update nows</label>
+                <div class="col-md-4">
+                  <button type="submit" class="btn" id="Upload">Aktualisieren!</button>
+                </div>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

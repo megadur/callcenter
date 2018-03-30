@@ -1,0 +1,31 @@
+<div class="row ">
+  <div class="col-md-8 ">
+    <!-- GUID -->
+    <div class="form-group">
+      <label for="expertise" class="col-md-4 control-label">GUID:</label>
+      <div class="col-md-8">
+        <select #selectElem (change)="setNewGUID(selectElem.value)" size='7'>
+          <option *ngFor="let a of accountListIn" [value]="a.GUID" ng-style="{'color': getStyle(e.STATUS)}">
+            {{a.GUID}}
+          </option>
+        </select>
+      </div>
+      <span id="helpBlock" class="help-block">Die Farbe bedeuten:
+        <span style="color:red;">rot</span>='inaktiv',
+        <span style="color:grey;">grau</span>='deaktiviert',
+        <span style="color:goldenrod;">gelb</span>='bestellt',
+        <span style="color:blue;">???</span>='gekündigt',
+        <span style="color:green;">grün</span>='aktiv', ...</span>
+    </div>
+  </div>
+  <div class="col-md-4  bg-info">
+    <div *ngIf="dbgLevel>0">
+      <div class="row">
+        <div class="col-md-12 ">
+          <h4 class="sr-only1">Account-List</h4>
+          <pre>{{diagnostic}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

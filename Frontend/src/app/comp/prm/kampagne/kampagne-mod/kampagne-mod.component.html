@@ -1,0 +1,163 @@
+<p>
+  kampagne-mod works!
+</p>
+<div class="panel-body">
+
+        <div class=" col-md-12 bs-callout bs-callout-danger">
+            <form class="form-horizontal">
+    
+                <div class="form-group">
+                    <label for="KampID" class="control-label col-md-2">Name</label>
+    
+                    <div class="col-md-4">
+                        <!-- This is a new div -->
+                        <input type="text" class="form-control" id="KampID" name="KampID" placeholder="KampID" aria-describedby="helpBlockKampID">
+                        <label class="sr-only" for="inputHelpBlock">Input with help text</label>
+                    </div>
+                    <div class="col-md-6">
+                        <span id="helpBlockKampID" class="help-block">Kampagnen dürfen nicht mit einer Ziffer beginnen.</span>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="TicketID" class="control-label col-md-2">TicketID</label>
+    
+                    <div class="col-md-4">
+                        <!-- This is a new div -->
+                        <input type="text" class="form-control" id="TicketID" name="TicketID" placeholder="TicketID">
+                    </div>
+                    <div class="col-md-6">
+                        <span id="helpBlockTicketID" class="help-block">Der Grund für diese Kampagne.</span>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="Status" class="control-label col-md-2">Status</label>
+    
+                    <div class="col-md-10">
+                        <!-- This is a new div -->
+                        <div class="dropdown" id="Status" name="Status">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownStatus" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="true">
+                                Auswahl ...
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownStatus">
+                                <li>
+                                    <a href="kampagne">abgebrochen</a>
+                                </li>
+                                <li>
+                                    <a href="kampagne">aktiv</a>
+                                </li>
+                                <li>
+                                    <a href="kampagne">abgeschlossen</a>
+                                </li>
+                                <li>
+                                    <a href="kampagne">erstellt</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="Service" class="control-label col-md-2">Service</label>
+    
+                    <div class="col-md-10">
+                        <!-- This is a new div -->
+                        <div class="dropdown" id="Service" name="Service">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownService" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="true">
+                                Auswahl ...
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownService">
+                                <li>
+                                    <a href="">AccDel</a>
+                                </li>
+                                <li>
+                                    <a href="">AccDel_Final</a>
+                                </li>
+                                <li>
+                                    <a href="">HauptnutzerResync</a>
+                                </li>
+                                <li>
+                                    <a href="">Repro</a>
+                                </li>
+                                <li>
+                                    <a href="">StartCommit</a>
+                                </li>
+                                <li>
+                                    <a href="">StartExecution</a>
+                                </li>
+                                <li>
+                                    <a href="">StartRollback</a>
+                                </li>
+                                <li>
+                                    <a href="">StartStorno</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="Operation" class="control-label col-md-2">Operation</label>
+    
+                    <div class="col-md-10">
+                        <!-- This is a new div -->
+    
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value=""> Rufnummern reprovisionieren
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value=""> Sperren reprovisionieren
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value=""> Einzelmodule reprovisionieren
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value=""> Parameter reprovisionieren
+                            </label>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="AnzahlJobs" class="control-label col-md-2">Anzahl der Jobs</label>
+    
+                    <div class="col-md-10">
+                        <!-- This is a new div -->
+                        <input type="text" class="form-control" id="AnzahlJobs" name="AnzahlJobs" placeholder="1...10">
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="Verz" class="control-label col-md-2">Verzögerung</label>
+    
+                    <div class="col-md-10">
+                        <!-- This is a new div -->
+                        <input type="text" class="form-control" id="Verz" name="Verz" placeholder="1...3600">
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <div class="col-md-offset-2  col-md-8">
+                        <!--New div, offset because there is no label -->
+                        <button type="submit" class="btn btn-primary">Speichern</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalKampagnen">Löschen</button>
+    
+                    </div>
+                </div>
+    
+            </form>
+        </div>
+    
+    </div>

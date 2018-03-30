@@ -1,0 +1,77 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+    <div class="row">
+      <div class="col-md-12 ">
+        <h4 class="sr-only1">Fehlerdetail</h4>
+        <pre>{{diagnostic}}</pre>
+      </div>
+    </div>
+  </div>
+<!-- Nummern, Zeiten etc. -->
+<div class="row">
+  <div class="col-md-4">
+    <dl class="dl-horizontal dl-horizontal-left">
+      <dt id="error-id-dt">ID</dt>
+      <dd aria-labelledby="error-id-dt">{{xerrorIn.ID}}</dd>
+      <dt id="error-system-dt">System</dt>
+      <dd aria-labelledby="error-system-dt">{{xerrorIn.SYS}}</dd>
+      <dt id="error-order-ext-dt">Auftrag (extern)</dt>
+      <dd>
+        <a [routerLink]="['/auftrag']" [queryParams]="{EOID: xerrorIn.EO_ID}">{{xerrorIn.EO_ID}}</a>      
+      </dd>
+      <dt id="error-order-dt">Auftrag (intern)</dt>
+      <dd>
+        <a [routerLink]="['/auftrag']" [queryParams]="{EOID: xerrorIn.SO_ID}">{{xerrorIn.SO_ID}}</a>      
+      </dd>
+      <dt id="error-created-dt">Erzeugt</dt>
+      <dd aria-labelledby="error-created-dt">{{xerrorIn.TS_CREATED}}</dd>
+      <dt id="error-closed-dt">Abgeschlossen</dt>
+      <dd aria-labelledby="error-closed-dt">{{xerrorIn.TS_CLOSED}}</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- Fehler intern -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" id="error-int">Interne Fehlermeldung</h3>
+      </div>
+      <div class="panel-body">
+        <dl class="dl-horizontal dl-horizontal-left">
+          <dt id="error-int-code-dt">Fehlercode</dt>
+          <dd aria-labelledby="error-int-code-dt">{{xerrorIn.CODE_INT}}</dd>
+          <dt id="error-int-text-dt">Meldung</dt>
+          <dd aria-labelledby="error-int-message-dt">{{xerrorIn.TEXT_INT}}</dd>
+          <dt>Stacktrace</dt>
+          <dd>
+            <!-- Button trigger modal -->
+            <a class="btn btn-primary" role="button" data-toggle="modal" href="#ModalStackTrace" aria-expanded="false" aria-controls="collapseExample">
+              Show ...
+            </a>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fehler extern -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" id="error-ext">Externe Fehlermeldung</h3>
+      </div>
+      <div class="panel-body">
+        <dl class="dl-horizontal dl-horizontal-left">
+          <dt id="error-ext-code-dt">Fehlercode</dt>
+          <dd aria-labelledby="error-ext-code-dt">{{xerrorIn.CODE_EXT}}</dd>
+          <dt id="error-ext-text-dt">Meldung</dt>
+          <dd aria-labelledby="error-ext-message-dt">{{xerrorIn.TEXT_EXT}}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,230 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <div class="panel-title">Aktiver Bestand</div>
+      </div>
+      <div class="panel-body">
+
+        <ul class="nav nav-tabs" role="tablist" id="account-tabs">
+          <li class="active">
+            <a href="#ems" role="tab" data-toggle="tab" aria-expanded="true">Einzelmodule</a>
+          </li>
+          <li class="">
+            <a href="#parameters" role="tab" data-toggle="tab" aria-expanded="false">Parameter</a>
+          </li>
+          <li class="">
+            <a href="#callnums" role="tab" data-toggle="tab" aria-expanded="false">Rufnummern</a>
+          </li>
+          <li class="">
+            <a href="#suspensions" role="tab" data-toggle="tab" aria-expanded="false">Sperren</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <!--  Einzelmodule -->
+          <div class="tab-pane active" id="ems">
+            <h4 class="sr-only" id="ems-header">Einzelmodule</h4>
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>
+                    <div>IDX</div>
+                  </th>
+                  <th>
+                    <div>EM</div>
+                  </th>
+                  <th>
+                    <div>Owner</div>
+                  </th>
+                  <th>
+                    <div>TS_CREATION</div>
+                  </th>
+                  <th>
+                    <div>INID </div>
+                  </th>
+                  <th>
+                    <div>Typ</div>
+                  </th>
+                  <th>
+                    <div>IK</div>
+                  </th>
+                  <th>
+                    <div>Stand</div>
+                  </th>
+
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr *ngFor="let a of getEMList()">
+                  <td>
+                    <a routerLink="/xbestand">
+                      <span class="badge">{{a.ID}}</span>
+                    </a>
+                  </td>
+                  <td>{{a.EM_MATNO}}</td>
+                  <td>{{a.IS_ACCOUNT_OWNER==1?'account':''}}{{a.IS_INID_OWNER==1?'inid':''}}</td>
+                  <td>{{a.TS_CREATION}}</td>
+                  <td>{{a.INID}}</td>
+                  <td></td>
+                  <td></td>
+                  <td>{{a.LAST_UPD}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Parameter -->
+          <div class="tab-pane" id="parameters">
+            <h4 class="sr-only" id="parameters-header">Parameter</h4>
+
+            <table class="table table-striped" aria-labelledby="parameters-header">
+              <thead>
+                <tr>
+                  <th>
+                    <div>IDX</div>
+                  </th>
+                  <th>
+                    <div>IDM_PARAM_ID</div>
+                  </th>
+                  <th>
+                    <div>FIELD</div>
+                  </th>
+                  <th>
+                    <div>CAPTION</div>
+                  </th>
+                  <th>
+                    <div>VALUE</div>
+                  </th>
+                  <th>
+                    <div>PROPAGATION</div>
+                  </th>
+                  <th>
+                    <div>INID</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--ID	STOCK_ID	DESTINATION_FIELD	EM_MATNO	INID	PARAM_ID	PARAM_TYPE	TARGET_SYSTEM	VALUE	LAST_UPD -->
+                <tr *ngFor="let a of getPARList()">
+                  <td>
+                    <a routerLink="/xbestand">
+                      <span class="badge">{{a.ID}}</span>
+                    </a>
+                  </td>
+                  <td>{{a.PARAM_ID}}</td>
+                  <td>{{a.DESTINATION_FIELD}}</td>
+                  <td></td>
+                  <td>{{a.VALUE}}</td>
+                  <td></td>
+                  <td></td>
+                  <td>{{a.TARGET_SYSTEM}}</td>
+                  <td></td>
+                  <td>{{a.INID}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+
+          <!-- Rufnummern -->
+          <div class="tab-pane" id="callnums">
+            <h4 class="sr-only" id="callnums-header">Rufnummern</h4>
+
+            <table class="table table-striped" aria-labelledby="callnums-header">
+              <thead>
+                <tr>
+                  <th>
+                    <div>IDX</div>
+                  </th>
+                  <th>
+                    <div>RN_STRUCT</div>
+                  </th>
+                  <th>
+                    <div>INID</div>
+                  </th>
+                  <th>
+                    <div>THN</div>
+                  </th>
+                  <th>
+                    <div>TYPE</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--ID	STOCK_ID	INID	RN_STRUCT	RN_UNSTRUCT	RN_TYPE	IS_THN	LAST_UPD-->
+                <tr *ngFor="let a of getRNRList()">
+                  <td>
+                    <a routerLink="/xbestand">
+                      <span class="badge">{{a.ID}}</span>
+                    </a>
+                  </td>
+                  <td>{{a.RN_STRUCT}}</td>
+                  <td>{{a.INID}}</td>
+                  <td>{{a.IS_THN}}</td>
+                  <td>{{a.RN_TYPE}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+
+          <!-- Sperren -->
+          <div class="tab-pane" id="suspensions">
+            <h4 class="sr-only" id="susp">Sperren</h4>
+
+            <table class="table table-striped" aria-labelledby="susp">
+              <thead>
+                <tr>
+                  <th>
+                    <div>IDX</div>
+                  </th>
+                  <th>
+                    <div>SPERR_GRP</div>
+                  </th>
+                  <th>
+                    <div>SUSP_TYPE</div>
+                  </th>
+                  <th>
+                    <div>SPERR_SCOPE</div>
+                  </th>
+                  <th>
+                    <div>INID</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--ID	STOCK_ID	INID	SPERR_GRP	SPERR_TYPE	SPERR_SCOPE	LAST_UPD-->
+                <tr *ngFor="let a of getSPRList()">
+                  <td>
+                    <a routerLink="/xbestand">
+                      <span class="badge">{{a.ID}}</span>
+                    </a>
+                  </td>
+                  <td>{{a.SPERR_GRP}}</td>
+                  <td>{{a.SPERR_TYPE}}</td>
+                  <td>{{a.SPERR_SCOPE}}</td>
+                  <td>{{a.INID}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div *ngIf="dbgLevel>0">
+      <div class="row">
+        <div class="col-md-12 ">
+          <h4 class="sr-only1">BestandDetail</h4>
+          <pre>{{diagnostic}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

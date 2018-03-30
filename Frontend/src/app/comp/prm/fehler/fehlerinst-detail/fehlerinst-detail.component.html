@@ -1,0 +1,62 @@
+<div *ngIf="dbgLevel>0">
+        <div class="row">
+  <div class="col-md-12">
+    <h2 class="sr-only">FehlerDetail</h2>
+    <pre>{{diagnostic}}</pre>
+  </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+
+    <div *ngIf="xError">
+
+      <dl class="dl-horizontal dl-horizontal-left grid">
+        <dt id="ID">ID</dt>
+        <dd role="defintion" aria-labelledBy="ID">{{xError.ID}}</dd>
+        <dt id="EO_ID">EO_ID</dt>
+        <dd role="defintion" aria-labelledBy="EO_ID">{{xError.EO_ID}}</dd>
+        <dt id="SO_ID">SO_ID</dt>
+        <dd role="defintion" aria-labelledBy="SO_ID">{{xError.SO_ID}}</dd>
+
+        <dt id="CODE_INT">CODE_INT</dt>
+        <dd role="defintion" aria-labelledBy="CODE_INT">{{xError.CODE_INT}}</dd>
+
+        <dt id="CODE_EXT">CODE_EXT</dt>
+        <dd role="defintion" aria-labelledBy="CODE_EXT">{{xError.CODE_EXT}}</dd>
+
+        <dt id="SYS">SYS</dt>
+        <dd role="defintion" aria-labelledBy="SYS">{{xError.SYS}}</dd>
+
+        <dt id="TASK">TASK</dt>
+        <dd role="defintion" aria-labelledBy="TASK">{{xError.TASK}}</dd>
+
+        <dt id="TEXT_INT">TEXT_INT</dt>
+        <dd role="defintion" aria-labelledBy="TEXT_INT">{{xError.TEXT_INT}}</dd>
+
+        <dt id="TEXT_EXT">TEXT_EXT</dt>
+        <dd role="defintion" aria-labelledBy="TEXT_EXT">{{xError.TEXT_EXT}}</dd>
+
+        <dt id="INC_TEXT_SHORT">INC_TEXT_SHORT</dt>
+        <dd role="defintion" aria-labelledBy="INC_TEXT_SHORT">{{xError.INC_TEXT_SHORT}}</dd>
+
+        <dt id="INC_TEXT_LONG">INC_TEXT_LONG</dt>
+        <dd role="defintion" aria-labelledBy="INC_TEXT_LONG">{{xError.INC_TEXT_LONG}}</dd>
+
+        <dt id="TS_CREATED">TS_CREATED</dt>
+        <dd role="defintion" aria-labelledBy="TS_CREATED">{{xError.TS_CREATED}}</dd>
+
+        <dt id="TS_CLOSED"></dt>
+        <dd role="defintion" aria-labelledBy="TS_CLOSED">{{xError.TS_CLOSED}}</dd>
+
+        <dt id="HANDLING">HANDLING</dt>
+        <dd role="defintion" aria-labelledBy="HANDLING">{{xError.HANDLING}}</dd>
+
+        <dt id="LAST_UPD">LAST_UPD</dt>
+        <dd role="defintion" aria-labelledBy="LAST_UPD">{{xError.LAST_UPD}}</dd>
+
+      </dl>
+
+    </div>
+  </div>
+</div>

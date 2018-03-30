@@ -1,0 +1,17 @@
+[
+    {
+        "TBL": "X_AUFTRAG_EXT",
+        "TO_NR": "208111243010",
+        "EO_ID": "XDM000000117029",
+        "ORDER_ID_CRM": "20811124300",
+        "ORDER_ID_BSSOE": null,
+        "ORDER_ID_SMF": "208111243-0000-0000-a0000-0000102",
+        "ORDER_ID_DKK": "20811124300",
+        "ORDER_ID_SNR": null,
+        "ORDER_ID_MISC": null,
+        "TS_CREATED": "2017-11-08T11:52:04.892Z",
+        "TS_LAST_UPDATE": "2017-11-08T11:56:14.498Z",
+        "URSPRUNGS_KWT": "2017-11-08T12:43:14.000Z",
+        "LAST_UPD": "2017-11-08T11:56:18.000Z"
+    }
+]

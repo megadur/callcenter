@@ -1,0 +1,102 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Fehlerliste</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+<table class="table table-grid">
+  <caption class="sr-only">Fehler</caption>
+  <thead>
+    <tr>
+      <th id="error-id-th">
+        <a class="sort-toggle active" id="error-id" autofocus="autofocus">
+          <span class="caption">ID</span>
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+            <!--  -->
+          </span>
+          <span class="sr-only">Absteigend sortieren</span>
+        </a>
+      </th>
+      <th id="error-code-int-th">
+        <a class="sort-toggle" id="error-code-int">
+          <span class="caption">Fehlercode</span>
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+            <!--  -->
+          </span>
+
+          <span class="sr-only">Aufsteigend sortieren</span>
+        </a>
+      </th>
+      <th id="error-task-th">
+        <a aria-hidden="true" class="sort-toggle" id="error-task">
+          <span class="caption">Task</span>
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+            <!--  -->
+          </span>
+
+          <span class="sr-only">Aufsteigend sortieren</span>
+        </a>
+      </th>
+      <th id="error-created-th">
+        <a aria-hidden="true" class="sort-toggle" id="error-created">
+          <span class="caption">Erzeugt</span>
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+            <!--  -->
+          </span>
+
+          <span class="sr-only">Aufsteigend sortieren</span>
+        </a>
+      </th>
+      <th id="error-closed-th">
+        <a aria-hidden="true" class="sort-toggle" id="error-closed">
+          <span class="caption">Geschlossen</span>
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+            <!--  -->
+          </span>
+
+          <span class="sr-only">Aufsteigend sortieren</span>
+        </a>
+      </th>
+      <th id="error-system-th">
+        <a aria-hidden="true" class="sort-toggle" id="error-system">
+          <span class="caption">System</span>
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+            <!--  -->
+          </span>
+
+          <span class="sr-only">Aufsteigend sortieren</span>
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td headers="error-id-th">
+        <a class="" role="button" data-toggle="collapse" href="#collapse83105" aria-expanded="false" aria-controls="collapse83105">
+          83105
+        </a>
+      </td>
+      <td headers="error-code-int-th">101</td>
+      <td headers="error-task-th"></td>
+      <td headers="error-created-th">21. Februar 2017 16:09:20 MEZ</td>
+      <td headers="error-closed-th">21. Februar 2017 16:09:20 MEZ</td>
+      <td headers="error-system-th">IDMA</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr *ngFor="let a of xerrorList()" [class.selected]="a === xerror" (click)="onSelect(a)">
+      <td headers="error-id-th">
+        <a routerLink="/error">{{a.ID}}</a>
+      </td>
+      <td headers="error-code-int-th">{{a.CODE_INT}}</td>
+      <td headers="error-task-th">{{a.TASK}}</td>
+      <td headers="error-created-th">{{a.TS_CREATED}}</td>
+      <td headers="error-closed-th">{{a.TS_CLOSED}}</td>
+      <td headers="error-system-th">{{a.SYS}}</td>
+    </tr>
+  </tbody>
+
+</table>

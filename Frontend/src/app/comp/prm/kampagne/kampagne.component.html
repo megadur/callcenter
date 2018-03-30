@@ -1,0 +1,25 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Kampagne {{getMode()}}</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <app-kampagne-suche (kampagneListOut)="hasKampagneList($event)"></app-kampagne-suche>
+  </div>
+  <div class="col-md-12">
+    <app-kampagne-liste [kampagneListIn]="kampagneList" (kampagneOut)="hasKampagne($event)"></app-kampagne-liste>
+
+  </div>
+  <div class="col-md-12">
+    <app-kampagne-edit [kampagneIn]="kampagne"></app-kampagne-edit>
+
+  </div>
+  <div class="col-md-12">
+    <app-kampagne-mod></app-kampagne-mod>
+  </div>
+</div>

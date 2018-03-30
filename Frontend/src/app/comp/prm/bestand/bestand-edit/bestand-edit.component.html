@@ -1,0 +1,508 @@
+<p>
+  bestand-edit works!
+</p>
+<form method="post" class="stockCreation form-inline" action="/idma-callcenter/stockcreation/stockprovisioning">
+    <input id="toNr" name="toNr" value="604121239010" autofocus="autofocus" type="hidden">
+    <input id="sourceStockId" name="sourceStockId" value="43012" type="hidden">
+    <div class="row" id="stock">
+      <div class="col-md-12">
+        <h3 id="changes">Zielbestand bearbeiten</h3>
+        <ul class="nav nav-tabs" role="tablist" id="ada-tabs">
+          <li class="active">
+            <a href="#ems1" role="tab" data-toggle="tab">Einzelmodule</a>
+          </li>
+          <li>
+            <a href="#parameters1" role="tab" data-toggle="tab">Parameter</a>
+          </li>
+          <li>
+            <a href="#callnums1" role="tab" data-toggle="tab">Rufnummern</a>
+          </li>
+          <li>
+            <a href="#suspensions1" role="tab" data-toggle="tab">Sperren</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- Einzelmodule -->
+          <div class="tab-pane active" id="ems1">
+            <h4 class="sr-only" id="ems-header">Einzelmodule</h4>
+
+            <table class="table table-striped" aria-labelledby="ems-header">
+              <caption class="sr-only">??order.changes.modules.caption_de??</caption>
+              <thead>
+                <tr>
+                  <th id="em-buttons-th">
+                    <button title="Hinzufügen" type="button" class="glyphicon glyphicon-plus add"></button>
+                  </th>
+                  <th id="em-matno-th">Einzelmodul</th>
+                  <th id="em-caption-th">Bezeichnung</th>
+                  <th id="em-mpmatno-th">Mp MatNo</th>
+                  <th id="em-assetid-th">Asset ID</th>
+                  <th id="em-inid-typ-th">INID-Typ</th>
+                  <th id="em-ik-th">Instanzkenner</th>
+                  <th id="em-inid-th">INID</th>
+                  <th id="em-owner-th">Eigentümer</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td headers="em-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="em-matno-th">
+                    <input readonly="readonly" required="required" id="modules0.emMatno" name="modules[0].emMatno" value="88219286" type="text">
+                  </td>
+
+                  <td headers="em-caption-th">EM_VOIP_APPLIKATION_ISI</td>
+                  <td headers="em-mpmatno-th">
+                    <input readonly="readonly" id="modules0.mpMatno" name="modules[0].mpMatno" value="89743564" type="text">
+                  </td>
+                  <td headers="em-assetid-th">
+                    <input readonly="readonly" id="modules0.assetId" name="modules[0].assetId" type="text">
+                  </td>
+                  <td headers="em-inid-typ-th">voip</td>
+                  <td headers="em-ik-th">
+                    <input readonly="readonly" id="modules0.instanz.ik" name="modules[0].instanz.ik" type="text">
+                  </td>
+                  <td headers="em-inid-th">130149019900010000639582</td>
+
+
+                  <td headers="em-owner-th"></td>
+                </tr>
+                <tr>
+                  <td headers="em-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="em-matno-th">
+                    <input readonly="readonly" required="required" id="modules1.emMatno" name="modules[1].emMatno" value="88216862" type="text">
+                  </td>
+
+                  <td headers="em-caption-th">EM_ISPX_C&amp;S COMFORT IP (5)</td>
+                  <td headers="em-mpmatno-th">
+                    <input readonly="readonly" id="modules1.mpMatno" name="modules[1].mpMatno" value="89743564" type="text">
+                  </td>
+                  <td headers="em-assetid-th">
+                    <input readonly="readonly" id="modules1.assetId" name="modules[1].assetId" value="471101" type="text">
+                  </td>
+                  <td headers="em-inid-typ-th"></td>
+                  <td headers="em-ik-th">
+                    <input readonly="readonly" id="modules1.instanz.ik" name="modules[1].instanz.ik" type="text">
+                  </td>
+                  <td headers="em-inid-th"></td>
+                  <td headers="em-owner-th">Account</td>
+
+
+                </tr>
+                <tr>
+                  <td headers="em-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="em-matno-th">
+                    <input readonly="readonly" required="required" id="modules2.emMatno" name="modules[2].emMatno" value="88218643" type="text">
+                  </td>
+
+                  <td headers="em-caption-th">EM_ZUSATZDIENSTE_ISI</td>
+                  <td headers="em-mpmatno-th">
+                    <input readonly="readonly" id="modules2.mpMatno" name="modules[2].mpMatno" value="89743564" type="text">
+                  </td>
+                  <td headers="em-assetid-th">
+                    <input readonly="readonly" id="modules2.assetId" name="modules[2].assetId" type="text">
+                  </td>
+                  <td headers="em-inid-typ-th"></td>
+                  <td headers="em-ik-th">
+                    <input readonly="readonly" id="modules2.instanz.ik" name="modules[2].instanz.ik" type="text">
+                  </td>
+                  <td headers="em-inid-th"></td>
+
+
+                  <td headers="em-owner-th"></td>
+                </tr>
+                <tr>
+                  <td headers="em-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="em-matno-th">
+                    <input readonly="readonly" required="required" id="modules3.emMatno" name="modules[3].emMatno" value="88218782" type="text">
+                  </td>
+
+                  <td headers="em-caption-th">EM_ERSTE_MSN_BEI_IP-AS_AN_ISI</td>
+                  <td headers="em-mpmatno-th">
+                    <input readonly="readonly" id="modules3.mpMatno" name="modules[3].mpMatno" value="89743564" type="text">
+                  </td>
+                  <td headers="em-assetid-th">
+                    <input readonly="readonly" id="modules3.assetId" name="modules[3].assetId" type="text">
+                  </td>
+                  <td headers="em-inid-typ-th">voip</td>
+                  <td headers="em-ik-th">
+                    <input readonly="readonly" id="modules3.instanz.ik" name="modules[3].instanz.ik" type="text">
+                  </td>
+                  <td headers="em-inid-th">130149019900010000639582</td>
+
+
+                  <td headers="em-owner-th"></td>
+                </tr>
+                <tr>
+                  <td headers="em-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="em-matno-th">
+                    <input readonly="readonly" required="required" id="modules4.emMatno" name="modules[4].emMatno" value="88217538" type="text">
+                  </td>
+
+                  <td headers="em-caption-th">EM_MASTERNUTZER</td>
+                  <td headers="em-mpmatno-th">
+                    <input readonly="readonly" id="modules4.mpMatno" name="modules[4].mpMatno" type="text">
+                  </td>
+                  <td headers="em-assetid-th">
+                    <input readonly="readonly" id="modules4.assetId" name="modules[4].assetId" type="text">
+                  </td>
+                  <td headers="em-inid-typ-th"></td>
+                  <td headers="em-ik-th">
+                    <input readonly="readonly" id="modules4.instanz.ik" name="modules[4].instanz.ik" type="text">
+                  </td>
+                  <td headers="em-inid-th"></td>
+
+
+                  <td headers="em-owner-th"></td>
+                </tr>
+                <tr>
+                  <td headers="em-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="em-matno-th">
+                    <input readonly="readonly" required="required" id="modules5.emMatno" name="modules[5].emMatno" value="88216906" type="text">
+                  </td>
+
+                  <td headers="em-caption-th">EM_2./3.MSN_BEI_IP-AS_ISI</td>
+                  <td headers="em-mpmatno-th">
+                    <input readonly="readonly" id="modules5.mpMatno" name="modules[5].mpMatno" value="89743564" type="text">
+                  </td>
+                  <td headers="em-assetid-th">
+                    <input readonly="readonly" id="modules5.assetId" name="modules[5].assetId" type="text">
+                  </td>
+                  <td headers="em-inid-typ-th">voip</td>
+                  <td headers="em-ik-th">
+                    <input readonly="readonly" id="modules5.instanz.ik" name="modules[5].instanz.ik" type="text">
+                  </td>
+                  <td headers="em-inid-th">130149019900010000639582</td>
+
+
+                  <td headers="em-owner-th"></td>
+                </tr>
+                <tr>
+                  <td headers="em-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="em-matno-th">
+                    <input readonly="readonly" required="required" id="modules6.emMatno" name="modules[6].emMatno" value="88217465" type="text">
+                  </td>
+
+                  <td headers="em-caption-th">EM_IP_KENNER_ISI</td>
+                  <td headers="em-mpmatno-th">
+                    <input readonly="readonly" id="modules6.mpMatno" name="modules[6].mpMatno" value="89743564" type="text">
+                  </td>
+                  <td headers="em-assetid-th">
+                    <input readonly="readonly" id="modules6.assetId" name="modules[6].assetId" type="text">
+                  </td>
+                  <td headers="em-inid-typ-th"></td>
+                  <td headers="em-ik-th">
+                    <input readonly="readonly" id="modules6.instanz.ik" name="modules[6].instanz.ik" type="text">
+                  </td>
+                  <td headers="em-inid-th"></td>
+
+
+                  <td headers="em-owner-th"></td>
+                </tr>
+                <tr>
+                  <td headers="em-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="em-matno-th">
+                    <input readonly="readonly" required="required" id="modules7.emMatno" name="modules[7].emMatno" value="88218905" type="text">
+                  </td>
+
+                  <td headers="em-caption-th">EM_VOIP_CALL_COMFORT_IP_5</td>
+                  <td headers="em-mpmatno-th">
+                    <input readonly="readonly" id="modules7.mpMatno" name="modules[7].mpMatno" value="89743564" type="text">
+                  </td>
+                  <td headers="em-assetid-th">
+                    <input readonly="readonly" id="modules7.assetId" name="modules[7].assetId" type="text">
+                  </td>
+                  <td headers="em-inid-typ-th">voip</td>
+                  <td headers="em-ik-th">
+                    <input readonly="readonly" id="modules7.instanz.ik" name="modules[7].instanz.ik" type="text">
+                  </td>
+                  <td headers="em-inid-th">130149019900010000639582</td>
+
+                  <td headers="em-owner-th">INID</td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Parameter -->
+          <div class="tab-pane" id="parameters1">
+            <h4 class="sr-only" id="parameters-header">Parameter</h4>
+
+            <table class="table table-striped" aria-labelledby="parameters-header">
+              <caption class="sr-only">??order.changes.parameter.caption_de??</caption>
+              <thead>
+                <tr>
+                  <th id="param-buttons-th">
+                    <button title="Hinzufügen" type="button" class="glyphicon glyphicon-plus add"></button>
+                  </th>
+                  <th id="param-param-id-th">Parameter</th>
+                  <th id="param-caption-th">Bezeichnung</th>
+                  <th id="param-param-value-th">Wert</th>
+                  <th id="param-target-system-th">Target System</th>
+                  <th id="param-destination-field-th">Destination Field</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td headers="param-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="param-param-id-th">
+                    <input readonly="readonly" required="required" id="parameter0.paramId" name="parameter[0].paramId" value="24" type="text">
+                  </td>
+                  <td headers="param-caption-th">Plattformkenner</td>
+                  <td headers="param-param-value-th">
+                    <input readonly="readonly" required="required" id="parameter0.value" name="parameter[0].value" value="1" type="text">
+                  </td>
+                  <td headers="param-target-system-th">XDS</td>
+                  <td headers="param-destination-field-th">@102</td>
+                </tr>
+                <tr>
+                  <td headers="param-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="param-param-id-th">
+                    <input readonly="readonly" required="required" id="parameter1.paramId" name="parameter[1].paramId" value="102" type="text">
+                  </td>
+                  <td headers="param-caption-th">Identifiziert den logischen Anschluss und damit den RFS Access Line
+                  </td>
+                  <td headers="param-param-value-th">
+                    <input readonly="readonly" required="required" id="parameter1.value" name="parameter[1].value" value="DEU.DTAG.216041212390"
+                      type="text">
+                  </td>
+                  <td headers="param-target-system-th">TDS</td>
+                  <td headers="param-destination-field-th">lineid</td>
+                </tr>
+                <tr>
+                  <td headers="param-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="param-param-id-th">
+                    <input readonly="readonly" required="required" id="parameter2.paramId" name="parameter[2].paramId" value="105" type="text">
+                  </td>
+                  <td headers="param-caption-th">Beschreibt das Authentifizierungsverfahren über die AAA Control Plattform
+                  </td>
+                  <td headers="param-param-value-th">
+                    <input readonly="readonly" required="required" id="parameter2.value" name="parameter[2].value" value="1" type="text">
+                  </td>
+                  <td headers="param-target-system-th">TDS</td>
+                  <td headers="param-destination-field-th">f047</td>
+                </tr>
+                <tr>
+                  <td headers="param-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="param-param-id-th">
+                    <input readonly="readonly" required="required" id="parameter3.paramId" name="parameter[3].paramId" value="26" type="text">
+                  </td>
+                  <td headers="param-caption-th">Subscription-Id</td>
+                  <td headers="param-param-value-th">
+                    <input readonly="readonly" required="required" id="parameter3.value" name="parameter[3].value" value="539622000000000" type="text">
+                  </td>
+                  <td headers="param-target-system-th">XDS</td>
+                  <td headers="param-destination-field-th">@104</td>
+                </tr>
+                <tr>
+                  <td headers="param-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="param-param-id-th">
+                    <input readonly="readonly" required="required" id="parameter4.paramId" name="parameter[4].paramId" value="25" type="text">
+                  </td>
+                  <td headers="param-caption-th">Subscriber-Id</td>
+                  <td headers="param-param-value-th">
+                    <input readonly="readonly" required="required" id="parameter4.value" name="parameter[4].value" value="keyA-Subscriber" type="text">
+                  </td>
+                  <td headers="param-target-system-th">XDS</td>
+                  <td headers="param-destination-field-th">@103</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Rufnummer -->
+          <div class="tab-pane" id="callnums1">
+            <h4 class="sr-only" id="callnums-header">Rufnummern</h4>
+
+            <table class="table table-striped" aria-labelledby="callnums-header">
+              <caption class="sr-only">Rufnummernbestand</caption>
+              <thead>
+                <tr>
+                  <th id="callnum-buttons-th">
+                    <button title="Hinzufügen" type="button" class="glyphicon glyphicon-plus add"></button>
+                  </th>
+                  <th id="callnum-callnum-th">Rufnummer</th>
+                  <th id="callnum-thn-th">Technische Hauptnummer</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td headers="callnum-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="callnum-callnum-th">
+                    <input readonly="readonly" required="required" placeholder="+49-xxxxx-xxxxxxxxxx" id="callNumbers0.rnStruct" name="callNumbers[0].rnStruct"
+                      value="+49-600-105830348" type="text">
+                  </td>
+
+                  <td headers="callnum-thn-th">
+                    <input readonly="readonly" id="callNumbers0.isThn1" name="callNumbers[0].isThn" value="true" checked="checked" type="checkbox">
+                    <input name="_callNumbers[0].isThn" value="on" type="hidden">
+                  </td>
+                </tr>
+                <tr>
+                  <td headers="callnum-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="callnum-callnum-th">
+                    <input readonly="readonly" required="required" placeholder="+49-xxxxx-xxxxxxxxxx" id="callNumbers1.rnStruct" name="callNumbers[1].rnStruct"
+                      value="+49-600-105830350" type="text">
+                  </td>
+
+                  <td headers="callnum-thn-th">
+                    <input readonly="readonly" id="callNumbers1.isThn1" name="callNumbers[1].isThn" value="true" type="checkbox">
+                    <input name="_callNumbers[1].isThn" value="on" type="hidden">
+                  </td>
+                </tr>
+                <tr>
+                  <td headers="callnum-buttons-th" class="buttons">
+                    <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                    <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                  </td>
+                  <td headers="callnum-callnum-th">
+                    <input readonly="readonly" required="required" placeholder="+49-xxxxx-xxxxxxxxxx" id="callNumbers2.rnStruct" name="callNumbers[2].rnStruct"
+                      value="+49-600-105830349" type="text">
+                  </td>
+
+                  <td headers="callnum-thn-th">
+                    <input readonly="readonly" id="callNumbers2.isThn1" name="callNumbers[2].isThn" value="true" type="checkbox">
+                    <input name="_callNumbers[2].isThn" value="on" type="hidden">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Sperren -->
+          <div class="tab-pane" id="suspensions1">
+            <h4 class="sr-only" id="susp">Sperren</h4>
+
+            <table class="table table-striped" aria-labelledby="susp">
+              <caption class="sr-only">??order.changes.suspensions.caption_de??</caption>
+              <thead>
+                <tr>
+                  <th id="susp-buttons-th">
+                    <button title="Hinzufügen" type="button" class="glyphicon glyphicon-plus add"></button>
+                  </th>
+                  <th id="susp-susp-group-th">Sperr-Gruppe</th>
+                  <th id="susp-caption-th">Beschreibung</th>
+                  <th id="susp-type-th">Sperr-Typ</th>
+                  <th id="susp-scope-th">Sperr-Scope</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Aktion -->
+          <div class="row">
+            <div class="col-md-1">
+              <a href="#detail" aria-controls="detail" role="tab" data-toggle="tab" class="btn btn-primary">Zurück</a>
+            </div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="orderName">manuelle Auftragsnummer / Ticket-Nummer</label>
+                <input class="form-control" pattern=".{10,64}" required="required" placeholder="10 bis 64 Zeichen" id="misc" name="misc"
+                  value="twtest2017" type="text">
+              </div>
+            </div>
+            <div class="col-md-1">
+              <button type="submit" class="btn btn-success" id="submitStock" data-placement="top" title="" data-original-title="Einige Felder befinden sich noch in Bearbeitung oder sind nicht ausgefüllt">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Provide  -->
+    <div id="validateSuccess">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Bestandsvalidierung - Erfolg</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p>Bestandsvalidierung - Erfolg</p>
+          <p>Soll der Bestand für den Account nun provisioniert werden?</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>manuelle Auftragsnummer / Ticket-Nummer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input pattern=".{10,64}" required="required" disabled="disabled" placeholder="10 bis 64 Zeichen" id="misc" name="misc" value="twtest2017"
+                    type="text">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col-md-1">
+            <button type="submit" class="btn btn-default" id="saveAndPersistForm">JA</button>
+          </div>
+          <div class="col-md-10"></div>
+          <div class="col-md-1">
+            <div class="btn btn-default" id="backToEdit">NEIN</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>

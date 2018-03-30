@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-8">
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
+
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Aufträge {{getMode()}}</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+
+<!-- Suchfeld -->
+<div class="row">
+  <div class="col-md-12">
+    <app-auftrag-suche [xauftragFltIn]="xauftragFlt" (xauftragExtListOut)="hasXAuftragExtList($event)"></app-auftrag-suche>
+  </div>
+</div>
+
+<!-- Auftrag Ext Detail -->
+<div class="row">
+  <div class="col-md-12">
+    <app-auftrag-ext-list [xauftragExtListIn]="xauftragExtList" (xauftragExtOut)="hasXAuftragExt($event)"></app-auftrag-ext-list>
+  </div>
+</div>
+
+<!-- Auftrag int List -->
+<div class="row">
+  <div class="col-md-12">
+    <app-auftrag-int-list [xauftragExtIn]="xauftragExt" (xauftragOut)="hasXAuftrag($event)"></app-auftrag-int-list>
+  </div>
+</div>
+
+<!-- Protokoll  -->
+<div class="row">
+  <div class="col-md-12">
+    <app-auftrag-msg-list [xauftragExtIn]="xauftragExt"></app-auftrag-msg-list>
+  </div>
+</div>

@@ -1,0 +1,137 @@
+<div class="container-fluid" role="main" aria-labelledBy="konfig" id="content">
+
+  <div class="row">
+    <div class="col">
+      <H1 class="sr-only">
+        Auswertung
+      </H1>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#ZPI" aria-controls="ZPI" role="tab" data-toggle="tab">ZPI</a>
+        </li>
+        <li role="presentation">
+          <a href="#SLUP" aria-controls="SLUP" role="tab" data-toggle="tab">SLUP</a>
+        </li>
+        <li role="presentation">
+          <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">DB</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="ZPI">
+          <form class="form-horizontal">
+            <div class="row">
+              <div class="form-group">
+                <div class="form-group">
+                  <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                  <label for="Menge" class="control-label col-md-2 ">Menge pro Intervall</label>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control" id="Menge" placeholder="1...50">
+                  </div>
+                  <div class="col-md-8">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="form-group">
+                  <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                  <label for="Intervall" class="control-label col-md-2 ">Intervall in sec.</label>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control" id="Intervall" placeholder="-1...300">
+                  </div>
+                  <div class="col-md-8">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="form-group">
+                <div class="form-group">
+                  <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                  <label for="Timeout" class="control-label col-md-2 ">Timeout in min.</label>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control" id="Timeout" placeholder="1...360">
+                  </div>
+                  <div class="col-md-8">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-offset-2  col-md-8">
+                  <!--New div, offset because there is no label -->
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="SLUP">
+          <form class="form-horizontal">
+            <div class="row">
+              <div class="form-group">
+                <div class="form-group">
+                  <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                  <label for="SLUPMenge" class="control-label col-md-2 ">Menge pro Intervall</label>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control" id="SLUPMenge" placeholder="5...120">
+                  </div>
+                  <div class="col-md-8">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="form-group">
+                  <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                  <label for="SLUPIntervall" class="control-label col-md-2 ">Aufrufe pro sec.</label>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control" id="SLUPIntervall" placeholder="1...50">
+                  </div>
+                  <div class="col-md-8">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-offset-2  col-md-8">
+                  <!--New div, offset because there is no label -->
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+        <div role="tabpanel" class="tab-pane" id="settings">
+          <p>Die aktuelle Dantenbank ist: {{getDBName()}}</p>
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" (click)="setDB('ET1')">ET1</button>
+            <button type="button" class="btn btn-default" (click)="setDB('ET2')">ET2</button>
+            <button type="button" class="btn btn-default" (click)="setDB('ET3')">ET3</button>
+          </div>
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" (click)="setDB('Mock')">Mock</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>

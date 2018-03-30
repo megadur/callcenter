@@ -1,0 +1,430 @@
+<div class="container-fluid" role="main" aria-labelledBy="catalog" id="content">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="sr-only" id="catalog">Produktkatalog</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="sr-only">Filter</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form method="get" role="search" action="/idma-callcenter/catalog">
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="em" class="control-label">EM-MatNo</label>
+                        <input type="text" name="emMatno" id="em" placeholder="EM-MatNo eingeben" class="form-control" maxlength="30" value="" />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="title" class="control-label">Bezeichnung</label>
+                        <input type="text" name="caption" id="title" placeholder="Bezeichnung eingeben" class="form-control" maxlength="100" value=""
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary">Filtern</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:1.5em">
+        <div class="col-md-12">
+            <table class="table table-grid table-striped">
+                <caption class="sr-only">Fehler</caption>
+                <thead>
+                    <tr>
+                        <th id="catalog-em-th" style="width: 25%;">
+                            <a class="sort-toggle" href="/idma-callcenter/catalog?size=25&amp;sort=emMatno%2CASC&amp;emMatno=&amp;caption=#catalog-em"
+                                id="catalog-em">
+                                <span class="caption">EM-MatNo</span>
+                                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                    <!--  -->
+                                </span>
+                                <span class="sr-only">Absteigend sortieren</span>
+                            </a>
+                        </th>
+                        <th id="catalog-title-th" style="width: 75%;">
+                            <a class="sort-toggle active" href="/idma-callcenter/catalog?size=25&amp;sort=caption%2CDESC&amp;emMatno=&amp;caption=#catalog-title"
+                                id="catalog-title">
+                                <span class="caption">Bezeichnung</span>
+                                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                    <!--  -->
+                                </span>
+
+                                <span class="sr-only">Aufsteigend sortieren</span>
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="catalog-em-th">88218247</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88218247">ABGEMANAGED_EM_WEBKONFERENZ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88219578</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88219578">EM_ BESTANDSSYNCHRO</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88223570</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88223570">EM_ EISHOCKEY TV OPTION _ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88219289</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88219289">EM_1.MSN_BEI_IP-AS_AN_THNF</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220879</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220879">EM_10000 PUNKTE_PSNT_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88219288</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88219288">EM_2./3.MSN_BEI_IP-AS_AN_THNF_ABBRUCH</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88216906</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88216906">EM_2./3.MSN_BEI_IP-AS_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220881</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220881">EM_20.000 POINTS / 20.00 EUR_PSNT_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220875</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220875">EM_20000 PUNKTE_PSNT_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220873</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220873">EM_250.000 POINTS / 250.00 EUR_PSNT_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88224302</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88224302">EM_3. LIGA TV OPTION_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88221077</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88221077">EM_3G 16</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88221102</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88221102">EM_4G GHZ 100</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88221100</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88221100">EM_4G GHZ 16</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88221101</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88221101">EM_4G GHZ 50</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88221078</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88221078">EM_4G MHZ 16</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88221099</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88221099">EM_4G MHZ 50</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220894</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220894">EM_5.000 POINTS / 5.00 EUR_PSNT_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220890</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220890">EM_50.000 POINTS / 50.00 EUR_PSNT_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220888</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220888">EM_5000 PUNKTE_PSNT_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88206429</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88206429">EM_ABSCHLUSSENDEINRICHTUNG NTA 2DR</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220824</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220824">EM_ABUSESPERREN_FOREN_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220870</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220870">EM_ABUSESPERRE_DE-MAIL_GK_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88222810</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88222810">EM_ABUSESPERRE_E-MAIL VERSAND_ISI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="catalog-em-th">88220829</td>
+                        <td headers="catalog-title-th">
+                            <a href="/idma-callcenter/catalog/88220829">EM_ABUSESPERRE_E-MAIL_IPVANS_ISI</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div id="size-lbl" class="control-label">Anzahl pro Seite</div>
+            <div class="btn-toolbar" aria-labelledBy="size-lbl" role="toolbar">
+                <div class="btn-group">
+                    <a class="btn btn-default active" href="/idma-callcenter/catalog?size=25&amp;sort=caption,ASC&amp;emMatno=&amp;caption=">25</a>
+                    <a class="btn btn-default" href="/idma-callcenter/catalog?size=50&amp;sort=caption,ASC&amp;emMatno=&amp;caption=">50</a>
+                    <a class="btn btn-default" href="/idma-callcenter/catalog?size=100&amp;sort=caption,ASC&amp;emMatno=&amp;caption=">100</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-9">
+            <div class="sr-only" id="pagination-lbl">Seitennavigation</div>
+            <ul class="pagination pull-right" aria-labelledBy="pagination-lbl">
+
+                <!-- vorherige seite -->
+                <li title="Vorherige Seite" class="disabled">
+                    <a href="">&laquo;
+                        <span class="sr-only"> Vorherige Seite</span>
+                    </a>
+                </li>
+
+                <!-- Seite 1 -->
+                <li title="1 Seite" class="active">
+                    <a href="/idma-callcenter/catalog?size=25&amp;sort=caption,ASC&amp;emMatno=&amp;caption=">
+                        <span class="sr-only">Seite</span>
+                        <span>1</span>
+                    </a>
+                </li>
+
+                <!-- Abgrenzung Unten-->
+
+
+                <!-- zwische seiten -->
+                <li>
+                    <a href="/idma-callcenter/catalog?page=1&amp;size=25&amp;sort=caption,ASC&amp;emMatno=&amp;caption=">
+                        <span class="sr-only">Seite</span>
+                        <span>2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/idma-callcenter/catalog?page=2&amp;size=25&amp;sort=caption,ASC&amp;emMatno=&amp;caption=">
+                        <span class="sr-only">Seite</span>
+                        <span>3</span>
+                    </a>
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+
+                <!-- Abgrenzung Oben-->
+                <li>
+                    <a>...</a>
+                </li>
+
+                <!-- letzte seite -->
+                <li>
+                    <a href="/idma-callcenter/catalog?page=50&amp;size=25&amp;sort=caption,ASC&amp;emMatno=&amp;caption=">51</a>
+                </li>
+
+                <!-- nächste seite -->
+                <li title="N&auml;chste Seite">
+                    <a href="">
+                        <span class="sr-only">N&auml;chste Seite </span>&raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

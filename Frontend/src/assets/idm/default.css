@@ -1,0 +1,127 @@
+.tab-pane .panel {
+  margin-top: 0.5em;
+}
+
+.form-filter input,
+.form-filter select {
+  width: 95%;
+}
+
+.panel-heading .accordion-toggle:after
+{
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+table .dl-horizontal dt,
+.dl-horizontal-left dt {
+  text-align: left;
+  
+}
+
+.dl-horizontal-gap-lg dt {
+  width: 180px !important;
+}
+
+.dl-horizontal-gap-lg dd {
+  margin-left: 180px;
+}
+
+table .dl-horizontal dt {
+  width: 80px !important;
+}
+
+table .dl-horizontal dd {
+  margin-left: 80px;
+}
+
+h3 > a {
+  color: #333;
+  text-decoration: none;
+}
+
+.tab-content > * {
+  margin-top: 1em;
+}
+
+table label {
+  font-weight: normal;
+}
+
+/*.active a {
+  background-color: #428BCA;
+  border-color: #428BCA;
+}*/
+
+@media screen {
+  .max-height-500 {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+}
+
+.table-grid .sort-toggle span{
+  opacity: 0;
+  color: #999 !important;
+}
+
+.table-grid .sort-toggle span.caption{
+  opacity: 1 !important;
+}
+
+.table-grid a.sort-toggle {
+  text-decoration:  none !important;
+}
+
+.table-grid .sort-toggle:hover span,
+.table-grid .sort-toggle.active span,
+.table-grid .sort-toggle:focus span{
+  opacity: 1.0;
+}
+
+.tab-pane .btn-group {
+ /* margin-bottom: 1em;*/
+ margin-bottom:0;
+}
+
+
+.input-group .bootstrap-select {
+  z-index: inherit !important;
+}
+
+.input-group-btn .selectpicker {
+  border-radius:  0 !important;
+}
+
+h2.panel-title {
+  font-size: 24px !important;
+}
+
+a.sr-only{
+	background-color:#000407;
+}
+tbody td.buttons button{
+	font-family: 'Glyphicons Halflings'!important;
+}
+td [readonly]{
+	background-color: rgb(235, 235, 228);
+	color: rgb(84, 84, 84);
+}
+#validateSuccess {
+	display:none;
+}
+.hidden {
+	display:none;
+}
+input.has-error{
+	border-radius: 5px; 
+	border:#FF0000 1px solid;
+}

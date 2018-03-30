@@ -1,0 +1,57 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Fehlersuche</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    //        $("#inputEM").mask("88999999");
+    // add * to required field labels
+    $('label.required').append('&nbsp;<strong>*</strong>&nbsp;');
+
+  });
+
+</script>
+
+<form id="content" >
+  <div class="row">
+    <div class="form-group col-md-3">
+      <label for="order" class="control-label  input required">Auftrag (XDM)</label>
+      <input name="eoId" id="order" class="form-control" required="required" placeholder="Auftragsnummer eingeben"
+      [(ngModel)]="formData.EO_ID" autofocus="autofocus" type="text">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="state" class="control-label">Status</label>
+      <select id="state" name="filter" class="form-control">
+        <option value="ALL" selected="selected">Alle</option>
+        <option value="OPEN">Offen</option>
+        <option value="CLOSED">Abgeschlossen</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="code-int" class="control-label">Fehlercode</label>
+      <input name="errorCode" id="code-int" class="form-control" maxlength="10" type="text">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="system" class="control-label">System</label>
+      <select id="system" name="system" class="form-control" placeholder="??errors.search.system.placeholder_de??">
+        <option value="" selected="selected">Alle</option>
+        <option value="IDMA">IDM-Adapter</option>
+        <option value="PSNT">PSNT</option>
+        <option value="ZPI">ZPI</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+        <button class="btn btn-primary" type="button" (click)="onSubmit()">
+            Suchen
+          </button>
+  
+    </div>
+  </div>
+</form>

@@ -1,0 +1,48 @@
+<p>
+  fehlerbild-detail works!
+</p>
+<!--
+-->
+<div>
+  <div class="container">
+    <div class="text-center">
+      <h3>Angular 2 - Pagination Example with logic like Google</h3>
+      items: {{getItems()}} pagesize:{{pagesize}}, currentPage:{{pager.currentPage}}, pager.totalPages: {{pager.totalPages}}
+      <table class="table table-bordered table-condensed ">
+        <thead>
+          <th>ID</th>
+          <th>EO_ID</th>
+          <th>SO_ID</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of pagedItems">
+            <td>{{item.ID}}</td>
+            <td>{{item.EO_ID}}</td>
+            <td>{{item.SO_ID}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- items being paged -->
+      <div *ngFor="let item of pagedItems">{{item.name}}</div>
+
+      <!-- pager -->
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(1)">First</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a (click)="setPage(page)">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.currentPage + 1)">Next</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.totalPages)">Last</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

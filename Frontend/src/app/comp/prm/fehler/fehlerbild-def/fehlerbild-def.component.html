@@ -1,0 +1,57 @@
+<form (ngSubmit)="onSubmit()" #FehlerDefForm="ngForm" id="FehlerDefForm">
+
+  <div class="form-group ">
+    <label for="FBSTATUS" class="control-label">Status</label>
+    <select id="FBSTATUS" class="form-control" name="FBSTATUS" [(ngModel)]="fehlerbildIn.STATUS">
+      <option value="ALL" selected="selected">Alle</option>
+      <option value="aktiv">aktiv</option>
+      <option value="inaktiv">inaktiv</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="" for="FB_SYMPTOM">Symptom</label>
+    <input type="text" class="form-control" id="FB_SYMPTOM" name="FB_SYMPTOM" placeholder="000000000000000" [(ngModel)]="fehlerbildIn.SYMPTOM">
+  </div>
+
+  <div class="form-group">
+    <label class="" for="FB_LOESUNG">NIMBUS-Lösung</label>
+    <input type="text" class="form-control" id="FB_LOESUNG" name="FB_LOESUNG" placeholder="NIMPL0000000000" [(ngModel)]="fehlerbildIn.LOESUNG">
+  </div>
+
+  <div class="form-group">
+    <label class="" for="FB_PRIO">Priorität</label>
+    <input type="text" class="form-control" id="FB_PRIO" name="FB_PRIO" [(ngModel)]="fehlerbildIn.PRIO">
+  </div>
+
+  <div class="form-group">
+    <label class="" for="FB_AUSLOESER">Auslöser</label>
+    <textarea class="form-control" rows="2" id="FB_AUSLOESER" name="FB_AUSLOESER" [(ngModel)]="fehlerbildIn.AUSLOESER"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="" for="FB_BESCHREIBUNG">Beschreibung</label>
+    <textarea class="form-control" rows="4" id="FB_BESCHREIBUNG" name="FB_BESCHREIBUNG" [(ngModel)]="fehlerbildIn.BESCHREIBUNG"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label input required" for="Fehlerbild">Nummer</label>
+    <div class="input-group" name="FehlerbildDef" id="FehlerbildDef">
+      <div class="input-group-addon">04</div>
+      <input type="text" class="form-control" name="Fehlerbild" id="Fehlerbild" [(ngModel)]="fehlerbildIn.BILDNUMMER">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="" for="FBSAVE"></label>
+
+    <div class="input-group">
+      <button type="submit" name="FBSAVE" id="FBSAVE" class="btn btn-primary">
+        <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save!</button>
+      <button type="button" name="FB_DELETE" id="FB_DELETE" class="btn btn-danger" (click)="onDelete()">
+        <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> Delete!</button>
+    </div>
+  </div>
+
+</form>
+<div class="input-group">
+</div>

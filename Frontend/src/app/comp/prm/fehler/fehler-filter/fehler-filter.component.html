@@ -1,0 +1,485 @@
+<!-- Modal -->
+<div class="modal fade" id="regexModal" tabindex="-1" role="dialog" aria-labelledby="regexModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="regexModalLabel">RegEx Evaluation</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-default">
+          <div class="panel-body" id="trText"></div>
+        </div>
+        <input type="text" class="form-control " id="trRegex" />
+        <div class="panel panel-default">
+          <div class="panel-body" id="trResult"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ONCLICK="demoShowMatchClick('trText',  'trRegex', 'trResult')">Check</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" ONCLICK="exitShowMatchClick('trRegex')">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">INC_TEXT_LONG</h4>
+      </div>
+      <div class="modal-body">
+        de.proventa.idma.workflow.WorkflowException: Mehrere InidOwner zum Ik 'null' gefunden at de.proventa.idma.workflow.service.fulfillment.complete.SollbestandValidierenService.validate(SollbestandValidierenService.java:70)
+        at de.proventa.idma.workflow.service.fulfillment.complete.SollbestandValidierenService.validate(SollbestandValidierenService.java:60)
+        at de.proventa.idma.workflow.service.fulfillment.complete.IdmDiensteberechtigungBereitstellenService.execute(IdmDiensteberechtigungBereitstellenService.java:72)
+        at de.proventa.idma.workflow.service.BusinessLogicService.executeTx_aroundBody0(BusinessLogicService.java:16) at
+        de.proventa.idma.workflow.service.BusinessLogicService$AjcClosure1.run(BusinessLogicService.java:1) at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96cproceed(AbstractTransactionAspect.aj:59)
+        at org.springframework.transaction.aspectj.AbstractTransactionAspect$AbstractTransactionAspect$1.proceedWithInvocation(AbstractTransactionAspect.aj:65)
+        at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+        at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96c(AbstractTransactionAspect.aj:63)
+        at de.proventa.idma.workflow.service.BusinessLogicService.executeTx(BusinessLogicService.java:15) at de.proventa.idma.workflow.service.auftragssteuerung.FulfillmentAuftragssteuerung.executeIntAuftrag(FulfillmentAuftragssteuerung.java:310)
+        at de.proventa.idma.workflow.service.auftragssteuerung.FulfillmentAuftragssteuerung.handle(FulfillmentAuftragssteuerung.java:187)
+        at de.proventa.idma.processor.FulfillmentProcessor.process(FulfillmentProcessor.java:105) at de.proventa.idma.workflow.transaction.MessageDispatcher.process_aroundBody0(MessageDispatcher.java:68)
+        at de.proventa.idma.workflow.transaction.MessageDispatcher$AjcClosure1.run(MessageDispatcher.java:1) at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96cproceed(AbstractTransactionAspect.aj:59)
+        at org.springframework.transaction.aspectj.AbstractTransactionAspect$AbstractTransactionAspect$1.proceedWithInvocation(AbstractTransactionAspect.aj:65)
+        at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+        at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96c(AbstractTransactionAspect.aj:63)
+        at de.proventa.idma.workflow.transaction.MessageDispatcher.process(MessageDispatcher.java:64) at de.proventa.idma.workflow.transaction.MessageDispatcher.dispatch(MessageDispatcher.java:40)
+        at sun.reflect.GeneratedMethodAccessor224.invoke(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606) at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:63)
+        at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95) at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:44)
+        at org.springframework.expression.spel.ast.MethodReference$MethodValueRef.getValue(MethodReference.java:258) at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:84)
+        at org.springframework.expression.spel.ast.SpelNodeImpl.getTypedValue(SpelNodeImpl.java:114) at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:111)
+        at org.springframework.integration.util.AbstractExpressionEvaluator.evaluateExpression(AbstractExpressionEvaluator.java:144)
+        at org.springframework.integration.util.MessagingMethodInvokerHelper.processInternal(MessagingMethodInvokerHelper.java:268)
+        at org.springframework.integration.util.MessagingMethodInvokerHelper.process(MessagingMethodInvokerHelper.java:142)
+        at org.springframework.integration.handler.MethodInvokingMessageProcessor.processMessage(MethodInvokingMessageProcessor.java:73)
+        at org.springframework.integration.handler.ServiceActivatingHandler.handleRequestMessage(ServiceActivatingHandler.java:67)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:142)
+        at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73) at
+        org.springframework.integration.handler.MessageHandlerChain$1.send(MessageHandlerChain.java:148) at org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330)
+        at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169) at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendMessage(AbstractReplyProducingMessageHandler.java:228)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendReplyMessage(AbstractReplyProducingMessageHandler.java:212)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.produceReply(AbstractReplyProducingMessageHandler.java:177)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleResult(AbstractReplyProducingMessageHandler.java:171)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:149)
+        at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73) at
+        org.springframework.integration.handler.MessageHandlerChain.handleMessageInternal(MessageHandlerChain.java:131) at
+        org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73) at org.springframework.integration.dispatcher.UnicastingDispatcher.doDispatch(UnicastingDispatcher.java:115)
+        at org.springframework.integration.dispatcher.UnicastingDispatcher.dispatch(UnicastingDispatcher.java:102) at org.springframework.integration.channel.AbstractSubscribableChannel.doSend(AbstractSubscribableChannel.java:77)
+        at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:178) at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:149)
+        at org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330) at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendMessage(AbstractReplyProducingMessageHandler.java:228)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendReplyMessage(AbstractReplyProducingMessageHandler.java:212)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.produceReply(AbstractReplyProducingMessageHandler.java:177)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleResult(AbstractReplyProducingMessageHandler.java:171)
+        at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:149)
+        at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73) at
+        org.springframework.integration.dispatcher.UnicastingDispatcher.doDispatch(UnicastingDispatcher.java:115) at org.springframework.integration.dispatcher.UnicastingDispatcher.dispatch(UnicastingDispatcher.java:102)
+        at org.springframework.integration.channel.AbstractSubscribableChannel.doSend(AbstractSubscribableChannel.java:77)
+        at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:178) at org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330)
+        at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169) at org.springframework.integration.core.MessagingTemplate.convertAndSend(MessagingTemplate.java:215)
+        at org.springframework.integration.gateway.MessagingGatewaySupport.send(MessagingGatewaySupport.java:184) at org.springframework.integration.jms.ChannelPublishingJmsMessageListener$GatewayDelegate.send(ChannelPublishingJmsMessageListener.java:442)
+        at org.springframework.integration.jms.ChannelPublishingJmsMessageListener.onMessage(ChannelPublishingJmsMessageListener.java:291)
+        at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:537)
+        at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:497)
+        at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:468)
+        at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:325)
+        at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+        at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1102)
+        at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1094)
+        at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:991)
+        at java.lang.Thread.run(Thread.java:744)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="dbgLevel>0">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="sr-only">fehler-filter</h2>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+<div class=" row">
+
+  <form class="form-horizontal" (ngSubmit)="onSubmit()" #FehlerFilterForm="ngForm">
+    <div class="panel panel-default">
+      <div class="panel-heading">Fehlerbild</div>
+      <div class="panel-body">
+        <!-- Name -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="errorname" class="contol-label text-right">Name</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="errorname">{{xErrorIn.NAME}}</div>
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.BILDNUMMER}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('SO_TYPE_ID_TEXT', 'SO_TYPE_ID')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Auftrag</div>
+      <div class="panel-body">
+
+        <!-- SO_TYPE_ID -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="SO_TYPE_ID_TEXT" class="contol-label text-right">SO_TYPE_ID</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="SO_TYPE_ID_TEXT">{{xErrorIn.SO_TYPE_ID}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.FLT_SO_TYPE_ID}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('SO_TYPE_ID_TEXT', 'SO_TYPE_ID')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="STATUS_TEXT" class="contol-label text-right">Status</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="STATUS_TEXT">{{xErrorIn.STATUS}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="FLT_STATUS" value={{fehlerbildIn.FLT_STATUS}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('STATUS_TEXT', 'STATUS')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SPECIAL_ORDER_FLAG_ID -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="SPECIAL_ORDER_FLAG_ID_TEXT" class="contol-label text-right">SOF</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="SPECIAL_ORDER_FLAG_ID_TEXT">{{xErrorIn.SPECIAL_ORDER_FLAG_ID}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.FLT_SPECIAL_ORDER_FLAG_ID}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('SPECIAL_ORDER_FLAG_ID_TEXT', 'SPECIAL_ORDER_FLAG_ID')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Error</div>
+      <div class="panel-body">
+
+
+        <!-- INC_TEXT_SHORT -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="INC_TEXT_SHORT_TEXT" class="contol-label text-right">INC_TEXT_SHORT</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="INC_TEXT_SHORT_TEXT">{{xErrorIn.INC_TEXT_SHORT}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.FLT_INC_TEXT_SHORT}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('INC_TEXT_SHORT_TEXT', 'INC_TEXT_SHORT')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- INC_TEXT_LONG -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="INC_TEXT_LONG_TEXT" class="contol-label text-right">INC_TEXT_LONG</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="INC_TEXT_LONG_TEXT">{{xErrorIn.INC_TEXT_LONG}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.FLT_INC_TEXT_LONG}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('INC_TEXT_LONG_TEXT', 'INC_TEXT_LONG')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- CODE_INT -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="CODE_INT_TEXT" class="contol-label text-right">CODE_INT</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="CODE_INT_TEXT">{{xErrorIn.CODE_INT}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" name="CODE_INT" [(ngModel)]="fehlerbildIn.FLT_CODE_INT">
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('CODE_INT_TEXT', 'CODE_INT')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!--  CODE_EXT-->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="CODE_EXT_TEXT" class="contol-label text-right">CODE_EXT</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="CODE_EXT_TEXT">{{xErrorIn.CODE_EXT}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.FLT_CODE_EXT}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('CODE_EXT_TEXT', 'CODE_EXT')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SYS -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="CODE_SYS_TEXT" class="contol-label text-right">CODE_SYSs</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="CODE_SYS_TEXT">{{xErrorIn.CODE_SYS}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" name="FLT_CODE_SYS" [(ngModel)]="fehlerbildIn.FLT_SYS">
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('CODE_SYS_TEXT', 'CODE_SYS')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TASK -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="TASK_TEXT" class="contol-label text-right">TASK</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="TASK_TEXT">{{xErrorIn.TASK}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.FLT_TASK}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('TASK_TEXT', 'TASK')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TEXT_INT -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="TEXT_INT_TEXT" class="contol-label text-right">TEXT_INT</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="TEXT_INT_TEXT">{{xErrorIn.TEXT_INT}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.FLT_TEXT_INT}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('TEXT_INT_TEXT', 'TEXT_INT')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TEXT_EXT -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="TEXT_EXT_TEXT" class="contol-label text-right">TEXT_EXT</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="TEXT_EXT_TEXT">{{xErrorIn.TEXT_EXT}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="NAME" value={{fehlerbildIn.FLT_TEXT_EXT}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('TEXT_EXT_TEXT', 'TEXT_EXT')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- HANDLING -->
+        <div class="form-group">
+          <div class="col-md-2  text-right">
+            <label for="HANDLING_TEXT" class="contol-label">HANDLING</label>
+          </div>
+          <div class="col-md-4">
+            <div class="form-control-static" id="HANDLING_TEXT">{{xErrorIn.HANDLING}}</div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="FLT_HANDLING" value={{fehlerbildIn.FLT_HANDLING}}>
+          </div>
+          <div class="col-md-2">
+            <span class="button-checkbox pull-right">
+              <button type="button" class="btn" data-color="primary">
+                <i class="glyphicon glyphicon-wrench"></i>
+              </button>
+              <input type="checkbox" class="hidden" />
+            </span>
+            <button type="button" class="btn btn-primary  pull-right" data-toggle="modal" data-target="#regexModal" ONCLICK="initShowMatchClick('HANDLING_TEXT', 'HANDLING')">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="form-group">
+      <div class="col-md-2">
+        <label for="Buttons_TEXT" class="contol-label text-right"></label>
+      </div>
+      <div class="col-md-4">
+        <label class="checkbox-inline pull-right">
+          <input type="checkbox" id="inlineCheckbox1" value="option1"> Halten</label>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary " type="button" (click)="findFehlerInst()">
+          <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>Instanzen</button>
+        <button class="btn btn-primary " type="button" (click)="findFehlerBild()">
+          <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>Bilder</button>
+        <button class="btn btn-default pull-right" type="button" onclick="" (click)="newForm()"> Neu! </button>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-success pull-right" type="button" (click)="edtitFB()" data-toggle="collapse" data-target="#collapseFBD"
+          aria-expanded="false" aria-controls="collapseFBD">
+          Editieren...
+        </button>
+        <div id="DelError">{{fbid}}</div>
+      </div>
+    </div>
+
+  </form>
+</div>

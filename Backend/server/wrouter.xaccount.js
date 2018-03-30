@@ -1,0 +1,43 @@
+ var express = require('express');
+ var router = express.Router();
+ 
+ var wrouter = require("./wrouter");
+
+ var thisArg = {
+     router: router,    db: 'xaccount',
+     sAlias:'AA'
+ };
+ var sSQL = '';
+ // region param
+ sSQL = "SELECT 'ACCOUNT' AS TBL, ";
+ sSQL =  sSQL+ " A.* ";
+ sSQL =  sSQL+ " FROM IDMA_BESTANDS_OPDB_DATA.X_ACCOUNT A ";
+ sSQL =  sSQL+ " WHERE  1=1";
+ sSQL =  sSQL+ " AND  (A.KDNR = :KDNR OR :KDNR IS NULL)";
+ sSQL =  sSQL+ " AND  (A.STATUS = :STATUS OR :STATUS IS NULL)";
+ sSQL =  sSQL+ " AND  rownum <= 10";
+wrouter(thisArg, "/"
+    , sSQL
+    , "query.KDNR", "query.KDNR", "query.STATUS", "query.STATUS"
+);
+ 
+ sSQL = "SELECT 'ACCOUNT' AS TBL, A.* FROM IDMA_BESTANDS_OPDB_DATA.X_ACCOUNT A WHERE A.GUID=:GUID";
+ wrouter(thisArg, "/:GUID", sSQL, "params.GUID")
+ 
+ sSQL = " SELECT 'EM'  AS CMD, :GUID AS GUID, E.*  FROM IDMA_BESTANDS_OPDB_DATA.X_EINZELMODUL E INNER JOIN IDMA_BESTANDS_OPDB_DATA.X_BESTAND B ON E.STOCK_ID=B.STOCK_ID WHERE B.GUID=:GUID";
+ wrouter(thisArg, "/:GUID/EM", sSQL, "GUID")
+ 
+ sSQL = "SELECT 'RNR' AS CMD, :GUID AS GUID, P.*  FROM IDMA_BESTANDS_OPDB_DATA.X_PARAMETER   P INNER JOIN IDMA_BESTANDS_OPDB_DATA.X_BESTAND B ON P.STOCK_ID=B.STOCK_ID WHERE B.GUID=:GUID";
+ wrouter(thisArg, "/:GUID/PAR", sSQL, "GUID")
+ 
+ sSQL = "SELECT 'RNR' AS CMD, :GUID AS GUID, R.*  FROM IDMA_BESTANDS_OPDB_DATA.X_RUFNUMMER   R INNER JOIN IDMA_BESTANDS_OPDB_DATA.X_BESTAND B ON B.STOCK_ID=R.STOCK_ID WHERE B.GUID=:GUID";
+ wrouter(thisArg, "/:GUID/RNR", sSQL, "GUID")
+ 
+ sSQL = "SELECT 'SPR' AS CMD, :GUID AS GUID, S.*  FROM IDMA_BESTANDS_OPDB_DATA.X_SPERRE      S INNER JOIN IDMA_BESTANDS_OPDB_DATA.X_BESTAND B ON B.STOCK_ID=S.STOCK_ID WHERE B.GUID=:GUID";
+ wrouter(thisArg, "/:GUID/SPR", sSQL, "GUID")
+ 
+ sSQL = "SELECT 'INS' AS CMD, :GUID AS GUID, I.*  FROM IDMA_BESTANDS_OPDB_DATA.X_INSTANZ     I INNER JOIN IDMA_BESTANDS_OPDB_DATA.X_BESTAND B ON B.STOCK_ID=I.STOCK_ID WHERE B.GUID=:GUID";
+ wrouter(thisArg, "/:GUID/INS", sSQL, "GUID")
+// endregion
+
+ module.exports = router;

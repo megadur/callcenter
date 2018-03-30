@@ -1,0 +1,346 @@
+<div class="container-fluid" role="main" aria-labelledBy="nutzer" id="nutzer">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="sr-only">Nutzermanagement</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#NutzerMgmtPP" aria-controls="PP" role="tab" data-toggle="tab">Produktionspläne</a>
+        </li>
+        <li role="presentation">
+          <a href="#NutzerMgmtErr" aria-controls="profile" role="tab" data-toggle="tab">Fehler</a>
+        </li>
+        <li role="presentation">
+          <a href="#NutzerMgmtResync" aria-controls="messages" role="tab" data-toggle="tab">Resync</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="NutzerMgmtPP">
+          NutzerMgmtPP...
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label for="GUID" class="control-label col-md-2">GUID</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="GUID" name="EM-Matno" placeholder="GUID">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="SOID" class="control-label col-md-2">SOID</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="SOID" name="EM-Matno" placeholder="SOID">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Status" class="control-label col-md-2">Status</label>
+
+              <div class="col-md-8">
+                <!-- This is a new div -->
+                <div class="dropdown ">
+                  <button class="btn btn-default dropdown-toggle col-md-6" type="button" id="Status" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    Alle
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>
+                      <a href="#"> Alle</a>
+                    </li>
+                    <li>
+                      <a href="#">erstellt</a>
+                    </li>
+                    <li>
+                      <a href="#">versendet</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Checkbox Group !-->
+              <label class="control-label  col-md-2">Zeitraum von</label>
+              <div class="col-md-8">
+                <label for="date_from" class="control-label">Datum</label>
+                <input type="date" id="date_from" />
+                <label for="time_from" class="control-label">Uhrzeit</label>
+                <input type="time" id="time_from" />
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Checkbox Group !-->
+              <label class="control-label  col-md-2">Zeitraum bis </label>
+              <div class="col-md-8">
+                <label for="date" class="control-label">Datum</label>
+                <input type="date" id="date" />
+                <label for="time" class="control-label">Uhrzeit</label>
+                <input type="time" id="time" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+          </form>
+          <table class="table table-grid">
+            <caption class="sr-only">Fehler</caption>
+            <thead>
+              <tr>
+                <th>PPID</th>
+                <th>SOID</th>
+                <th>To-Nummmer</th>
+                <th>Hauptnutzer Guid</th>
+                <th>Nutzer Guid</th>
+                <th>Status</th>
+                <th>erstellt</th>
+                <th>gesendet</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>
+
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="NutzerMgmtErr">
+          NutzerMgmtErr...
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label for="SOID" class="control-label col-md-2">SOID</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="SOID" name="EM-Matno" placeholder="SOID">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Status" class="control-label col-md-2">Status</label>
+
+              <div class="col-md-8">
+                <!-- This is a new div -->
+                <div class="dropdown ">
+                  <button class="btn btn-default dropdown-toggle col-md-6" type="button" id="Status" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    Alle
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>
+                      <a href="#"> Alle</a>
+                    </li>
+                    <li>
+                      <a href="#">offene</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Checkbox Group !-->
+              <label class="control-label  col-md-2">Zeitraum von</label>
+              <div class="col-md-8">
+                <label for="date_from" class="control-label">Datum</label>
+                <input type="date" id="date_from" />
+                <label for="time_from" class="control-label">Uhrzeit</label>
+                <input type="time" id="time_from" />
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Checkbox Group !-->
+              <label class="control-label  col-md-2">Zeitraum bis </label>
+              <div class="col-md-8">
+                <label for="date" class="control-label">Datum</label>
+                <input type="date" id="date" />
+                <label for="time" class="control-label">Uhrzeit</label>
+                <input type="time" id="time" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+          </form>
+          <table class="table table-grid">
+            <caption class="sr-only">Fehler</caption>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Code Intern</th>
+                <th>Code Extern</th>
+                <th>System</th>
+                <th>Task</th>
+                <th>Text Intern</th>
+                <th>Text Extern</th>
+                <th>erstellt</th>
+                <th>Aktion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>
+                  <button type="submit" class="btn btn-default">Anzeige</button>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            Details
+            <dl class="dl-horizontal dl-horizontal-left grid">
+              <dt>Id</dt>
+              <dd role="defintion">
+                94040</dd>
+              <dt>Code Intern</dt>
+              <dd role="defintion">
+              </dd>
+              <dt>Code Extern</dt>
+              <dd role="defintion">
+              </dd>
+              <dt>System</dt>
+              <dd role="defintion">
+                IDMA</dd>
+              <dt>Task</dt>
+              <dd role="defintion">
+              </dd>
+              <dt>Text Intern</dt>
+              <dd role="defintion">
+                Produktionsplan an SMK FF senden</dd>
+              <dt>Text Extern</dt>
+              <dd role="defintion">
+                Produktionsplan Callbackwartezeit ist abgelaufen</dd>
+              <dt>Incident Text Kurz</dt>
+              <dd role="defintion">
+              </dd>
+              <dt>Incident Text Lang</dt>
+              <dd role="defintion">
+              </dd>
+              <dt>So-ID</dt>
+              <dd role="defintion">
+                IDM000000559108</dd>
+              <dt>Incident-ID</dt>
+              <dd role="defintion">
+              </dd>
+              <dt>Behandlung</dt>
+              <dd role="defintion">
+              </dd>
+              <dt>Erstellt</dt>
+              <dd role="defintion">
+                2017-05-04 10:20:58.98</dd>
+              <dt>Abgeschlossen</dt>
+              <dd role="defintion">
+              </dd>
+            </dl>
+            <button type="submit" class="btn btn-default">Löschen</button>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="NutzerMgmtResync">
+          NutzerMgmtResync...
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="TONR" class="control-label col-md-2">TONR</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="TONR" name="TONR" placeholder="TONR">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="Resync" class="control-label col-md-2">Resync</label>
+
+              <div class="col-md-4">
+                <!-- This is a new div -->
+                <label class="checkbox-inline" id="Resync">
+                  <input type="checkbox" id="inlineCheckbox1" value="option1"> Hauptnutzer
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Instanz
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-md-2">SLUP</label>
+
+              <div class="col-md-4">
+
+                <!-- This is a new div -->
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="SLUP1" value="option1"> PWS
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="SLUP2" value="option2"> IMS
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

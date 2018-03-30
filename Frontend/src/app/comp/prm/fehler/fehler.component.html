@@ -1,0 +1,157 @@
+<div class="container-fluid" role="main" aria-labelledBy="Fehlerbild">
+
+  <div *ngIf="dbgLevel>0">
+    <div class="row">
+      <div class="col-md-12 ">
+        <h4 class="sr-only">Fehlerbild</h4>
+        <pre>{{diagnostic}}</pre>
+      </div>
+      <!--
+     <app-fehlerbild-def></app-fehlerbild-def>
+    <app-fehlerbild-detail></app-fehlerbild-detail>
+    -->
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title" id="error-int">Fehlerfilter</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-10">
+            <app-fehler-filter [xErrorIn]="xerror" [fehlerbildIn]="fehlerbild" (fehlerbildListOut)="hasFehlerbildList($event)" (xerrorListOut)="hasXErrorList($event)"
+              (fehlerbildOut)="hasFehlerbild($event)"></app-fehler-filter>
+          </div>
+          <div class="collapse" id="collapseFBD">
+            <div class="col-md-2 well">
+              <app-fehlerbild-def [fehlerbildIn]="fehlerbild" (fehlerbildOut)="hasFehlerbild($event)"></app-fehlerbild-def>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2 well well-sm">
+      <p>1. Filtern</p>
+    </div>
+
+  </div>
+
+  <!-- Nav Tabs -->
+  <div class="row">
+    <div class="col-md-10">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#FI" aria-controls="FI" role="tab" data-toggle="tab">Fehlerinstanz
+            <span class="badge">{{getFICount()}}</span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#FB" aria-controls="FB" role="tab" data-toggle="tab">Fehlerbild
+            <span class="badge">{{getFBCount()}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-2 well well-sm">
+      <p>1. Einstieg</p>
+    </div>
+
+  </div>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+    <!-- Fehlerinstanz -->
+    <div role="tabpanel" class="tab-pane active" id="FI">
+      <div class="row">
+        <div class="col-md-10">
+          <app-fehlerinst-search [xerrorListIn]="xerrorList" (xerrorListOut)="hasXerrorList($event)"></app-fehlerinst-search>
+        </div>
+        <div class="col-md-2 well well-sm">
+          <p>3xx</p>
+        </div>
+      </div>
+
+      <div *ngIf="xerrorList">
+        <div class="row">
+          <div class="col-md-10">
+            <app-fehlerinst-list [xerrorListIn]="xerrorList" (xerrorOut)="hasXError($event)"></app-fehlerinst-list>
+          </div>
+          <div class="col-md-2 well well-sm">
+            <p>3a. Die Filterergebnisse werden angezeigt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Fehlerbild -->
+    <div role="tabpanel" class="tab-pane" id="FB">
+      <div class="row">
+        <div class="col-md-10">
+          <app-fehlerbild-search [fehlerbildListIn]="fehlerbildList" (fehlerbildListOut)="hasFehlerbildist($event)"></app-fehlerbild-search>
+        </div>
+        <div class="col-md-2 well">
+          <p>3xxt</p>
+        </div>
+
+        <!-- Fehler-, Fehlerbild-liste -->
+        <div class="col-md-10 ">
+          <app-fehlerbild-list [fehlerbildListIn]="fehlerbildList" (fehlerbildOut)="hasFehlerbild($event)"></app-fehlerbild-list>
+        </div>
+        <div class="col-md-2 well">
+          <p>3b. Die Fehlerbild Filterergebnisse werden zur Vorauswahl angezeigt</p>
+        </div>
+        <div class="col-md-10 ">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Fehlerbild Export/Import</h3>
+            </div>
+            <div class="panel-body">
+              <div class="form-group ">
+
+                <label for="ZeitBis" class="control-label">CSV Datei</label>
+                <button class="btn " type="button">
+                  Export
+                </button>
+                <button class="btn " type="button">
+                  Import
+                </button>
+                <span id="helpBlock" class="help-block">Die Liste kann exportiert und importiert werden.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 well">
+          <p>3c. um mit Excel weiter auszuwerten.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Fehlerbild Überprüfung -->
+<div class="row">
+  <!-- Fehlerbild-Liste -->
+  <div class="col-md-6">
+    <div class="collapse" id="collapseFBL">
+      <app-fehlerinst-search [xerrorListIn]="xerrorList" (xerrorListOut)="hasXerrorList($event)"></app-fehlerinst-search>
+    </div>
+  </div>
+  <!--Fehlerbilddetails -->
+  <div class="col-md-6">
+    <div class="collapse" id="collapseFBDR">
+      <!-- Nummern, Zeiten etc. -->
+      <app-fehlerinst-detail [xerrorIn]="xerror"></app-fehlerinst-detail>
+    </div>
+  </div>
+</div>

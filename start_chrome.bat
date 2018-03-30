@@ -1,0 +1,2 @@
+::call "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --args --disable-web-security --user-data-dir
+start "" "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --args --disable-web-security --user-data-dir

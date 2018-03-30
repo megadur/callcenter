@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">interne Aufträge IDM-Adapter</div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <caption class="sr-only">??order.search.caption_de??</caption>
+          <thead>
+            <tr>
+              <th id="id">IDM-Adapter intern</th>
+              <th id="type">Auftragstyp</th>
+              <th id="status">Status</th>
+              <th id="created">Erzeugt</th>
+              <th id="completed">Komplettiert</th>
+              <th id="aborted">Abgebrochen</th>
+              <th id="executed">Ausgeführt</th>
+              <th id="rollbacked">Zurückgerollt</th>
+              <th id="commited">Abgeschlossen</th>
+              <th id="lastUpdate">Letztes Update</th>
+              <th>Diagnose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let a of xauftragList" [class.selected]="a === xauftrag" (click)="onSelect(a)">
+              <td headers="error-id-th">
+                <a routerLink="/xauftragExt">
+                  <span class="badge">{{a.SO_ID}}</span>
+                </a>
+              </td>
+              <td>{{a.SO_TYPE_ID}}</td>
+              <td>{{a.STATUS}}</td>
+              <td>{{a.TS_CREATED}}</td>
+              <td>{{a.TS_COMPLETED}}</td>
+              <td>{{a.TS_ABORTED}}</td>
+              <td>{{a.TS_EXECUTED}}</td>
+              <td>{{a.TS_ROLLBACKED}}</td>
+              <td>{{a.TS_COMMITED}}</td>
+              <td>{{a.TS_LAST_UPDATE}}</td>
+
+            </tr>
+
+            <tr>
+              <td headers="id">IDM000000639608 </td>
+              <td headers="type">Auftrag mit Teilaktion ‚IDM Provisionierung beauftragen‘</td>
+              <td headers="status">Commited</td>
+              <td headers="created">2017-12-04 14:00:45</td>
+              <td headers="completed">2017-12-04 14:00:45</td>
+              <td headers="aborted">--</td>
+              <td headers="executed">2017-12-04 14:03:00</td>
+              <td headers="rollbacked">--</td>
+              <td headers="commited">2017-12-04 14:07:35</td>
+              <td headers="lastUpdate">2017-12-04 14:07:35</td>
+              <td>
+              </td>
+            </tr>
+            <tr>
+              <td headers="id">IDM000000639609
+              </td>
+              <td headers="type">E.164 Nutzer Zuordnung lesen</td>
+              <td headers="status">Commited</td>
+              <td headers="created">2017-12-04 14:00:45</td>
+              <td headers="completed">2017-12-04 14:00:45</td>
+              <td headers="aborted">--</td>
+              <td headers="executed">2017-12-04 14:05:16</td>
+              <td headers="rollbacked">--</td>
+              <td headers="commited">2017-12-04 14:07:35</td>
+              <td headers="lastUpdate">2017-12-04 14:07:35</td>
+              <td>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 ">
+    <!-- Titel -->
+    <div *ngIf="dbgLevel>0">
+      <div class="row">
+        <div class="col-md-12 ">
+          <h4 class="sr-only1">Auftrag Intern</h4>
+          <pre>{{diagnostic}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

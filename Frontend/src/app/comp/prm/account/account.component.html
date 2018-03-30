@@ -1,0 +1,56 @@
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Accounts</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+
+<!-- Suchfeld -->
+<div class="row">
+  <div class="col-md-12">
+    <app-account-suche (accountListOut)="hasAccountList($event)" (accountOut)="hasAccount($event)"></app-account-suche>
+  </div>
+</div>
+
+<!-- Account-Liste -->
+<div class="row">
+  <div class="col-md-12 ">
+    <app-account-list [accountIn]="account" [accountListIn]="accountList" (accountOut)="hasAccount($event)" (bestandOut)="hasBestand($event)"></app-account-list>
+  </div>
+</div>
+<!-- Account-Details -->
+<div class="row">
+  <div class="col-md-12">
+    <app-account-detail [accountIn]="account" ></app-account-detail>
+  </div>
+</div>
+
+<!-- Aufträge  -->
+<!--
+    <div class="row">
+  <div class="col-md-12">
+    <app-auftrag-ext-detail [xbestandIn]="xbestand"></app-auftrag-ext-detail>
+  </div>
+</div>
+-->
+
+<!-- Tab panes -->
+<div class="row">
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="detail">
+      <!-- Bestand Detail -->
+      <div class="col-md-12">
+        <app-bestand-detail [bestandIn]="bestand" ></app-bestand-detail>
+      </div>
+    </div>
+    <!-- Bestand Edit-->
+    <div role="tabpanel" class="tab-pane" id="edit">
+      <div class="col-md-12">
+        <app-bestand-edit></app-bestand-edit>
+      </div>
+    </div>
+  </div>
+</div>

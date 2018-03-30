@@ -1,0 +1,27 @@
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
+        <div class="row">
+          <div class="col-md-12 ">
+            <h4 class="sr-only1">katalog-suche</h4>
+            <pre>{{diagnostic}}</pre>
+          </div>
+        </div>
+      </div>
+<form id="content" method="get" action="/idma-callcenter/accounts" role="search">
+  <div class="form-group">
+    <label for="search" class="control-label input required">EM- MP-Nummer oder Bezeichnung/Teil</label>
+    <div class="input-group ">
+      <input id="search" required="required" placeholder="GUID, TO-Nummer oder Kundennummer eingeben" class="form-control" maxlength="100"
+        [(ngModel)]="formData.VALUE" name="query" autofocus="autofocus">
+
+      <div class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="onSubmit()">
+          Suchen
+        </button>
+
+      </div>
+    </div>
+    <span id="helpBlock" class="help-block">Suche: nur ein Eingabefeld für EM-/MP-Nummer und Name Case insensitiv.</span>
+
+  </div>
+</form>

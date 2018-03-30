@@ -1,0 +1,97 @@
+[
+    {
+        "SOTT": "ControlIT Export",
+        "STATUS": "Error in Completion",
+        "SPECIAL_ORDER_FLAG_ID": null,
+        "NAME": null,
+        "ID": 120030,
+        "EO_ID": "XDM000000180162",
+        "SO_ID": "IDM000000663022",
+        "CODE_INT": "6200",
+        "CODE_EXT": null,
+        "SYS": "IDMA",
+        "TASK": "ControlIT Export",
+        "TEXT_INT": "Beim Exportieren ist ein Fehler aufgetreten (Ein unerwarteter Fehler ist aufgetreten)",
+        "TEXT_EXT": null,
+        "INC_TEXT_SHORT": "WorkflowException: Beim Exportieren ist ein Fehler aufgetreten (Ein unerwarteter Fehler ist aufgetreten)",
+        "INC_TEXT_LONG": {
+            "_readableState": {
+                "objectMode": false,
+                "highWaterMark": 16384,
+                "buffer": {
+                    "head": null,
+                    "tail": null,
+                    "length": 0
+                },
+                "length": 0,
+                "pipes": null,
+                "pipesCount": 0,
+                "flowing": null,
+                "ended": false,
+                "endEmitted": false,
+                "reading": false,
+                "sync": true,
+                "needReadable": false,
+                "emittedReadable": false,
+                "readableListening": false,
+                "resumeScheduled": false,
+                "destroyed": false,
+                "defaultEncoding": "utf8",
+                "awaitDrain": 0,
+                "readingMore": false,
+                "decoder": null,
+                "encoding": null
+            },
+            "readable": true,
+            "domain": null,
+            "_events": {},
+            "_eventsCount": 2,
+            "_writableState": {
+                "objectMode": false,
+                "highWaterMark": 16384,
+                "finalCalled": false,
+                "needDrain": false,
+                "ending": false,
+                "ended": false,
+                "finished": false,
+                "destroyed": false,
+                "decodeStrings": true,
+                "defaultEncoding": "utf8",
+                "length": 0,
+                "writing": false,
+                "corked": 0,
+                "sync": true,
+                "bufferProcessing": false,
+                "writecb": null,
+                "writelen": 0,
+                "bufferedRequest": null,
+                "lastBufferedRequest": null,
+                "pendingcb": 0,
+                "prefinished": false,
+                "errorEmitted": false,
+                "bufferedRequestCount": 0,
+                "corkedRequestsFree": {
+                    "next": null,
+                    "entry": null
+                }
+            },
+            "writable": true,
+            "allowHalfOpen": true,
+            "iLob": {
+                "valid": true,
+                "autoCloseLob": true,
+                "type": 2006,
+                "offset": 1,
+                "pieceSize": 8060,
+                "length": 6429,
+                "chunkSize": 8060
+            }
+        },
+        "TS_CREATED": "2018-01-15T07:35:48.557Z",
+        "TS_CLOSED": "2018-01-15T07:35:48.557Z",
+        "HANDLING": "-",
+        "LAST_UPD": "2018-01-15T08:02:11.000Z",
+        "DBMS_LOB.SUBSTR(XE.INC_TEXT_LONG,400,1)": "de.proventa.idma.workflow.WorkflowException: Beim Exportieren ist ein Fehler aufgetreten (Ein unerwarteter Fehler ist aufgetreten)\n\tat de.proventa.idma.export.ControlItExporterService$1.executeInternal_aroundBody0(ControlItExporterService.java:164)\n\tat de.proventa.idma.export.ControlItExporterService$1$AjcClosure1.run(ControlItExporterService.java:1)\n\tat org.springframework.transaction.aspectj.Abs"
+    }
+
+]
