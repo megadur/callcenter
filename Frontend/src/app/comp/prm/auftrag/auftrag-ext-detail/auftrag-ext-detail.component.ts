@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { Bestand } from '../../../../model/bestand';
 import { XAuftragService } from '../../../../service/xauftrag.service';
-import { XAuftrag } from '../../../../model/x_auftrag';
+import { XAuftragExt } from '../../../../model/x_auftrag_ext';
 
 import * as myGlobals from '../../../../globals'; //<==== this one
 
@@ -16,13 +16,13 @@ export class AuftragExtDetailComponent implements OnInit {
     private _bestand: Bestand;
 
     constructor(private aService: XAuftragService, private router: Router) { }
-    xauftragList: XAuftrag[];
-    xauftrag: XAuftrag;
+    xauftragList: XAuftragExt[];
+    xauftrag: XAuftragExt;
     dbgLevel: number;
 
     ngOnInit() {
         this.dbgLevel = myGlobals.dbgLevel;
-        this.xauftrag = new XAuftrag();
+        this.xauftrag = new XAuftragExt();
     }
 
     @Input() set bestandIn(x: Bestand) {

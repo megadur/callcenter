@@ -14,7 +14,7 @@ import * as myGlobals from '../../../../globals'; //<==== this one
 })
 export class AuftragIntListComponent implements OnInit {
     dbgLevel: number;
-    private xauftragList: XAuftrag[];
+    xauftragList: XAuftrag[];
     @Output() xauftragOut = new EventEmitter<XAuftrag>();
     xauftragExt: XAuftragExt;
     xauftrag: XAuftrag;
