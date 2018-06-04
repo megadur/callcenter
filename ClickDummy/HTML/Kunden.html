@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Kunden - IDM-Adapter</title>
+    <link rel="stylesheet" type="text/css" href="res/default.css"/>
+    <link rel="stylesheet" type="text/css" href="res/bootstrap-select.css"/>
+    <link rel="stylesheet" type="text/css" href="res/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="res/a11ytheme.css"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="res/select2.css"/>
+
+    <script src="res/js/jquery.js"></script>
+    <script src="res/js/bootstrap.js"></script>
+    <script src="res/js/bootstrap-select.js"></script>
+    <script src="res/js/application.js"></script>
+    <script src="res/js/stockeditor.js"></script>
+    <script src="res/js/select2.js"></script>
+
+    <script >
+        $(function () {
+            $('.selectpicker').selectpicker({
+                tickIcon: 'glyphicon-ok'
+            });
+        });
+    </script>
+    <script >
+        $(function () {
+            $("#includedNavbar").load("navbar.html");
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="includedNavbar"></div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="sr-only" id="accounts">Kunden</h1>
+            </div>
+        </div>
+
+        <!-- Suchfeld -->
+        <div class="row">
+            <div class="col-md-4">
+
+                <form id="content" method="get" action="/idma-callcenter/accounts" role="search">
+                    <div class="form-group">
+                        <label for="search" class="control-label input required">GUID, TO-Nummer oder Kundennummer</label>
+                        <div class="input-group">
+                            <input id="search" required="required" placeholder="GUID, TO-Nummer oder Kundennummer eingeben" class="form-control" maxlength="100"
+                                name="query" autofocus="autofocus">
+                            <div class="btn-group bootstrap-select input-group-btn">
+                                <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="type" title="GUID">
+                                    <span class="filter-option pull-left">Alle</span>&nbsp;
+                                    <span class="bs-caret">
+                                        <span class="caret"></span>
+                                    </span>
+                                </button>
+                                <div class="dropdown-menu open" role="combobox" aria-expanded="false" aria-controls="collapsekunden_liste">
+                                    <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" aria-controls="collapsekunden_liste">
+                                        <li data-original-index="1" class="selected">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                                <span class="text">Alle</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="1" class="selected">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                                <span class="text">GUID</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="2">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">TO-Nummer</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="3">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">Kundennummer</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-group bootstrap-select input-group-btn">
+                            </div>
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsekunden_liste" aria-expanded="false"
+                                    aria-controls="collapsekunden_liste">
+                                    Suchen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="xcollapse" id="collapsekunden_liste">
+
+            <!-- Account-Details -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <H3 class="panel-title pull-left" style="padding-top: 7.5px;">Kundendaten: 6041212390</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="col-md-3">
+                                <!-- GUID -->
+                                <div class="form-group">
+                                    <label for="expertise" class="col-md-4 control-label">GUID:</label>
+                                    <div class="col-md-8">
+                                        <select class="form-control inputstl" id="expertise" multiple size='7'>
+                                            <option ><span class="badge" style="color: green;">aktiv</span>100049016041212390100001</option>
+                                            <option style="color:goldenrod;">100049016041212390100001</option>
+                                            <option style="color:blue;">100049016041212390100001</option>
+                                            <option style="color:grey;">100049016041212390100001</option>
+                                            <option style="color:red;">100049016041212390100001</option>
+                                            <option>100049016041212390100001</option>
+                                            <option>100049016041212390100001</option>
+                                            <option>100049016041212390100001</option>
+                                            <option>100049016041212390100001</option>
+                                            <option>100049016041212390100001</option>
+                                            <option>100049016041212390100001</option>
+                                        </select>
+
+                                    </div>
+                                    <span id="helpBlock" class="help-block">Die Farbe bedeuten:
+                                        <span style="color:red;">rot</span>='inaktiv',
+                                        <span style="color:grey;">grau</span>='deaktiviert',
+                                        <span style="color:goldenrod;">gelb</span>='bestellt',
+                                        <span style="color:blue;">???</span>='gekündigt',
+                                        <span style="color:green;">grün</span>='aktiv', ...</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-body bg-success">
+
+                                        <!-- -->
+                                        <div class="col-md-4">
+                                            <dl class="dl-horizontal dl-horizontal-left">
+                                                <dt id="guid">GUID</dt>
+                                                <dd  aria-labelledby="guid">
+                                                    <strong>100049016041212390100001</strong>
+                                                </dd>
+
+                                                <dt id="tonr">TO-Nummer</dt>
+                                                <dd aria-labelledby="tonr">604121239010</dd>
+
+                                                <dt id="kdnr">Kundennummer</dt>
+                                                <dd aria-labelledby="kdnr">6041212390</dd>
+
+                                                <dd aria-labelledby="kdnr">
+                                                    <small>Neu: --</small>
+                                                </dd>
+                                                <dd aria-labelledby="kdnr">
+                                                    <small>Alt: --</small>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <!-- -->
+                                        <div class="col-md-4">
+                                            <dl class="dl-horizontal dl-horizontal-left">
+                                                <dt id="status">Status</dt>
+                                                <dd aria-labelledby="status" class="bg-success">aktiviert</dd>
+
+                                                <dt id="systel">Systel</dt>
+                                                <dd  aria-labelledby="systel">70026408</dd>
+                                                
+                                                <dt id="created">Erzeugt</dt>
+                                                <dd  aria-labelledby="created">
+                                                    <span>2017-12-04 14:00:45</span>
+                                                </dd>
+                                                <dt id="modified">Aktualisiert</dt>
+                                                <dd  aria-labelledby="modified">
+                                                    <span>2017-12-04 14:00:45</span>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <!-- Action -->
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="buttonResync" class="col-md-8 control-label">Nutzer resynchronisieren</label>
+                                                <div class="col-md-4" id="Resync">
+                                                    <button class="btn btn-primary form-control" type="button" id="buttonResync">
+                                                        <span class="glyphicon glyphicon-retweet"></span>&nbsp; Resync</button>
+                                                </div>
+                                                <label for="buttonDel" class="col-md-8 control-label">nur in inaktiver Account </label>
+                                                <div class="col-md-4" id="del">
+                                                    <button class="btn btn-danger form-control" type="button" id="buttonDel" >
+                                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp; ACC_DEL</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aufträge  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <div class="panel-title pull-left" style="padding-top: 7.5px;">Aufträge
+                            </div>
+                            <div class="btn-group pull-right">
+                                <label >&nbsp;&nbsp;</label>
+                                <a id="accordiontoggle_order" class="accordion-toggle pull-right" data-toggle="collapse" href="#order-data" aria-expanded="true"></a>
+                            </div>
+                            <div class="dropdown pull-right">
+                                <label for="dropdownctionType">Action Type</label>
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownctionType" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="true">
+                                    Alle
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownctionType">
+                                    <li>
+                                        <a href="#">Alle</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Buchung</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lesen</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sonstige</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="collapse in" role="region" id="order-data" aria-expanded="false">
+                                <table class="table table-striped" title="Aufträge zu Konto 100049012863035330020001">
+                                    <caption>Aufträge zu Konto 100049012863035330020001</caption>
+                                    <thead>
+                                        <tr>
+                                            <th id="order-TS_Created-th">TS_Created</th>
+                                            <th id="order-TS_Completed-th">TS_Completed</th>
+                                            <th id="order-TS_Executed-th">TS_Executed</th>
+                                            <th id="order-SOF-th">SOF</th>
+                                            <th id="order-SO-TYPE-th">SO-TYPE</th>
+                                            <th id="order-Status-th">Status</th>
+                                            <th id="order-eoid-th">IDM-A extern</th>
+                                            <th id="order-crm-th">CRM-T</th>
+                                            <th id="order-bssoe-th">BSSOE</th>
+                                            <th id="order-dkk-th">DKK</th>
+                                            <th id="order-snr-th">ursp. KWT</th>
+                                            <th id="order-misc-th">Sonstiges</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                        <tr>
+                                            <td headers="order-TS_Created-th">2017-05-14 18:33:35</td>
+                                            <td headers="order-TS_Completed-th">2017-05-14 18:33:35</td>
+                                            <td headers="order-TS_Executed-th">2017-05-14 18:33:35</td>
+                                            <td headers="order-SOF-th">Sonderkündigung</td>
+                                            <td headers="order-SO-TYPE-th">Komplett freigeben</td>
+                                            <td headers="order-Status-th">Error in Completion</td>
+                                            <td headers="order-eoid-th">
+                                                <a href="Aufträge.html">XDM000000130178</a>
+                                            </td>
+                                            <td headers="order-crm-th">60412123900</td>
+                                            <td headers="order-bssoe-th">604121239011</td>
+                                            <td headers="order-dkk-th"></td>
+                                            <td headers="order-snr-th">2017-07-11</td>
+                                            <td headers="order-misc-th" role="tablist">
+                                                <a href="#repro" aria-controls="edit" role="tab" data-toggle="tab" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp; Repro</a>
+
+                                                <a href="#edit" aria-controls="edit" role="tab" data-toggle="tab" class="btn btn-danger">
+                                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp; Edit</a>
+
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- Anzahl pro Seite -->
+                                <div class="col-md-6">
+                                    <div id="size-lbl" class="control-label">Anzahl pro Seite</div>
+                                    <div class="btn-toolbar" aria-labelledby="size-lbl" role="toolbar">
+                                        <div class="btn-group">
+                                            <a class="btn btn-default active" href="#">25</a>
+                                            <a class="btn btn-default" href="#">50</a>
+                                            <a class="btn btn-default" href="#">100</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Seitennavigation -->
+                                <div class="col-md-offset-1 col-md-5">
+                                    <div class="sr-only" id="pagination-lbl">Seitennavigation</div>
+                                    <ul class="pagination pull-right" aria-labelledby="pagination-lbl">
+
+                                        <!-- vorherige seite -->
+                                        <li title="Vorherige Seite" class="disabled">
+                                            <a href="">«
+                                                <span class="sr-only"> Vorherige Seite</span>
+                                            </a>
+                                        </li>
+
+                                        <!-- Seite 1 -->
+                                        <li title="1 Seite" class="active">
+                                            <a >
+                                                <span class="sr-only">Seite</span>
+                                                <span>1</span>
+                                            </a>
+                                        </li>
+
+                                        <!-- Abgrenzung Unten-->
+
+
+                                        <!-- zwische seiten -->
+                                        <li>
+                                            <a >
+                                                <span class="sr-only">Seite</span>
+                                                <span>2</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <span class="sr-only">Seite</span>
+                                                <span>3</span>
+                                            </a>
+                                        </li>
+                                        <li>
+
+
+                                            <!-- Abgrenzung Oben-->
+                                            <li>
+                                                <a>...</a>
+                                            </li>
+
+                                            <!-- letzte seite -->
+                                            <li>
+                                                <a >50</a>
+                                            </li>
+
+                                            <!-- nächste seite -->
+                                            <li title="Nächste Seite">
+                                                <a href="">
+                                                    <span class="sr-only">Nächste Seite </span>»</a>
+                                            </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab panes -->
+            <div class="row">
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="detail">
+                        <!-- Bestand -->
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+                                    <div class="panel-title">Aktiver Bestand</div>
+                                </div>
+                                <div class="panel-body">
+
+                                    <ul class="nav nav-tabs" role="tablist" id="account-tabs">
+                                        <li class="active">
+                                            <a href="#ems" role="tab" data-toggle="tab" aria-expanded="true">Einzelmodule</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#parameters" role="tab" data-toggle="tab" aria-expanded="false">Parameter</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#callnums" role="tab" data-toggle="tab" aria-expanded="false">Rufnummern</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#suspensions" role="tab" data-toggle="tab" aria-expanded="false">Sperren</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <!--  Einzelmodule -->
+                                        <div class="tab-pane active" id="ems">
+                                            <h4 class="sr-only" id="ems-header">Einzelmodule</h4>
+
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div>IDX</div>
+                                                        </th>
+                                                        <th>
+                                                            <div>EM</div>
+                                                        </th>
+                                                        <th class="v-table-header-cell">
+                                                            <div>Owner</div>
+                                                        </th>
+                                                        <th>
+                                                            <div>TS_CREATION</div>
+                                                        </th>
+                                                        <th>
+                                                            <div>KWT</div>
+                                                        </th>
+                                                        <th>
+                                                            <div>Aktivierung</div>
+                                                        </th>
+                                                        <th>
+                                                            <div>SO_ID</div>
+                                                        </th>
+                                                        <th>
+                                                            <div>INID </div>
+                                                        </th>
+                                                        <th>
+                                                            <div>Typ</div>
+                                                        </th>
+                                                        <th>
+                                                            <div>IK</div>
+                                                        </th>
+                                                        <th>
+                                                            <div>Stand</div>
+                                                        </th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div>01</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">88216822 EM_ISPX_C&amp;S COMFORT (5)
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>Account</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>--- (KWT)</td>
+                                                        <td>2017-11-08 16:49:19.52</td>
+                                                        <td>IDM000000637030</td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="v-table-row-aktiviert v-table-row-odd v-selected">
+                                                        <td>
+                                                            <div>02</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="v-label">88218643, EM_ZUSATZDIENSTE_ISI</div>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td>
+                                                            <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                        </td>
+                                                        <td>--- (KWT)</td>
+                                                        <td>2017-11-08 16:49:19.52</td>
+                                                        <td>IDM000000637030</td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08, 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div>03</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">88217538, EM_MASTERNUTZER
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>--- (KWT)</td>
+                                                        <td>2017-11-08 16:49:19.52</td>
+                                                        <td>IDM000000637030</td>
+                                                        <td>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="v-table-row-aktiviert v-table-row-odd">
+                                                        <td>
+                                                            <div>04</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">88217954 EM_HOMEPAGE PROFESSIONAL</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>Instanz / Inid</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>--- (KWT)</td>
+                                                        <td>2017-11-08 16:49:19.52</td>
+                                                        <td>IDM000000637030</td>
+                                                        <td>130149019900010000636898</td>
+                                                        <td>hosting</td>
+                                                        <td>600008884573201 (IK)</td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div>05</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">88217946, EM_WEITERE-DOMAIN-UNTER_DE</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>--- (KWT)</td>
+                                                        <td>2017-11-08 16:49:19.52 </td>
+                                                        <td>IDM000000637030</td>
+                                                        <td>130149019900010000636898</td>
+                                                        <td>hosting</td>
+                                                        <td>600008884573201 (IK)</td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="v-table-row-aktiviert v-table-row-odd">
+                                                        <td>
+                                                            <div>06</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">88217942 EM_HOMEPAGE BASIC</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>Instanz / Inid</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>--- (KWT)</td>
+                                                        <td>2017-11-08 16:49:19.52</td>
+                                                        <td>IDM000000637030</td>
+                                                        <td>130149019900010000636899</td>
+                                                        <td>hosting</td>
+                                                        <td>600008884573202 (IK)</td>
+                                                        <td>
+                                                            <div>
+                                                                <div class="v-label">2017-11-08 16:49:19.52</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Parameter -->
+                                        <div class="tab-pane" id="parameters">
+                                            <h4 class="sr-only" id="parameters-header">Parameter</h4>
+
+                                            <table class="table table-striped" aria-labelledby="parameters-header">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div>IDX</div>
+                                                        </th>
+                                                        <td>
+                                                            <div>IDM_PARAM_ID</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>FIELD</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>CAPTION</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>VALUE</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>SO_ID</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>TS_CREATION</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>PROPAGATION</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>ID</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>INID</div>
+                                                        </td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div>01</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>24</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>@102</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>Plattformkenner</div>
+                                                        </td>
+                                                        <td>1</td>
+                                                        <td>IDM000000636737</td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:16:25.82</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:18:29.41</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>79074</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>130149019900010000635924</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div>02</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>25</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>@103</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>Subscriber-Id</div>
+                                                        </td>
+                                                        <td>keyA-Subscriber</td>
+                                                        <td>IDM000000636737</td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:16:25.82</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:18:29.41</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>79072</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>130149019900010000635924</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div>03</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>26</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>@104</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>Subscription-Id</div>
+                                                        </td>
+                                                        <td>539622000000000</td>
+                                                        <td>IDM000000636737</td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:16:25.82</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:18:29.41</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>79076</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>130149019900010000635924</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div>04</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>105</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>f047</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>Beschreibt das Authentifizierungsverfahren über die AAA Control
+                                                                Plattform
+                                                            </div>
+                                                        </td>
+                                                        <td>1</td>
+                                                        <td>IDM000000636737</td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:16:25.82</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:18:29.41</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>79073</div>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div>05</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>102</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>lineid</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>Identifiziert den logischen Anschluss und damit den RFS Access
+                                                                Line
+                                                            </div>
+                                                        </td>
+                                                        <td>DEU.DTAG.212061110490</td>
+                                                        <td>IDM000000636737</td>
+                                                        <td>2017-11-06 11:16:25.82</td>
+                                                        <td>2017-11-06 11:18:29.41</td>
+                                                        <td>
+                                                            <div>79075</div>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                        <!-- Rufnummern -->
+                                        <div class="tab-pane" id="callnums">
+                                            <h4 class="sr-only" id="callnums-header">Rufnummern</h4>
+
+                                            <table class="table table-striped" aria-labelledby="callnums-header">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div>IDX</div>
+                                                        </th>
+                                                        <td>
+
+
+                                                            <div>RN_STRUCT</div>
+                                                        </td>
+                                                        <td>
+
+
+                                                            <div>INID</div>
+                                                        </td>
+                                                        <td>
+
+
+                                                            <div>THN</div>
+                                                        </td>
+                                                        <td>
+
+
+                                                            <div>TS_CREATION</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>KWT</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>ACTIVATION</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>SO_ID</div>
+                                                        </td>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div>01</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>+49-200-103404545</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>130149019900010000635924</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>X</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:16:25.82</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>2017-11-06 (KWT)</td>
+                                                        <td>2017-11-06 11:18:29.41</td>
+                                                        <td>IDM000000636737</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div>02</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>+49-200-103404547</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>130149019900010000635924</div>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:16:25.82</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>2017-11-06 (KWT)</td>
+                                                        <td>2017-11-06 11:18:29.41</td>
+                                                        <td>IDM000000636737</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div>03</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>+49-200-103404546</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>130149019900010000635924</div>
+                                                        </td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td>>2017-11-06 11:16:25.82</td>
+                                                        <td>2017-11-06 (KWT)</td>
+                                                        <td>2017-11-06 11:18:29.41</td>
+                                                        <td>IDM000000636737</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                        <!-- Sperren -->
+                                        <div class="tab-pane" id="suspensions">
+                                            <h4 class="sr-only" id="susp">Sperren</h4>
+
+                                            <table class="table table-striped" aria-labelledby="susp">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div>IDX</div>
+                                                        </th>
+                                                        <th>
+
+
+                                                            <div>SPERRE</div>
+                                                        </th>
+                                                        <th>
+
+
+                                                            <div>SUSP_TYPE</div>
+                                                        </th>
+                                                        <th>
+
+
+                                                            <div>TS_CREATION</div>
+                                                        </th>
+                                                        <th>KWT</th>
+                                                        <th>ACTIVATION</th>
+                                                        <th>SO_ID</th>
+                                                        <th>PP_ID</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div>01</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div>307, DKK_VOIP_IPONE_GASSENSPERRE</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>DKK</div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <div>2017-11-06 11:16:25.82</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>2017-11-06 (KWT)</td>
+                                                        <td>2017-11-06 11:18:29.41</td>
+                                                        <td>IDM000000636737</td>
+                                                        <td>206111049-0000-0000-a0000-0000105</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bestand Edit-->
+                    <div role="tabpanel" class="tab-pane" id="edit">
+                        <div class="col-md-12">
+                            <form method="post" class="stockCreation form-inline" action="/idma-callcenter/stockcreation/stockprovisioning">
+                                <input id="toNr" name="toNr" value="604121239010" type="hidden">
+                                <input id="sourceStockId" name="sourceStockId" value="43012" type="hidden">
+                                <div class="row" id="stock">
+                                    <div class="col-md-12">
+                                        <h3 id="changes">Zielbestand bearbeiten</h3>
+                                        <ul class="nav nav-tabs" role="tablist" id="ada-tabs">
+                                            <li class="active">
+                                                <a href="#ems-edit" role="tab" data-toggle="tab">Einzelmodule</a>
+                                            </li>
+                                            <li>
+                                                <a href="#parameters-edit" role="tab" data-toggle="tab">Parameter</a>
+                                            </li>
+                                            <li>
+                                                <a href="#callnums-edit" role="tab" data-toggle="tab">Rufnummern</a>
+                                            </li>
+                                            <li>
+                                                <a href="#suspensions-edit" role="tab" data-toggle="tab">Sperren</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- Einzelmodule -->
+                                            <div class="tab-pane active" id="ems-edit">
+                                                <h4 class="sr-only" id="ems-header-edit">Einzelmodule</h4>
+
+                                                <table class="table table-striped" aria-labelledby="ems-header-edit">
+                                                    <caption class="sr-only">Einzelmodule</caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th id="em-buttons-th">
+                                                                <button title="Hinzufügen" type="button" class="glyphicon glyphicon-plus add"></button>
+                                                            </th>
+                                                            <th id="em-matno-th">Einzelmodul</th>
+                                                            <th id="em-caption-th">Bezeichnung</th>
+                                                            <th id="em-mpmatno-th">Mp MatNo</th>
+                                                            <th id="em-assetid-th">Asset ID</th>
+                                                            <th id="em-inid-typ-th">INID-Typ</th>
+                                                            <th id="em-ik-th">Instanzkenner</th>
+                                                            <th id="em-inid-th">INID</th>
+                                                            <th id="em-owner-th">Eigentümer</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>                                
+                                                        <tr>
+                                                            <td headers="em-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="em-matno-th">
+                                                                 <label for="modules0.emMatno" class="sr-only">em-matno</label>
+
+                                                                <input readonly="readonly" required="required" id="modules0.emMatno" name="modules[0].emMatno" value="88219286" type="text">
+                                                            </td>
+
+                                                            <td headers="em-caption-th">EM_VOIP_APPLIKATION_ISI</td>
+                                                            <td headers="em-mpmatno-th">
+                                                                <input readonly="readonly" id="modules0.mpMatno" name="modules[0].mpMatno" value="89743564" type="text">
+                                                            </td>
+                                                            <td headers="em-assetid-th">
+                                                                <input readonly="readonly" id="modules0.assetId" name="modules[0].assetId" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-typ-th">voip</td>
+                                                            <td headers="em-ik-th">
+                                                                <input readonly="readonly" id="modules0.instanz.ik" name="modules[0].instanz.ik" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-th">130149019900010000639582</td>
+
+
+                                                            <td headers="em-owner-th"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="em-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="em-matno-th">
+                                                                <input readonly="readonly" required="required" id="modules1.emMatno" name="modules[1].emMatno" value="88216862" type="text">
+                                                            </td>
+
+                                                            <td headers="em-caption-th">EM_ISPX_C&amp;S COMFORT IP (5)</td>
+                                                            <td headers="em-mpmatno-th">
+                                                                <input readonly="readonly" id="modules1.mpMatno" name="modules[1].mpMatno" value="89743564" type="text">
+                                                            </td>
+                                                            <td headers="em-assetid-th">
+                                                                <input readonly="readonly" id="modules1.assetId" name="modules[1].assetId" value="471101" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-typ-th"></td>
+                                                            <td headers="em-ik-th">
+                                                                <input readonly="readonly" id="modules1.instanz.ik" name="modules[1].instanz.ik" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-th"></td>
+                                                            <td headers="em-owner-th">Account</td>
+
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="em-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="em-matno-th">
+                                                                <input readonly="readonly" required="required" id="modules2.emMatno" name="modules[2].emMatno" value="88218643" type="text">
+                                                            </td>
+
+                                                            <td headers="em-caption-th">EM_ZUSATZDIENSTE_ISI</td>
+                                                            <td headers="em-mpmatno-th">
+                                                                <input readonly="readonly" id="modules2.mpMatno" name="modules[2].mpMatno" value="89743564" type="text">
+                                                            </td>
+                                                            <td headers="em-assetid-th">
+                                                                <input readonly="readonly" id="modules2.assetId" name="modules[2].assetId" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-typ-th"></td>
+                                                            <td headers="em-ik-th">
+                                                                <input readonly="readonly" id="modules2.instanz.ik" name="modules[2].instanz.ik" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-th"></td>
+
+
+                                                            <td headers="em-owner-th"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="em-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="em-matno-th">
+                                                                <input readonly="readonly" required="required" id="modules3.emMatno" name="modules[3].emMatno" value="88218782" type="text">
+                                                            </td>
+
+                                                            <td headers="em-caption-th">EM_ERSTE_MSN_BEI_IP-AS_AN_ISI</td>
+                                                            <td headers="em-mpmatno-th">
+                                                                <input readonly="readonly" id="modules3.mpMatno" name="modules[3].mpMatno" value="89743564" type="text">
+                                                            </td>
+                                                            <td headers="em-assetid-th">
+                                                                <input readonly="readonly" id="modules3.assetId" name="modules[3].assetId" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-typ-th">voip</td>
+                                                            <td headers="em-ik-th">
+                                                                <input readonly="readonly" id="modules3.instanz.ik" name="modules[3].instanz.ik" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-th">130149019900010000639582</td>
+
+
+                                                            <td headers="em-owner-th"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="em-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="em-matno-th">
+                                                                <input readonly="readonly" required="required" id="modules4.emMatno" name="modules[4].emMatno" value="88217538" type="text">
+                                                            </td>
+
+                                                            <td headers="em-caption-th">EM_MASTERNUTZER</td>
+                                                            <td headers="em-mpmatno-th">
+                                                                <input readonly="readonly" id="modules4.mpMatno" name="modules[4].mpMatno" type="text">
+                                                            </td>
+                                                            <td headers="em-assetid-th">
+                                                                <input readonly="readonly" id="modules4.assetId" name="modules[4].assetId" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-typ-th"></td>
+                                                            <td headers="em-ik-th">
+                                                                <input readonly="readonly" id="modules4.instanz.ik" name="modules[4].instanz.ik" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-th"></td>
+
+
+                                                            <td headers="em-owner-th"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="em-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="em-matno-th">
+                                                                <input readonly="readonly" required="required" id="modules5.emMatno" name="modules[5].emMatno" value="88216906" type="text">
+                                                            </td>
+
+                                                            <td headers="em-caption-th">EM_2./3.MSN_BEI_IP-AS_ISI</td>
+                                                            <td headers="em-mpmatno-th">
+                                                                <input readonly="readonly" id="modules5.mpMatno" name="modules[5].mpMatno" value="89743564" type="text">
+                                                            </td>
+                                                            <td headers="em-assetid-th">
+                                                                <input readonly="readonly" id="modules5.assetId" name="modules[5].assetId" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-typ-th">voip</td>
+                                                            <td headers="em-ik-th">
+                                                                <input readonly="readonly" id="modules5.instanz.ik" name="modules[5].instanz.ik" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-th">130149019900010000639582</td>
+
+
+                                                            <td headers="em-owner-th"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="em-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="em-matno-th">
+                                                                <input readonly="readonly" required="required" id="modules6.emMatno" name="modules[6].emMatno" value="88217465" type="text">
+                                                            </td>
+
+                                                            <td headers="em-caption-th">EM_IP_KENNER_ISI</td>
+                                                            <td headers="em-mpmatno-th">
+                                                                <input readonly="readonly" id="modules6.mpMatno" name="modules[6].mpMatno" value="89743564" type="text">
+                                                            </td>
+                                                            <td headers="em-assetid-th">
+                                                                <input readonly="readonly" id="modules6.assetId" name="modules[6].assetId" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-typ-th"></td>
+                                                            <td headers="em-ik-th">
+                                                                <input readonly="readonly" id="modules6.instanz.ik" name="modules[6].instanz.ik" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-th"></td>
+
+
+                                                            <td headers="em-owner-th"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="em-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="em-matno-th">
+                                                                <input readonly="readonly" required="required" id="modules7.emMatno" name="modules[7].emMatno" value="88218905" type="text">
+                                                            </td>
+
+                                                            <td headers="em-caption-th">EM_VOIP_CALL_COMFORT_IP_5</td>
+                                                            <td headers="em-mpmatno-th">
+                                                                <input readonly="readonly" id="modules7.mpMatno" name="modules[7].mpMatno" value="89743564" type="text">
+                                                            </td>
+                                                            <td headers="em-assetid-th">
+                                                                <input readonly="readonly" id="modules7.assetId" name="modules[7].assetId" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-typ-th">voip</td>
+                                                            <td headers="em-ik-th">
+                                                                <input readonly="readonly" id="modules7.instanz.ik" name="modules[7].instanz.ik" type="text">
+                                                            </td>
+                                                            <td headers="em-inid-th">130149019900010000639582</td>
+
+                                                            <td headers="em-owner-th">INID</td>
+
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <!-- Parameter -->
+                                            <div class="tab-pane" id="parameters-edit">
+                                                <h4 class="sr-only" id="parameters-header-edit">Parameter</h4>
+
+                                                <table class="table table-striped" aria-labelledby="parameters-header-edit">
+                                                    <caption class="sr-only">Parameter</caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th id="param-buttons-th">
+                                                                <button title="Hinzufügen" type="button" class="glyphicon glyphicon-plus add"></button>
+                                                            </th>
+                                                            <th id="param-param-id-th">Parameter</th>
+                                                            <th id="param-caption-th">Bezeichnung</th>
+                                                            <th id="param-param-value-th">Wert</th>
+                                                            <th id="param-target-system-th">Target System</th>
+                                                            <th id="param-destination-field-th">Destination Field</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                           <tr>
+                                                            <td headers="param-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="param-param-id-th">
+                                                                <input readonly="readonly" required="required" id="parameter0.paramId" name="parameter[0].paramId" value="24" type="text">
+                                                            </td>
+                                                            <td headers="param-caption-th">Plattformkenner</td>
+                                                            <td headers="param-param-value-th">
+                                                                <input readonly="readonly" required="required" id="parameter0.value" name="parameter[0].value" value="1" type="text">
+                                                            </td>
+                                                            <td headers="param-target-system-th">XDS</td>
+                                                            <td headers="param-destination-field-th">@102</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="param-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="param-param-id-th">
+                                                                <input readonly="readonly" required="required" id="parameter1.paramId" name="parameter[1].paramId" value="102" type="text">
+                                                            </td>
+                                                            <td headers="param-caption-th">Identifiziert den logischen Anschluss und damit den RFS Access
+                                                                Line
+                                                            </td>
+                                                            <td headers="param-param-value-th">
+                                                                <input readonly="readonly" required="required" id="parameter1.value" name="parameter[1].value" value="DEU.DTAG.216041212390"
+                                                                    type="text">
+                                                            </td>
+                                                            <td headers="param-target-system-th">TDS</td>
+                                                            <td headers="param-destination-field-th">lineid</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="param-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="param-param-id-th">
+                                                                <input readonly="readonly" required="required" id="parameter2.paramId" name="parameter[2].paramId" value="105" type="text">
+                                                            </td>
+                                                            <td headers="param-caption-th">Beschreibt das Authentifizierungsverfahren über die AAA Control
+                                                                Plattform
+                                                            </td>
+                                                            <td headers="param-param-value-th">
+                                                                <input readonly="readonly" required="required" id="parameter2.value" name="parameter[2].value" value="1" type="text">
+                                                            </td>
+                                                            <td headers="param-target-system-th">TDS</td>
+                                                            <td headers="param-destination-field-th">f047</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="param-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="param-param-id-th">
+                                                                <input readonly="readonly" required="required" id="parameter3.paramId" name="parameter[3].paramId" value="26" type="text">
+                                                            </td>
+                                                            <td headers="param-caption-th">Subscription-Id</td>
+                                                            <td headers="param-param-value-th">
+                                                                <input readonly="readonly" required="required" id="parameter3.value" name="parameter[3].value" value="539622000000000" type="text">
+                                                            </td>
+                                                            <td headers="param-target-system-th">XDS</td>
+                                                            <td headers="param-destination-field-th">@104</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="param-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="param-param-id-th">
+                                                                <input readonly="readonly" required="required" id="parameter4.paramId" name="parameter[4].paramId" value="25" type="text">
+                                                            </td>
+                                                            <td headers="param-caption-th">Subscriber-Id</td>
+                                                            <td headers="param-param-value-th">
+                                                                <input readonly="readonly" required="required" id="parameter4.value" name="parameter[4].value" value="keyA-Subscriber" type="text">
+                                                            </td>
+                                                            <td headers="param-target-system-th">XDS</td>
+                                                            <td headers="param-destination-field-th">@103</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                            <!-- Rufnummer -->
+                                            <div class="tab-pane" id="callnums-edit">
+                                                <h4 class="sr-only" id="callnums-header-edit">Rufnummern</h4>
+
+                                                <table class="table table-striped" aria-labelledby="callnums-header-edit">
+                                                    <caption class="sr-only">Rufnummernbestand</caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th id="callnum-buttons-th">
+                                                                <button title="Hinzufügen" type="button" class="glyphicon glyphicon-plus add"></button>
+                                                            </th>
+                                                            <th id="callnum-callnum-th">Rufnummer</th>
+                                                            <th id="callnum-thn-th">Technische Hauptnummer</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td headers="callnum-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="callnum-callnum-th">
+                                                                <input readonly="readonly" required="required" placeholder="+49-xxxxx-xxxxxxxxxx" id="callNumbers0.rnStruct" name="callNumbers[0].rnStruct"
+                                                                    value="+49-600-105830348" type="text">
+                                                            </td>
+
+                                                            <td headers="callnum-thn-th">
+                                                                <input  id="callNumbers0.isThn1" name="callNumbers[0].isThn" value="true" checked="checked" type="checkbox">
+                                                                <input name="_callNumbers[0].isThn" value="on" type="hidden">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="callnum-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="callnum-callnum-th">
+                                                                <input readonly="readonly" required="required" placeholder="+49-xxxxx-xxxxxxxxxx" id="callNumbers1.rnStruct" name="callNumbers[1].rnStruct"
+                                                                    value="+49-600-105830350" type="text">
+                                                            </td>
+
+                                                            <td headers="callnum-thn-th">
+                                                                <input id="callNumbers1.isThn1" name="callNumbers[1].isThn" value="true" type="checkbox">
+                                                                <input name="_callNumbers[1].isThn" value="on" type="hidden">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td headers="callnum-buttons-th" class="buttons">
+                                                                <button title="Bearbeiten" type="button" class="glypicon glyphicon-pencil edit"></button>
+                                                                <button type="button" title="Löschen" class="glypicon glyphicon-remove remove"></button>
+                                                            </td>
+                                                            <td headers="callnum-callnum-th">
+                                                                <input required="required" placeholder="+49-xxxxx-xxxxxxxxxx" id="callNumbers2.rnStruct" name="callNumbers[2].rnStruct"
+                                                                    value="+49-600-105830349" type="text">
+                                                            </td>
+
+                                                            <td headers="callnum-thn-th">
+                                                                <input id="callNumbers2.isThn1" name="callNumbers[2].isThn" value="true" type="checkbox">
+                                                                <input name="_callNumbers[2].isThn" value="on" type="hidden">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                            <!-- Sperren -->
+                                            <div class="tab-pane" id="suspensions-edit">
+                                                <h4 class="sr-only" id="susp-edit">Sperren</h4>
+
+                                                <table class="table table-striped" aria-labelledby="susp-edit">
+                                                    <caption class="sr-only">Sperren</caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th id="susp-buttons-th">
+                                                                <button title="Hinzufügen" type="button" class="glyphicon glyphicon-plus add"></button>
+                                                            </th>
+                                                            <th id="susp-susp-group-th">Sperr-Gruppe</th>
+                                                            <th id="susp-caption-th">Beschreibung</th>
+                                                            <th id="susp-type-th">Sperr-Typ</th>
+                                                            <th id="susp-scope-th">Sperr-Scope</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+     
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-1" role=tablist>
+                                                    <a href="#detail" aria-controls="detail" role="tab" data-toggle="tab" class="btn btn-primary">Zurück</a>
+                                                </div>
+                                                <div class="col-md-6">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="orderName">manuelle Auftragsnummer / Ticket-Nummer</label>
+                                                        <input class="form-control" pattern=".{10,64}" required="required" placeholder="10 bis 64 Zeichen" id="orderName" name="misc"
+                                                            value="twtest2017" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <button type="submit" class="btn btn-success" id="submitStock" data-placement="top" title="" data-original-title="Einige Felder befinden sich noch in Bearbeitung oder sind nicht ausgefüllt">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!--   -->
+                                <div id="validateSuccess">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2>Bestandsvalidierung - Erfolg</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>Bestandsvalidierung - Erfolg</p>
+                                            <p>Soll der Bestand für den Account nun provisioniert werden?</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>manuelle Auftragsnummer / Ticket-Nummer</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input pattern=".{10,64}" required="required" disabled="disabled" placeholder="10 bis 64 Zeichen" id="misc-edit" name="misc-edit" value="twtest2017"
+                                                                type="text">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="col-md-1">
+                                                <button type="submit" class="btn btn-default" id="saveAndPersistForm">JA</button>
+                                            </div>
+                                            <div class="col-md-10"></div>
+                                            <div class="col-md-1">
+                                                <div class="btn btn-default" id="backToEdit">NEIN</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

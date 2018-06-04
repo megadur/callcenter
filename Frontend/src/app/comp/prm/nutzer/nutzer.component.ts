@@ -1,12 +1,10 @@
 import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-
-import { XAuftrag } from '../../../model/x_auftrag';
-
+import { XAuftragExt } from '../../../model/x_auftrag_ext';
 import { XAuftragService } from '../../../service/xauftrag.service';
-import { ConfigurationService } from '../../../service/configuration.service';
 
+import { ConfigurationService } from '../../../service/configuration.service';
 import * as myGlobals from '../../../globals'; //<==== this one
 
 
@@ -17,45 +15,45 @@ import * as myGlobals from '../../../globals'; //<==== this one
 })
 export class NutzerComponent implements OnInit {
 
-    @Output() nmauftragOut = new EventEmitter<XAuftrag>();
+    @Output() xauftragExtOut = new EventEmitter<XAuftragExt>();
     // prdFlt: XAuftrag;
 
-    nmauftrag: XAuftrag;
-    nmauftragList: XAuftrag[];
+    xauftragExt: XAuftragExt;
+    xauftragExtList: XAuftragExt[];
 
     dbgLevel: number;
     dbMode: string;
     constructor(private route: ActivatedRoute,
-        private kService: XAuftragService,
+        private aService: XAuftragService,
         private cfgService: ConfigurationService,
     ) { }
 
     ngOnInit() {
         this.dbgLevel = myGlobals.dbgLevel;
         this.dbMode = myGlobals.getMode();
-        this.nmauftrag = new XAuftrag();
+        this.xauftragExt = new XAuftragExt();
     }
     getMode() {
         return myGlobals.getMode();
     }
-    hasXAuftragList(xl: XAuftrag[]) {
+    hasXAuftragExtList(xl: XAuftragExt[]) {
         if (xl) {
-            console.log(this.logHead() + 'hasXAuftragList()' + xl.length);
-            this.nmauftragList = xl;
-            if (xl) this.nmauftrag = xl[0];
+            console.log(this.logHead() + 'hasXAuftragExtList()' + xl.length);
+            this.xauftragExtList = xl;
+            if (xl) this.xauftragExt = xl[0];
         }
     }
-    hasXAuftrag(x: XAuftrag) {
+    hasXAuftragExt(x: XAuftragExt) {
         if (x) {
-            console.log(this.logHead() + 'hasXAuftrag() ' + x.EO_ID);
-            this.nmauftrag = x;
+            console.log(this.logHead() + 'hasXAuftragExt() ' + x.EO_ID);
+            this.xauftragExt = x;
         }
     }
     // TODO: Remove this when we're done
     get diagnostic() {
-        let sRet = 'app-katalog';
-        sRet = sRet + '\r\n nmauftrag:'; if (this.nmauftrag) { sRet = sRet + this.nmauftrag.name; }
-        sRet = sRet + '\r\n nmauftragList:'; if (this.nmauftragList) { sRet = sRet + this.nmauftragList.length; }
+        let sRet = 'app-nutzer';
+        sRet = sRet + '\r\n xauftragExt:'; if (this.xauftragExt) { sRet = sRet + this.xauftragExt.name; }
+        sRet = sRet + '\r\n xauftragList:'; if (this.xauftragExtList) { sRet = sRet + this.xauftragExtList.length; }
         // sRet = sRet + '\r\n nmauftragFlt:'; if (this.prdFlt) { sRet = sRet + JSON.stringify(this.prdFlt); }
 
         return sRet + ', \r\n';

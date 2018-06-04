@@ -35,7 +35,6 @@ export class XAuftragService {
         private messageService: MessageService) { }
 
     //#region XAccInfo
-
     /** GET Account by guid. Will 404 if id not found */
     getXAccInfoList_ByGuid(guid: string): Observable<XAccountInfo[]> {
         let s = 'getXAccInfoList_ByGuid for ' + guid;
@@ -51,7 +50,6 @@ export class XAuftragService {
     //#endregion
 
     //#region XHisAuftrag
-
     /** GET XHisAuftrag by guid. Will 404 if id not found */
     getXHisAuftragList_ByGuid(guid: string): Observable<XHisAuftrag[]> {
         let s = 'getXHisAuftragList_ByGuid for ' + guid;
@@ -67,7 +65,6 @@ export class XAuftragService {
     //#endregion
 
     //#region XAuftrag
-
     /** GET XAuftragList by guid. Will 404 if id not found */
     getXAuftragList_ByGuid(guid: string): Observable<XAuftrag[]> {
         let s = 'getXAuftragList_ByGuid for ' + guid;
@@ -159,10 +156,42 @@ export class XAuftragService {
             );
     }
 
+    /** GET XAuftragExt by guid. Will 404 if id not found */
+    getXAuftragList_ByXAuftragFlt(x: XAuftragFlt): Observable<XAuftrag[]> {
+        let s = 'getXAuftragList_ByXAuftragFlt() ';
+        this.log(s + ' for ' + JSON.stringify(x));
+        if (myGlobals.getMode() == 'Mock')
+            return this.getXAuftragList_ByXAuftragFlt_Mock(x);
+        else
+            return this.getXAuftragList_ByXAuftragFlt_CBE(x);
+    }
+    private getXAuftragList_ByXAuftragFlt_Mock(x: XAuftragFlt): Observable<XAuftrag[]> {
+        let s = 'getXAuftragList_ByXAuftragFlt_Mock ';
+        const sFlt = `EOID=${x.EO_ID}_BSSOE=${x.ORDER_ID_BSSOE}_CRM=${x.ORDER_ID_CRM}_DKK=${x.ORDER_ID_DKK}_MISC=${x.ORDER_ID_MISC}_SMF=${x.ORDER_ID_SMF}_SNR=${x.ORDER_ID_SNR}`;
+        const url = 'assets/json/XAuftrag/' + sFlt + '.json';
+        this.log(s +' for ' + url);
+
+        return this.http.get<XAuftrag[]>(url)
+            .pipe(
+                tap(x => this.log(`${s} fetched ${x.length}`)),
+                catchError(this.handleError<any[]>(`${s} failed for ${url}`))
+            );
+    }
+    private getXAuftragList_ByXAuftragFlt_CBE(x: XAuftragFlt): Observable<XAuftrag[]> {
+        let s = 'getXAuftragExtList_ByXAuftragFlt_CBE ';
+        const sFlt = `EOID=${x.EO_ID}&BSSOE=${x.ORDER_ID_BSSOE}&CRM=${x.ORDER_ID_CRM}&DKK=${x.ORDER_ID_DKK}&MISC=${x.ORDER_ID_MISC}&SMF=${x.ORDER_ID_SMF}&SNR=${x.ORDER_ID_SNR}`;
+        const url = `${this.sUrl}/${this.sAuftrag}?${sFlt}`;
+        this.log(s +' for ' + url);
+
+        return this.http.get<XAuftrag[]>(url)
+            .pipe(
+                tap(x => this.log(`${s} fetched ${x.length}`)),
+                catchError(this.handleError<any[]>(`${s} failed for ${url}`))
+            );
+    }
     //#endregion
 
     //#region XAuftragExt
-
     /** GET XAuftragExt by guid. Will 404 if id not found */
     getXAuftragExtList_ByGuid(guid: string): Observable<XAuftragExt[]> {
         let s = 'getXAuftragExtList_ByGuid for ' + guid;
@@ -258,7 +287,6 @@ export class XAuftragService {
     //#endregion
 
     //#region XError
-
     /** GET XErrorList by guid. Will 404 if id not found */
     getXErrorList_ByGuid(guid: string): Observable<XError[]> {
         let s = 'getXErrorList_ByGuid for ' + guid;

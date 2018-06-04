@@ -14,6 +14,7 @@ import * as myGlobals from '../../../../globals'; //<==== this one
 })
 export class AuftragSucheComponent implements OnInit {
     //    @Input() xauftrag: XAuftrag;
+    private xauftragExtList: XAuftragExt[];
     private xauftragFlt: XAuftragFlt;
     @Output() xauftragListOut = new EventEmitter<XAuftrag[]>();
     @Output() xauftragExtListOut = new EventEmitter<XAuftragExt[]>();
@@ -38,8 +39,8 @@ export class AuftragSucheComponent implements OnInit {
     selectedValue: any;
     selectedItem: string;
     constructor(private aService: XAuftragService) { }
-    getIdType(v: String) {
-        console.log('getIdType for: ' + v);
+    selectItem_ByValue(v: String) {
+        console.log('selectItem_ByValue for: ' + v);
         let item;
         this.xauftragFlt = new XAuftragFlt();
         if (!item && v.startsWith('IDM')) {
@@ -89,16 +90,17 @@ export class AuftragSucheComponent implements OnInit {
     }
     initFormdata() {
         //this.formData.ID = '100049015549700404220001';
-        this.formData.ID='XDM000000192928';
+        this.formData.ID = 'XDM000000192928';
     }
     ngOnInit() {
         this.dbgLevel = myGlobals.dbgLevel;
         this.xauftragFlt = new XAuftragFlt();
         this.initFormdata();
-        this.getIdType(this.formData.ID);
+        this.onSubmit();
     }
     onSubmit() {
         console.log('onSubmit()');
+        this.selectItem_ByValue(this.formData.ID);
         this.xauftragFlt = new XAuftragFlt();
         if (this.formData.selected.id == 'GUID') this.xauftragFlt.GUID = this.formData.ID;
         if (this.formData.selected.id == 'SO_ID') this.xauftragFlt.SO_ID = this.formData.ID;
@@ -109,7 +111,7 @@ export class AuftragSucheComponent implements OnInit {
         if (this.formData.selected.id == 'MISC') this.xauftragFlt.ORDER_ID_MISC = this.formData.ID;
         if (this.formData.selected.id == 'SMF') this.xauftragFlt.ORDER_ID_SMF = this.formData.ID;
         if (this.formData.selected.id == 'SNR') this.xauftragFlt.ORDER_ID_SNR = this.formData.ID;
-        this.getXAuftragExtList_ByFlt(this.xauftragFlt);
+        this.findXAuftragExtList_ByFlt(this.xauftragFlt);
     }
 
     //region Input
@@ -125,7 +127,7 @@ export class AuftragSucheComponent implements OnInit {
             this.xauftragFlt.ORDER_ID_SMF = x.ORDER_ID_SMF;
             this.xauftragFlt.ORDER_ID_SNR = x.ORDER_ID_SNR;
 
-            this.getXAuftragExtList_ByFlt(this.xauftragFlt);
+            this.findXAuftragExtList_ByFlt(this.xauftragFlt);
             if (x.EO_ID) this.formData.ID = x.EO_ID;
             if (x.ORDER_ID_BSSOE) this.formData.ID = x.ORDER_ID_BSSOE;
             if (x.ORDER_ID_CRM) this.formData.ID = x.ORDER_ID_CRM;
@@ -137,8 +139,21 @@ export class AuftragSucheComponent implements OnInit {
     }
     //endregion
 
-    getXAuftragList_ByXauftrag(x: XAuftrag) {
-        this.log('getXAuftragList_ByXauftrag()' + x.SO_ID);
+    findXAuftragExtList_ByFlt(x: XAuftragFlt) {
+        this.log('findXAuftragExtList_ByFlt()' + x.EO_ID);
+        this.aService
+            .getXAuftragExtList_ByXAuftragFlt(x)
+            .subscribe(x => this.setXAuftragExtList(x));
+    }
+    setXAuftragExtList(x: XAuftragExt[]) {
+        if (x) {
+            this.log('setXAuftragExtList:' + x.length);
+            this.xauftragExtListOut.emit(x);
+            this.xauftragExtList = x;
+        }
+    }
+    findXAuftragExtList_ByXAuftrag(x: XAuftrag) {
+        this.log('findXAuftragExtList_ByFlt()' + x.SO_ID);
         this.aService
             .getXAuftragList_ByXAuftrag(x)
             .subscribe(x => this.setXAuftragList(x));
@@ -151,24 +166,12 @@ export class AuftragSucheComponent implements OnInit {
         }
     }
 
-    getXAuftragExtList_ByFlt(x: XAuftragFlt) {
-        this.log('getXAuftragExtList_ByFlt()' + x.EO_ID);
-        this.aService
-            .getXAuftragExtList_ByXAuftragFlt(x)
-            .subscribe(x => this.setXAuftragExtList(x));
-    }
-    setXAuftragExtList(x: XAuftragExt[]) {
-        if (x) {
-            this.log('setXAuftragExtList:' + x.length);
-            this.xauftragExtListOut.emit(x);
-            // this.xauftragExt = x[0];
-        }
-    }
+
 
     // TODO: Remove this when we're done
     get diagnostic() {
         let sRet = 'app-auftrag-suche';
-        //sRet = sRet + '\r\n xauftragList:'; if (this.xauftragList) { sRet = sRet + this.xauftragList.length; }
+        sRet = sRet + '\r\n xauftragExtList:'; if (this.xauftragExtList) { sRet = sRet + this.xauftragExtList.length; }
         //sRet = sRet + '\r\n xauftragExtList:'; if (this.xauftragExtListOut.map) { sRet = sRet + this.xauftragExtListOut.map.length; }
         //sRet = sRet + '\r\n xauftragList:'; if (this.xauftragListOut.map) { sRet = sRet + this.xauftragListOut.map.length; }
         sRet = sRet + '\r\n xauftragFlt:'; if (this.xauftragFlt) { sRet = sRet + JSON.stringify(this.xauftragFlt); }

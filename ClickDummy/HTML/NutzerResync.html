@@ -1,0 +1,45 @@
+<div class="col-md-6">
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="TONR" class="control-label col-md-2">TONR</label>
+
+            <div class="col-md-4">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="TONR" name="TONR" placeholder="TONR">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Resync" class="control-label col-md-2">Resync</label>
+
+            <div class="col-md-4">
+                <!-- This is a new div -->
+                <label class="checkbox-inline" id="Resync">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" checked > Digest aktualisieren
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="col-md-6">
+    <div class="well">
+        Zur Resynchronisation muss entweder TO-Nummer oder Guid der Hauptbenutzers eingegeben werden.
+        <br/>
+    </div>
+    <div class="bs-callout bs-callout-info">
+            <div class="well">
+                    Bei der Authentifizierung im Rahmen der VoIP-Telefonie wird der Email-Alias und das Dienstepasswort verhashed. Dieser Hash wird in die VoIP-Plattform übernommen um die Angaben zu Email und Passwort durch den User überprüfen zu können. Das entsprechende Authentifizierungsverfahren wird daher auch verkürzt als DIGEST bezeichnet.
+
+            Wenn der Kunde eine Email-Alias eingerichtet hat, kann er mit Email und WebPasswort den VoIP Service nomadisch nutzen.
+        </div>
+    </div>
+</div>

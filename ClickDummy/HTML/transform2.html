@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<meta http-equiv="Content-Language" content="en-us"/>
+<title>Contracting, Licensing and Compliance News</title>
+</head>
+<body>
+<script language="javascript">
+    function displayMessage() {
+        // Load XML 
+
+        var xml = new ActiveXObject("Microsoft.XMLDOM")
+        xml.async = false
+        xml.load("05_SMKUSERDATA.xml")
+
+        // Load the XSL
+        var xsl = new ActiveXObject("Microsoft.XMLDOM")
+        xsl.async = false
+        xsl.load("prodplan2html.xsl")
+
+        // Transform
+        document.write(xml.transformNode(xsl))
+    }
+</script>
+huhu
+</body>
+</html>

@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Aufträge</title>
+    <link rel="stylesheet" type="text/css" href="res/default.css">
+    <link rel="stylesheet" type="text/css" href="res/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="res/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="res/a11ytheme.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="res/select2.css">
+    <style>
+        /* fix = code from bootstrap 3 */
+
+        tbody.collapse.in {
+            display: table-row-group;
+        }
+    </style>
+    <script type="text/javascript" src="res/js/jquery.js">
+    </script>
+    <script type="text/javascript" src="res/js/bootstrap.js">
+    </script>
+    <script type="text/javascript" src="res/js/bootstrap-select.js">
+    </script>
+    <script type="text/javascript" src="res/js/application.js">
+    </script>
+    <script type="text/javascript" src="res/js/stockeditor.js">
+    </script>
+    <script type="text/javascript" src="res/js/select2.js">
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.selectpicker').selectpicker({
+                tickIcon: 'glyphicon-ok'
+            });
+        });
+        $(function () {
+            $("#includedNavbar").load("navbar.html");
+        });
+
+        function fensterOeffnen(sUrl) {
+            //alert(sUrl);
+            window.open(sUrl, 'newwindow',
+                'scrollbars=1,width=800,height=800');
+        }
+    </script>
+</head>
+
+<body>
+    <div id="includedNavbar"></div>
+
+    <div class="container-fluid" role="main" aria-labelledby="order" id="content">
+
+        <!-- Titel -->
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="sr-only" id="order">Aufträge</h1>
+            </div>
+        </div>
+
+        <!-- Suchfeld -->
+        <div class="row">
+            <div class="col-md-4">
+                <script>
+                    $(document).ready(function () {
+                        //        $("#inputEM").mask("88999999");
+                        // add * to required field labels
+                        $('label.required').append('&nbsp;<strong>*</strong>&nbsp;');
+
+                    });
+                </script>
+                <form method="get" action="/idma-callcenter/orders" role="search">
+                    <div class="form-group">
+                        <label for="search" class="control-label input required">Auftragsnummer</label>
+                        <div class="input-group">
+                            <input class="form-control" required="required" name="query" id="search" placeholder="Auftragsnummer eingeben" maxlength="100"
+                                autofocus="autofocus" type="text" value="XDM000000130178 ">
+                            <label for="system" class="sr-only">order.search.system</label>
+                            <div class="btn-group bootstrap-select input-group-btn" style="width: 164px;">
+                                <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="system" title="IDM-Adapter intern">
+                                    <span class="filter-option pull-left">Alle</span>&nbsp;
+                                    <span class="bs-caret">
+                                        <span class="caret"></span>
+                                    </span>
+                                </button>
+                                <div class="dropdown-menu open" role="combobox" style="min-width: 0px;">
+                                    <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                        <li data-original-index="0" class="selected">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                                <span class="text">Alle</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="0" class="selected">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                                <span class="text">IDM-Adapter intern</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="1">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">IDM-Adapter extern</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="2">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">SMK-FF</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="3">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">CRM-T</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="4">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">BSSOE</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="5">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">DKK</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="6">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">Sofortnutzungsref.</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                        <li data-original-index="7">
+                                            <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="text">Sonstiges</span>
+                                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAuftragExtDetail" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    Suchen
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Suchergebnisse -->
+        <div class="xcollapse" id="collapseAuftragExtDetail">
+            <!-- Auftrag Ext Detail -->
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Auftrag IDM-Adapter Extern: XDM000000130178 </div>
+                        <div class="panel-body">
+                            <div class="col-md-4">
+
+                                <dl class="dl-horizontal dl-horizontal-left">
+                                    <dt id="toNr">TO-Nummer</dt>
+                                    <dd role="defintion" aria-labelledby="toNr">604121239010</dd>
+
+                                    <dt id="idma">IDM-Adapter extern</dt>
+                                    <dd role="defintion" aria-labelledby="idma">XDM000000130178</dd>
+
+                                    <dt id="smf">SMK-FF</dt>
+                                    <dd role="defintion" aria-labelledby="smf">604121239-0000-0000-a0000-0000101</dd>
+
+                                    <dt id="crm">CRM-T</dt>
+                                    <dd role="defintion" aria-labelledby="crm">60412123900</dd>
+
+                                    <dt id="bssoe">BSSOE</dt>
+                                    <dd role="defintion" aria-labelledby="bssoe">604121239011</dd>
+                                </dl>
+                            </div>
+
+                            <div class="col-md-4">
+                                <dl class="dl-horizontal dl-horizontal-left">
+                                    <dt id="kdNr">Kundennummer</dt>
+                                    <dd role="defintion" aria-labelledby="kdNr">6041212390</dd>
+
+                                    <dt id="dkk">DKK</dt>
+                                    <dd role="defintion" aria-labelledby="dkk"></dd>
+
+                                    <dt id="snr">Sofortnutzungsref.</dt>
+                                    <dd role="defintion" aria-labelledby="snr"></dd>
+
+                                    <dt id="misc">Sonstiges</dt>
+                                    <dd role="defintion" aria-labelledby="misc"></dd>
+
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auftrag int List -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">interne Aufträge IDM-Adapter</div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <caption class="sr-only">??order.search.caption_de??</caption>
+                                <thead>
+                                    <tr>
+                                        <th id="id">IDM-Adapter intern</th>
+                                        <th id="type">Auftragstyp</th>
+                                        <th id="status">Status</th>
+                                        <th id="created">Erzeugt</th>
+                                        <th id="completed">Komplettiert</th>
+                                        <th id="aborted">Abgebrochen</th>
+                                        <th id="executed">Ausgeführt</th>
+                                        <th id="rollbacked">Zurückgerollt</th>
+                                        <th id="commited">Abgeschlossen</th>
+                                        <th id="lastUpdate">Letztes Update</th>
+                                        <th>Diagnose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td headers="id">IDM000000639608 </td>
+                                        <td headers="type">Auftrag mit Teilaktion ‚IDM Provisionierung beauftragen‘</td>
+                                        <td headers="status">Commited</td>
+                                        <td headers="created">2017-12-04 14:00:45</td>
+                                        <td headers="completed">2017-12-04 14:00:45</td>
+                                        <td headers="aborted">--</td>
+                                        <td headers="executed">2017-12-04 14:03:00</td>
+                                        <td headers="rollbacked">--</td>
+                                        <td headers="commited">2017-12-04 14:07:35</td>
+                                        <td headers="lastUpdate">2017-12-04 14:07:35</td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td headers="id">IDM000000639609
+                                        </td>
+                                        <td headers="type">E.164 Nutzer Zuordnung lesen</td>
+                                        <td headers="status">Commited</td>
+                                        <td headers="created">2017-12-04 14:00:45</td>
+                                        <td headers="completed">2017-12-04 14:00:45</td>
+                                        <td headers="aborted">--</td>
+                                        <td headers="executed">2017-12-04 14:05:16</td>
+                                        <td headers="rollbacked">--</td>
+                                        <td headers="commited">2017-12-04 14:07:35</td>
+                                        <td headers="lastUpdate">2017-12-04 14:07:35</td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Protokoll  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">Messages IDM-Adapter Extern: XDM000000130178
+                            <div class="btn-group pull-right">
+                                <label for="Diganose" class="pull-left">Diganose: </label>
+                                <a id="Diganose" class="btn btn-primary btn-xs " href="msg/EOID_XDM000000130171.zip" download>Messages</a>
+
+                            </div>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- Protokoll -->
+                            <table class="table table-responsive table-striped ">
+                                <!-- Kopf -->
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div>ID</div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                            <div></div>
+                                            <div>Correlation ID</div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                            <div></div>
+                                            <div>Datum</div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                            <div></div>
+                                            <div>Order-ID</div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                            <div></div>
+                                            <div>Context</div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                            <div></div>
+                                            <div style="width:100%;">Service</div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                            <div></div>
+                                            <div>Typ</div>
+                                        </th>
+                                        <th>
+                                            <div></div>
+                                            <div></div>
+                                            <div>Message</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <!-- CP -->
+                                <tbody>
+                                    <!-- Complete-PP -->
+                                    <tr class="clickable " data-toggle="collapse" data-target="#Complete-PP" aria-expanded="false" aria-controls="Complete-PP">
+                                        <td>
+                                            <div>
+                                                <span class="glyphicon glyphicon glyphicon-arrow-right text-success" aria-hidden="true"></span>
+                                                58856</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:12:36.97</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Complete-PP</div>
+                                        </td>
+                                        <td>
+                                            <div>FULFILLMENT</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="fensterOeffnen('./msg/05_SMKUSERDATA2.xml')">HTML</a>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="fensterOeffnen('./msg/05_SMKUSERDATA.xml')">XML</a>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="alert('Copy XML to Clippboard!');">COPY</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Complete-PP" class="collapse">
+                                    <tr>
+                                        <td>
+
+                                            <div>
+                                                <span class="glyphicon " aria-hidden="true">&nbsp;</span>
+                                                58857
+                                                <span class="glyphicon glyphicon glyphicon-arrow-right text-success" aria-hidden="true"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:12:37.13
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIPasswordHandlingService.createAccessPassword</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="fensterOeffnen('msg/08_ZPIProvisioningService.createAccount2.xml')">HTML</a>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="fensterOeffnen('msg/08_ZPIProvisioningService.createAccount.xml')">XML</a>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="alert('Copy XML to Clippboard!');">COPY</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <span class="glyphicon " aria-hidden="true">&nbsp;</span>
+                                                58858
+                                                <span class="glyphicon glyphicon glyphicon-arrow-left text-success" aria-hidden="true"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>58857</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:12:37.21
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIPasswordHandlingService.createAccessPassword</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="fensterOeffnen('./msg/09_ZPIProvisioningService.createAccount2.xml')">HTML</a>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="fensterOeffnen('./msg/09_ZPIProvisioningService.createAccount.xml')">XML</a>
+                                                <a class="btn btn-primary btn-xs" href="#" onclick="alert('Copy XML to Clippboard!');">COPY</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <span class="glyphicon " aria-hidden="true">&nbsp;</span>
+                                                58859
+                                                <span class="glyphicon glyphicon glyphicon-arrow-right text-success" aria-hidden="true"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:12:37.22
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIPasswordHandlingService.createAccessId</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <span class="glyphicon " aria-hidden="true">&nbsp;</span>
+                                                58860
+                                                <span class="glyphicon glyphicon glyphicon-arrow-left text-success" aria-hidden="true"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>58859</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:12:37.26
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIPasswordHandlingService.createAccessId</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <!-- CP CB-->
+                                <tbody>
+                                    <!-- Complete-PP-CB-->
+                                    <tr class="clickable " data-toggle="collapse" data-target="#Complete-PP-CB" aria-expanded="false" aria-controls="Complete-PP-CB">
+                                        <td>
+                                            <div>
+                                                <span class="glyphicon glyphicon glyphicon-arrow-left text-success" aria-hidden="true"></span>
+                                                58861</div>
+                                        </td>
+                                        <td>
+                                            <div>58856</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:12:37.37</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Complete-PP-CB</div>
+                                        </td>
+                                        <td>
+                                            <div>FULFILLMENT</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Complete-PP-CB" class="collapse">
+                                </tbody>
+
+                                <!-- EA1 -->
+                                <tbody>
+                                    <!-- Execute-TA -->
+                                    <tr class="clickable " data-toggle="collapse" data-target="#Execute-TA1" aria-expanded="false" aria-controls="Execute-TA1">
+                                        <td>
+                                            <div>58870</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.22</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Execute-TA</div>
+                                        </td>
+                                        <td>
+                                            <div>FULFILLMENT</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Execute-TA1" class="collapse">
+                                    <tr>
+                                        <td>
+                                            <div>58871</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.31
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.createAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58872</div>
+                                        </td>
+                                        <td>
+                                            <div>58871</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.43
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.createAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58873</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.44
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAllInstanceDataForOwner</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58874</div>
+                                        </td>
+                                        <td>
+                                            <div>58873</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.50
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAllInstanceDataForOwner</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58875</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.51
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.setFeatures</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58876</div>
+                                        </td>
+                                        <td>
+                                            <div>58875</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.67
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.setFeatures</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58877</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.68
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.setSuspensions</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58878</div>
+                                        </td>
+                                        <td>
+                                            <div>58877</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.83
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.setSuspensions</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58879</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.84
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAccountData</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58880</div>
+                                        </td>
+                                        <td>
+                                            <div>58879</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.89
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAccountData</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58881</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.90
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.updateAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58882</div>
+                                        </td>
+                                        <td>
+                                            <div>58881</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.98
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.updateAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58883</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:47.01
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAllActiveAliasesForAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58884</div>
+                                        </td>
+                                        <td>
+                                            <div>58883</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:47.06
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAllActiveAliasesForAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58885</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:47.08
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>DWHSERVICE</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <!-- EA1 CB -->
+                                <tbody>
+                                    <!-- Execute-TA-CB -->
+                                    <tr class="clickable " data-toggle="collapse" data-target="#Execute-TA1-CB" aria-expanded="false" aria-controls="Execute-TA1-CB">
+                                        <td>
+                                            <div>58886</div>
+                                        </td>
+                                        <td>
+                                            <div>58870</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:47.14</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Execute-TA-CB</div>
+                                        </td>
+                                        <td>
+                                            <div>FULFILLMENT</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Execute-TA1-CB bg-success" class="collapse">
+                                </tbody>
+
+                                <!-- EA2 -->
+                                <tbody>
+                                    <!-- Execute-TA2 -->
+                                    <tr class="clickable " data-toggle="collapse" data-target="#Execute-TA2" aria-expanded="false" aria-controls="Execute-TA2">
+                                        <td>
+                                            <div>58870</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.22</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Execute-TA</div>
+                                        </td>
+                                        <td>
+                                            <div>FULFILLMENT</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Execute-TA2" class="collapse">
+                                    <tr>
+                                        <td>
+                                            <div>58871</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.31
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.createAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58872</div>
+                                        </td>
+                                        <td>
+                                            <div>58871</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.43
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.createAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58873</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.44
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAllInstanceDataForOwner</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58874</div>
+                                        </td>
+                                        <td>
+                                            <div>58873</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.50
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAllInstanceDataForOwner</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58875</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.51
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.setFeatures</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58876</div>
+                                        </td>
+                                        <td>
+                                            <div>58875</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.67
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.setFeatures</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58877</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.68
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.setSuspensions</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58878</div>
+                                        </td>
+                                        <td>
+                                            <div>58877</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.83
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.setSuspensions</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58879</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.84
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAccountData</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58880</div>
+                                        </td>
+                                        <td>
+                                            <div>58879</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.89
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAccountData</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58881</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.90
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.updateAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58882</div>
+                                        </td>
+                                        <td>
+                                            <div>58881</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:46.98
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIProvisioningService.updateAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58883</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:47.01
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAllActiveAliasesForAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58884</div>
+                                        </td>
+                                        <td>
+                                            <div>58883</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:47.06
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>ZPIInformationService.getAllActiveAliasesForAccount</div>
+                                        </td>
+                                        <td>
+                                            <div>WebService</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>58885</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:47.08
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div> IDM000000639608
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>DWHSERVICE</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <!-- Execute-TA-CB -->
+                                    <tr class="clickable " data-toggle="collapse" data-target="#Execute-TA2-CB" aria-expanded="false" aria-controls="Execute-TA2-CB">
+                                        <td>
+                                            <div>58886</div>
+                                        </td>
+                                        <td>
+                                            <div>58870</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:17:47.14</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Execute-TA-CB</div>
+                                        </td>
+                                        <td>
+                                            <div>FULFILLMENT</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Execute-TA2-CB bg-succevv" class="collapse">
+                                </tbody>
+                                <tbody>
+                                    <!-- Commit-PP -->
+                                    <tr class="clickable " data-toggle="collapse" data-target="#Commit-PP" aria-expanded="false" aria-controls="Commit-PP">
+                                        <td>
+                                            <div>58931</div>
+                                        </td>
+                                        <td>
+                                            <div></div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:19:53.50</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Commit-PP</div>
+                                        </td>
+                                        <td>
+                                            <div>FULFILLMENT</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Commit-PP" class="collapse">
+                                </tbody>
+                                <tbody>
+                                    <!-- Commit-PP-CB -->
+                                    <tr class="clickable " data-toggle="collapse" data-target="#Commit-PP-CB" aria-expanded="false" aria-controls="Commit-PP-CB">
+                                        <td>
+                                            <div>58932</div>
+                                        </td>
+                                        <td>
+                                            <div>58931</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>2017-11-22 11:19:53.55</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Commit-PP-CB</div>
+                                        </td>
+                                        <td>
+                                            <div>FULFILLMENT</div>
+                                        </td>
+                                        <td>
+                                            <div>Queue</div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <a class="btn bg-danger text-danger btn-xs" href="Fehler_Detail.html">Fehler</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Commit-PP-CB" class="collapse">
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

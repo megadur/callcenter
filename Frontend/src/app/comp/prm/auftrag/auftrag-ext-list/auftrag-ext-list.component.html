@@ -38,38 +38,36 @@
 
             <thead>
               <tr>
-                <th id="order-misc-th">TS_Created</th>
-                <th id="order-misc-th">TS_Completed</th>
-                <th id="order-misc-th">TS_Executed</th>
+                <th id="order-misc-th" class="visible-lg ">TS_Created</th>
+                <th id="order-misc-th" class="visible-lg  ">TS_Completed</th>
+                <th id="order-misc-th" class="visible-lg ">TS_Executed</th>
                 <th id="order-misc-th">SOF</th>
                 <th id="order-misc-th">SO-TYPE</th>
                 <th id="order-misc-th">Status</th>
                 <th id="order-eoid-th">IDM-A extern</th>
-                <th id="order-crm-th">CRM-T</th>
-                <th id="order-bssoe-th">BSSOE</th>
-                <th id="order-dkk-th">DKK</th>
-                <th id="order-snr-th">ursp. KWT</th>
+                <th id="order-crm-th" class="visible-lg  ">CRM-T</th>
+                <th id="order-bssoe-th" class="visible-lg  ">BSSOE</th>
+                <th id="order-dkk-th" class="visible-lg  ">DKK</th>
+                <th id="order-snr-th" class="visible-lg  ">ursp. KWT</th>
                 <th id="order-misc-th">Sonstiges</th>
               </tr>
             </thead>
 
             <tbody>
               <tr *ngFor="let a of pagedItems" [class.selected]="a === xauftragExt" (click)="onSelect(a)">
-                <td>
-                  <span class="badge">{{a.TS_CREATED}}</span>
-                </td>
-                <td>TS_Completed</td>
-                <td>TS_Executed</td>
-                <td>SOF</td>
-                <td>SO-TYPE</td>
-                <td>Status</td>
+                <td class="visible-lg  ">{{a.TS_CREATED}}</td>
+                <td class="visible-lg  ">{{a.TS_Completed}}</td>
+                <td class="visible-lg  ">{{a.TS_Executed}}</td>
+                <td>{{a.SOF}}</td>
+                <td>{{a.SO-TYPE}}</td>
+                <td>{{a.Status}}</td>
                 <td>
                   <a href="auftrag">{{a.EO_ID}}</a>
                 </td>
-                <td>{{a.ORDER_ID_CRM}}</td>
-                <td>{{a.ORDER_ID_BSSOE}}</td>
-                <td>{{a.ORDER_ID_DKK}}</td>
-                <td>{{a.URSPRUNGS_KWT}}</td>
+                <td class="visible-lg  ">{{a.ORDER_ID_CRM}}</td>
+                <td class="visible-lg  ">{{a.ORDER_ID_BSSOE}}</td>
+                <td class="visible-lg  ">{{a.ORDER_ID_DKK}}</td>
+                <td class="visible-lg  ">{{a.URSPRUNGS_KWT}}</td>
                 <td headers="order-misca-th" class="bg-info">
                   <a href="#repro" aria-controls="edit" role="tab" data-toggle="tab" class="btn btn-primary">
                     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp; Repro</a>
@@ -77,100 +75,56 @@
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp; Edit</a>
                 </td>
               </tr>
-              <tr>
-                <td headers="order-misca-th">2017-05-14 18:33:35</td>
-                <td headers="order-misca-th">2017-05-14 18:33:35</td>
-                <td headers="order-misca-th">2017-05-14 18:33:35</td>
-                <td headers="order-misca-th">Sonderkündigung</td>
-                <td headers="order-misca-th">Komplett freigeben</td>
-                <td headers="order-misca-th">Error in Completion</td>
-                <td headers="order-eoid-th">
-                  <a href="Aufträge.html">XDM000000130178</a>
-                </td>
-                <td headers="order-crm-th">60412123900</td>
-                <td headers="order-bssoe-th">604121239011</td>
-                <td headers="order-dkk-th"></td>
-                <td headers="order-snr-th">2017-07-11</td>
-                <td headers="order-misca-th">
-                  <a href="#repro" aria-controls="edit" role="tab" data-toggle="tab" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>&nbsp; Repro</a>
 
-                  <a href="#edit" aria-controls="edit" role="tab" data-toggle="tab" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp; Edit</a>
-
-
-                </td>
-              </tr>
             </tbody>
           </table>
-          <!-- Anzahl pro Seite -->
-          <div class="col-md-6 ">
-            <div id="size-lbl" class="control-label">Anzahl pro Seite</div>
-            <div class="btn-toolbar bg-info" aria-labelledby="size-lbl" role="toolbar">
-              <div class="btn-group ">
-                <a class="btn btn-default active" href="#" disabled="disabled">25</a>
-                <a class="btn btn-default" href="#" disabled="disabled">50</a>
-                <a class="btn btn-default" href="#" disabled="disabled">100</a>
+          <div class="row">
+            <!-- Anzahl pro Seite -->
+            <div class="col-sm-6  col-md-4">
+              <div for="size-lbl" class="control-label">Anzahl pro Seite</div>
+
+              <ul *ngIf="pager.pages && pager.pages.length" class="pagination" aria-labelledby="size-lbl" id="size-lbl">
+                <li>
+                  <a (click)="setPageSize(5)">5</a>
+                </li>
+                <li>
+                  <a (click)="setPageSize(15)">15</a>
+                </li>
+                <li>
+                  <a (click)="setPageSize(25)">25</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Seitennavigation -->
+            <div class="col-sm-6 col-md-8">
+              <div class="pull-right">
+                <div for="fblpages" class="control-label"> &nbsp;</div>
+
+                <!-- items being paged -->
+                <div *ngFor="let item of pagedItems">{{item.name}}</div>
+
+                <!-- pager -->
+                <ul *ngIf="pager.pages && pager.pages.length" class="pagination" id="fblpages">
+                  <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                  </li>
+                  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                  </li>
+                </ul>
               </div>
+
             </div>
           </div>
-          <!-- Seitennavigation -->
-          <div class="col-md-offset-1 col-md-5 bg-info">
-            <div class="sr-only" id="pagination-lbl">Seitennavigation</div>
-            <ul class="pagination pull-right bg-info" aria-labelledby="pagination-lbl">
-
-              <!-- vorherige seite -->
-              <li title="Vorherige Seite" class="disabled">
-                <a href="">«
-                  <span class="sr-only"> Vorherige Seite</span>
-                </a>
-              </li>
-
-              <!-- Seite 1 -->
-              <li title="1 Seite" class="active">
-                <a data-toggle="collapse" href="#collapseKatalogDetail" aria-expanded="false" aria-controls="collapseKatalogDetail">
-                  <span class="sr-only">Seite</span>
-                  <span>1</span>
-                </a>
-              </li>
-
-              <!-- Abgrenzung Unten-->
-
-
-              <!-- zwische seiten -->
-              <li>
-                <a data-toggle="collapse" href="#collapseKatalogDetail" aria-expanded="false" aria-controls="collapseKatalogDetail">
-                  <span class="sr-only">Seite</span>
-                  <span>2</span>
-                </a>
-              </li>
-              <li>
-                <a data-toggle="collapse" href="#collapseKatalogDetail" aria-expanded="false" aria-controls="collapseKatalogDetail">
-                  <span class="sr-only">Seite</span>
-                  <span>3</span>
-                </a>
-              </li>
-              <li>
-
-
-                <!-- Abgrenzung Oben-->
-                <li>
-                  <a>...</a>
-                </li>
-
-                <!-- letzte seite -->
-                <li>
-                  <a data-toggle="collapse" href="#collapseKatalogDetail" aria-expanded="false" aria-controls="collapseKatalogDetail">50</a>
-                </li>
-
-                <!-- nächste seite -->
-                <li title="Nächste Seite">
-                  <a href="">
-                    <span class="sr-only">Nächste Seite </span>»</a>
-                </li>
-            </ul>
-          </div>
-
         </div>
       </div>
     </div>

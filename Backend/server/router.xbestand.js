@@ -1,9 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var dateFormat = 'YYYY-MM-DD';
-// var db = require("./base/dbconfig");
 var database = require('./base/database-pool.js');
-// var dbconfig = require('./base/dbcfg.js');
 
 function generateParams(req, params) {
     return params.map(e => {

@@ -23,18 +23,16 @@
 <!-- Account-Details -->
 <div class="row">
   <div class="col-md-12">
-    <app-account-detail [accountIn]="account" ></app-account-detail>
+    <app-account-detail [accountIn]="account"></app-account-detail>
   </div>
 </div>
 
 <!-- Aufträge  -->
-<!--
-    <div class="row">
+<div class="row">
   <div class="col-md-12">
-    <app-auftrag-ext-detail [xbestandIn]="xbestand"></app-auftrag-ext-detail>
+    <app-auftrag-ext-detail [bestandIn]="bestand"></app-auftrag-ext-detail>
   </div>
 </div>
--->
 
 <!-- Tab panes -->
 <div class="row">
@@ -43,7 +41,7 @@
     <div role="tabpanel" class="tab-pane active" id="detail">
       <!-- Bestand Detail -->
       <div class="col-md-12">
-        <app-bestand-detail [bestandIn]="bestand" ></app-bestand-detail>
+        <app-bestand-detail [bestandIn]="bestand"></app-bestand-detail>
       </div>
     </div>
     <!-- Bestand Edit-->

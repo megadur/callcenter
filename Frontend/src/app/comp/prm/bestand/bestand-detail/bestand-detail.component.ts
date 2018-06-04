@@ -67,6 +67,9 @@ export class BestandDetailComponent implements OnInit {
         if (this.xbestand)
             return this.xbestand.rnr;
     }
+    getTitle(){
+        return 'ID: ' + this.xbestand.STOCK_ID + '-' + this.xbestand.STATUS;
+    }
     // TODO: Remove this when we're done
     get diagnostic() {
         let sRet = 'app-bestand-detail';

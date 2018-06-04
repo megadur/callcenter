@@ -1,17 +1,23 @@
-<p>
-  nutzer-suche works!
-</p>
+<div *ngIf="dbgLevel>0">
+  <div class="col-md-12">
+    <h4 class="sr-only">Nutzer-Search</h4>
+    <pre>{{diagnostic}}</pre>
+  </div>
+</div>
+
 <div class="panel panel-default">
   <div class="panel-heading">Suchkriterien</div>
   <div class="panel-body">
-    <form class="form-horizontal">
+    <form class="form-horizontal" (ngSubmit)="onSubmit()" #FehlerbildSuchForm="ngForm" id="NutzerSuchForm">
 
       <div class="form-group">
         <label for="GUID" class="control-label col-md-4">GUID</label>
 
         <div class="col-md-8">
           <!-- This is a new div -->
-          <input type="text" class="form-control" id="GUID" name="EM-Matno" placeholder="GUID">
+          <input class="form-control " required="required" name="GUID" id="GUID" placeholder="Auftragsnummer eingeben"
+           type="text" [(ngModel)]="formData.GUID">
+
         </div>
       </div>
       <div class="form-group">
@@ -75,6 +81,3 @@
     </form>
   </div>
 </div>
-
-
-

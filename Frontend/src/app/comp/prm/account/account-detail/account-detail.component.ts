@@ -3,6 +3,8 @@ import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { Account } from '../../../../model/account';
 import { XBestand } from '../../../../model/x-bestand';
 
+import * as myGlobals from '../../../../globals'; //<==== this one
+
 @Component({
     selector: 'app-account-detail',
     templateUrl: './account-detail.component.html',
@@ -14,7 +16,7 @@ export class AccountDetailComponent implements OnInit {
     constructor() { }
     dbgLevel: number;
     ngOnInit() {
-        this.dbgLevel = 1;
+        this.dbgLevel = myGlobals.dbgLevel;
         this.accountIn = new Account();
     }
 

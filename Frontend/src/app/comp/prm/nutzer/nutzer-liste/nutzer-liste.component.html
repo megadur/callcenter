@@ -1,6 +1,10 @@
-<p>
-  nutzer-liste works!
-</p>
+<div *ngIf="dbgLevel>0">
+  <div class="col-md-12">
+    <h4 class="sr-only">Nutzer-Liste</h4>
+    <pre>{{diagnostic}}</pre>
+  </div>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="ModalNutzerDel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -23,146 +27,134 @@
   <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
-<div class="panel panel-default">
-  <div class="panel-heading">Produktionsplan-Liste</div>
-  <div class="panel-body">
-    <div class="col-md-12">
-      <table class="table table-grid">
-        <caption class="sr-only">Fehler</caption>
-        <thead>
-          <tr>
-            <th>PPID</th>
-            <th>SOID</th>
-            <th>To-Nummmer</th>
-            <th>Hauptnutzer Guid</th>
-            <th>Nutzer Guid</th>
-            <th>Status</th>
-            <th>erstellt</th>
-            <th>gesendet</th>
-            <th>Aktion</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>216051246-0000-0000-a0000-0000203</td>
-            <td>IDM000000034113</td>
-            <td>604121239010</td>
-            <td>100049016041212390100001</td>
-            <td>100049014144219230100001</td>
-            <td>gesendet</td>
-            <td>2017-05-16 13:08:40</td>
-            <td>2017-05-16 13:08:40</td>
-            <td>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalNutzerDel">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                Löschen
-              </button>
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">Produktionsplan-Liste</div>
+      <div class="panel-body">
+        <div class="col-md-12">
+          <table class="table table-grid">
+            <caption class="sr-only">Fehler</caption>
+            <thead>
+              <tr>
+                <th class="visible-lg">PPID</th>
+                <th>SOID</th>
+                <th>TO-Nummmer</th>
+                <th class="visible-lg">Hauptnutzer Guid</th>
+                <th class="visible-lg">Nutzer Guid</th>
+                <th>Status</th>
+                <th class="visible-lg">erstellt</th>
+                <th class="visible-lg">gesendet</th>
+                <th>Aktion</th>
+              </tr>
+            </thead>
+              <tbody>
+              <tr *ngFor="let a of pagedItems" [class.selected]="a === xauftragExt" (click)="onSelect(a)">
+                <td class="visible-lg ">{{a.ORDER_ID_SMF}}</td>
+                <td>
+                  <a href="auftrag">{{a.SO_ID}}</a>
+                </td>
+                <td>{{a.TO_NR}}</td>
+                <td class="visible-lg ">{{a.GUID}}</td>
+                <td class="visible-lg ">{{a.GUID}}</td>
+                <td>{{a.STATUS}}</td>
+                <td class="visible-lg  ">cr{{a.TS_CREATED}}</td>
+                <td class="visible-lg  ">co{{a.TS_LAST_UPDATE}}</td>
+                <!--
+                            -->
+                <td headers="order-misca-th" class="">
+                  <a class="btn btn-danger btn-xs" data-toggle="collapse" href="#{{a.ID}}" aria-expanded="false" aria-controls="'a.ID'">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    löschen
+                  </a>
+                  <a class="btn btn-success btn-xs" (click)="assignActity(a.ID)">
+                    <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+                    senden
+                  </a>
 
-              <button type="button" class="btn btn-success">
-                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-                erneut Senden
-              </button>
+                </td>
 
-            </td>
-          </tr>
-          <tr>
-            <td>212466051-0000-0000-a0000-0000123</td>
-            <td>IDM000000054323</td>
-            <td>604134545010</td>
-            <td>100049016041212390100001</td>
-            <td>100049014144219230100001</td>
-            <td>gesendet</td>
-            <td>2017-04-17 19:08:40</td>
-            <td>2017-05-17 18:08:40</td>
-            <td>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalNutzerDel">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                Löschen
-              </button>
-              <button type="button" class="btn btn-success">
-                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-                erneut Senden
-              </button>
+              </tr>
 
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-2">
-      <div id="size-lbl" class="control-label">Anzahl pro Seite</div>
-      <div class="btn-toolbar" aria-labelledby="size-lbl" role="toolbar">
-        <div class="btn-group">
-          <a class="btn btn-default active" href="#">25</a>
-          <a class="btn btn-default" href="#">50</a>
-          <a class="btn btn-default" href="#">100</a>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-4">
+          <div id="size-lbl" class="control-label">Anzahl pro Seite</div>
+          <div class="btn-toolbar" aria-labelledby="size-lbl" role="toolbar">
+            <div class="btn-group">
+              <a class="btn btn-default active" href="#">25</a>
+              <a class="btn btn-default" href="#">50</a>
+              <a class="btn btn-default" href="#">100</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-offset-2 col-md-6">
+          <div class="sr-only" id="pagination-lbl">Seitennavigation</div>
+          <ul class="pagination pull-right" aria-labelledby="pagination-lbl">
+
+            <!-- vorherige seite -->
+            <li title="Vorherige Seite" class="disabled">
+              <a href="">«
+                <span class="sr-only"> Vorherige Seite</span>
+              </a>
+            </li>
+
+            <!-- Seite 1 -->
+            <li title="1 Seite" class="active">
+              <a href="#">
+                <span class="sr-only">Seite</span>
+                <span>1</span>
+              </a>
+            </li>
+
+            <!-- Abgrenzung Unten-->
+
+
+            <!-- zwische seiten -->
+            <li>
+              <a href="#">
+                <span class="sr-only">Seite</span>
+                <span>2</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="sr-only">Seite</span>
+                <span>3</span>
+              </a>
+            </li>
+
+            <!-- Abgrenzung Oben-->
+            <li>
+              <a>...</a>
+            </li>
+
+            <!-- letzte seite -->
+            <li>
+              <a href="#">50</a>
+            </li>
+
+            <!-- nächste seite -->
+            <li title="Nächste Seite">
+              <a href="">
+                <span class="sr-only">Nächste Seite </span>»</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="col-md-offset-6 col-md-4">
-      <div class="sr-only" id="pagination-lbl">Seitennavigation</div>
-      <ul class="pagination pull-right" aria-labelledby="pagination-lbl">
 
-        <!-- vorherige seite -->
-        <li title="Vorherige Seite" class="disabled">
-          <a href="">«
-            <span class="sr-only"> Vorherige Seite</span>
-          </a>
-        </li>
-
-        <!-- Seite 1 -->
-        <li title="1 Seite" class="active">
-          <a href="#">
-            <span class="sr-only">Seite</span>
-            <span>1</span>
-          </a>
-        </li>
-
-        <!-- Abgrenzung Unten-->
-
-
-        <!-- zwische seiten -->
-        <li>
-          <a href="#">
-            <span class="sr-only">Seite</span>
-            <span>2</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="sr-only">Seite</span>
-            <span>3</span>
-          </a>
-        </li>
-
-        <!-- Abgrenzung Oben-->
-        <li>
-          <a>...</a>
-        </li>
-
-        <!-- letzte seite -->
-        <li>
-          <a href="#">50</a>
-        </li>
-
-        <!-- nächste seite -->
-        <li title="Nächste Seite">
-          <a href="">
-            <span class="sr-only">Nächste Seite </span>»</a>
-        </li>
-      </ul>
+  </div>
+  <div class="col-md-4 ">
+    <!-- Titel -->
+    <div *ngIf="dbgLevel>0">
+      <div class="row">
+        <div class="col-md-12 ">
+          <h4 class="sr-only1">NM Auftrag </h4>
+          <pre>{{diagnostic}}</pre>
+        </div>
+      </div>
     </div>
   </div>
 </div>

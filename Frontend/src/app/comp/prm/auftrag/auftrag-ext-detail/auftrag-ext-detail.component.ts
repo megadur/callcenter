@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { XBestand } from '../../../../model/x-bestand';
+import { Bestand } from '../../../../model/bestand';
 import { XAuftragService } from '../../../../service/xauftrag.service';
 import { XAuftrag } from '../../../../model/x_auftrag';
 
@@ -13,7 +13,7 @@ import * as myGlobals from '../../../../globals'; //<==== this one
     styleUrls: ['./auftrag-ext-detail.component.css']
 })
 export class AuftragExtDetailComponent implements OnInit {
-    private _xbestand: XBestand;
+    private _bestand: Bestand;
 
     constructor(private aService: XAuftragService, private router: Router) { }
     xauftragList: XAuftrag[];
@@ -25,21 +25,21 @@ export class AuftragExtDetailComponent implements OnInit {
         this.xauftrag = new XAuftrag();
     }
 
-    @Input() set xbestandIn(x: XBestand) {
-        console.log('AuftragExtDetailComponent.xbestandIn: ' + x);
+    @Input() set bestandIn(x: Bestand) {
+        console.log('AuftragExtDetailComponent.bestandIn: ' + x);
 
-        this._xbestand = x;
-        if (this._xbestand) {
-            if (this._xbestand)
-                this.getXAuftragBySoId(this._xbestand.SO_ID);
+        this._bestand = x;
+        if (this._bestand) {
+            if (this._bestand)
+                this.getXAuftragBySoId(this._bestand.SO_ID);
         }
     }
 
-    get xbestandIn() {
-        return this._xbestand;
+    get bestandIn() {
+        return this._bestand;
     }
     getXAuftragBySoId(soid) {
-        console.log('AuftragExtDetailComponent.xbestandIn: ', soid);
+        console.log('AuftragExtDetailComponent.getXAuftragBySoId: ', soid);
         let guid = '';
         let eoid = '';
         this.aService
@@ -48,7 +48,7 @@ export class AuftragExtDetailComponent implements OnInit {
 
     }
     setXAuftragList(x) {
-        console.log('setXAuftragList: ', x);
+        console.log('AuftragExtDetailComponent.setXAuftragList: ', x);
         this.xauftragList = x;
         if (this.xauftragList)
             this.xauftrag = this.xauftragList[0];
@@ -58,7 +58,7 @@ export class AuftragExtDetailComponent implements OnInit {
         let sRet = 'app-auftrag-ext-detail';
         sRet = sRet + '\r\n xauftragList:'; if (this.xauftragList) { sRet = sRet + this.xauftragList.length; }
         sRet = sRet + '\r\n xauftrag:'; if (this.xauftrag) { sRet = sRet + this.xauftrag.EO_ID; }
-        sRet = sRet + '\r\n xbestand:'; if (this._xbestand) { sRet = sRet + this._xbestand.SO_ID; }
+        sRet = sRet + '\r\n bestand:'; if (this._bestand) { sRet = sRet + this._bestand.SO_ID; }
 
         return sRet + ', \r\n';
     }

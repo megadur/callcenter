@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fehler - IDM-Adapter</title>
+    <link rel="stylesheet" type="text/css" href="res/default.css">
+    <link rel="stylesheet" type="text/css" href="res/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="res/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="res/a11ytheme.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="res/select2.css">
+
+    <script type="text/javascript" src="res/js/jquery.js" />
+    </script>
+    <script type="text/javascript" src="res/js/bootstrap.js">
+    </script>
+    <script type="text/javascript" src="res/js/bootstrap-select.js">
+    </script>
+    <script type="text/javascript" src="res/js/application.js">
+    </script>
+    <script type="text/javascript" src="res/js/stockeditor.js">
+    </script>
+    <script type="text/javascript" src="res/js/select2.js">
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.selectpicker').selectpicker({
+                tickIcon: 'glyphicon-ok'
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#includedNavbar").load("navbar.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="includedNavbar"></div>
+
+    <!-- Modal -->
+    <div class="modal fade bs-example-modal-lg" id="ModalStackTrace" tabindex="-1" role="dialog" aria-labelledby="ModalStackTraceLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="ModalStackTraceLabel">INC_TEXT_LONG</h4>
+                </div>
+                <div class="modal-body">
+                    de.proventa.idma.workflow.WorkflowException: Mehrere InidOwner zum Ik 'null' gefunden at de.proventa.idma.workflow.service.fulfillment.complete.SollbestandValidierenService.validate(SollbestandValidierenService.java:70)
+                    at de.proventa.idma.workflow.service.fulfillment.complete.SollbestandValidierenService.validate(SollbestandValidierenService.java:60)
+                    at de.proventa.idma.workflow.service.fulfillment.complete.IdmDiensteberechtigungBereitstellenService.execute(IdmDiensteberechtigungBereitstellenService.java:72)
+                    at de.proventa.idma.workflow.service.BusinessLogicService.executeTx_aroundBody0(BusinessLogicService.java:16)
+                    at de.proventa.idma.workflow.service.BusinessLogicService$AjcClosure1.run(BusinessLogicService.java:1)
+                    at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96cproceed(AbstractTransactionAspect.aj:59)
+                    at org.springframework.transaction.aspectj.AbstractTransactionAspect$AbstractTransactionAspect$1.proceedWithInvocation(AbstractTransactionAspect.aj:65)
+                    at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+                    at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96c(AbstractTransactionAspect.aj:63)
+                    at de.proventa.idma.workflow.service.BusinessLogicService.executeTx(BusinessLogicService.java:15) at
+                    de.proventa.idma.workflow.service.auftragssteuerung.FulfillmentAuftragssteuerung.executeIntAuftrag(FulfillmentAuftragssteuerung.java:310)
+                    at de.proventa.idma.workflow.service.auftragssteuerung.FulfillmentAuftragssteuerung.handle(FulfillmentAuftragssteuerung.java:187)
+                    at de.proventa.idma.processor.FulfillmentProcessor.process(FulfillmentProcessor.java:105) at de.proventa.idma.workflow.transaction.MessageDispatcher.process_aroundBody0(MessageDispatcher.java:68)
+                    at de.proventa.idma.workflow.transaction.MessageDispatcher$AjcClosure1.run(MessageDispatcher.java:1)
+                    at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96cproceed(AbstractTransactionAspect.aj:59)
+                    at org.springframework.transaction.aspectj.AbstractTransactionAspect$AbstractTransactionAspect$1.proceedWithInvocation(AbstractTransactionAspect.aj:65)
+                    at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+                    at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96c(AbstractTransactionAspect.aj:63)
+                    at de.proventa.idma.workflow.transaction.MessageDispatcher.process(MessageDispatcher.java:64) at de.proventa.idma.workflow.transaction.MessageDispatcher.dispatch(MessageDispatcher.java:40)
+                    at sun.reflect.GeneratedMethodAccessor224.invoke(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                    at java.lang.reflect.Method.invoke(Method.java:606) at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:63)
+                    at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95)
+                    at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:44) at org.springframework.expression.spel.ast.MethodReference$MethodValueRef.getValue(MethodReference.java:258)
+                    at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:84)
+                    at org.springframework.expression.spel.ast.SpelNodeImpl.getTypedValue(SpelNodeImpl.java:114) at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:111)
+                    at org.springframework.integration.util.AbstractExpressionEvaluator.evaluateExpression(AbstractExpressionEvaluator.java:144)
+                    at org.springframework.integration.util.MessagingMethodInvokerHelper.processInternal(MessagingMethodInvokerHelper.java:268)
+                    at org.springframework.integration.util.MessagingMethodInvokerHelper.process(MessagingMethodInvokerHelper.java:142)
+                    at org.springframework.integration.handler.MethodInvokingMessageProcessor.processMessage(MethodInvokingMessageProcessor.java:73)
+                    at org.springframework.integration.handler.ServiceActivatingHandler.handleRequestMessage(ServiceActivatingHandler.java:67)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:142)
+                    at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73)
+                    at org.springframework.integration.handler.MessageHandlerChain$1.send(MessageHandlerChain.java:148) at
+                    org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330) at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendMessage(AbstractReplyProducingMessageHandler.java:228)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendReplyMessage(AbstractReplyProducingMessageHandler.java:212)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.produceReply(AbstractReplyProducingMessageHandler.java:177)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleResult(AbstractReplyProducingMessageHandler.java:171)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:149)
+                    at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73)
+                    at org.springframework.integration.handler.MessageHandlerChain.handleMessageInternal(MessageHandlerChain.java:131)
+                    at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73)
+                    at org.springframework.integration.dispatcher.UnicastingDispatcher.doDispatch(UnicastingDispatcher.java:115)
+                    at org.springframework.integration.dispatcher.UnicastingDispatcher.dispatch(UnicastingDispatcher.java:102)
+                    at org.springframework.integration.channel.AbstractSubscribableChannel.doSend(AbstractSubscribableChannel.java:77)
+                    at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:178)
+                    at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:149)
+                    at org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330) at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendMessage(AbstractReplyProducingMessageHandler.java:228)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendReplyMessage(AbstractReplyProducingMessageHandler.java:212)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.produceReply(AbstractReplyProducingMessageHandler.java:177)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleResult(AbstractReplyProducingMessageHandler.java:171)
+                    at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:149)
+                    at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73)
+                    at org.springframework.integration.dispatcher.UnicastingDispatcher.doDispatch(UnicastingDispatcher.java:115)
+                    at org.springframework.integration.dispatcher.UnicastingDispatcher.dispatch(UnicastingDispatcher.java:102)
+                    at org.springframework.integration.channel.AbstractSubscribableChannel.doSend(AbstractSubscribableChannel.java:77)
+                    at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:178)
+                    at org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330) at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169)
+                    at org.springframework.integration.core.MessagingTemplate.convertAndSend(MessagingTemplate.java:215)
+                    at org.springframework.integration.gateway.MessagingGatewaySupport.send(MessagingGatewaySupport.java:184)
+                    at org.springframework.integration.jms.ChannelPublishingJmsMessageListener$GatewayDelegate.send(ChannelPublishingJmsMessageListener.java:442)
+                    at org.springframework.integration.jms.ChannelPublishingJmsMessageListener.onMessage(ChannelPublishingJmsMessageListener.java:291)
+                    at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:537)
+                    at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:497)
+                    at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:468)
+                    at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:325)
+                    at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+                    at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1102)
+                    at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1094)
+                    at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:991)
+                    at java.lang.Thread.run(Thread.java:744)
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" role="main" aria-labelledby="errors">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="sr-only" id="errors">Fehler</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="sr-only">Filter</h2>
+                <script>
+                    $(document).ready(function () {
+                        //        $("#inputEM").mask("88999999");
+                        // add * to required field labels
+                        $('label.required').append('&nbsp;<strong>*</strong>&nbsp;');
+
+                    });
+                </script>
+
+                <form id="content" action="/idma-callcenter/errors" method="get" role="search">
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label for="order" class="control-label  input required">Auftrag (XDM)</label>
+                            <input name="eoId" id="order" class="form-control" required="required" maxlength="100" placeholder="Auftragsnummer eingeben"
+                                value="XDM000000000146" autofocus="autofocus" type="text">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="state" class="control-label">Status</label>
+                            <select id="state" name="filter" class="form-control">
+                                <option value="ALL" selected="selected">Alle</option>
+                                <option value="OPEN">Offen</option>
+                                <option value="CLOSED">Abgeschlossen</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="code-int" class="control-label">Fehlercode</label>
+                            <input name="errorCode" id="code-int" class="form-control" maxlength="10" type="text">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="system" class="control-label">System</label>
+                            <select id="system" name="system" class="form-control" placeholder="??errors.search.system.placeholder_de??">
+                                <option value="" selected="selected">Alle</option>
+                                <option value="IDMA">IDM-Adapter</option>
+                                <option value="PSNT">PSNT</option>
+                                <option value="ZPI">ZPI</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                Suchen
+                            </button>
+
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="collapse" id="collapseExample">
+                            <div class="well">
+                                <table class="table table-grid">
+                                    <caption class="sr-only">Fehler</caption>
+                                    <thead>
+                                        <tr>
+                                            <th id="error-id-th">
+                                                <a class="sort-toggle active" id="error-id" autofocus="autofocus">
+                                                    <span class="caption">ID</span>
+                                                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                        <!--  -->
+                                                    </span>
+                                                    <span class="sr-only">Absteigend sortieren</span>
+                                                </a>
+                                            </th>
+                                            <th id="error-code-int-th">
+                                                <a class="sort-toggle" id="error-code-int">
+                                                    <span class="caption">Fehlercode</span>
+                                                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                        <!--  -->
+                                                    </span>
+
+                                                    <span class="sr-only">Aufsteigend sortieren</span>
+                                                </a>
+                                            </th>
+                                            <th id="error-task-th">
+                                                <a aria-hidden="true" class="sort-toggle" id="error-task">
+                                                    <span class="caption">Task</span>
+                                                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                        <!--  -->
+                                                    </span>
+
+                                                    <span class="sr-only">Aufsteigend sortieren</span>
+                                                </a>
+                                            </th>
+                                            <th id="error-created-th">
+                                                <a aria-hidden="true" class="sort-toggle" id="error-created">
+                                                    <span class="caption">Erzeugt</span>
+                                                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                        <!--  -->
+                                                    </span>
+
+                                                    <span class="sr-only">Aufsteigend sortieren</span>
+                                                </a>
+                                            </th>
+                                            <th id="error-closed-th">
+                                                <a aria-hidden="true" class="sort-toggle" id="error-closed">
+                                                    <span class="caption">Geschlossen</span>
+                                                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                        <!--  -->
+                                                    </span>
+
+                                                    <span class="sr-only">Aufsteigend sortieren</span>
+                                                </a>
+                                            </th>
+                                            <th id="error-system-th">
+                                                <a aria-hidden="true" class="sort-toggle" id="error-system">
+                                                    <span class="caption">System</span>
+                                                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                        <!--  -->
+                                                    </span>
+
+                                                    <span class="sr-only">Aufsteigend sortieren</span>
+                                                </a>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="error-id-th">
+                                                <a class="" role="button" data-toggle="collapse" href="#collapse83105" aria-expanded="false" aria-controls="collapse83105">
+                                                    83105
+                                                </a>
+                                            </td>
+                                            <td headers="error-code-int-th">101</td>
+                                            <td headers="error-task-th"></td>
+                                            <td headers="error-created-th">21. Februar 2017 16:09:20 MEZ</td>
+                                            <td headers="error-closed-th">21. Februar 2017 16:09:20 MEZ</td>
+                                            <td headers="error-system-th">IDMA</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="collapse" id="collapse83105">
+                            <!-- Nummern, Zeiten etc. -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <dl class="dl-horizontal dl-horizontal-left">
+                                        <dt id="error-id-dt">ID</dt>
+                                        <dd aria-labelledby="error-id-dt">83102</dd>
+                                        <dt id="error-system-dt">System</dt>
+                                        <dd aria-labelledby="error-system-dt">IDMA</dd>
+                                        <dt id="error-order-ext-dt">Auftrag (extern)</dt>
+                                        <dd>
+                                            <a aria-labelledby="error-order-ext-dt" href="Aufträge.html">XDM000000000146</a>
+                                        </dd>
+                                        <dt id="error-order-dt">Auftrag (intern)</dt>
+                                        <dd>
+                                            <a aria-labelledby="error-order-dt" href="#"></a>
+                                        </dd>
+                                        <dt id="error-created-dt">Erzeugt</dt>
+                                        <dd aria-labelledby="error-created-dt">21. Februar 2017 16:07:48 MEZ</dd>
+                                        <dt id="error-closed-dt">Abgeschlossen</dt>
+                                        <dd aria-labelledby="error-closed-dt">21. Februar 2017 16:07:48 MEZ</dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <!-- Fehler intern -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="error-int">Interne Fehlermeldung</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <dl class="dl-horizontal dl-horizontal-left">
+                                                <dt id="error-int-code-dt">Fehlercode</dt>
+                                                <dd aria-labelledby="error-int-code-dt">2435</dd>
+                                                <dt id="error-int-text-dt">Meldung</dt>
+                                                <dd aria-labelledby="error-int-message-dt">Es fehlt der Wert '/SubscriberServiceOrderItemSpec/entityKey/keyA' im Produktionsplan.
+                                                </dd>
+                                                <dt>Stacktrace</dt>
+                                                <dd>
+                                                    <!-- Button trigger modal -->
+                                                   <a class="btn btn-primary" role="button" data-toggle="modal" href="#ModalStackTrace" aria-expanded="false" aria-controls="collapseExample">
+                                                        Show ...
+                                                      </a>
+                                                </dd>
+                                           </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fehler extern -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" id="error-ext">Externe Fehlermeldung</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <dl class="dl-horizontal dl-horizontal-left">
+                                                <dt id="error-ext-code-dt">Fehlercode</dt>
+                                                <dd aria-labelledby="error-ext-code-dt"></dd>
+                                                <dt id="error-ext-text-dt">Meldung</dt>
+                                                <dd aria-labelledby="error-ext-message-dt"></dd>
+                                             </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -3,8 +3,8 @@
     <form id="content" (ngSubmit)="onSubmit()" #AuftragForm="ngForm">
       <div class="form-group">
         <label for="search" class="control-label input required">Auftragsnummer</label>
-        <div class="input-group">
-          <input class="form-control" required="required" name="query" id="search" placeholder="Auftragsnummer eingeben" maxlength="100"
+        <div class="input-group col-md-8">
+          <input class="form-control " required="required" name="query" id="search" placeholder="Auftragsnummer eingeben" maxlength="100"
             autofocus="autofocus" type="text" [(ngModel)]="formData.ID" (ngModelChange)="getIdType($event)">
 
           <select [(ngModel)]="formData.selected" name="wert" class="selectpicker">
@@ -20,7 +20,6 @@
               Suchen
             </button>
           </span>
-          <div>selected: {{formData.selected.id}}:{{formData.selected.name}}={{selectedValue}}</div>
         </div>
       </div>
     </form>

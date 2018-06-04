@@ -1,8 +1,7 @@
 import { OnInit, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 
 
-import { XAuftrag } from '../../../../model/x_auftrag';
-
+import { XAuftragExt } from '../../../../model/x_auftrag_ext';
 import { XAuftragService } from '../../../../service/xauftrag.service';
 
 
@@ -17,9 +16,9 @@ import * as myGlobals from '../../../../globals'; //<==== this one
 })
 export class NutzerListeComponent implements OnInit {
 
-    private _nmauftragListIn: XAuftrag[];
-    private _nmauftrag: XAuftrag;
-    @Output() nmauftragOut = new EventEmitter<XAuftrag>();
+    private _xauftragExtListIn: XAuftragExt[];
+    private _xauftragExt: XAuftragExt;
+    @Output() xauftragExtOut = new EventEmitter<XAuftragExt>();
 
     // array of all items to be paged
     // private allItems: any[];
@@ -37,20 +36,20 @@ export class NutzerListeComponent implements OnInit {
         this.dbgLevel = myGlobals.dbgLevel;
     }
 
-    @Input() set nmauftragListIn(x: XAuftrag[]) {
+    @Input() set xauftragExtListIn(x: XAuftragExt[]) {
         if (x) {
-            console.log(this.logHead() +'set nmauftragListIn len ' + x.length);
-            this._nmauftragListIn = x;
-            this.setXAuftrag(x[0]);
+            console.log(this.logHead() +'set xauftragExtListIn len ' + x.length);
+            this._xauftragExtListIn = x;
+            this.setXAuftragExt(x[0]);
             // initialize to page 1
             this.setPage(1);
         }
     }
-    get nmauftragListIn() {
-        console.log(this.logHead() +'get nmauftragListIn');
-        return this._nmauftragListIn;
+    get xauftragExtListIn() {
+        console.log(this.logHead() +'get xauftragListIn');
+        return this._xauftragExtListIn;
     }
-    nmauftragList() {
+    xauftragList() {
         return this.pagedItems;
     }
 
@@ -65,48 +64,51 @@ export class NutzerListeComponent implements OnInit {
         if (page < 1 || page > this.pager.totalPages) {
             return;
         }
-        if (this._nmauftragListIn) {
+        if (this._xauftragExtListIn) {
             // get pager object from service
-            this.pager = this.pagerService.getPager(this._nmauftragListIn.length, page, this.pagesize);
+            this.pager = this.pagerService.getPager(this._xauftragExtListIn.length, page, this.pagesize);
 
             // get current page of items
-            this.pagedItems = this._nmauftragListIn.slice(this.pager.startIndex, this.pager.endIndex + 1);
+            this.pagedItems = this._xauftragExtListIn.slice(this.pager.startIndex, this.pager.endIndex + 1);
         }
     }
 
-    onSelect(x: XAuftrag): void {
+    onSelect(x: XAuftragExt): void {
         console.log(this.logHead() +'onSelect() ' + x.EO_ID);
-        this.setXAuftrag(x);
+        this.setXAuftragExt(x);
         /*
         let k=new XAuftrag();
         k.CAMPAIGN_ID='bitte warten...';
         this.setXAuftrag(k);
-        this.getnmauftrag_ById(x.CAMPAIGN_ID);
+        this.getxauftrag_ById(x.CAMPAIGN_ID);
         */
     }
-    onEditStopp(x: XAuftrag){
+    onEditStopp(x: XAuftragExt){
         console.log(this.logHead()+' onEditStopp: ' + x.EO_ID);
         //this.setXAuftrag(x);
-        // this.getnmauftrag_ById(x.CAMPAIGN_ID);
+        // this.getxauftrag_ById(x.CAMPAIGN_ID);
         
     }
 
-    setXAuftrag(x: XAuftrag) {
+    setXAuftragExt(x: XAuftragExt) {
         console.log(this.logHead() +'setXAuftrag(): ' + x.EO_ID);
-        this._nmauftrag=x;
-        this.nmauftragOut.emit(x);
+        this._xauftragExt=x;
+        this.xauftragExtOut.emit(x);
     }
-    getnmauftrag_ById(soid: string) {
-        console.log(this.logHead() +'getnmauftrag_ById(): ' + soid);
+    /*
+    getxauftrag_ById(soid: string) {
+        console.log(this.logHead() +'getxauftrag_ById(): ' + soid);
         this.kService.getXAuftrag_BySoid(soid)
             .subscribe(x => this.setXAuftrag(x));
     }
-
+*/
     // TODO: Remove this when we're done
     get diagnostic() {
-        let sRet = 'app-nmauftrag-list';
-        sRet = sRet + '\r\n _nmauftragListIn:'; if (this._nmauftragListIn) { sRet = sRet + this._nmauftragListIn.length; }
-        sRet = sRet + '\r\n _nmauftrag:'; if (this._nmauftrag) { sRet = sRet + this._nmauftrag.EO_ID; }
+        let sRet = 'app-nutzer-liste';
+        sRet = sRet + '\r\n _xauftragListIn:'; if (this._xauftragExtListIn) { sRet = sRet + this._xauftragExtListIn.length; }
+        sRet = sRet + '\r\n pagedItems:'; if (this.pagedItems) { sRet = sRet + this.pagedItems.length; }
+        sRet = sRet + '\r\n _xauftrag:'; if (this._xauftragExt) { sRet = sRet + this._xauftragExt.EO_ID; }
+        sRet = sRet + '\r\n _xauftrag:'; if (this._xauftragExt) { sRet = sRet + + JSON.stringify(this._xauftragExt); }
         return sRet + ', \r\n';
     }
     logHead(){

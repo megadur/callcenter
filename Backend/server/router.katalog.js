@@ -34,6 +34,8 @@ router.use(function timeLog(req, res, next) {
 // define the home page route
 router.get('/', function (req, res) {
     let param = {};
+    database.setPool('AB');
+
     /*
     --EM_MATNO, CAPTION, DESCRIPTION, PRODUCT_STATUS, EM_TYPE_ID, INID_TYPE_ID, SUSP_GROUP_ID, IS_DELETED, TS_DELETION, LAST_UPD
     SELECT 
@@ -89,8 +91,8 @@ router.get('/', function (req, res) {
     //sSQL = sSQL + "\n AND rownum <= 11";
     sSQL = sSQL + "\n ORDER BY EM.EM_MATNO";
     //sSQL = sSQL + "\n ;";
-    // log(sSQL);
-    // log('param: ' + JSON.stringify(param));
+     log(sSQL);
+     log('param: ' + JSON.stringify(param));
 
     database.simpleExecute(
             sSQL,
@@ -105,6 +107,7 @@ router.get('/', function (req, res) {
             res.send(results.rows);
         })
         .catch(function (err) {
+            console.log(err);
             next(err);
         });
 
@@ -116,6 +119,7 @@ router.get('/', function (req, res) {
 router.get('/EM/:EM_MATNO', async function (req, res) {
     var emId = generateParams(req, ["params.EM_MATNO"]);
     log('router.get: ' + req.path + ' mit ' + emId);
+    database.setPool('AB');
     var prdem = await getEMDetails_ById(emId, res);
     // log('router.send: ' + JSON.stringify(prdem));
     res.send(prdem);

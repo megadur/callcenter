@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:4200/fehlerbild -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fehlerbild - IDM-Adapter</title>
+    <link rel="stylesheet" type="text/css" href="res/default.css">
+    <link rel="stylesheet" type="text/css" href="res/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="res/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="res/a11ytheme.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="res/select2.css">
+
+    <script type="text/javascript" src="res/js/jquery.js" />
+    </script>
+    <script type="text/javascript" src="res/js/bootstrap.js">
+    </script>
+    <script type="text/javascript" src="res/js/bootstrap-select.js">
+    </script>
+    <script type="text/javascript" src="res/js/application.js">
+    </script>
+    <script type="text/javascript" src="res/js/stockeditor.js">
+    </script>
+    <script type="text/javascript" src="res/js/select2.js">
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.selectpicker').selectpicker({
+                tickIcon: 'glyphicon-ok'
+            });
+        });
+    </script>
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+        /* You can add global styles to this file, and also import other style files */
+    </style>
+    <style></style>
+    <style>
+        .row[_ngcontent-c3] {
+            margin-top: 40px;
+            padding: 0 10px;
+        }
+
+        .clickable[_ngcontent-c3] {
+            cursor: pointer;
+        }
+
+        .panel-heading[_ngcontent-c3] span[_ngcontent-c3] {
+            margin-top: -20px;
+            font-size: 15px;
+        }
+
+        body[_ngcontent-c3] {
+            background-color: aqua;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#includedNavbar").load("navbar.html");
+        });
+    </script>
+</head>
+
+<body>
+    <app-root _nghost-c0="" ng-version="5.2.7">
+        <div id="includedNavbar"></div>
+
+
+        <div class="container-fluid" id="content" role="main">
+            <router-outlet></router-outlet>
+            <app-fehler _nghost-c3="">
+                <div aria-labelledby="Fehlerbild" class="container-fluid" role="main">
+
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" id="error-int">Fehlerfilter</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="col-md-10">
+                                        <app-fehler-filter _nghost-c4="" ng-reflect-fehlerbild-in="[object Object]">
+                                            <div aria-labelledby="regexModalLabel" class="modal fade" id="regexModal" role="dialog" tabindex="-1">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <h4 class="modal-title" id="regexModalLabel">RegEx Evaluation</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-body" id="trText"></div>
+                                                            </div>
+                                                            <input class="form-control " id="trRegex" type="text">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-body" id="trResult"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button onclick="demoShowMatchClick('trText',  'trRegex', 'trResult')" class="btn btn-primary" type="button">Check</button>
+                                                            <button onclick="exitShowMatchClick('trRegex')" class="btn btn-default" data-dismiss="modal" type="button">OK</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div aria-labelledby="myModalLabel" class="modal fade bs-example-modal-lg" id="myModal" role="dialog" tabindex="-1">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <h4 class="modal-title" id="myModalLabel">INC_TEXT_LONG</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            de.proventa.idma.workflow.WorkflowException: Mehrere InidOwner zum Ik 'null' gefunden at de.proventa.idma.workflow.service.fulfillment.complete.SollbestandValidierenService.validate(SollbestandValidierenService.java:70)
+                                                            at de.proventa.idma.workflow.service.fulfillment.complete.SollbestandValidierenService.validate(SollbestandValidierenService.java:60)
+                                                            at de.proventa.idma.workflow.service.fulfillment.complete.IdmDiensteberechtigungBereitstellenService.execute(IdmDiensteberechtigungBereitstellenService.java:72)
+                                                            at de.proventa.idma.workflow.service.BusinessLogicService.executeTx_aroundBody0(BusinessLogicService.java:16)
+                                                            at de.proventa.idma.workflow.service.BusinessLogicService$AjcClosure1.run(BusinessLogicService.java:1)
+                                                            at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96cproceed(AbstractTransactionAspect.aj:59)
+                                                            at org.springframework.transaction.aspectj.AbstractTransactionAspect$AbstractTransactionAspect$1.proceedWithInvocation(AbstractTransactionAspect.aj:65)
+                                                            at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+                                                            at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96c(AbstractTransactionAspect.aj:63)
+                                                            at de.proventa.idma.workflow.service.BusinessLogicService.executeTx(BusinessLogicService.java:15)
+                                                            at de.proventa.idma.workflow.service.auftragssteuerung.FulfillmentAuftragssteuerung.executeIntAuftrag(FulfillmentAuftragssteuerung.java:310)
+                                                            at de.proventa.idma.workflow.service.auftragssteuerung.FulfillmentAuftragssteuerung.handle(FulfillmentAuftragssteuerung.java:187)
+                                                            at de.proventa.idma.processor.FulfillmentProcessor.process(FulfillmentProcessor.java:105)
+                                                            at de.proventa.idma.workflow.transaction.MessageDispatcher.process_aroundBody0(MessageDispatcher.java:68)
+                                                            at de.proventa.idma.workflow.transaction.MessageDispatcher$AjcClosure1.run(MessageDispatcher.java:1)
+                                                            at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96cproceed(AbstractTransactionAspect.aj:59)
+                                                            at org.springframework.transaction.aspectj.AbstractTransactionAspect$AbstractTransactionAspect$1.proceedWithInvocation(AbstractTransactionAspect.aj:65)
+                                                            at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+                                                            at org.springframework.transaction.aspectj.AbstractTransactionAspect.ajc$around$org_springframework_transaction_aspectj_AbstractTransactionAspect$1$2a73e96c(AbstractTransactionAspect.aj:63)
+                                                            at de.proventa.idma.workflow.transaction.MessageDispatcher.process(MessageDispatcher.java:64)
+                                                            at de.proventa.idma.workflow.transaction.MessageDispatcher.dispatch(MessageDispatcher.java:40)
+                                                            at sun.reflect.GeneratedMethodAccessor224.invoke(Unknown Source)
+                                                            at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                                                            at java.lang.reflect.Method.invoke(Method.java:606) at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:63)
+                                                            at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95)
+                                                            at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:44)
+                                                            at org.springframework.expression.spel.ast.MethodReference$MethodValueRef.getValue(MethodReference.java:258)
+                                                            at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:84)
+                                                            at org.springframework.expression.spel.ast.SpelNodeImpl.getTypedValue(SpelNodeImpl.java:114)
+                                                            at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:111)
+                                                            at org.springframework.integration.util.AbstractExpressionEvaluator.evaluateExpression(AbstractExpressionEvaluator.java:144)
+                                                            at org.springframework.integration.util.MessagingMethodInvokerHelper.processInternal(MessagingMethodInvokerHelper.java:268)
+                                                            at org.springframework.integration.util.MessagingMethodInvokerHelper.process(MessagingMethodInvokerHelper.java:142)
+                                                            at org.springframework.integration.handler.MethodInvokingMessageProcessor.processMessage(MethodInvokingMessageProcessor.java:73)
+                                                            at org.springframework.integration.handler.ServiceActivatingHandler.handleRequestMessage(ServiceActivatingHandler.java:67)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:142)
+                                                            at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73)
+                                                            at org.springframework.integration.handler.MessageHandlerChain$1.send(MessageHandlerChain.java:148)
+                                                            at org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330)
+                                                            at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendMessage(AbstractReplyProducingMessageHandler.java:228)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendReplyMessage(AbstractReplyProducingMessageHandler.java:212)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.produceReply(AbstractReplyProducingMessageHandler.java:177)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleResult(AbstractReplyProducingMessageHandler.java:171)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:149)
+                                                            at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73)
+                                                            at org.springframework.integration.handler.MessageHandlerChain.handleMessageInternal(MessageHandlerChain.java:131)
+                                                            at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73)
+                                                            at org.springframework.integration.dispatcher.UnicastingDispatcher.doDispatch(UnicastingDispatcher.java:115)
+                                                            at org.springframework.integration.dispatcher.UnicastingDispatcher.dispatch(UnicastingDispatcher.java:102)
+                                                            at org.springframework.integration.channel.AbstractSubscribableChannel.doSend(AbstractSubscribableChannel.java:77)
+                                                            at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:178)
+                                                            at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:149)
+                                                            at org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330)
+                                                            at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendMessage(AbstractReplyProducingMessageHandler.java:228)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.sendReplyMessage(AbstractReplyProducingMessageHandler.java:212)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.produceReply(AbstractReplyProducingMessageHandler.java:177)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleResult(AbstractReplyProducingMessageHandler.java:171)
+                                                            at org.springframework.integration.handler.AbstractReplyProducingMessageHandler.handleMessageInternal(AbstractReplyProducingMessageHandler.java:149)
+                                                            at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:73)
+                                                            at org.springframework.integration.dispatcher.UnicastingDispatcher.doDispatch(UnicastingDispatcher.java:115)
+                                                            at org.springframework.integration.dispatcher.UnicastingDispatcher.dispatch(UnicastingDispatcher.java:102)
+                                                            at org.springframework.integration.channel.AbstractSubscribableChannel.doSend(AbstractSubscribableChannel.java:77)
+                                                            at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:178)
+                                                            at org.springframework.integration.core.MessagingTemplate.doSend(MessagingTemplate.java:330)
+                                                            at org.springframework.integration.core.MessagingTemplate.send(MessagingTemplate.java:169)
+                                                            at org.springframework.integration.core.MessagingTemplate.convertAndSend(MessagingTemplate.java:215)
+                                                            at org.springframework.integration.gateway.MessagingGatewaySupport.send(MessagingGatewaySupport.java:184)
+                                                            at org.springframework.integration.jms.ChannelPublishingJmsMessageListener$GatewayDelegate.send(ChannelPublishingJmsMessageListener.java:442)
+                                                            at org.springframework.integration.jms.ChannelPublishingJmsMessageListener.onMessage(ChannelPublishingJmsMessageListener.java:291)
+                                                            at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:537)
+                                                            at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:497)
+                                                            at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:468)
+                                                            at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:325)
+                                                            at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:263)
+                                                            at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1102)
+                                                            at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1094)
+                                                            at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:991)
+                                                            at java.lang.Thread.run(Thread.java:744)
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class=" row">
+                                                <form class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">Fehlerbild</div>
+                                                        <div class="panel-body">
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="errorname">Name</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="errorname"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('SO_TYPE_ID_TEXT', 'SO_TYPE_ID')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">Auftrag</div>
+                                                        <div class="panel-body">
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="SO_TYPE_ID_TEXT">SO_TYPE_ID</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="SO_TYPE_ID_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('SO_TYPE_ID_TEXT', 'SO_TYPE_ID')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="STATUS_TEXT">Status</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="STATUS_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="FLT_STATUS" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('STATUS_TEXT', 'STATUS')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="SPECIAL_ORDER_FLAG_ID_TEXT">SOF</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="SPECIAL_ORDER_FLAG_ID_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('SPECIAL_ORDER_FLAG_ID_TEXT', 'SPECIAL_ORDER_FLAG_ID')" class="btn btn-primary  pull-right"
+                                                                        data-target="#regexModal" data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">Error</div>
+                                                        <div class="panel-body">
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="INC_TEXT_SHORT_TEXT">INC_TEXT_SHORT</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="INC_TEXT_SHORT_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('INC_TEXT_SHORT_TEXT', 'INC_TEXT_SHORT')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="INC_TEXT_LONG_TEXT">INC_TEXT_LONG</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="INC_TEXT_LONG_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('INC_TEXT_LONG_TEXT', 'INC_TEXT_LONG')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="CODE_INT_TEXT">CODE_INT</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="CODE_INT_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control ng-untouched ng-pristine ng-valid" name="CODE_INT" type="text" ng-reflect-name="CODE_INT">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('CODE_INT_TEXT', 'CODE_INT')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="CODE_EXT_TEXT">CODE_EXT</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="CODE_EXT_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('CODE_EXT_TEXT', 'CODE_EXT')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="CODE_SYS_TEXT">CODE_SYSs</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="CODE_SYS_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control ng-untouched ng-pristine ng-valid" name="FLT_CODE_SYS" type="text" ng-reflect-name="FLT_CODE_SYS"
+                                                                        ng-reflect-model="IDMA">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('CODE_SYS_TEXT', 'CODE_SYS')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="TASK_TEXT">TASK</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="TASK_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('TASK_TEXT', 'TASK')" class="btn btn-primary  pull-right" data-target="#regexModal" data-toggle="modal"
+                                                                        type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="TEXT_INT_TEXT">TEXT_INT</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="TEXT_INT_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('TEXT_INT_TEXT', 'TEXT_INT')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label text-right" for="TEXT_EXT_TEXT">TEXT_EXT</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="TEXT_EXT_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="NAME" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('TEXT_EXT_TEXT', 'TEXT_EXT')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-md-2  text-right">
+                                                                    <label class="contol-label" for="HANDLING_TEXT">HANDLING</label>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-control-static" id="HANDLING_TEXT"></div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input class="form-control" id="FLT_HANDLING" type="text">
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <span class="button-checkbox pull-right">
+                                                                        <button class="btn" data-color="primary" type="button">
+                                                                            <i class="glyphicon glyphicon-wrench"></i>
+                                                                        </button>
+                                                                        <input class="hidden" type="checkbox">
+                                                                    </span>
+                                                                    <button onclick="initShowMatchClick('HANDLING_TEXT', 'HANDLING')" class="btn btn-primary  pull-right" data-target="#regexModal"
+                                                                        data-toggle="modal" type="button">
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="col-md-2">
+                                                            <label class="contol-label text-right" for="Buttons_TEXT"></label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label class="checkbox-inline pull-right">
+                                                                <input id="inlineCheckbox1" type="checkbox" value="option1"> Halten</label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <button class="btn btn-primary " type="button">
+                                                                <span aria-hidden="true" class="glyphicon glyphicon-filter"></span>Instanzen</button>
+                                                            <button class="btn btn-primary " type="button">
+                                                                <span aria-hidden="true" class="glyphicon glyphicon-filter"></span>Bilder</button>
+                                                            <button class="btn btn-default pull-right" onclick="" type="button"> Neu! </button>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <button aria-controls="collapseFBD" aria-expanded="true" class="btn btn-success pull-right" data-target="#collapseFBD" data-toggle="collapse"
+                                                                type="button">
+                                                                Editieren...
+                                                            </button>
+                                                            <div id="DelError"></div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </app-fehler-filter>
+                                    </div>
+                                    <div class="collapse in" id="collapseFBD" aria-expanded="true">
+                                        <div class="col-md-2 well">
+                                            <app-fehlerbild-def _nghost-c5="" ng-reflect-fehlerbild-in="[object Object]">
+                                                <form id="FehlerDefForm" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                                                    <div class="form-group ">
+                                                        <label class="control-label" for="FBSTATUS">Status</label>
+                                                        <select class="form-control ng-untouched ng-pristine ng-valid" id="FBSTATUS" name="FBSTATUS" ng-reflect-name="FBSTATUS" ng-reflect-model="">
+                                                            <option selected="selected" value="ALL" ng-reflect-value="ALL">Alle</option>
+                                                            <option value="aktiv" ng-reflect-value="aktiv">aktiv</option>
+                                                            <option value="inaktiv" ng-reflect-value="inaktiv">inaktiv</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="" for="FB_SYMPTOM">Symptom</label>
+                                                        <input class="form-control ng-untouched ng-pristine ng-valid" id="FB_SYMPTOM" name="FB_SYMPTOM" placeholder="000000000000000"
+                                                            type="text" ng-reflect-name="FB_SYMPTOM" ng-reflect-model="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="" for="FB_LOESUNG">NIMBUS-Lösung</label>
+                                                        <input class="form-control ng-untouched ng-pristine ng-valid" id="FB_LOESUNG" name="FB_LOESUNG" placeholder="NIMPL0000000000"
+                                                            type="text" ng-reflect-name="FB_LOESUNG" ng-reflect-model="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="" for="FB_PRIO">Priorität</label>
+                                                        <input class="form-control ng-untouched ng-pristine ng-valid" id="FB_PRIO" name="FB_PRIO" type="text" ng-reflect-name="FB_PRIO"
+                                                            ng-reflect-model="999">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="" for="FB_AUSLOESER">Auslöser</label>
+                                                        <textarea class="form-control ng-untouched ng-pristine ng-valid" id="FB_AUSLOESER" name="FB_AUSLOESER" rows="2" ng-reflect-name="FB_AUSLOESER"
+                                                            ng-reflect-model=""></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="" for="FB_BESCHREIBUNG">Beschreibung</label>
+                                                        <textarea class="form-control ng-untouched ng-pristine ng-valid" id="FB_BESCHREIBUNG" name="FB_BESCHREIBUNG" rows="4" ng-reflect-name="FB_BESCHREIBUNG"
+                                                            ng-reflect-model=""></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label input required" for="Fehlerbild">Nummer</label>
+                                                        <div class="input-group" id="FehlerbildDef" name="FehlerbildDef">
+                                                            <div class="input-group-addon">04</div>
+                                                            <input class="form-control ng-untouched ng-pristine ng-valid" id="Fehlerbild" name="Fehlerbild" type="text" ng-reflect-name="Fehlerbild"
+                                                                ng-reflect-model="04undefined000000001">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="" for="FBSAVE"></label>
+                                                        <div class="input-group">
+                                                            <button class="btn btn-primary" id="FBSAVE" name="FBSAVE" type="submit">
+                                                                <span aria-hidden="true" class="glyphicon glyphicon-floppy-saved"></span> Save!</button>
+                                                            <button class="btn btn-danger" id="FB_DELETE" name="FB_DELETE" type="button">
+                                                                <span aria-hidden="true" class="glyphicon glyphicon-floppy-remove"></span> Delete!</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="input-group">
+                                                </div>
+                                            </app-fehlerbild-def>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 well well-sm">
+                            <p>1. Filtern</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10">
+
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active" role="presentation">
+                                    <a aria-controls="FI" data-toggle="tab" href="http://localhost:4200/#FI" role="tab">Fehlerinstanz
+                                        <span class="badge">10</span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a aria-controls="FB" data-toggle="tab" href="http://localhost:4200/#FB" role="tab">Fehlerbild
+                                        <span class="badge">5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 well well-sm">
+                            <p>1. Einstieg</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="FI" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <app-fehlerinst-search _nghost-c6="" ng-reflect-xerror-list-in="[object Object],[object Object">
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading clearfix">
+                                                <div class="pull-left" style="padding-top: 7.5px;">Fehlerinstanz-Suche</div>
+                                                <div class="pull-right">
+                                                    <label for="accordiontoggle-fehlerinst-search">&nbsp;&nbsp;</label>
+                                                    <a aria-expanded="false" class="accordion-toggle pull-right" data-toggle="collapse" href="http://localhost:4200/#fehlerinst-search"
+                                                        id="accordiontoggle-fehlerinst-search"></a>
+                                                </div>
+                                            </div>
+                                            <div class="collapse" id="fehlerinst-search">
+                                                <div class="panel-body col-md-12">
+                                                    <form class="form-horizontal ng-untouched ng-pristine ng-valid" id="FehlerSearchForm" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label  col-md-4" for="order">XDM</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control ng-untouched ng-pristine ng-valid" id="eoId" name="eoId" placeholder="Auftragsnummer eingeben"
+                                                                            required="" type="text" ng-reflect-required="required"
+                                                                            ng-reflect-name="eoId" ng-reflect-model="EO_ID">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group ">
+                                                                    <label class="control-label col-md-4" for="ZeitVon">von</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control " disabled="" id="ZeitVon" name="ZeitVon" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group ">
+                                                                    <label class="control-label col-md-4" for="ZeitBis">bis</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control " disabled="" id="ZeitBis" name="ZeitBis" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group ">
+                                                                    <label class="control-label col-md-4" for="Zeitraum">Zeitraum</label>
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control" disabled="" id="Zeitraum" name="Zeitraum" placeholder="??errors.search.system.placeholder_de??">
+                                                                            <option selected="selected" value="" ng-reflect-value="">Erzeugt</option>
+                                                                            <option value="E1" ng-reflect-value="E1">Erzeugt</option>
+                                                                            <option value="E2" ng-reflect-value="E2">geschlossen</option>
+                                                                            <option value="E3" ng-reflect-value="E3">Erstellt</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group ">
+                                                                    <label class="control-label col-md-4" for="sb">.</label>
+                                                                    <div class="col-sm-8">
+                                                                        <button class="btn btn-success " id="sb" type="submit">Submit</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </app-fehlerinst-search>
+                                </div>
+                                <div class="col-md-2 well well-sm">
+                                    <p>3xx</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <app-fehlerinst-list _nghost-c7="" ng-reflect-xerror-list-in="[object Object],[object Object">
+
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">FehlerListe</div>
+                                                <div class="panel-body ">
+                                                    <div class="col-md-12">
+                                                        <table class="table table-grid">
+                                                            <caption class="sr-only">FehlerListe</caption>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th id="error-id-th">
+                                                                        <a autofocus="autofocus" class="sort-toggle active" href="http://localhost:4200/#" id="error-id">
+                                                                            <span class="caption">ID</span>
+                                                                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-up">
+                                                                            </span>
+                                                                            <span class="sr-only">Absteigend sortieren</span>
+                                                                        </a>
+                                                                    </th>
+                                                                    <th id="error-code-int-th">
+                                                                        <a class="sort-toggle" href="http://localhost:4200/#" id="error-code-int">
+                                                                            <span class="caption">CODE_INT</span>
+                                                                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-up">
+                                                                            </span>
+                                                                            <span class="sr-only">Aufsteigend sortieren</span>
+                                                                        </a>
+                                                                    </th>
+                                                                    <th id="error-task-th">
+                                                                        <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-task">
+                                                                            <span class="caption">SO_TYPE_ID</span>
+                                                                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-up">
+                                                                            </span>
+                                                                            <span class="sr-only">Aufsteigend sortieren</span>
+                                                                        </a>
+                                                                    </th>
+                                                                    <th id="error-created-th">
+                                                                        <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-created">
+                                                                            <span class="caption">STATUS</span>
+                                                                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-up">
+                                                                            </span>
+                                                                            <span class="sr-only">Aufsteigend sortieren</span>
+                                                                        </a>
+                                                                    </th>
+                                                                    <th id="error-closed-th">
+                                                                        <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-closed">
+                                                                            <span class="caption">SYS</span>
+                                                                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-up">
+                                                                            </span>
+                                                                            <span class="sr-only">Aufsteigend sortieren</span>
+                                                                        </a>
+                                                                    </th>
+                                                                    <th id="error-system-th">
+                                                                        <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-system">
+                                                                            <span class="caption">TS_CREATED</span>
+                                                                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-up">
+                                                                            </span>
+                                                                            <span class="sr-only">Aufsteigend sortieren</span>
+                                                                        </a>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <td headers="error-id-th">
+                                                                        <a routerlink="/fehlerbild" ng-reflect-router-link="/fehlerbild" href="http://localhost:4200/fehlerbild">
+                                                                            <span class="badge">123036</span>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td headers="error-code-int-th">5003</td>
+                                                                    <td headers="error-created-th"></td>
+                                                                    <td headers="error-task-th"></td>
+                                                                    <td headers="error-system-th">IDMA</td>
+                                                                    <td headers="error-closed-th"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td headers="error-id-th">
+                                                                        <a routerlink="/fehlerbild" ng-reflect-router-link="/fehlerbild" href="http://localhost:4200/fehlerbild">
+                                                                            <span class="badge">123038</span>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td headers="error-code-int-th">1805</td>
+                                                                    <td headers="error-created-th"></td>
+                                                                    <td headers="error-task-th"></td>
+                                                                    <td headers="error-system-th">IDMA</td>
+                                                                    <td headers="error-closed-th"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td headers="error-id-th">
+                                                                        <a routerlink="/fehlerbild" ng-reflect-router-link="/fehlerbild" href="http://localhost:4200/fehlerbild">
+                                                                            <span class="badge">123042</span>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td headers="error-code-int-th">5037</td>
+                                                                    <td headers="error-created-th">Standardbuchung</td>
+                                                                    <td headers="error-task-th">Error in Completion</td>
+                                                                    <td headers="error-system-th">IDMA</td>
+                                                                    <td headers="error-closed-th">2018-01-31T13:45:27.505Z</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="control-label" id="size-lbl">Anzahl pro Seite</div>
+
+                                                        <ul aria-labelledby="size-lbl" class="pagination">
+                                                            <li>
+                                                                <a>5</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>15</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>25</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="pull-right">
+                                                            <div class="control-label" for="flpages"> &nbsp;</div>
+
+                                                            <div id="flpages"></div>
+                                                            <div id="flpages"></div>
+                                                            <div id="flpages"></div>
+
+
+                                                            <ul class="pagination">
+                                                                <li class="disabled" ng-reflect-ng-class="[object Object]">
+                                                                    <a>First</a>
+                                                                </li>
+                                                                <li class="disabled" ng-reflect-ng-class="[object Object]">
+                                                                    <a>Previous</a>
+                                                                </li>
+
+                                                                <li class="active" ng-reflect-ng-class="[object Object]">
+                                                                    <a>1</a>
+                                                                </li>
+                                                                <li ng-reflect-ng-class="[object Object]">
+                                                                    <a>2</a>
+                                                                </li>
+                                                                <li ng-reflect-ng-class="[object Object]">
+                                                                    <a>3</a>
+                                                                </li>
+                                                                <li ng-reflect-ng-class="[object Object]">
+                                                                    <a>4</a>
+                                                                </li>
+                                                                <li ng-reflect-ng-class="[object Object]">
+                                                                    <a>Next</a>
+                                                                </li>
+                                                                <li ng-reflect-ng-class="[object Object]">
+                                                                    <a>Last</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </app-fehlerinst-list>
+                                    </div>
+                                    <div class="col-md-2 well well-sm">
+                                        <p>3a. Die Filterergebnisse werden angezeigt</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="FB" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <app-fehlerbild-search _nghost-c8="" ng-reflect-fehlerbild-list-in="[object Object],[object Object">
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading clearfix">
+                                                <div class="pull-left" style="padding-top: 7.5px;">Fehlerbild-Suche</div>
+                                                <div class="pull-right">
+                                                    <label for="accordiontoggle-fehlerbild-search">&nbsp;&nbsp;</label>
+                                                    <a aria-expanded="false" class="accordion-toggle pull-right" data-toggle="collapse" href="http://localhost:4200/#fehlerbild-search"
+                                                        id="accordiontoggle-fehlerbild-search"></a>
+                                                </div>
+                                            </div>
+                                            <div class="collapse" id="fehlerbild-search">
+                                                <div class="panel-body col-md-12">
+                                                    <form class="form-horizontal ng-untouched ng-pristine ng-valid" id="FehlerbildSuchForm" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputBILDNUMMER">Bild</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control ng-untouched ng-pristine ng-valid" id="inputBILDNUMMER" name="inputBILDNUMMER" placeholder="BILDNUMMER"
+                                                                            type="text" ng-reflect-name="inputBILDNUMMER" ng-reflect-model="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputSTATUS">STATUS</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control ng-untouched ng-pristine ng-valid" id="inputSTATUS" name="inputSTATUS" placeholder="STATUS" type="text"
+                                                                            ng-reflect-name="inputSTATUS" ng-reflect-model="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputLOESUNG">LOESUNG</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control" id="inputLOESUNG" placeholder="LOESUNG" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputPRIO">PRIO</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control" id="inputPRIO" placeholder="PRIO" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputSYMPTOM">SYMPTOM</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control" id="inputSYMPTOM" placeholder="SYMPTOM" type="text">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputAUSLOESER">AUSLOESER</label>
+                                                                    <div class="col-sm-8">
+                                                                        <textarea class="form-control ng-untouched ng-pristine ng-valid" id="inputAUSLOESER" name="inputAUSLOESER" placeholder="AUSLOESER"
+                                                                            rows="2" ng-reflect-name="inputAUSLOESER" ng-reflect-model=""></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputBESCHREIBUNG">BESCHREIBUNG</label>
+                                                                    <div class="col-sm-8">
+                                                                        <textarea class="form-control ng-untouched ng-pristine ng-valid" id="inputBESCHREIBUNG" name="inputBESCHREIBUNG" placeholder="BESCHREIBUNG"
+                                                                            rows="2" ng-reflect-name="inputBESCHREIBUNG" ng-reflect-model=""></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputERSTELLT_TS">ERSTELLT_TS</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control" id="inputERSTELLT_TS" placeholder="ERSTELLT_TS" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputGEAENDERT_TS">GEAENDERT_TS</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input class="form-control" id="inputGEAENDERT_TS" placeholder="GEAENDERT_TS" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-4 control-label" for="inputAction">Action</label>
+                                                                    <div class="col-sm-8">
+                                                                        <button class="btn btn-primary" id="Action" type="button">
+                                                                            Suchen
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </app-fehlerbild-search>
+                                </div>
+                                <div class="col-md-2 well">
+                                    <p>3xxt</p>
+                                </div>
+
+                                <div class="col-md-10 ">
+                                    <app-fehlerbild-list _nghost-c9="" ng-reflect-fehlerbild-list-in="[object Object],[object Object">
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" id="error-int">Fehlerfilter</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-md-10">
+                                                    <table class="table table-grid">
+                                                        <caption class="sr-only">FehlerBildListe</caption>
+                                                        <thead>
+                                                            <tr>
+                                                                <th id="error-id-th">
+                                                                    <a autofocus="autofocus" class="sort-toggle active" href="http://localhost:4200/#" id="error-id">
+                                                                        <span class="caption">BILDNUMMER</span>
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span>
+                                                                        <span class="sr-only">Absteigend sortieren</span>
+                                                                    </a>
+                                                                </th>
+                                                                <th id="error-code-int-th">
+                                                                    <a class="sort-toggle" href="http://localhost:4200/#" id="error-code-int">
+                                                                        <span class="caption">SO_TYPE_ID</span>
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span>
+                                                                        <span class="sr-only">Aufsteigend sortieren</span>
+                                                                    </a>
+                                                                </th>
+                                                                <th id="error-task-th">
+                                                                    <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-task">
+                                                                        <span class="caption">CODE_INT</span>
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span>
+                                                                        <span class="sr-only">Aufsteigend sortieren</span>
+                                                                    </a>
+                                                                </th>
+                                                                <th id="error-created-th">
+                                                                    <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-created">
+                                                                        <span class="caption">BESCHREIBUNG</span>
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span>
+                                                                        <span class="sr-only">Aufsteigend sortieren</span>
+                                                                    </a>
+                                                                </th>
+                                                                <th id="error-closed-th">
+                                                                    <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-closed">
+                                                                        <span class="caption">AUSLOESER</span>
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span>
+                                                                        <span class="sr-only">Aufsteigend sortieren</span>
+                                                                    </a>
+                                                                </th>
+                                                                <th id="error-system-th">
+                                                                    <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-system">
+                                                                        <span class="caption">PRIO</span>
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span>
+                                                                        <span class="sr-only">Aufsteigend sortieren</span>
+                                                                    </a>
+                                                                </th>
+                                                                <th id="error-system-th">
+                                                                    <a aria-hidden="true" class="sort-toggle" href="http://localhost:4200/#" id="error-system">
+                                                                        <span class="caption">ERSTELLT_TS</span>
+                                                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span>
+                                                                        <span class="sr-only">Aufsteigend sortieren</span>
+                                                                    </a>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <a routerlink="/fehlerbild" ng-reflect-router-link="/fehlerbild" href="http://localhost:4200/fehlerbild">
+                                                                        <span class="badge">1</span>
+                                                                    </a>
+                                                                </td>
+                                                                <td>BILDNUMMER01</td>
+                                                                <td>FLT_SO_TYPE_ID01</td>
+                                                                <td>FLT_CODE_INT01</td>
+                                                                <td>BESCHREIBUNG01</td>
+                                                                <td>AUSLOESER01</td>
+                                                                <td>PRIO01</td>
+                                                                <td>ERSTELLT_TS01</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <a routerlink="/fehlerbild" ng-reflect-router-link="/fehlerbild" href="http://localhost:4200/fehlerbild">
+                                                                        <span class="badge">2</span>
+                                                                    </a>
+                                                                </td>
+                                                                <td>BILDNUMMER02</td>
+                                                                <td>FLT_SO_TYPE_ID02</td>
+                                                                <td>FLT_CODE_INT02</td>
+                                                                <td>BESCHREIBUNG02</td>
+                                                                <td>AUSLOESER02</td>
+                                                                <td>PRIO02</td>
+                                                                <td>ERSTELLT_TS02</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <a routerlink="/fehlerbild" ng-reflect-router-link="/fehlerbild" href="http://localhost:4200/fehlerbild">
+                                                                        <span class="badge">3</span>
+                                                                    </a>
+                                                                </td>
+                                                                <td>BILDNUMMER03</td>
+                                                                <td>FLT_SO_TYPE_ID03</td>
+                                                                <td>FLT_CODE_INT03</td>
+                                                                <td>BESCHREIBUNG03</td>
+                                                                <td>AUSLOESER03</td>
+                                                                <td>PRIO03</td>
+                                                                <td>ERSTELLT_TS03</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="control-label" for="size-lbl">Anzahl pro Seite</div>
+
+                                                    <ul aria-labelledby="size-lbl" class="pagination" id="size-lbl">
+                                                        <li>
+                                                            <a>5</a>
+                                                        </li>
+                                                        <li>
+                                                            <a>15</a>
+                                                        </li>
+                                                        <li>
+                                                            <a>25</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="pull-right">
+                                                        <div class="control-label" for="fblpages"> &nbsp;</div>
+
+
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+
+
+                                                        <ul class="pagination" id="fblpages">
+                                                            <li class="disabled" ng-reflect-ng-class="[object Object]">
+                                                                <a>First</a>
+                                                            </li>
+                                                            <li class="disabled" ng-reflect-ng-class="[object Object]">
+                                                                <a>Previous</a>
+                                                            </li>
+
+                                                            <li class="active" ng-reflect-ng-class="[object Object]">
+                                                                <a>1</a>
+                                                            </li>
+                                                            <li ng-reflect-ng-class="[object Object]">
+                                                                <a>2</a>
+                                                            </li>
+                                                            <li ng-reflect-ng-class="[object Object]">
+                                                                <a>Next</a>
+                                                            </li>
+                                                            <li ng-reflect-ng-class="[object Object]">
+                                                                <a>Last</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h1 class="sr-only" id="errors">Fehler</h1>
+                                            </div>
+                                        </div>
+                                    </app-fehlerbild-list>
+                                </div>
+                                <div class="col-md-2 well">
+                                    <p>3b. Die Fehlerbild Filterergebnisse werden zur Vorauswahl angezeigt</p>
+                                </div>
+                                <div class="col-md-10 ">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Fehlerbild Export/Import</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="form-group ">
+                                                <label class="control-label" for="ZeitBis">CSV Datei</label>
+                                                <button class="btn " type="button">
+                                                    Export
+                                                </button>
+                                                <button class="btn " type="button">
+                                                    Import
+                                                </button>
+                                                <span class="help-block" id="helpBlock">Die Liste kann exportiert und importiert werden.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 well">
+                                    <p>3c. um mit Excel weiter auszuwerten.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="collapse" id="collapseFBL">
+                            <app-fehlerinst-search _nghost-c6="" ng-reflect-xerror-list-in="[object Object],[object Object">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading clearfix">
+                                        <div class="pull-left" style="padding-top: 7.5px;">Fehlerinstanz-Suche</div>
+                                        <div class="pull-right">
+                                            <label for="accordiontoggle-fehlerinst-search">&nbsp;&nbsp;</label>
+                                            <a aria-expanded="false" class="accordion-toggle pull-right" data-toggle="collapse" href="http://localhost:4200/#fehlerinst-search"
+                                                id="accordiontoggle-fehlerinst-search"></a>
+                                        </div>
+                                    </div>
+                                    <div class="collapse" id="fehlerinst-search">
+                                        <div class="panel-body col-md-12">
+                                            <form class="form-horizontal ng-untouched ng-pristine ng-valid" id="FehlerSearchForm" novalidate="">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label  col-md-4" for="order">XDM</label>
+                                                            <div class="col-sm-8">
+                                                                <input class="form-control ng-untouched ng-pristine ng-valid" id="eoId" name="eoId" placeholder="Auftragsnummer eingeben"
+                                                                    required="" type="text" ng-reflect-required="required" ng-reflect-name="eoId"
+                                                                    ng-reflect-model="EO_ID">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group ">
+                                                            <label class="control-label col-md-4" for="ZeitVon">von</label>
+                                                            <div class="col-sm-8">
+                                                                <input class="form-control " disabled="" id="ZeitVon" name="ZeitVon" type="text">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="control-label col-md-4" for="ZeitBis">bis</label>
+                                                            <div class="col-sm-8">
+                                                                <input class="form-control " disabled="" id="ZeitBis" name="ZeitBis" type="text">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="control-label col-md-4" for="Zeitraum">Zeitraum</label>
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control" disabled="" id="Zeitraum" name="Zeitraum" placeholder="??errors.search.system.placeholder_de??">
+                                                                    <option selected="selected" value="" ng-reflect-value="">Erzeugt</option>
+                                                                    <option value="E1" ng-reflect-value="E1">Erzeugt</option>
+                                                                    <option value="E2" ng-reflect-value="E2">geschlossen</option>
+                                                                    <option value="E3" ng-reflect-value="E3">Erstellt</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group ">
+                                                            <label class="control-label col-md-4" for="sb">.</label>
+                                                            <div class="col-sm-8">
+                                                                <button class="btn btn-success " id="sb" type="submit">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </app-fehlerinst-search>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="collapse" id="collapseFBDR">
+                            <app-fehlerinst-detail _nghost-c10="">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!--bindings={}-->
+                                    </div>
+                                </div>
+                            </app-fehlerinst-detail>
+                        </div>
+                    </div>
+                </div>
+            </app-fehler>
+        </div>
+    </app-root>
+    <script type="text/javascript" src="./DFE_files/inline.bundle.js.Download"></script>
+    <script type="text/javascript" src="./DFE_files/polyfills.bundle.js.Download"></script>
+    <script type="text/javascript" src="./DFE_files/styles.bundle.js.Download"></script>
+    <script type="text/javascript" src="./DFE_files/vendor.bundle.js.Download"></script>
+    <script type="text/javascript" src="./DFE_files/main.bundle.js.Download"></script>
+
+</body>
+
+</html>

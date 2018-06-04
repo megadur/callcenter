@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>EM - IDM-Adapter</title>
+  <link rel="stylesheet" type="text/css" href="res/default.css">
+  <link rel="stylesheet" type="text/css" href="res/bootstrap-select.css">
+  <link rel="stylesheet" type="text/css" href="res/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="res/a11ytheme.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="res/select2.css">
+
+  <script type="text/javascript" src="res/js/jquery.js"/>
+  </script>
+  <script type="text/javascript" src="res/js/bootstrap.js">
+  </script>
+  <script type="text/javascript" src="res/js/bootstrap-select.js">
+  </script>
+  <script type="text/javascript" src="res/js/application.js">
+  </script>
+  <script type="text/javascript" src="res/js/stockeditor.js">
+  </script>
+  <script type="text/javascript" src="res/js/select2.js">
+  </script>
+
+  <script type="text/javascript">
+    $(function () {
+      $('.selectpicker').selectpicker({
+        tickIcon: 'glyphicon-ok'
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      $("#includedNavbar").load("navbar.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="includedNavbar"></div>
+
+
+  <h1 class="sr-only" id="em">Einzelmodul</h1>
+
+  <!-- Titel und Beschreibung -->
+  <div id="content" class="container-fluid" role="main" aria-labelledby="em">
+    <div class="row">
+      <div class="col-md-10">
+        <h2 id="title">EM_2./3.MSN_BEI_IP-AS_ISI</h2>
+        <p>EM_2./3.MSN_BEI_IP-AS_ISI</p>
+      </div>
+    </div>
+
+    <!-- Attribute -->
+    <div class="row">
+      <div class="col-md-4">
+        <dl class="dl-horizontal dl-horizontal-left dl-horizontal-gap-lg">
+          <dt id="catalog-em-dt">ID</dt>
+          <dd aria-labelledby="catalog-em-dt">88216906</dd>
+          <dt id="catalog-type-dt">Typ</dt>
+          <dd aria-labelledby="catalog-type-dt">Premium Service</dd>
+          <dt id="catalog-inid-dt">INID-Typ</dt>
+          <dd aria-labelledby="catalog-inid-dt">VoIP (IP-One-Kenner)</dd>
+          <dt id="catalog-requires-ik-dt">Benötigt Instanzkenner</dt>
+
+          <dd aria-labelledby="catalog-requires-ik-dt">Nein</dd>
+          <dt id="catalog-multiple-inids-allowed-dt">Mehrere INIDs erlaubt</dt>
+
+          <dd aria-labelledby="catalog-multiple-inids-allowed-dt">Nein</dd>
+          <dt id="catalog-keep-alive-dt">Keep-Alive</dt>
+
+          <dd aria-labelledby="catalog-keep-alive-dt">Nein</dd>
+        </dl>
+      </div>
+      <div class="col-md-4">
+        <dl class="dl-horizontal dl-horizontal-left dl-horizontal-gap-lg">
+          <dt id="catalog-rules-dt">Regeln</dt>
+          <dd aria-labelledby="catalog-rules-dt">
+            <ul class="list-unstyled">
+              <li>AutoRemove bei ISPWegf erlaubt</li>
+              <li>nicht für Nachladung relevant</li>
+              <li>enthält Rufnummer</li>
+              <li>benötigt INID</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+
+    <!-- LSI-Attribute -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3>LSI-Attribute</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 max-height-500">
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+          <li class="active">
+            <a role="tab" data-toggle="pill" href="#lsi-4">Rufnummer 2. MSN</a>
+          </li>
+          <li>
+            <a role="tab" data-toggle="pill" href="#lsi-5">Rufnummer 3. MSN</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9 max-height-500">
+        <div class="tab-content">
+          <div class="tab-pane active" id="lsi-4">
+            <h4 label="lsi-4">Rufnummer 2. MSN</h4>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th style="width: 25%;" id="lsi-id-th-4">ID</th>
+                  <td style="width: 75%;" headers="lsi-id-th-4">4</td>
+                </tr>
+                <tr>
+                  <th id="lsi-datatype-th-4">Datentyp</th>
+                  <td headers="lsi-datatype-th-4">STRING</td>
+                </tr>
+                <tr>
+                  <th id="lsi-req-th-4">Pflichtattribut</th>
+                  <td headers="lsi-req-th-4">Ja</td>
+
+                </tr>
+                <tr>
+                  <th id="lsi-max-length-th-4">Max. Länge</th>
+                  <td label="lsi-max-length-th-4">14</td>
+                </tr>
+
+
+
+
+                <tr>
+                  <th id="lsi-rule-th-4">Regeln</th>
+                  <td headers="lsi-rule-th-4">
+                    <ul class="list-unstyled">
+
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th id="lsi-del-th-4">Gelöscht</th>
+
+                  <td headers="lsi-del-th-4">Nein</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="lsi-5">
+            <h4 label="lsi-5">Rufnummer 3. MSN</h4>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th style="width: 25%;" id="lsi-id-th-5">ID</th>
+                  <td style="width: 75%;" headers="lsi-id-th-5">5</td>
+                </tr>
+                <tr>
+                  <th id="lsi-datatype-th-5">Datentyp</th>
+                  <td headers="lsi-datatype-th-5">STRING</td>
+                </tr>
+                <tr>
+                  <th id="lsi-req-th-5">Pflichtattribut</th>
+                  <td headers="lsi-req-th-5">Ja</td>
+
+                </tr>
+                <tr>
+                  <th id="lsi-max-length-th-5">Max. Länge</th>
+                  <td label="lsi-max-length-th-5">14</td>
+                </tr>
+
+
+
+
+                <tr>
+                  <th id="lsi-rule-th-5">Regeln</th>
+                  <td headers="lsi-rule-th-5">
+                    <ul class="list-unstyled">
+
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th id="lsi-del-th-5">Gelöscht</th>
+
+                  <td headers="lsi-del-th-5">Nein</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="jsseunrwnoeo" style="display: none;">
+    <div id="ocfipreoqlao" style="display: none;" class="simple_mutex" origin="smarttube">mutex/ocfipreoqlao/mutex</div>
+  </div>
+</body>
+
+</html>

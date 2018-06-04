@@ -16,7 +16,8 @@ const httpOptions = {
 export class XMessageService {
 
     private sUrl = 'http://localhost:3300';  // URL to web api
-    private sMessage='xmessages';
+    private sMessage='xmessage';
+    private sMessages='xmessages';
     a: Observable<XMessage>;
 
     constructor(
@@ -26,21 +27,23 @@ export class XMessageService {
     }
 
     // GET XBestand by guid. Will 404 if id not found
-    getXMessageById(id: string): Observable<XMessage> {
+    getXMessageById(id: string): Observable<string> {
         if(id != ''){
-            const url = `${this.sUrl}/${this.sMessage}?MSG_ID=${id}`;
-        return this.http.get<XMessage>(url)
+            const url = `${this.sUrl}/${this.sMessage}/${id}`;
+            const headers = new HttpHeaders({ 'Content-Type': 'text/xml' }).set('Accept', 'text/xml');
+            //return this.http.get<string>(url, { headers: headers})
+            return this.http.get<string>(url)
             .pipe(
             tap(_ => this.log(`fetched XMessage for ${url}`)),
-            catchError(this.handleError<XMessage>(`getXMessageById id=${id}`))
+            catchError(this.handleError<string>(`getXMessageById id=${id}`))
             );
         }
     }
-    getXMessageListBySoId(soid: string): Observable<XMessage[]> {
+    findXMessageListBySoId(soid: string): Observable<XMessage[]> {
         let s = 'getXMessageListBySoId for ' + soid;
         this.log(s);
         const sFlt = `SO_ID=${soid}`;
-        const url = `${this.sUrl}/${this.sMessage}?${sFlt}`;
+        const url = `${this.sUrl}/${this.sMessages}?${sFlt}`;
         this.log(s + ' with ' + url);
         return this.http.get<XMessage[]>(url)
             .pipe(
@@ -48,11 +51,11 @@ export class XMessageService {
                 catchError(this.handleError<any[]>(`${s} failed for ${url}`))
             );
     }
-    getXMessageListByEoId(eoid: string): Observable<XMessage[]> {
-        let s = 'getXMessageListByEoId for ' + eoid;
+    findXMessageListByEoId(eoid: string): Observable<XMessage[]> {
+        let s = 'findXMessageListByEoId for ' + eoid;
         this.log(s);
         const sFlt = `EO_ID=${eoid}`;
-        const url = `${this.sUrl}/${this.sMessage}?${sFlt}`;
+        const url = `${this.sUrl}/${this.sMessages}?${sFlt}`;
         this.log(s + ' with ' + url);
         return this.http.get<XMessage[]>(url)
             .pipe(

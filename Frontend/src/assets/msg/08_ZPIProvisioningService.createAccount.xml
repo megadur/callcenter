@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+		<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1">
+			<wsse:UsernameToken wsu:Id="UsernameToken-E1C4B4187C036BFC7815123851188521107">
+				<wsse:Username>zpi_idma_user</wsse:Username>
+				<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">xxxxx</wsse:Password>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</SOAP-ENV:Header>
+	<soap:Body>
+		<createAccount xmlns="http://zpi.telekom.com/Types/ZPIProvisioning/v2">
+			<contributor>
+				<contributorId>ISI</contributorId>
+				<contributorReference>IDM000000639579</contributorReference>
+			</contributor>
+			<account>
+				<id>100049016041211510300001</id>
+				<idType>guid</idType>
+			</account>
+			<keyValueList>
+				<keyValue>
+					<key>tlnr</key>
+					<value>604121151030</value>
+				</keyValue>
+				<keyValue>
+					<key>mbnr</key>
+					<value>0001</value>
+				</keyValue>
+				<keyValue>
+					<key>syst</key>
+					<value>70026407</value>
+				</keyValue>
+				<keyValue>
+					<key>anre</key>
+					<value>1</value>
+				</keyValue>
+				<keyValue>
+					<key>name</key>
+					<value>MANDELBROT</value>
+				</keyValue>
+				<keyValue>
+					<key>zusa</key>
+					<value>Max</value>
+				</keyValue>
+				<keyValue>
+					<key>stra</key>
+					<value>Erpelweg 11</value>
+				</keyValue>
+				<keyValue>
+					<key>plz</key>
+					<value>12345</value>
+				</keyValue>
+				<keyValue>
+					<key>ort</key>
+					<value>Entenhausen</value>
+				</keyValue>
+				<keyValue>
+					<key>fkto</key>
+					<value>004322796873</value>
+				</keyValue>
+				<keyValue>
+					<key>coco</key>
+					<value>DE</value>
+				</keyValue>
+				<keyValue>
+					<key>gebd</key>
+					<value>11.11.1911</value>
+				</keyValue>
+				<keyValue>
+					<key>kdnr</key>
+					<value>6041211510</value>
+				</keyValue>
+				<keyValue>
+					<key>einr</key>
+					<value>171204115838</value>
+				</keyValue>
+				<keyValue>
+					<key>prla</key>
+					<value>de</value>
+				</keyValue>
+				<keyValue>
+					<key>p016</key>
+					<value>Hauptnutzer</value>
+				</keyValue>
+				<keyValue>
+					<key>f482</key>
+					<value>1</value>
+				</keyValue>
+				<keyValue>
+					<key>cfdm</key>
+					<value>CVSE</value>
+				</keyValue>
+			</keyValueList>
+		</createAccount>
+	</soap:Body>
+</soap:Envelope>

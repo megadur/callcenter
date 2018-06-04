@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Account } from '../../../model/account';
 import { Bestand } from '../../../model/bestand';
 
+import * as myGlobals from '../../../globals'; //<==== this one
+
 @Component({
     selector: 'app-account',
     templateUrl: './account.component.html',
@@ -14,8 +16,10 @@ export class AccountComponent implements OnInit {
     bestand: Bestand
     constructor() { }
     dbgLevel: number;
+    dbMode: string;
     ngOnInit() {
-        this.dbgLevel = 1;
+        this.dbgLevel = myGlobals.dbgLevel;
+        this.dbMode = myGlobals.getMode();
     }
 
     hasAccount(x: Account) {

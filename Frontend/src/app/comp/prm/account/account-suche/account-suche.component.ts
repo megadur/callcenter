@@ -25,7 +25,7 @@ export class AccountSucheComponent implements OnInit {
 
     ngOnInit() {
         console.log('AccountSucheComponent.ngOnInit()');
-        this.dbgLevel = 1;
+        this.dbgLevel = myGlobals.dbgLevel;
         this.onSubmit();
     }
     onSubmit() {

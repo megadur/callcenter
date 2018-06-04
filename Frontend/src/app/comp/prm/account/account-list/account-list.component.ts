@@ -69,7 +69,7 @@ export class AccountListComponent implements OnInit {
     setAccount(a: Account): void {
         this.account = a;
         if (a) {
-            this.getBestandByGuid(a.GUID);
+            this.getBestandList_ByGuid(a.GUID);
         }
     }
     setAccountList(a: Account[]): void {
@@ -80,8 +80,8 @@ export class AccountListComponent implements OnInit {
     }
 
     // region bestand
-    getBestandByGuid(guid: string) {
-        console.log('AccountListComponent.getBestandByGuid()' + guid);
+    getBestandList_ByGuid(guid: string) {
+        console.log('AccountListComponent.getBestandList_ByGuid()' + guid);
         this.bService
             .getBestandList_ByParam(guid, '', '', '')
             .subscribe(x => this.setBestandList(x));
@@ -91,8 +91,8 @@ export class AccountListComponent implements OnInit {
         if (x) {
             console.log('AccountListComponent.setBestandList[] ' + x.length);
             this.bestandList = x;
-            // this.xbestand = this.xbestandList.filter(x => x.STATUS === 'aktiviert')[0];
-            this.setBestand(x[0]);
+            let xbestand = x.filter(b => b.STATUS === 'aktiviert')[0];
+            this.setBestand(xbestand);
         }
     }
     setBestand(x:Bestand): void {

@@ -1,0 +1,71 @@
+<script>
+    $(document).ready(function () {
+        //        $("#inputEM").mask("88999999");
+        // add * to required field labels
+        $('label.required').append('&nbsp;<strong>*</strong>&nbsp;');
+        $('#contact-form').validate({
+            rules: {
+                inputEM: {
+                    minlength: 8,
+                    required: true,
+                    normalizer: function (value) {
+                        return $.trim(value);
+                    }
+                },
+                inputMP: {
+                    minlength: 8,
+                    required: true,
+                    MPMatNoStartsWith89: true
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.control-group').removeClass('text-success').addClass('error');
+            },
+            success: function (element) {
+                element.text('OK!').addClass('valid')
+                    .closest('.control-group').removeClass('error').addClass('bg-success');
+            }
+        });
+
+    });
+    jQuery.validator.addMethod("MPMatNoStartsWith89", function (inp, element) {
+        inp = inp.replace(/\s+/g, "");
+        return this.optional(element) || inp.match(/^89\d{6,}$/);
+    }, "MPMatNoStartsWith89");
+</script>
+<div class="col-md-12">
+    <form class="form-horizontal" id="contact-form">
+        <div class="form-group">
+            <label for="inputEM" class="col-md-4 control-label input required">EM MatNo.</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="inputEM" name="inputEM" placeholder="88..." title="EM MatNo. beginnt mit 88 und ist Pflicht"
+                    maxlength="8">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEMName" class="col-md-4 control-label input required">EM Name</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="inputEMName" name="inputEM" placeholder="Name ..." title="EM Name " readonly>
+                <span id="helpBlock" class="help-block">Die EM Name wird anhand der eingegebenen Nummer gefüllt.</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputMP" class="col-md-4 control-label  input required">MP MatNo.</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="inputMP" name="inputMP" placeholder="89..." title="MP MatNo. beginnt mit 89 und ist Pflicht"
+                    maxlength="8">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputMPName" class="col-md-4 control-label input required">MP Name</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="inputMPName" name="inputEM" placeholder="Name ..." title="EM Name ">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+                <button type="submit" class="btn btn-danger">Speichern</button>
+            </div>
+        </div>
+    </form>
+</div>

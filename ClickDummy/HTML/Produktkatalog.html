@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Produkte - IDM-Adapter</title>
+    <link rel="stylesheet" type="text/css" href="res/default.css">
+    <link rel="stylesheet" type="text/css" href="res/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="res/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="res/a11ytheme.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="res/select2.css">
+
+    <script type="text/javascript" src="res/js/jquery.js" />
+    </script>
+    <script type="text/javascript" src="res/js/bootstrap.js">
+    </script>
+    <script type="text/javascript" src="res/js/bootstrap-select.js">
+    </script>
+    <script type="text/javascript" src="res/js/application.js">
+    </script>
+    <script type="text/javascript" src="res/js/stockeditor.js">
+    </script>
+    <script type="text/javascript" src="res/js/select2.js">
+    </script>
+    <script type="text/javascript" src="res/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="res/js/additional-methods.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.selectpicker').selectpicker({
+                tickIcon: 'glyphicon-ok'
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#includedNavbar").load("navbar.html");
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div id="includedNavbar"></div>
+
+
+    <div class="container-fluid" role="main" aria-labelledby="catalog" id="content">
+
+        <!-- Header -->
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="sr-only" id="catalog">Produktkatalog</h1>
+            </div>
+        </div>
+
+        <!-- Suchfeld -->
+        <div class="row">
+            <div class="col-md-4">
+                <form id="content" method="get" action="/idma-callcenter/accounts" role="search">
+                    <div class="form-group">
+                        <label for="search" class="control-label input required">EM- MP-Nummer oder Bezeichnung/Teil</label>
+                        <div class="input-group ">
+                            <input id="search" required="required" placeholder="GUID, TO-Nummer oder Kundennummer eingeben" class="form-control" maxlength="100"
+                                name="query" autofocus="autofocus">
+
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseKatalogListe" aria-expanded="false"
+                                    aria-controls="collapseKatalogListe">
+                                    Suchen
+                                </button>
+                            </div>
+                        </div>
+                        <span id="helpBlock" class="help-block">Suche:  nur ein Eingabefeld für  EM-/MP-Nummer und Name Case insensitiv.</span>
+
+                    </div>
+                </form>
+           </div>
+           <div class="col-md-4">
+                
+           </div>
+        </div>
+
+        <!-- Liste + Details -->
+        <div class="row" style="margin-top:1.5em">
+            <!-- Liste -->
+            <div class="col-md-8">
+                <div class="collapse" id="collapseKatalogListe">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Katalog</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-condensed table-hover">
+                                <caption class="sr-only">Fehler</caption>
+                                <thead>
+                                    <tr>
+                                        <th id="catalog-em-th">
+                                            <a class="sort-toggle" href="#">
+                                                <span class="caption">EM-MatNo</span>
+                                                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                    <!--  -->
+                                                </span>
+                                                <span class="sr-only">Absteigend sortieren</span>
+                                            </a>
+                                        </th>
+                                        <th id="catalog-title-th">
+                                            <a class="sort-toggle active" href="#" id="catalog-title">
+                                                <span class="caption">EM-Bezeichnung</span>
+                                                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                    <!--  -->
+                                                </span>
+
+                                                <span class="sr-only">Aufsteigend sortieren</span>
+                                            </a>
+                                        </th>
+                                        <th id="catalog-title-th">
+                                            <a class="sort-toggle active" href="#" id="catalog-title">
+                                                <span class="caption">last Update</span>
+                                                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                    <!--  -->
+                                                </span>
+
+                                                <span class="sr-only">Aufsteigend sortieren</span>
+                                            </a>
+                                        </th>
+                                        <th id="catalog-em-th">
+                                            <a class="sort-toggle" href="#">
+                                                <span class="caption">MP-MatNo</span>
+                                                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                    <!--  -->
+                                                </span>
+                                                <span class="sr-only">Absteigend sortieren</span>
+                                            </a>
+                                        </th>
+                                        <th id="catalog-title-th">
+                                            <a class="sort-toggle active" href="#" id="catalog-title">
+                                                <span class="caption">MP-Bezeichnung</span>
+                                                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true">
+                                                    <!--  -->
+                                                </span>
+
+                                                <span class="sr-only">Aufsteigend sortieren</span>
+                                            </a>
+                                        </th>
+          
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr onclick="$('#collapseKatalogDetail').collapse('toggle');">
+                                        <td>88218283</td>
+                                        <td>EM_CountryFlat_IP_2</td>
+                                        <td>2017-01-01</td>
+                                        <td>89756047</td>
+                                        <td>CountryFlat IP2</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218284</td>
+                                        <td>EM_CountryFlat_IP_1_4</td>
+                                        <td>2017-01-01</td>
+                                        <td>89756046</td>
+                                        <td>CountryFlat IP (1.4)</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218285</td>
+                                        <td>EM_CountryFlat_IP_2_4</td>
+                                        <td>2017-01-01</td>
+                                        <td>89756048</td>
+                                        <td>CountryFlat IP (2.4)</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218286</td>
+                                        <td>EM_Festnetz_zu Mobil_IP</td>
+                                        <td>2017-01-01</td>
+                                        <td>89756044</td>
+                                        <td>Festnetz zu Mobil IP</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218314</td>
+                                        <td>ISP- Entertain Comfort Plus 4 V-EM Flat</td>
+                                        <td>2017-01-01</td>
+                                        <td>89743064</td>
+                                        <td>Entertain Comfort Plus (4) DSL</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218333</td>
+                                        <td>ISP- Entertain Comfort Plus IP 4 V-EM Fl</td>
+                                        <td>2017-01-01</td>
+                                        <td>89743530</td>
+                                        <td>Entertain Comfort 12 IP (4) DSL</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218338</td>
+                                        <td>HomepagePlus FKTs Speicherpl.&Transferv.</td>
+                                        <td>2017-01-01</td>
+                                        <td>89711418</td>
+                                        <td>Homepage Plus</td>
+                                        </tr>
+                                        <tr class="danger">
+                                        <td>88218339</td>
+                                        <td>ISP-Tarif Entertain Prem. IP (4) VEM Fla</td>
+                                        <td>2017-01-01</td>
+                                        <td>89743531</td>
+                                        <td>Entertain Premium IP (4) DSL</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218345</td>
+                                        <td>ISP-Tarif Try&buy Ent.Comf. 4 V-EM Flat</td>
+                                        <td>2017-01-01</td>
+                                        <td>89743532</td>
+                                        <td>Try & Buy Entertain Comfort DSL</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218357</td>
+                                        <td>ISP-Tarif Call & Surf VDSL+ V-EM Flat</td>
+                                        <td>2017-01-01</td>
+                                        <td>89743534</td>
+                                        <td>Surf Comfort Plus VDSL 25</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218371</td>
+                                        <td>EM_Zusatzsp_MS_Exchange_Business</td>
+                                        <td>2017-01-01</td>
+                                        <td>89746282</td>
+                                        <td>MS Exchange Business + Zusatzspeicher</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218372</td>
+                                        <td>EM_Zusatzsp_MS_Exchange_Premium</td>
+                                        <td>2017-01-01</td>
+                                        <td>89746283</td>
+                                        <td>MS Exchange Premium + Zusatzspeicher</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218373</td>
+                                        <td>EM_Zusatzsp_MS_Exchange_Premium_BB</td>
+                                        <td>2017-01-01</td>
+                                        <td>89746284</td>
+                                        <td>Exch.Premium BlackBerry + Zusatzspeicher</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218463</td>
+                                        <td>EM_LIGA total Aktion</td>
+                                        <td>2017-01-01</td>
+                                        <td>89757023</td>
+                                        <td>Sky Bundesliga-Paket Aktion</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218464</td>
+                                        <td>EM_LIGA total HD Aktion</td>
+                                        <td>2017-01-01</td>
+                                        <td>89757024</td>
+                                        <td>Sky Bundesliga-Paket + Sky HD Aktion</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218465</td>
+                                        <td>EM_BVB total!</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753436</td>
+                                        <td>BVB total!</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218479</td>
+                                        <td>EM_De-Domain</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753279</td>
+                                        <td>de-Domain</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218480</td>
+                                        <td>EM_Internationale-Domain</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753280</td>
+                                        <td>Internationale Domain</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218496</td>
+                                        <td>EM_Sperre Zusatzdienste</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753516</td>
+                                        <td>Sperre Zusatzdienste</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218501</td>
+                                        <td>EM_ISPX Call & Surf Comfort Plus 4 (RF)</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753847</td>
+                                        <td>Z_Surf Comfort Plus (4)</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218503</td>
+                                        <td>EM_ISPX_C&S Comfort 4 (RF)</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753842</td>
+                                        <td>Z_Surf Comfort (4)</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218509</td>
+                                        <td>EM_MS_Ex_Standard_Jahrespreis</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753969</td>
+                                        <td>Microsoft Exchange Standard Jahrespaket</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218510</td>
+                                        <td>EM_MS_Ex_Premium_Jahrespreis</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753968</td>
+                                        <td>Microsoft Exchange Premium Jahrespaket</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218511</td>
+                                        <td>EM_MS_Ex_Premium_BB_Jahrespreis</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753967</td>
+                                        <td>MS Exch. Premium BlackBerry Jahrespaket</td>
+                                        </tr>
+                                        <tr>
+                                        <td>88218512</td>
+                                        <td>EM_VoIP_Basistarif</td>
+                                        <td>2017-01-01</td>
+                                        <td>89753887</td>
+                                        <td>VoIP Basistarif</td>
+                                        </tr>
+                                        
+                                        </tbody>
+                                        
+                                        
+                            </table>
+                            <div class="col-md-6">
+                                <div id="size-lbl" class="control-label">Anzahl pro Seite</div>
+                                <div class="btn-toolbar" aria-labelledby="size-lbl" role="toolbar">
+                                    <div class="btn-group">
+                                        <a class="btn btn-default active" href="#">25</a>
+                                        <a class="btn btn-default" href="#">50</a>
+                                        <a class="btn btn-default" href="#">100</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-offset-1 col-md-5">
+                                <div class="sr-only" id="pagination-lbl">Seitennavigation</div>
+                                <ul class="pagination pull-right" aria-labelledby="pagination-lbl">
+
+                                    <!-- vorherige seite -->
+                                    <li title="Vorherige Seite" class="disabled">
+                                        <a href="">
+                                            <span class="sr-only"> Vorherige Seite</span>
+                                        </a>
+                                    </li>
+
+                                    <!-- Seite 1 -->
+                                    <li title="1 Seite" class="active">
+                                        <a data-toggle="collapse" href="#collapseKatalogDetail" aria-expanded="false" aria-controls="collapseKatalogDetail">
+                                            <span class="sr-only">Seite</span>
+                                            <span>1</span>
+                                        </a>
+                                    </li>
+
+                                    <!-- Abgrenzung Unten-->
+
+
+                                    <!-- zwische seiten -->
+                                    <li>
+                                        <a data-toggle="collapse" href="#collapseKatalogDetail" aria-expanded="false" aria-controls="collapseKatalogDetail">
+                                            <span class="sr-only">Seite</span>
+                                            <span>2</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#collapseKatalogDetail" aria-expanded="false" aria-controls="collapseKatalogDetail">
+                                            <span class="sr-only">Seite</span>
+                                            <span>3</span>
+                                        </a>
+                                    </li>
+
+
+
+                                    <!-- Abgrenzung Oben-->
+                                    <li>
+                                        <a>...</a>
+                                    </li>
+
+                                    <!-- letzte seite -->
+                                    <li>
+                                        <a data-toggle="collapse" href="#collapseKatalogDetail" aria-expanded="false" aria-controls="collapseKatalogDetail">50</a>
+                                    </li>
+
+                                    <!-- nächste seite -->
+                                    <li title="Nächste Seite">
+                                        <a href="">
+                                            <span class="sr-only">Nächste Seite </span>»</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="col-md-4">
+                <div class="collapse" id="collapseKatalogDetail">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Katalogdetails</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <h3 id="title">ABGEMANAGED_EM_WEBKONFERENZ</h3>
+                                </div>
+                            </div>
+
+                            <!-- Attribute -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <dl class="dl-horizontal dl-horizontal-left dl-horizontal-gap-lg">
+                                        <dt id="catalog-em-dt">ID</dt>
+                                        <dd aria-labelledby="catalog-em-dt">88218247</dd>
+
+                                        <dt id="catalog-type-dt">Typ</dt>
+                                        <dd aria-labelledby="catalog-type-dt">Premium Service</dd>
+
+                                        <dt id="catalog-inid-dt">INID-Typ</dt>
+                                        <dd aria-labelledby="catalog-inid-dt">keine INID</dd>
+
+                                        <dt id="catalog-requires-ik-dt">Benötigt Instanzkenner</dt>
+                                        <dd aria-labelledby="catalog-requires-ik-dt">Nein</dd>
+
+                                        <dt id="catalog-multiple-inids-allowed-dt">Mehrere INIDs erlaubt</dt>
+                                        <dd aria-labelledby="catalog-multiple-inids-allowed-dt">Nein</dd>
+
+                                        <dt id="catalog-keep-alive-dt">Keep-Alive</dt>
+                                        <dd aria-labelledby="catalog-keep-alive-dt">Nein</dd>
+
+                                        <dt id="catalog-keep-alive-dt">last Update</dt>
+                                        <dd aria-labelledby="catalog-keep-alive-dt">2017-07-02</dd>
+                                    </dl>
+                                    <dl class="dl-horizontal dl-horizontal-left dl-horizontal-gap-lg">
+                                        <dt id="catalog-rules-dt">Regeln</dt>
+                                        <dd aria-labelledby="catalog-rules-dt">
+                                            <ul class="list-unstyled">
+                                                <li>(76) AutoRemove bei ISPWegf erlaubt</li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Katalogeditor</h3>
+                        </div>
+                        <div class="panel-body bs-callout bs-callout-danger">
+                                <script>
+                                        $(document).ready(function () {
+                                            //        $("#inputEM").mask("88999999");
+                                            // add * to required field labels
+                                            $('label.required').append('&nbsp;<strong>*</strong>&nbsp;');
+                                            $('#contact-form').validate({
+                                                rules: {
+                                                    inputEM: {
+                                                        minlength: 8,
+                                                        required: true,
+                                                        normalizer: function (value) {
+                                                            return $.trim(value);
+                                                        }
+                                                    },
+                                                    inputMP: {
+                                                        minlength: 8,
+                                                        required: true,
+                                                        MPMatNoStartsWith89: true
+                                                    }
+                                                },
+                                                highlight: function (element) {
+                                                    $(element).closest('.control-group').removeClass('success').addClass('error');
+                                                },
+                                                success: function (element) {
+                                                    element.text('OK!').addClass('valid')
+                                                        .closest('.control-group').removeClass('error').addClass('success');
+                                                }
+                                            });
+                                    
+                                        });
+                                        jQuery.validator.addMethod("MPMatNoStartsWith89", function (inp, element) {
+                                            inp = inp.replace(/\s+/g, "");
+                                            return this.optional(element) || inp.match(/^89\d{6,}$/);
+                                        }, "MPMatNoStartsWith89");
+                                    </script>
+                                    <div class="col-md-12">
+                                        <form class="form-horizontal" id="contact-form">
+                                            <div class="form-group">
+                                                <label for="inputEM" class="col-md-4 control-label input required">EM MatNo.</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="inputEM" name="inputEM" placeholder="88..." title="EM MatNo. beginnt mit 88 und ist Pflicht"
+                                                        maxlength="8">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEMName" class="col-md-4 control-label input required">EM Name</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="inputEMName" name="inputEM" placeholder="Name ..." title="EM Name " readonly>
+                                                    <span id="helpBlock" class="help-block">Die EM Name wird anhand der EM- Nummer gefüllt.</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputMP" class="col-md-4 control-label  input required">MP MatNo.</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="inputMP" name="inputMP" placeholder="89..." title="MP MatNo. beginnt mit 89 und ist Pflicht"
+                                                        maxlength="8">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputMPName" class="col-md-4 control-label input required">MP Name</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" id="inputMPName" name="inputEM" placeholder="Name ..." title="EM Name ">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-offset-4 col-md-8">
+                                                    <button type="submit" class="btn btn-danger">Speichern</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Katalog aktualisieren</h3>
+                        </div>
+                        <div class="panel-body bs-callout bs-callout-warning">
+                            <div class="">
+
+                                <form class="form-horizontal">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                                            <label for="Update" class="control-label col-md-4 "> Letztes Update</label>
+                                            <div class="col-md-8">
+                                                <p class="form-control-static">2018-02-07 05:05:00</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                                            <label for="Upload" class="control-label col-md-4 "> Update nows</label>
+                                            <div class="col-md-8">
+                                                <button type="submit" class="btn btn-warning" id="Upload">Aktualisieren!</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

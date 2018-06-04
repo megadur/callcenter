@@ -1,0 +1,121 @@
+<script>
+    $(function () {
+
+        $('#datetimepickerVon').datetimepicker({
+            defaultDate: '2017-09-04 12:00',
+            format: 'YYYY-MM-DD HH:mm'
+        });
+
+        $('#datetimepickerBis').datetimepicker({
+            defaultDate: '2018-01-04 18:00',
+            format: 'YYYY-MM-DD HH:mm'
+        });
+
+    });
+</script>
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Suchkriterien</div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+
+                    <div class="form-group">
+                        <label for="GUID" class="control-label col-md-4">GUID</label>
+
+                        <div class="col-md-8">
+                            <!-- This is a new div -->
+                            <input type="text" class="form-control" id="GUID" name="EM-Matno" placeholder="GUID">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="SOID" class="control-label col-md-4">SOID</label>
+
+                        <div class="col-md-8">
+                            <!-- This is a new div -->
+                            <input type="text" class="form-control" id="SOID" name="EM-Matno" placeholder="SOID">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Status" class="control-label col-md-4">Status</label>
+
+                        <div class="col-md-8">
+                            <!-- This is a new div -->
+                            <div class="dropdown ">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="Status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Alle
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li>
+                                        <a href="#"> Alle</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">erstellt</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">versendet</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for='datetimepickerBis' class="control-label  col-md-4">Zeitraum bis </label>
+                        <div class='input-group date datepicker_format col-md-8' id='datetimepickerBis'>
+                            <input type='text' class="form-control datepicker_format" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for='datetimepickerVon' class="control-label  col-md-4">Zeitraum von </label>
+                        <div class='input-group date datepicker_format col-md-8' id='datetimepickerVon'>
+                            <input type='text' class="form-control datepicker_format" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2  col-md-8">
+                            <!--New div, offset because there is no label -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">Gesamtstatus</div>
+            <div class="panel-body">
+                <h3>Produktionsplanübersicht</h3>
+                <dl class="dl-horizontal dl-horizontal-left grid">
+                    <dt>gesendet</dt>
+                    <dd role="defintion">
+                        94040</dd>
+                    <dt>wartent</dt>
+                    <dd role="defintion">
+                        94040</dd>
+                    <dt>fehlerhaft</dt>
+                    <dd role="defintion">
+                        94040</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="well">
+            Hier werden die Nutzermanagement Produktionspläne angezeigt, die sich noch im Produktionbuffer befinden. Selektierte Produktionspläne
+            können gelöscht werden.
+            <br/> Die Anzeige/Suche kann über dies Kriterien eingeschränkt werden.
+        </div>
+    </div>
+</div>

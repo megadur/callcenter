@@ -1,0 +1,84 @@
+<script>
+    $(function () {
+
+        $('#datetimepickerVon').datetimepicker({
+            defaultDate: '2017-09-04 12:00',
+            format: 'YYYY-MM-DD HH:mm'
+        });
+
+        $('#datetimepickerBis').datetimepicker({
+            defaultDate: '2018-01-04 18:00',
+            format: 'YYYY-MM-DD HH:mm'
+        });
+
+    });
+</script>
+<div class="col-md-6">
+
+    <form class="form-horizontal">
+
+        <div class="form-group">
+            <label for="SOID" class="control-label col-md-2">SOID</label>
+
+            <div class="col-md-6">
+                <!-- This is a new div -->
+                <input type="text" class="form-control" id="SOID" name="EM-Matno" placeholder="SOID">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Status" class="control-label col-md-2">Status</label>
+
+            <div class="col-md-8">
+                <!-- This is a new div -->
+                <div class="dropdown ">
+                    <button class="btn btn-default dropdown-toggle " type="button" id="Status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Alle
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li>
+                            <a href="#"> Alle</a>
+                        </li>
+                        <li>
+                            <a href="#">offene</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label  col-md-2">Zeitraum bis </label>
+            <div class='input-group date datepicker_format col-md-6' id='datetimepickerBis'>
+                <input type='text' class="form-control datepicker_format" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label  col-md-2">Zeitraum von </label>
+            <div class='input-group date datepicker_format col-md-6' id='datetimepickerVon'>
+                <input type='text' class="form-control datepicker_format" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<div class="col-md-6">
+    <div class="well">
+        Anzeige der Fehler, die während der Slup Event Verarbeitung aufgetreten sind.
+        <br/> Die Liste/Suche kann über diese Kriterien eingeschränkt werden.
+    </div>
+</div>

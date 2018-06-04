@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:em="my:EM" version="1.0">
+    <xsl:import href="emrule.xsl"/>
+    <xsl:output omit-xml-declaration="yes" indent="yes"/>
+    <xsl:strip-space elements="*"/>
+
+    <em:codes>
+<code key="88200042" value="EM_EURO-BASISANSCHLUß (DSS1)"/>
+<code key="88206429" value="EM_ABSCHLUSSENDEINRICHTUNG NTA 2DR"/>
+<code key="88210751" value="EM_ISP0_TOI DSL FLATRATE"/>
+<code key="88210753" value="EM_ISP0_TOI DSL FLAT 2000"/>
+<code key="88210755" value="EM_ISP0_TOI DSL FLAT 3000"/>
+<code key="88210757" value="EM_ISP0_TOI DSL 1500 MB"/>
+<code key="88210760" value="EM_T-ONLINE DSL 3000 MB"/>
+<code key="88210762" value="EM_ISP0_TOI DSL 6000 MB"/>
+<code key="88210768" value="EM_T-ONLINE DSL SURFTIME 60"/>
+<code key="88210783" value="EM_ISP0_TOI DSL SURFTIME 30"/>
+<code key="88210785" value="EM_ISP0_TOI SURFTIME 30"/>
+<code key="88210787" value="EM_ISP0_TOI SURFTIME 60"/>
+<code key="88210789" value="EM_ISP0_TOI SURFTIME 90"/>
+<code key="88210791" value="EM_ISP0_TOI SURFTIME 120"/>
+<code key="88213613" value="EM_CALL COMFORT IP (4)"/>
+<code key="88213780" value="EM_ANSCHRIFTEN_AN_OMS_TOI"/>
+<code key="88214707" value="EM_ISP0_TOI DSL FLAT MAX"/>
+<code key="88214709" value="EM_ISP0_TOI DSL VOLUME"/>
+<code key="88214717" value="EM_ISP0_TOI DSL START"/>
+<code key="88214718" value="EM_ISP0_TO_SURF ECO CLASSIC"/>
+<code key="88214719" value="EM_ISP0_SURF ECO 10H"/>
+<code key="88214720" value="EM_ISP0_SURF ECO 30H"/>
+<code key="88214721" value="EM_ISP0_SURF ECO 50H"/>
+<code key="88214722" value="EM_ISP0_SURF ECO FLAT"/>
+<code key="88214723" value="EM_ISP0_SURF DSL FLAT"/>
+<code key="88214802" value="EM_STB_INSTANZENPRODUKT"/>
+<code key="88215173" value="EM_TOI_VDSL_25_ANSCHLUSS_MA_ISI"/>
+<code key="88215174" value="EM_TOI_VDSL_50_ANSCHLUSS_MA"/>
+<code key="88216404" value="EM_TEST_ATTRIBUTIERUNG_SK_2"/>
+<code key="88216405" value="EM_TEST_ATTRIBUTIERUNG_SK_3"/>
+<code key="88216406" value="EM_TEST_ATTRIBUTIERUNG_SK_1"/>
+<code key="88216407" value="EM_TEST_ATTRIBUTIERUNG_SK_4"/>
+<code key="88216408" value="EM_TEST_ATTRIBUTIERUNG_SK_5"/>
+<code key="88216410" value="EM_ANSAGE BEI UMZUG KOSTENFREI"/>
+<code key="88216458" value="EM_CALL START IP (4)"/>
+<code key="88216649" value="EM_ISP0_TOI ECO"/>
+<code key="88216656" value="EM_ISPO_UMZUGSTRANSFER_ISI"/>
+<code key="88216658" value="EM_ISP0_TOI BY CALL"/>
+<code key="88216659" value="EM_ISP0_TOI BY DAY"/>
+<code key="88216662" value="EM_ISP0_TOI DSL FLAT CLASSIC"/>
+<code key="88216664" value="EM_ISP0_T-HOME COMPLETE BASIC"/>
+<code key="88216665" value="EM_ISP0_T-HOME COMPLETE PLUS"/>
+<code key="88216668" value="EM_ISP0_TOI T-HOME CLASSIC"/>
+<code key="88216670" value="EM_ISP0_TOI DSL FLAT MAX MITARBEITER"/>
+<code key="88216672" value="EM_ISP0_SURF DSL FLAT FÜR MITARBEITER"/>
+<code key="88216676" value="EM_ISP0_TOI DSL START MITARBEITER"/>
+<code key="88216678" value="EM_ISP0_DSL VOLUME MA"/>
+<code key="88216680" value="EM_ISP0_T-HOME CLASSIC MITARBEITER"/>
+<code key="88216682" value="EM_ISP0_T-HOME COMPLETE PLUS MITARBEITER"/>
+<code key="88216684" value="EM_ISP0_SURF ECO 10H MITARBEITER"/>
+<code key="88216686" value="EM_ISP0_SURF ECO 30H MITARBEITER"/>
+<code key="88216688" value="EM_ISP0_SURF ECO CLASSIC MITARBEITER"/>
+<code key="88216690" value="EM_ISP0_SURF ECO CLASSIC JOURNALIST"/>
+<code key="88216692" value="EM_ISP0_SURF BYCALL DSL VIA SATELLIT 2"/>
+<code key="88216694" value="EM_ISP0_TO_STARTER TARIF"/>
+<code key="88216696" value="EM_ISPM_PID 355_KEIN TARIF"/>
+<code key="88216697" value="EM_ISP0_TO_DSL FLAT CLASSIC***"/>
+<code key="88216700" value="EM_ISP0_TARIF MITBENUTZER"/>
+<code key="88216702" value="EM_ISP0_T@SCHOOL PREMIUM"/>
+<code key="88216703" value="EM_ISP0_TOI DSL 500 MB"/>
+<code key="88216706" value="EM_ISP_WUNSCHSPERRE_ISI"/>
+<code key="88216708" value="EM_ISP_ABUSESPERRE_ISI"/>
+<code key="88216806" value="EM_ISPX_C&amp;amp;S BASIC (2)"/>
+<code key="88216807" value="EM_ISPX_C&amp;amp;S BASIC (4.1)"/>
+<code key="88216808" value="EM_ISPX_C&amp;S COMFORT (2)"/>
+<code key="88216809" value="EM_ISPX_C&amp;S COMFORT PLUS (2)"/>
+<code key="88216810" value="EM_ISPX_ENTERTAIN BASIC"/>
+<code key="88216811" value="EM_ISPX_ENTERTAIN COMFORT"/>
+<code key="88216812" value="EM_ISPX_ENTERTAIN COMFORT PLUS"/>
+<code key="88216813" value="EM_ISPX_C&amp;S BASIC"/>
+<code key="88216814" value="EM_ISPX_C&amp;S COMFORT"/>
+<code key="88216815" value="EM_ISPX_C&amp;S COMFORT PLUS"/>
+<code key="88216816" value="EM_ISPX_C&amp;S START"/>
+<code key="88216817" value="EM_ISPX_C&amp;S BASIC (3)"/>
+<code key="88216818" value="EM_ISPX_C&amp;S START (4)"/>
+<code key="88216819" value="EM_ISPX_C&amp;S BASIC (4.2)"/>
+<code key="88216820" value="EM_ISPX_C&amp;S COMFORT PLUS IP (4)"/>
+<code key="88216821" value="EM_ISPX_C&amp;S COMFORT PLUS (4)"/>
+<code key="88216822" value="EM_ISPX_C&amp;S COMFORT (5)"/>
+<code key="88216823" value="EM_ISPX_ENTERTAIN COMFORT 4"/>
+<code key="88216824" value="EM_ISPX_ENTERTAIN COMFORT PLUS 4"/>
+<code key="88216825" value="EM_ISPX_ENTERTAIN PREMIUM (4)"/>
+<code key="88216826" value="EM_ISPX_ENTERTAIN COMFORT IP (4)"/>
+<code key="88216827" value="EM_ISPX_C&amp;S COMFORT (4)"/>
+<code key="88216828" value="EM_ISPX_C&amp;S BASIC IP (4.1)"/>
+<code key="88216829" value="EM_ISPX_C&amp;S COMFORT IP (4)"/>
+<code key="88216830" value="EM_ISPX_ENTERTAIN COMFORT 12 IP (4)"/>
+<code key="88216831" value="EM_ISPX_ENTERTAIN PREMIUM IP (4)"/>
+<code key="88216832" value="EM_ISPX_TRY &amp; BUY ENTERTAIN COMFORT 4"/>
+<code key="88216833" value="EM_ISPX_C&amp;S VDSL"/>
+<code key="88216834" value="EM_ISPX_C&amp;S VDSL PLUS"/>
+<code key="88216860" value="EM_ISPX_C&amp;S COMFORT IP (SPEED)"/>
+<code key="88216862" value="EM_ISPX_C&amp;S COMFORT IP (5)"/>
+<code key="88216863" value="EM_ISPX_C&amp;S VDSL 50 IP"/>
+<code key="88216865" value="EM_ISPX_COMPLETE BUSINESS BASIC"/>
+<code key="88216867" value="EM_ISPX_COMPLETE BUSINESS PREMIUM"/>
+<code key="88216869" value="EM_ISPX_COMPLETE BUSINESS PREMIUM PLUS"/>
+<code key="88216893" value="EM_ISP0_TOI_DSL FLAT PROFI"/>
+<code key="88216894" value="EM_ISP0_TOI_DSL FLAT KOMBI"/>
+<code key="88216895" value="EM_ISP0_TOI FLAT KOMBI PLUS"/>
+<code key="88216896" value="EM_ISP0_PROVIDERWECHSEL C&amp;S"/>
+<code key="88216897" value="EM_ISPM_KÜNDIGERTARIF"/>
+<code key="88216906" value="EM_2./3.MSN BEI IP-AS AN OMS/ISI"/>
+<code key="88216907" value="EM_WEITERE MSN BEI IP-AS AN OMS/ISI"/>
+<code key="88216918" value="EM_TDSL 768 AN OMS/ISI"/>
+<code key="88216919" value="EM_TDSL 384 AN OMS/ISI"/>
+<code key="88216920" value="EM_TDSL 1000 AN OMS/ISI"/>
+<code key="88216921" value="EM_TDSL 2000 AN OMS/ISI"/>
+<code key="88216922" value="EM_TDSL 1536 AN OMS/ISI"/>
+<code key="88216923" value="EM_TDSL 3072 AN OMS/ISI"/>
+<code key="88216924" value="EM_TDSL 6000 AN OMS/ISI"/>
+<code key="88216925" value="EM_TDSL 16000 AN OMS/ISI"/>
+<code key="88216929" value="EM_TOI RESALE DSL 1000 AN OMS/ISI"/>
+<code key="88216931" value="EM_TOI RESALE DSL 384 AN OMS/ISI"/>
+<code key="88216932" value="EM_TOI RESALE DSL 768 AN OMS/ISI"/>
+<code key="88216933" value="EM_TOI RESALE DSL 16000 AN OMS/ISI"/>
+<code key="88216934" value="EM_TOI RESALE DSL 2000 AN OMS/ISI"/>
+<code key="88216935" value="EM_TOI RESALE DSL 1536 AN OMS/ISI"/>
+<code key="88216936" value="EM_TOI RESALE DSL 6000 AN OMS/ISI"/>
+<code key="88216937" value="EM_TOI RESALE DSL 3072 AN OMS/ISI"/>
+<code key="88217034" value="EM_TDSV-KZ BEI IP-AS AN OMS/ISI"/>
+<code key="88217035" value="EM_EVÜ UNGEKÜRZT AN OMS/ISI"/>
+<code key="88217036" value="EM_EVÜ GEKÜRZT AN OMS/ISI"/>
+<code key="88217073" value="EM_DSL_16 FÜR ISI"/>
+<code key="88217074" value="EM_VDSL_50_TV FÜR ISI"/>
+<code key="88217075" value="EM_VDSL_25_TV FÜR ISI"/>
+<code key="88217110" value="EM_GENERIERUNG REDUZIERTE ZUGANGSDATEN"/>
+<code key="88217122" value="EM_GENERIERUNG VOLL. ZUGANGSDATEN (ISI)"/>
+<code key="88217316" value="EM_CALL COMFORT VDSL IP"/>
+<code key="88217330" value="EM_KUENDIGERTARIF"/>
+<code key="88217332" value="EM_PROVIDERWECHSEL_C&amp;S"/>
+<code key="88217334" value="EM_PROGRAMM_MANAGER"/>
+<code key="88217336" value="EM_ENTERTAIN_BIG_TV"/>
+<code key="88217338" value="EM_ENTERTAIN_FAMILY"/>
+<code key="88217340" value="EM_IPTV_DOKU"/>
+<code key="88217342" value="EM_ENTERTAIN_POLSKI"/>
+<code key="88217344" value="EM_ENTERTAIN_PO_RUSSKI"/>
+<code key="88217346" value="EM_ENTERTAIN_ITALIANO"/>
+<code key="88217348" value="EM_ENTERTAIN_TUERK"/>
+<code key="88217350" value="EM_ENTERTAIN_DIGITURK"/>
+<code key="88217352" value="EM_ENTERTAIN_MTV_TUNE_INN"/>
+<code key="88217354" value="EM_ENTERTAIN_DELUXE_MUSIC_LOUNGE"/>
+<code key="88217356" value="EM_BUNDESLIGA_PREMIERE_T_HOME"/>
+<code key="88217358" value="EM_ENTERTAIN_PREMIERE_FAMILIE"/>
+<code key="88217360" value="EM_ENTERTAIN_PREMIERE_FILM"/>
+<code key="88217362" value="EM_ENTERTAIN_PREMIERE_HDTV"/>
+<code key="88217364" value="EM_ENTERTAIN_PREMIERE_SPORT_2"/>
+<code key="88217366" value="EM_ENTERTAIN_PREMIERE_4ER_PAKET"/>
+<code key="88217368" value="EM_ENTERTAIN_PREMIERE_4ER_PAKET_HDTV"/>
+<code key="88217370" value="EM_BIG_BROTHER_24H_LIVE"/>
+<code key="88217372" value="EM_SCHWAEBISCHE_ZEITUNG_NEWSPORTAL"/>
+<code key="88217374" value="EM_RTLNOW"/>
+<code key="88217465" value="EM_IP_KENNER_ISI"/>
+<code key="88217533" value="EM_SPERRE_VESPA_SHOP_ISI"/>
+<code key="88217536" value="EM_REO_ZUGANGSSPERRE_ISI"/>
+<code key="88217538" value="EM_MASTERNUTZER"/>
+<code key="88217543" value="EM_MUSIC STREAMING_ISI"/>
+<code key="88217562" value="EM_VDSL_16 FÜR ISI"/>
+<code key="88217577" value="EM_MANAGED_SERVER_BASIC"/>
+<code key="88217579" value="EM_MANAGED_SERVER_PROFESSIONAL"/>
+<code key="88217581" value="EM_MANAGED_SERVER_STARTER"/>
+<code key="88217583" value="EM_ROOT_SERVER_BASIC"/>
+<code key="88217585" value="EM_ROOT_SERVER_STARTER"/>
+<code key="88217587" value="EM_ROOT_SERVER_PROFESSIONAL"/>
+<code key="88217589" value="EM_WINDOWS_SERVER_BASIC"/>
+<code key="88217591" value="EM_WINDOWS_SERVER_PROFESSIONAL"/>
+<code key="88217593" value="EM_WINDOWS_SERVER_STARTER"/>
+<code key="88217622" value="EM_TV DIGITAL ENTERTAIN ABO"/>
+<code key="88217636" value="EM_BEATE_UHSE_LIVE_CLUB"/>
+<code key="88217638" value="EM_EROTIK_INSIDER"/>
+<code key="88217640" value="EM_PLAYBOYNET"/>
+<code key="88217642" value="EM_PRALINE_ABO"/>
+<code key="88217644" value="EM_PRALINE_NETZ_18_16"/>
+<code key="88217646" value="EM_COUPÉ"/>
+<code key="88217688" value="EM_ENTERTAIN_PREMIERE_FUSSBALL"/>
+<code key="88217690" value="EM_ENTERTAIN_PREMIERE_SPORT"/>
+<code key="88217692" value="EM_ENTERTAIN_PREMIERE_BLOCKBUSTER"/>
+<code key="88217694" value="EM_ENTERTAIN_PREMIERE_ENTERTAINMENT"/>
+<code key="88217696" value="EM_ENTERTAIN_PREMIERE_THEMA"/>
+<code key="88217698" value="EM_ENTERTAIN_PREMIERE_HD"/>
+<code key="88217700" value="EM_ENTERTAIN_PREMIERE_DISCOVERY HD"/>
+<code key="88217702" value="EM_ENTERTAIN_PREMIERE_6ER_KOMBI_HD"/>
+<code key="88217704" value="EM_ENTERTAIN_PREMIERE_6ER_KOMBI"/>
+<code key="88217706" value="EM_ENTERTAIN_HD"/>
+<code key="88217733" value="EM_WISO_MEIN_GELD"/>
+<code key="88217735" value="EM_BANKING PAKET"/>
+<code key="88217737" value="EM_BANKING_SOFTWARE"/>
+<code key="88217739" value="EM_LASTSCHRIFTMODUL"/>
+<code key="88217752" value="EM_ISPX_T&amp;B ENTERTAIN COMFORT (4) IP"/>
+<code key="88217857" value="EM_ISPX_ENTERTAIN PURE PSTN"/>
+<code key="88217860" value="EM_ISPX_ENTERTAIN PURE IP"/>
+<code key="88217923" value="EM_HOTSPOT BY CALL"/>
+<code key="88217929" value="EM_HOTSPOT FLAT"/>
+<code key="88217942" value="EM_HOMEPAGE BASIC"/>
+<code key="88217944" value="EM_HOMEPAGE ADVANCED"/>
+<code key="88217946" value="EM_WEITERE-DOMAIN-UNTER_DE"/>
+<code key="88217948" value="EM_DESIGNASSISTENT_ZEHN_SEITEN"/>
+<code key="88217950" value="EM_DESIGNASSISTENT_UNLIM_SEITENZAHL"/>
+<code key="88217952" value="EM_BILDERGALERIE"/>
+<code key="88217954" value="EM_HOMEPAGE PROFESSIONAL"/>
+<code key="88217956" value="EM_SPAM-VIRENSCHUTZ-EMAIL-PF"/>
+<code key="88217958" value="EM_TRAFFIC-FLATRATE-HOMEPAGE"/>
+<code key="88217960" value="EM_SICHERHEITSPAKET_NORTONINTERNETSECUR"/>
+<code key="88217962" value="EM_SIPA NORTON 360"/>
+<code key="88217964" value="EM_SIPA BASIC"/>
+<code key="88217966" value="EM_DIALERSCHUTZ-SOFTWARE"/>
+<code key="88217968" value="EM_LIZENZ_FIREWALL-SOFTWARE"/>
+<code key="88217973" value="EM_MEDIENCENTER"/>
+<code key="88217975" value="EM_MAIL&amp;CLOUD M"/>
+<code key="88217979" value="EM_SPEICHERERWEITERUNG-5GB"/>
+<code key="88217985" value="EM_MEDIENCENTER INKLUSIVNUTZER"/>
+<code key="88217988" value="EM_INKLUSIVNUTZER"/>
+<code key="88217994" value="EM_EMAIL_BENACHRICHTIGUNG"/>
+<code key="88217995" value="EM_SMS-MMS-FAX-VERSAND"/>
+<code key="88218022" value="EM_DIRECT_VPN_02"/>
+<code key="88218025" value="EM_DIRECT_VPN_05"/>
+<code key="88218026" value="EM_DIRECT_VPN_10"/>
+<code key="88218027" value="EM_DIRECT_VPN_15"/>
+<code key="88218032" value="EM_SOFTWARELOAD_FLATRATE"/>
+<code key="88218033" value="EM_COMPUTER_INSIDER_ADVANCED"/>
+<code key="88218037" value="EM_SOFTWARELOAD_FLATRATE_PRO"/>
+<code key="88218039" value="EM_MAIL&amp;CLOUD M-INKLUSIVNUTZER"/>
+<code key="88218043" value="EM_SMS-MMS-FAX-VERSAND_INKLUSIVNUTZER"/>
+<code key="88218044" value="EM_MULTIMEDIA_SPEICHER_CONNECT"/>
+<code key="88218047" value="EM_NETZWERKSP_CONNECT_INKLUSIVNUTZER"/>
+<code key="88218048" value="EM_BUNDESLIGA_INSIDER"/>
+<code key="88218051" value="EM_T-ONLINE_SHOP"/>
+<code key="88218052" value="EM_T-ONLINE_SHOPPING"/>
+<code key="88218055" value="EM_T-ONLINE-DE_PORTAL"/>
+<code key="88218056" value="EM_WEBNEWS"/>
+<code key="88218059" value="EM_T-ONLINE-IQ"/>
+<code key="88218061" value="EM_MR_WONG"/>
+<code key="88218062" value="EM_MEINE_FILMWELT"/>
+<code key="88218073" value="EM_PENTHOUSE"/>
+<code key="88218075" value="EM_PENTHOUSE_18_PLUS"/>
+<code key="88218077" value="EM_GAMESLOAD_BASIC_PACK"/>
+<code key="88218078" value="EM_GAMESLOAD_FLATRATE"/>
+<code key="88218079" value="EM_GAMESLOAD_ PREMIUM_PACK"/>
+<code key="88218080" value="EM_GAMESLOAD_SPEZIAL_PAKET"/>
+<code key="88218081" value="EM_GAMESLOAD_FAMILIEN_PAKET"/>
+<code key="88218087" value="EM_HOMEPAGE_PLUS"/>
+<code key="88218088" value="EM_HOMEPAGE_STARTER"/>
+<code key="88218089" value="EM_MYDOMAIN"/>
+<code key="88218090" value="EM_INKLUSIV_HOMEPAGE"/>
+<code key="88218091" value="EM_EVENT_HOMEPAGE"/>
+<code key="88218092" value="EM_HOMEPAGE"/>
+<code key="88218093" value="EM_HOMEPAGE_CARD"/>
+<code key="88218094" value="EM_DOMAIN_EMAIL"/>
+<code key="88218108" value="EM_MODUL_ROUTENPLANER"/>
+<code key="88218109" value="EM_MODUL_FORUM"/>
+<code key="88218110" value="EM_MINI-SHOP"/>
+<code key="88218111" value="EM_MITARBEITER-INKL-EMAIL-POSTFACH"/>
+<code key="88218112" value="EM_WEITERES_EMAIL-POSTFACH"/>
+<code key="88218113" value="EM_EMAIL_SPEICHERERWEITERUNG_1GB"/>
+<code key="88218114" value="EM_MINI_DATENBANK"/>
+<code key="88218115" value="EM_THEMENPAKET_UNTERHALTUNG"/>
+<code key="88218116" value="EM_THEMENPAKET_WIRTSCHAFT-UNTERHALTUNG"/>
+<code key="88218121" value="EM_EINE-WEITERE-DOMAIN-UNTER_CH-AT-LI"/>
+<code key="88218122" value="EM_EINE-WEITERE-DOMAIN-UNTER_MOBI"/>
+<code key="88218125" value="EM_EINE-DOMAIN-AUS-INTERNATIONALEN-TLDS"/>
+<code key="88218126" value="EM_HOTSPOT_CALL_MITARBEITER"/>
+<code key="88218127" value="EM_HOTSPOT_FLAT_MITARBEITER"/>
+<code key="88218128" value="EM_HOTSPOT_FLAT_MARKTTEST_PPHS"/>
+<code key="88218134" value="EM_MUSICLOAD_NONSTOP_30 TAGE"/>
+<code key="88218135" value="EM_MUSICLOAD_NONSTOP_90-TAGE"/>
+<code key="88218141" value="EM_SOFTWARELOAD"/>
+<code key="88218142" value="EM_GAMESLOAD"/>
+<code key="88218143" value="EM_MUSICLOAD"/>
+<code key="88218144" value="EM_VIDEOLOAD"/>
+<code key="88218145" value="EM_EROTICLOUNGE"/>
+<code key="88218146" value="EM_SHOP_STARTER"/>
+<code key="88218147" value="EM_SHOP_BASIC"/>
+<code key="88218148" value="EM_SHOP_ADVANCED"/>
+<code key="88218149" value="EM_SHOP_PROFESSIONAL"/>
+<code key="88218154" value="EM_SOFTWARELOAD_SICHERHEITSPAKET"/>
+<code key="88218158" value="EM_MY_LOGIN"/>
+<code key="88218159" value="EM_VIDEOLOAD_DOKU"/>
+<code key="88218160" value="EM_VIDEOLOAD_KIDS"/>
+<code key="88218161" value="EM_VIDEOLOAD_MOVIE"/>
+<code key="88218162" value="EM_VIDEOLOAD_TV-PAKET"/>
+<code key="88218172" value="EM_VERMARKTUNGS-PAKET_STARTER"/>
+<code key="88218173" value="EM_FUNKTIONS-PAKET_STARTER"/>
+<code key="88218174" value="EM_LOGISTIK-ZAHLUNGS-PAKET_STARTER"/>
+<code key="88218175" value="EM_VERMARKTUNGS-PAKET_BASIC"/>
+<code key="88218176" value="EM_FUNKTIONS-PAKET_BASIC"/>
+<code key="88218177" value="EM_LOGISTIK-ZAHLUNGS-PAKET_BASIC"/>
+<code key="88218178" value="EM_DOMAIN-EMAIL-PAKET_BASIC"/>
+<code key="88218179" value="EM_DESIGN-PAKET_BASIC"/>
+<code key="88218180" value="EM_VERMARKTUNGS-PAKET_ADVANCED"/>
+<code key="88218181" value="EM_FUNKTIONS-PAKET_ADVANCED"/>
+<code key="88218182" value="EM_DESIGN-PAKET_ADVANCED"/>
+<code key="88218209" value="EM_KOMFORTPAKET"/>
+<code key="88218210" value="EM_KINDERSCHUTZ-SOFTWARE"/>
+<code key="88218211" value="EM_VIRENSCHUTZ-SOFTWARE"/>
+<code key="88218212" value="EM_FIREWALL-SOFTWARE"/>
+<code key="88218213" value="EM_TO_SICHERHEITSPAKET_JAHRESABO"/>
+<code key="88218214" value="EM_INTERNETSCHUTZ-SOFTWARE_JAHRESABO"/>
+<code key="88218215" value="EM_T-TELESEC_PERSONAL_SECURITY_SERVICE"/>
+<code key="88218216" value="EM_POSTFACHVIRENSCHUTZ"/>
+<code key="88218217" value="EM_INTERNETSCHUTZ-SOFTWARE"/>
+<code key="88218224" value="EM_MS_HOSTED_EXCHANGE_BUSINESS"/>
+<code key="88218225" value="EM_MS_HOSTED_EXCHANGE_STANDARD"/>
+<code key="88218226" value="EM_MS_HOSTED_EXCHANGE_PREMIUM"/>
+<code key="88218227" value="EM_MS_HOSTED_EXCHANGE_BLACKBERRY"/>
+<code key="88218228" value="EM_MS_OFFICE_PROFESSIONAL"/>
+<code key="88218229" value="EM_MS_VISIO"/>
+<code key="88218230" value="EM_MS_PROJECT"/>
+<code key="88218231" value="EM_MS_DYNAMCIS_CRM_4_0"/>
+<code key="88218232" value="EM_ZUGANGSSOFTWARE_CITRIX_CLIENT"/>
+<code key="88218233" value="EM_CIERP3_STANDARD"/>
+<code key="88218234" value="EM_CIERP3_BUSINESS"/>
+<code key="88218235" value="EM_MICROSOFT_FRONTPAGE_2003"/>
+<code key="88218236" value="EM_MS_SHAREPOINT"/>
+<code key="88218237" value="EM_SPOC_CRM"/>
+<code key="88218238" value="EM_MESONIC_WINLINE_LIVE"/>
+<code key="88218239" value="EM_MS_DYNAMICS_NAV_5_0_BE"/>
+<code key="88218240" value="EM_MS_OFFICE_STANDARD"/>
+<code key="88218241" value="EM_EXCHANGE_ÖFFENTL_ORDNER_1GB"/>
+<code key="88218242" value="EM_EXCHANGE_ÖFFENTL_ORDNER_2GB"/>
+<code key="88218243" value="EM_EXCHANGE_ÖFFENTL_ORDNER_3GB"/>
+<code key="88218244" value="EM_EXCHANGE_ÖFFENTL_ORDNER_4GB"/>
+<code key="88218245" value="EM_EXCHANGE_ÖFFENTL_ORDNER_5GB"/>
+<code key="88218246" value="EM_EXCHANGE_BUSINESS_JAHRESPREIS"/>
+<code key="88218247" value="ABGEMANAGED_EM_WEBKONFERENZ"/>
+<code key="88218248" value="EM_ITSS_WTS-TOOLS"/>
+<code key="88218278" value="EM_UNIVERSAL_SERVER_PROFESSIONAL"/>
+<code key="88218279" value="EM_UNIVERSAL_SERVER_BASIC"/>
+<code key="88218280" value="EM_UNIVERSAL_SERVER_STARTER"/>
+<code key="88218281" value="EM_FESTNETZ_ZU_T-MOBILE_FLAT_IP"/>
+<code key="88218282" value="EM_COUNTRYFLAT_IP_1"/>
+<code key="88218283" value="EM_COUNTRYFLAT_IP_2"/>
+<code key="88218284" value="EM_COUNTRYFLAT_IP_1_4"/>
+<code key="88218285" value="EM_COUNTRYFLAT_IP_2_4"/>
+<code key="88218286" value="EM_FESTNETZ_ZU MOBIL_IP"/>
+<code key="88218287" value="EM_FAMILY_IP"/>
+<code key="88218360" value="EM_ITSS_ZUSATZSPEICHER_CIERP_3_BUSINESS"/>
+<code key="88218363" value="EM_ITSS_ZUSATZSPEICHER_SPOC-CRM"/>
+<code key="88218364" value="EM_ITSS_ZUSATZSP_MESONIC_WINLINE_LIVE"/>
+<code key="88218367" value="EM_ITSS_ZUSATZSPEICHER_DYNAMICS_CRM_4_0"/>
+<code key="88218368" value="EM_ITSS_ZUSATZSPEICHER_DYNAMICS_NAV"/>
+<code key="88218371" value="EM_ZUSATZSP_MS_EXCHANGE_BUSINESS"/>
+<code key="88218372" value="EM_ZUSATZSP_MS_EXCHANGE_PREMIUM"/>
+<code key="88218373" value="EM_ZUSATZSP_MS_EXCHANGE_PREMIUM_BB"/>
+<code key="88218376" value="EM_LIZENZ_VIRENSCHUTZ-SOFTWARE"/>
+<code key="88218442" value="EM_FOTOSERVICE"/>
+<code key="88218461" value="EM_LIGA TOTAL"/>
+<code key="88218462" value="EM_LIGA TOTAL HD"/>
+<code key="88218463" value="EM_LIGA TOTAL AKTION"/>
+<code key="88218464" value="EM_LIGA TOTAL HD AKTION"/>
+<code key="88218465" value="EM_BVB TOTAL!"/>
+<code key="88218478" value="EM_SMS-MMS-FAX-VERSAND-SPERRE"/>
+<code key="88218479" value="EM_DE-DOMAIN"/>
+<code key="88218480" value="EM_INTERNATIONALE-DOMAIN"/>
+<code key="88218496" value="EM_SPERRE_ZUSATZDIENSTE_ISI"/>
+<code key="88218501" value="EM_ISPX CALL &amp; SURF COMFORT PLUS 4 (RF)"/>
+<code key="88218503" value="EM_ISPX_C&amp;S COMFORT 4 (RF)"/>
+<code key="88218509" value="EM_MS_EX_STANDARD_JAHRESPREIS"/>
+<code key="88218510" value="EM_MS_EX_PREMIUM_JAHRESPREIS"/>
+<code key="88218511" value="EM_MS_EX_PREMIUM_BB_JAHRESPREIS"/>
+<code key="88218512" value="EM_VOIP_BASISTARIF"/>
+<code key="88218517" value="EM_VOIP_TELEFONIE"/>
+<code key="88218581" value="EM_GAMESLOAD_SPIELE_CLUB_12_MON"/>
+<code key="88218582" value="EM_GAMESLOAD_SPIELE_CLUB_6_MON"/>
+<code key="88218583" value="EM_GAMESLOAD_SPIELE_CLUB_1_MON"/>
+<code key="88218584" value="EM_MONATSPAKET_ANIMATIONEN"/>
+<code key="88218585" value="EM_MONATSPAKET_FARBIGE_LOGOS"/>
+<code key="88218586" value="EM_MONATSPAKET_HANDY-SPIELE"/>
+<code key="88218587" value="EM_MONATSPAKET_REAL_MUSIC"/>
+<code key="88218588" value="EM_MONATSPAKET_SOUNDS_STIMMEN"/>
+<code key="88218589" value="EM_SERVER"/>
+<code key="88218590" value="EM_MSO_SBE_2007"/>
+<code key="88218591" value="EM_MSO_PROFESSIONAL_2007"/>
+<code key="88218607" value="EM_DSL_2000_RAM_AN_ISI"/>
+<code key="88218608" value="EM_DSL_2000_RAM_IP_AN_ISI"/>
+<code key="88218609" value="EM_DSL_6000_RAM_AN_ISI"/>
+<code key="88218611" value="EM_ISPX_ENTERTAIN PUR FLAT PSTN"/>
+<code key="88218613" value="EM_ISPX_ENTERTAIN PUR FLAT IP"/>
+<code key="88218619" value="EM_SPORT"/>
+<code key="88218620" value="EM_SKY_WELT"/>
+<code key="88218621" value="EM_SKY_WELT_HD"/>
+<code key="88218622" value="EM_SKY_WELT_FILM"/>
+<code key="88218623" value="EM_SKY_WELT_FILM_HD"/>
+<code key="88218643" value="EM_ZUSATZDIENSTE_ISI"/>
+<code key="88218650" value="EM_ISI_INSTANZENPRODUKT"/>
+<code key="88218701" value="EM_MUSICLOAD_MUSIC_S"/>
+<code key="88218702" value="EM_MUSICLOAD_MUSIC_M"/>
+<code key="88218703" value="EM_MUSICLOAD_MUSIC_L"/>
+<code key="88218746" value="EM_BENUTZER-PIN (ISI)"/>
+<code key="88218777" value="EM_ZUGRIFF_CVSE-KUNDENCENTER"/>
+<code key="88218778" value="EM_ZUGRIFF_GURK-KUNDENCENTER"/>
+<code key="88218782" value="EM_ERSTE_MSN_BEI_IP-AS_AN_ISI"/>
+<code key="88218797" value="EM_TVISTER"/>
+<code key="88218807" value="EM_IPTV_FILM"/>
+<code key="88218808" value="EM_IPTV_KINDER"/>
+<code key="88218809" value="EM_IPTV_LIFESTYLE"/>
+<code key="88218810" value="EM_IPTV_LOUNGE"/>
+<code key="88218811" value="EM_IPTV_BIG_TV_START"/>
+<code key="88218812" value="EM_IPTV_BIG_TV"/>
+<code key="88218813" value="EM_IPTV_HD_START"/>
+<code key="88218822" value="EM_ISI_REO_ONLY"/>
+<code key="88218823" value="EM_ISI_T-NET-BOX"/>
+<code key="88218836" value="EM_ISPX_ENTERTAIN PREMIUM (5) PSTN"/>
+<code key="88218837" value="EM_ISPX_ENTERTAIN PREMIUM (5) IP"/>
+<code key="88218844" value="EM_ISI_FESTNETZINTEGRATION"/>
+<code key="88218854" value="EM_ISI_COPY_MAIL"/>
+<code key="88218868" value="EM_DEVELOPERGARDEN"/>
+<code key="88218869" value="EM_AUTHENTICATION"/>
+<code key="88218870" value="EM_CONFERENCE_CALL"/>
+<code key="88218871" value="EM_IP_LOCATION"/>
+<code key="88218872" value="EM_SEND_SMS"/>
+<code key="88218873" value="EM_LOCAL_SEARCH"/>
+<code key="88218874" value="EM_CONFERENCECALL_LIGHT"/>
+<code key="88218875" value="EM_VOICE_CALL"/>
+<code key="88218877" value="EM_ISPX_CALL &amp; SURF BASIC IP 5.1"/>
+<code key="88218879" value="EM_MIGRATIONSKENNER_VRS_TOIDSL"/>
+<code key="88218896" value="EM_PRESELECTION_IP_ORT_ISI"/>
+<code key="88218897" value="EM_PRESELECTION_IP_FERN"/>
+<code key="88218900" value="EM_BEATE_UHSE_LIVE_CLUB_18_PLUS"/>
+<code key="88218902" value="EM_VOIP_CALL_COMFORT_IP_4"/>
+<code key="88218903" value="EM_VOIP_CALL_COMFORT_PLUS_IP_4"/>
+<code key="88218904" value="EM_VOIP_CALL_START_IP"/>
+<code key="88218905" value="EM_VOIP_CALL_COMFORT_IP_5"/>
+<code key="88218906" value="EM_VOIP_CALL_VDSL_IP"/>
+<code key="88218925" value="EM_DSL_TELEFONIE_FLAT"/>
+<code key="88218926" value="EM_DSL_TELEFONIE_COUNTRY_FLAT_1"/>
+<code key="88218927" value="EM_DSL_TELEFONIE_CF_1_CALL_SURF"/>
+<code key="88218928" value="EM_DSL_TELEFONIE_COUNTRY_FLAT_2"/>
+<code key="88218930" value="EM_DSL_TELEFONIE_ZU_MOBIL_CALL_SURF"/>
+<code key="88218991" value="EM_EASYSUPPORT_FERNUNTERSTÜTZUNG_ISI"/>
+<code key="88219267" value="EM_ISPX_ENTERTAIN_SAT_PSTN"/>
+<code key="88219268" value="EM_ISPX_ENTERTAIN_SAT_IP"/>
+<code key="88219281" value="EM_ANSCHRIFT_AN_THNF"/>
+<code key="88219282" value="EM_VOIP_PLATTFOM_ CALL_COMFORT_IP_4"/>
+<code key="88219283" value="EM_ZUSATZDIENSTE_AN_THNF"/>
+<code key="88219284" value="EM_IP_KENNER_AN_THNF"/>
+<code key="88219285" value="EM_ISP_TESTANGEBOT_16_AN_THNF"/>
+<code key="88219286" value="EM_VOIP_APPLIKATION_ISI"/>
+<code key="88219287" value="EM_TDSV-KZ_AN_THNF"/>
+<code key="88219288" value="EM_2./3.MSN_BEI_IP-AS_AN_THNF_ABBRUCH"/>
+<code key="88219289" value="EM_1.MSN_BEI_IP-AS_AN_THNF"/>
+<code key="88219408" value="EM_MSOFFICE_PROFESSIONAL_2010_24_M"/>
+<code key="88219409" value="EM_MSOFFICE_HOMESTUDENT_2010_24_M"/>
+<code key="88219410" value="EM_MSOFFICE_SMALLBUSINESS _2010_24_M"/>
+<code key="88219522" value="EM_LIGA TOTAL_HSV_TOTAL"/>
+<code key="88219523" value="EM_LIGA TOTAL_HD_HSV_TOTAL"/>
+<code key="88219524" value="EM_LIGA TOTAL_BVB TOTAL"/>
+<code key="88219525" value="EM_LIGA TOTAL_HD_BVB TOTAL"/>
+<code key="88219526" value="EM_HSV_TOTAL"/>
+<code key="88219578" value="EM_ BESTANDSSYNCHRO"/>
+<code key="88219627" value="EM_ZUSTIMMUNG ZUM DATENAUSTAUSCH"/>
+<code key="88219644" value="EM_EROTIC_LOUNGE_CLUB"/>
+<code key="88219656" value="EM_NORTON_INTERNET_SECURITY"/>
+<code key="88219657" value="EM_EPUBLISHING"/>
+<code key="88219662" value="EM_VDSL_16_DP FÜR ISI"/>
+<code key="88219697" value="EM_DSL_16000_RAM_O_SPLITTER_(3)_FUER_ISI"/>
+<code key="88219698" value="EM_DSL_384_IP_FUER_ISI"/>
+<code key="88219699" value="EM_DSL_2000_RAM_O_SPLITTER_(2)_FUER_ISI"/>
+<code key="88219700" value="EM_DSL_6000_RAM_O_SPLITTER_(1)_FUER_ISI"/>
+<code key="88219701" value="EM_DSL_6000_RAM_O_SPLITTER_(2)_FUER_ISI"/>
+<code key="88219702" value="EM_DSL_6000_RAM_O_SPLITTER_(3)_FUER_ISI"/>
+<code key="88219703" value="EM_DSL_16000_RAM_O_SPLITTER_(1)_FUER_ISI"/>
+<code key="88219704" value="EM_DSL_16000_RAM_O_SPLITTER_(2)_FUER_ISI"/>
+<code key="88219705" value="EM_DSL_16_TV_OHNE_SPLITTER_FUER_ISI"/>
+<code key="88219706" value="EM_VDSL_16_TV_OHNE_SPLITTER_FUER_ISI"/>
+<code key="88219707" value="EM_VDSL_25_OHNE_SPLITTER_FUER_ISI"/>
+<code key="88219708" value="EM_VDSL_50_OHNE_SPLITTER_FUER_ISI"/>
+<code key="88219709" value="EM_VDSL_25_TV_OHNE_SPLITTER_FUER_ISI"/>
+<code key="88219710" value="EM_VDSL_50_TV_OHNE_SPLITTER_FUER_ISI"/>
+<code key="88219758" value="EM_SICHER UND ENTSPANNT"/>
+<code key="88219759" value="EM_ALARM-LEITSTELLE"/>
+<code key="88219766" value="EM_ISP0_TESTKENNUNG ET PUR"/>
+<code key="88219767" value="EM_ISP0_TESTKENNUNG ET COMFORT"/>
+<code key="88219768" value="EM_ISP0_TESTKENNUNG ET SAT"/>
+<code key="88219806" value="EM_DEMAIL"/>
+<code key="88220011" value="EM_BDEMAIL_BASIC"/>
+<code key="88220012" value="EM_BDEMAIL_100"/>
+<code key="88220013" value="EM_BDEMAIL_1000"/>
+<code key="88220014" value="EM_BDEMAIL_250"/>
+<code key="88220015" value="EM_BDEMAIL_2500"/>
+<code key="88220016" value="EM_BDEMAIL_BASICR1"/>
+<code key="88220017" value="EM_BDEMAIL_BASICR2"/>
+<code key="88220018" value="EM_BDEMAIL_100R1"/>
+<code key="88220019" value="EM_BDEMAIL_1000R1"/>
+<code key="88220020" value="EM_BDEMAIL_250R1"/>
+<code key="88220021" value="EM_BDEMAIL_BASIC SPEZIAL"/>
+<code key="88220022" value="EM_BDEMAIL_50"/>
+<code key="88220032" value="EM_BESTANDSSYNCHRO_PID_BEREINIG"/>
+<code key="88220039" value="EM_BESTANDSSYNCHRO_2_(TONR. EINRICHTEN)"/>
+<code key="88220042" value="EM_DE-MAIL NUTZUNGSSPERRE"/>
+<code key="88220043" value="EM_DE-MAIL ZUGANGSSPERRE"/>
+<code key="88220075" value="EM_INSYNC"/>
+<code key="88220086" value="EM_STILLES_ANLEGEN_ISI"/>
+<code key="88220088" value="EM_VERTRAGSPOSITION_ISI"/>
+<code key="88220090" value="EM_STILLES_LOESCHEN_ISI"/>
+<code key="88220092" value="EM_KUNDENUEBERNAHME_ISI"/>
+<code key="88220095" value="EM_ZUGRIFF_BUSI_KUNDENCENTER_ISI"/>
+<code key="88220097" value="EM_IPV6_ISI"/>
+<code key="88220100" value="EM_ISPX SURFONLY TELEKOM@SCHOOL ADSL_ISI"/>
+<code key="88220102" value="EM_ISPX_SURF ONLYTELEKOM@SCHOOL_VDSL_ISI"/>
+<code key="88220103" value="EM_ISPX_START_FIBER_ISI"/>
+<code key="88220110" value="EM_FTTH_100 FÜR ISI"/>
+<code key="88220111" value="EM_FTTH_16 FÜR ISI"/>
+<code key="88220112" value="EM_FTTH_200 FÜR ISI"/>
+<code key="88220113" value="EM_FTTH_384_ISI"/>
+<code key="88220114" value="EM_FTTH_50 FÜR ISI"/>
+<code key="88220136" value="EM_SOFTWARELOAD_INTERNETSCHUTZ"/>
+<code key="88220138" value="EM_LEITSTELLE_3_WOCHEN"/>
+<code key="88220154" value="EM_ISPX_CALL_START_IP_ISI"/>
+<code key="88220187" value="EM_ISPX_CALL_COMFORT_IP_ISI"/>
+<code key="88220237" value="EM_ISPX_CALL_PLUS_IP_ISI"/>
+<code key="88220247" value="EM_ISPX_CALL_BASIC_ IP_ISI"/>
+<code key="88220444" value="EM_POSTCLEARING_ONLY_ISI"/>
+<code key="88220461" value="EM_ISPX_ENTERTAIN_COMFORT_(5)_DSL"/>
+<code key="88220463" value="EM_ISPX_ENTERTAIN_PREMIUM_(6)_DSL"/>
+<code key="88220466" value="EM_MAIL&amp;CLOUD L_ISI"/>
+<code key="88220468" value="EM_MAIL&amp;CLOUD L FÜR INKLUSIVNUTZER_ISI"/>
+<code key="88220497" value="EM_VOIP_CALL_START_HIGH_SPEED_IP_ISI"/>
+<code key="88220499" value="EM_VOIP_CALL_COMFORT_IP_(MAX11)_ISI"/>
+<code key="88220501" value="EM_VOIP_CALL_BASIC_IP_(MAX11)_ISI"/>
+<code key="88220517" value="EM_IP_VOICE_SPERRE_ISI"/>
+<code key="88220520" value="EM_SICHERHEITSPAKET_KOMPLETT_M_ISI"/>
+<code key="88220521" value="EM_ZUSÄTZL_SICHERHEITSPAKET_KOMPLETT_ISI"/>
+<code key="88220526" value="EM_EONS_ZUHAUSE_ISI"/>
+<code key="88220527" value="EM_EONS_UNTERWEGS_ISI"/>
+<code key="88220528" value="EM_ENTERTAIN TO GO_(START)_ISI"/>
+<code key="88220529" value="EM_E2G SPEICHERPLATZ_ISI"/>
+<code key="88220540" value="EM_BESTANDSSYNCHRO_3_(BKTO)_ISI"/>
+<code key="88220541" value="EM_BESTANDSSYNCHRO_4_(KUNDENNUMMER)_ISI"/>
+<code key="88220553" value="EM_ISPX_ENTERTAIN_PREMIUM_PLUS_DSL_ISI"/>
+<code key="88220555" value="EM_DTAG NUTZUNGSPRODUKT_PSNT_ISI"/>
+<code key="88220557" value="EM_PLAYBOYNET_PSNT_ISI"/>
+<code key="88220559" value="EM_PRALINE-NETZ 18/16_PSNT_ISI"/>
+<code key="88220561" value="EM_COUPÉ CLUB (6 MONATE)_PSNT_ISI"/>
+<code key="88220563" value="EM_PENTHOUSE 18+ (3 MONATE)_PSNT_ISI"/>
+<code key="88220565" value="EM_IP100@SCRAT_PSNT_ISI"/>
+<code key="88220567" value="EM_MUSICLOAD AT NONSTOP 90_PSNT_ISI"/>
+<code key="88220569" value="EM_MUSICLOAD AT NONSTOP 30_PSNT_ISI"/>
+<code key="88220571" value="EM_MUSICLOAD CH NONSTOP 30_PSNT_ISI"/>
+<code key="88220573" value="EM_MUSICLOAD CH NONSTOP 90_PSNT_ISI"/>
+<code key="88220575" value="EM_PS INHALTE UND SERVICES_PSNT_ISI"/>
+<code key="88220577" value="EM_PS WEBORGANIZER_PSNT_ISI"/>
+<code key="88220579" value="EM_SOFTWARELOAD_PSNT_ISI"/>
+<code key="88220585" value="EM_GAMESLOAD_PSNT_ISI"/>
+<code key="88220587" value="EM_MUSICLOAD_PSNT_ISI"/>
+<code key="88220590" value="EM_VIDEOLOAD_PSNT_ISI"/>
+<code key="88220593" value="EM_EROTICLOUNGE_PSNT_ISI"/>
+<code key="88220595" value="EM_T-ONLINE SHOP_PSNT_ISI"/>
+<code key="88220597" value="EM_T-ONLINE SHOPPING_PSNT_ISI"/>
+<code key="88220599" value="EM_T-ONLINE-DE PORTAL_PSNT_ISI"/>
+<code key="88220601" value="EM_WEBNEWS_PSNT_ISI"/>
+<code key="88220603" value="EM_T-ONLINE-IQ_PSNT_ISI"/>
+<code key="88220605" value="EM_MR WONG_PSNT_ISI"/>
+<code key="88220608" value="EM_MEINE FILMWELT_PSNT_ISI"/>
+<code key="88220610" value="EM_FOTOSERVICE_PSNT_ISI"/>
+<code key="88220612" value="EM_FREE-EMAIL_PSNT_ISI"/>
+<code key="88220614" value="EM_EMAIL BASIC_PSNT_ISI"/>
+<code key="88220616" value="EM_MEDIENCENTER_PSNT_ISI"/>
+<code key="88220618" value="EM_POSTFACHVIRENSCHUTZ_PSNT_ISI"/>
+<code key="88220620" value="EM_SPAMSCHUTZ BASIC_PSNT_ISI"/>
+<code key="88220622" value="EM_DEVELOPERGARDEN_PSNT_ISI"/>
+<code key="88220624" value="EM_AUTHENTICATION_PSNT_ISI"/>
+<code key="88220626" value="EM_IP LOCATION_PSNT_ISI"/>
+<code key="88220628" value="EM_SEND SMS_PSNT_ISI"/>
+<code key="88220630" value="EM_VOICE CALL_PSNT_ISI"/>
+<code key="88220632" value="EM_CONFERENCE CALL_PSNT_ISI"/>
+<code key="88220634" value="EM_SOFTWARELOAD FLATRATE_PSNT_ISI"/>
+<code key="88220636" value="EM_COMPUTER INSIDER ADVANCED_PSNT_ISI"/>
+<code key="88220638" value="EM_SOFTWARELOAD FLATRATE PRO_PSNT_ISI"/>
+<code key="88220640" value="EM_DOKU SELECTION_PSNT_ISI"/>
+<code key="88220642" value="EM_KIDS SELECTION_PSNT_ISI"/>
+<code key="88220644" value="EM_MOVIE SELECTION_PSNT_ISI"/>
+<code key="88220646" value="EM_SOFTWARELOAD SICHERHEITSPAKET_PSNT_IS"/>
+<code key="88220648" value="EM_TV SELECTION_PSNT_ISI"/>
+<code key="88220650" value="EM_LOCAL SEARCH_PSNT_ISI"/>
+<code key="88220652" value="EM_CONFERENCE CALL - LIGHT_PSNT_ISI"/>
+<code key="88220655" value="EM_EROTIC LOUNGE INSIDER_PSNT_ISI"/>
+<code key="88220657" value="EM_BASIS@SCRAT_PSNT_ISI"/>
+<code key="88220659" value="EM_ENTERTAIN@SCRAT_PSNT_ISI"/>
+<code key="88220661" value="EM_DSL50@SCRAT_PSNT_ISI"/>
+<code key="88220663" value="EM_BEATE UHSE LIVE CLUB 18+_PSNT_ISI"/>
+<code key="88220665" value="EM_TVISTER_PSNT_ISI"/>
+<code key="88220667" value="EM_SEND MMS_PSNT_ISI"/>
+<code key="88220669" value="EM_GAMESLOAD BASIC PACK-PSNT_ISI"/>
+<code key="88220671" value="EM_GAMESLOAD PREMIUM PACK_PSNT_ISI"/>
+<code key="88220673" value="EM_MUSICLOAD NONSTOP 30_PSNT_ISI"/>
+<code key="88220675" value="EM_GAMESLOAD FAMILIEN PAKET_PSNT_ISI"/>
+<code key="88220677" value="EM_EPUBLISHING_PSNT_ISI"/>
+<code key="88220679" value="EM_IP200@SCRAT_PSNT_ISI"/>
+<code key="88220681" value="EM_EROTIC LOUNGE CLUB_PSNT_ISI"/>
+<code key="88220683" value="EM_AUTOSCOUT24_PSNT_ISI"/>
+<code key="88220685" value="EM_PRALINE NETZ (3 MONATE)_PSNT_ISI"/>
+<code key="88220687" value="EM_COUPÉ CLUB_PSNT_ISI"/>
+<code key="88220689" value="EM_COUPÉ CLUB (12 MONATE)_PSNT_ISI"/>
+<code key="88220691" value="EM_PLAYBOYNET (3 MONATE)_PSNT_ISI"/>
+<code key="88220693" value="EM_PENTHOUSE (3 MONATE)_PSNT_ISI"/>
+<code key="88220695" value="EM_PENTHOUSE (6 MONATE)_PSNT_ISI"/>
+<code key="88220697" value="EM_PENTHOUSE 18+ (6 MONATE)_PSNT_ISI"/>
+<code key="88220699" value="EM_MUSICLOAD NONSTOP 90_PSNT_ISI"/>
+<code key="88220701" value="EM_MUSICLOAD MUSIC S_PSNT_ISI"/>
+<code key="88220703" value="EM_MUSICLOAD MUSIC M_PSNT_ISI"/>
+<code key="88220705" value="EM_MUSICLOAD MUSIC L_PSNT_ISI"/>
+<code key="88220707" value="EM_FREEMAIL PREMIUM_PSNT_ISI"/>
+<code key="88220709" value="EM_SPEECH TO TEXT_PSNT_ISI"/>
+<code key="88220711" value="EM_BEATE UHSE LIVE CLUB ABO_PSNT_ISI"/>
+<code key="88220713" value="EM_VOIP@SCRAT_PSNT_ISI"/>
+<code key="88220715" value="EM_STB@SCRAT_PSNT_ISI"/>
+<code key="88220717" value="EM_DSL16@SCRAT_PSNT_ISI"/>
+<code key="88220719" value="EM_DSL25@SCRAT_PSNT_ISI"/>
+<code key="88220721" value="EM_INTERNET&amp;ISP@SCRAT_PSNT_ISI"/>
+<code key="88220723" value="EM_FREEMAIL PREMIUM (KOSTENLOS)_PSNT_ISI"/>
+<code key="88220725" value="EM_SOFTWARELOAD INTERNETSCHUTZ_PSNT_ISI"/>
+<code key="88220727" value="EM_DE-MAIL PK_PSNT_ISI"/>
+<code key="88220786" value="EM_TDSV_KZ BEI EVÜ AN ABILIT"/>
+<code key="88220787" value="EM_TDSV_KZ BEI IP-AS AN ABILIT"/>
+<code key="88220788" value="EM_TDSV_KZ BEI ISP AN ABILIT"/>
+<code key="88220811" value="EM_UMZUGSTRANSFER_DUMMY"/>
+<code key="88220813" value="EM_VOIP_CALL_START_FIBER_IP_ISI"/>
+<code key="88220814" value="EM_ABUSESPERRE_MAILVERSAND_PORT_25_ISI"/>
+<code key="88220817" value="EM_SPERRE_MAIL_INTERN_MISSBRAUCH_ISI"/>
+<code key="88220819" value="EM_ABUSESPERRE_QUOTA_ERREICHT_ISI"/>
+<code key="88220821" value="EM_ABUSESPERRE_SMS_VERSAND_ISI"/>
+<code key="88220823" value="EM_ABUSE_VOLLSPERRE_ISI"/>
+<code key="88220824" value="EM_ABUSESPERREN_FOREN_ISI"/>
+<code key="88220827" value="EM_ABUSESPERRE_HOSTING_ISI"/>
+<code key="88220829" value="EM_ABUSESPERRE_E-MAIL_IPVANS_ISI"/>
+<code key="88220831" value="EM_ABUSESPERRE_IPTV_ISI"/>
+<code key="88220833" value="EM_ABUSESPERRE_LOGIN_REO_ISI"/>
+<code key="88220835" value="EM_ABUSESPERRE_REO_ONLINE_ISI"/>
+<code key="88220851" value="EM_VERSANDQUOTENERHÖHUNG"/>
+<code key="88220852" value="EM_ENTERTAIN_ZUGABE_HD"/>
+<code key="88220854" value="EM_IPTV_ZUGABE_BIG_TV"/>
+<code key="88220856" value="EM_ZUGABE_LIGA TOTAL"/>
+<code key="88220858" value="EM_ZUGABE_LIGA TOTAL HD"/>
+<code key="88220860" value="EM_ZUGABE_SIPA NORTON 360"/>
+<code key="88220862" value="EM_ZUGABE_MAIL&amp;CLOUD M"/>
+<code key="88220865" value="EM_WLAN_TO_GO_ISI"/>
+<code key="88220870" value="EM_ABUSESPERRE_DE-MAIL_GK_ISI"/>
+<code key="88220873" value="EM_250.000 POINTS / 250.00 EUR_PSNT_ISI"/>
+<code key="88220875" value="EM_20000 PUNKTE_PSNT_ISI"/>
+<code key="88220879" value="EM_10000 PUNKTE_PSNT_ISI"/>
+<code key="88220881" value="EM_20.000 POINTS / 20.00 EUR_PSNT_ISI"/>
+<code key="88220883" value="EM_FANORAKEL_PSNT_ISI"/>
+<code key="88220888" value="EM_5000 PUNKTE_PSNT_ISI"/>
+<code key="88220890" value="EM_50.000 POINTS / 50.00 EUR_PSNT_ISI"/>
+<code key="88220892" value="EM_DE-MAIL NUTZUNGSSPERRE (KSL)_PSNT_ISI"/>
+<code key="88220894" value="EM_5.000 POINTS / 5.00 EUR_PSNT_ISI"/>
+<code key="88220896" value="EM_DE-MAIL KSL-CLEARING_PSNT_ISI"/>
+<code key="88220898" value="EM_CLOUD USER MANAGEMENT LAB AP_PSNT_ISI"/>
+<code key="88220900" value="EM_MUSIK"/>
+<code key="88220906" value="EM_ISPX_ENTERTAIN_COMFORT_SAT_DSL_ISI"/>
+<code key="88220921" value="EM_ABUSE_VOIP_VOLL_ISI"/>
+<code key="88220923" value="EM_ABUSE_VOIP_ONNET_ISI"/>
+<code key="88220929" value="EM_ABUSE_VOIP_NATIONAL_ISI"/>
+<code key="88220932" value="EM_ABUSE_VOIP_NAT_MOBIL_ISI"/>
+<code key="88220934" value="EM_ABUSE_VOIP_INTERNATIONAL_ISI"/>
+<code key="88220936" value="EM_ABUSE_VOIP_SERVICE_RN_ISI"/>
+<code key="88220938" value="EM_ABUSE_VOIP_T-VOTE_RN_ISI"/>
+<code key="88220940" value="EM_ABUSE_VOIP_11ER_RN_ISI"/>
+<code key="88220942" value="EM_ABUSE_VOIP_PREMIUM_RN_ISI"/>
+<code key="88220944" value="EM_ABUSE_VOIP_INTERKONTINENTAL_ISI"/>
+<code key="88220946" value="EM_ABUSE_VOIP_OUTBOUND_VOLL_ISI"/>
+<code key="88220951" value="EM_ABUSE_VOIP_VNB-1_ISI"/>
+<code key="88220953" value="EM_ABUSE_VOIP_VNB-2_ISI"/>
+<code key="88220955" value="EM_ABUSE_VOIP_VNB-3_ISI"/>
+<code key="88220958" value="EM_WLAN_TO_GO_TEMP_ISI"/>
+<code key="88220961" value="EM_ISPX_SURF_COMFORT_VIA_FUNK_S_ISI"/>
+<code key="88220964" value="EM_ZUGABE_SIPA_KOMPLETT_ISI"/>
+<code key="88220967" value="EM_FILM_(2)_ISI"/>
+<code key="88220969" value="EM_KINDER_(2)_ISI"/>
+<code key="88220971" value="EM_LIFESTYLE_(2)_ISI"/>
+<code key="88220973" value="EM_LOUNGE_(2)_ISI"/>
+<code key="88220975" value="EM_DOKU_(2)_ISI"/>
+<code key="88220977" value="EM_SPORT_(2)_ISI"/>
+<code key="88220979" value="EM_MUSIK_(2)_ISI"/>
+<code key="88220981" value="EM_BIG TV_(2)_ISI"/>
+<code key="88220983" value="EM_ZUGABE BIG TV_(2)_ISI"/>
+<code key="88220985" value="EM_ISPX_SURF_COMFORT_VIA_FUNK_M_ISI"/>
+<code key="88220987" value="EM_ISPX_SURF_COMFORT_VIA_FUNK_L_ISI"/>
+<code key="88221007" value="EM_ISPM_ZUGANG_ZU_TELEKOM_D_BUSINESS_ISI"/>
+<code key="88221023" value="EM_HOMEPAGE_BASIC_BUSINESS_ISI"/>
+<code key="88221025" value="EM_HOMEPAGE_STARTER_BUSINESS_ISI"/>
+<code key="88221036" value="EM_EONS REL 2 DP ZUHAUSE"/>
+<code key="88221037" value="EM_EONS REL 2 DP UNTERWEGS"/>
+<code key="88221038" value="EM_ENTERTAINTV_MOBIL_ISI"/>
+<code key="88221039" value="EM_EONS REL 2 ZUHAUSE"/>
+<code key="88221040" value="EM_EONS REL 2 UNTERWEGS"/>
+<code key="88221041" value="EM_EONS REL 2 ÜBERALL"/>
+<code key="88221042" value="EM_EONS REL 2 SAT ZUHAUSE"/>
+<code key="88221044" value="EM_EONS REL 2 SAT UNTERWEGS"/>
+<code key="88221045" value="EM_EONS REL 2 SAT ÜBERALL"/>
+<code key="88221046" value="EM_EONS REL 2 COMFORT SAT ZUHAUSE"/>
+<code key="88221047" value="EM_EONS REL 2 COMFORT SAT UNTERWEGS"/>
+<code key="88221048" value="EM_EONS REL 2 COMFORT SAT ÜBERALL"/>
+<code key="88221049" value="EM_EONS REL 2 BVB TOTAL!"/>
+<code key="88221050" value="EM_EONS REL 2 HSV TOTAL!"/>
+<code key="88221051" value="EM_EONS REL 2 LIGA TOTAL!"/>
+<code key="88221052" value="M_EONS REL 2 PAY-PAKET"/>
+<code key="88221053" value="EM_EONS REL 2 VOD SELECTION"/>
+<code key="88221054" value="EM_ENTERTAIN TO GO ÜBERALL IPTV"/>
+<code key="88221055" value="EM_ENTERTAIN TO GO ÜBERALL COMFORT SAT"/>
+<code key="88221056" value="EM_ZUGABE ENTERTAINTV_MOBIL_ISI"/>
+<code key="88221077" value="EM_3G 16"/>
+<code key="88221078" value="EM_4G MHZ 16"/>
+<code key="88221094" value="EM_BENUTZER-PIN EONS (ISI)"/>
+<code key="88221099" value="EM_4G MHZ 50"/>
+<code key="88221100" value="EM_4G GHZ 16"/>
+<code key="88221101" value="EM_4G GHZ 50"/>
+<code key="88221102" value="EM_4G GHZ 100"/>
+<code key="88221111" value="EM_IPTV_FILM_EP"/>
+<code key="88221112" value="EM_IPTV_KINDER_EP"/>
+<code key="88221113" value="EM_IPTV_LIFESTYLE_EP"/>
+<code key="88221114" value="EM_IPTV_LOUNGE_EP"/>
+<code key="88221115" value="EM_IPTV_DOKU_EP"/>
+<code key="88221116" value="EM_IPTV_SPORT_EP"/>
+<code key="88221117" value="EM_IPTV_MUSIK_EP"/>
+<code key="88221118" value="EM_IPTV_HD_OPTION_EP"/>
+<code key="88221119" value="EM_IPTV_HD_OPTION"/>
+<code key="88221140" value="EM_ISPM_ÜBERGANGST_Z_VERTRAGSKL_ISI"/>
+<code key="88221142" value="EM_ISPM_ÜBERGANGST_PLUS_Z_VERTRAGSKL_ISI"/>
+<code key="88221144" value="EM_EVN_FUER_DE-MAIL"/>
+<code key="88221152" value="EM_MAIL &amp; CLOUD L_PSNT_ISI"/>
+<code key="88221154" value="EM_MAIL &amp; CLOUD S_PSNT_ISI"/>
+<code key="88221156" value="EM_MEDIENCENTER_NEU_PSNT_ISI"/>
+<code key="88221168" value="EM_VDSL_VEC_TP 100 FÜR ISI"/>
+<code key="88221170" value="EM_VDSL_VEC_DP 100 FÜR ISI"/>
+<code key="88221178" value="EM_VDSL_VEC_TP_100_ISI"/>
+<code key="88221180" value="EM_VDSL_VEC_DP_ 100 _ISI"/>
+<code key="88221183" value="EM_SEND_MMS_ISI"/>
+<code key="88221192" value="EM_IP-TV FILM (2)_ISI"/>
+<code key="88221193" value="EM_IP-TV KINDER (2)_ISI"/>
+<code key="88221194" value="EM_IP-TV LIFESTYLE (2)_ISI"/>
+<code key="88221195" value="EM_IP-TV DOKU (2)_ISI"/>
+<code key="88221196" value="EM_IP-TV SPORT (2)_ISI"/>
+<code key="88221197" value="EM_IP-TV LOUNGE (2)_ISI"/>
+<code key="88221198" value="EM_IP-TV MUSIK_ISI"/>
+<code key="88221199" value="EM_IP-TV POLNISCH_ISI"/>
+<code key="88221200" value="EM_IP-TV ITALIENISCH_ISI"/>
+<code key="88221201" value="EM_IP-TV TÜRKISCH_ISI"/>
+<code key="88221203" value="EM_IP-TV BIG TV (2)_ISI"/>
+<code key="88221204" value="EM_IP-TV HD OPTION_ISI"/>
+<code key="88221205" value="EM_IP-TV HD START_ISI"/>
+<code key="88221207" value="EM_IP-TV DIGITURK_ISI"/>
+<code key="88221228" value="EM_ISP0_ÜBERGANGST_SURF_COMFORT_ISI"/>
+<code key="88221229" value="EM_ISP0_ÜBERGANGST_SURF_COMFORT_PL_ISI"/>
+<code key="88221233" value="EM_ISP0_TESTKENNUNG ET COMF SAT"/>
+<code key="88221259" value="EM_ISPX_KÜNDIGERTARIF_SURF_COMFORT_ISI"/>
+<code key="88221262" value="EM_ISPX_SURF_ZUHAUSE_HYBRID_S_ISI"/>
+<code key="88221264" value="EM_ISPX_SURF_ZUHAUSE_HYBRID_M_ISI"/>
+<code key="88221266" value="EM_ISPX_SURF_ZUHAUSE_HYBRID_L_ISI"/>
+<code key="88221268" value="EM_WHOLESALE_WIA_IPTV_ISI"/>
+<code key="88221292" value="EM_DLAN CONNECT M"/>
+<code key="88221293" value="EM_DLAN CONNECT S"/>
+<code key="88221300" value="EM_SKY_STARTER_ISI"/>
+<code key="88221301" value="EM_SKY_WELT_ISI"/>
+<code key="88221302" value="EM_SKY_FILM_ISI"/>
+<code key="88221303" value="EM_SKY_SPORT_ISI"/>
+<code key="88221304" value="EM_SKY_BUNDESLIGA_ISI"/>
+<code key="88221305" value="EM_SKY_HD_ISI"/>
+<code key="88221307" value="EM_SPERRE SKY"/>
+<code key="88221309" value="EM_SKY_ENTERTAIN"/>
+<code key="88221311" value="EM_WHOLESALE_KUNDENDATEN_ISI"/>
+<code key="88221314" value="EM_VDSL_16_WHOLESALE_FUER_ISI"/>
+<code key="88221315" value="EM_VDSL_25_WHOLESALE_FUER_ISI"/>
+<code key="88221316" value="EM_VDSL_50_WHOLESALE_FUER_ISI"/>
+<code key="88221317" value="EM_VDSL_100_WHOLESALE_FUER_ISI"/>
+<code key="88221318" value="EM_ADSL_16000 PLUS_WHOLESALE_FUER_ISI"/>
+<code key="88221319" value="EM_ADSL_16000 J PLUS_WHOLESALE_FUER_ISI"/>
+<code key="88221328" value="EM_MS EXCHANGE ONLINE S_ISI"/>
+<code key="88221330" value="EM_MS EXCHANGE ONLINE L_ISI"/>
+<code key="88221332" value="EM_MS EX ONLINE L BLACKBERRY_ISI"/>
+<code key="88221334" value="EM_MS EX ONLINE L RESSOURCENBOX_ISI"/>
+<code key="88221336" value="EM_MS EX ONLINE S JAHRESPAKET_ISI"/>
+<code key="88221338" value="EM_MS EX ONLINE L JAHRESPAKET_ISI"/>
+<code key="88221340" value="EM_MS EX ONLINE L BLACKBERRY JAHRESP_ISI"/>
+<code key="88221342" value="EM_MS EX ONLINE L RESSOURCEN JAHRESP_ISI"/>
+<code key="88221344" value="EM_MS EX ONLINE S + SHAREP.ONL.S_ISI"/>
+<code key="88221346" value="EM_MS EX ONLINE L + SHAREP.ONL.S_ISI"/>
+<code key="88221348" value="EM_MS EX ONL. L BLACKB+SHAREP.ONL.S_ISI"/>
+<code key="88221350" value="EM_MS EX ONL. S+SHAREP.ONL.S JAHRESP_ISI"/>
+<code key="88221352" value="EM_MS EX ONL.L+SHAREP.ONL. S JAHRESP_ISI"/>
+<code key="88221354" value="EM_MSEXON.L BLACKB+SHAREP.ONL.S JAHR_ISI"/>
+<code key="88221356" value="EM_MICROSOFT OUTLOOK 2010_ISI"/>
+<code key="88221358" value="EM_DOMAIN NAMES_ISI"/>
+<code key="88221360" value="EM_EXCHANGE QUARANTÄNEBOX_ISI"/>
+<code key="88221362" value="EM_EXCHANGE FAXVERSAND ERWEITERUNG_ISI"/>
+<code key="88221364" value="EM_EXCHANGE FAXVERSAND BEREITSTELL_ISI"/>
+<code key="88221366" value="EM_RÜCKSICHERUNG VON DATEN_ISI"/>
+<code key="88221368" value="EM_MICROSOFT SHAREPOINT ONLINE M_ISI"/>
+<code key="88221370" value="EM_MS SHAREP. ONLINE M USER-ERWEITER_ISI"/>
+<code key="88221372" value="EM_MS SHAREP. ONL. ZUSÄTZL.SPEICHER_ISI"/>
+<code key="88221374" value="EM_CRM SERVICES ONLINE_ISI"/>
+<code key="88221376" value="EM_CRM SERVICES ONL.ZUSÄTZL.SPEICHER_ISI"/>
+<code key="88221378" value="EM_ONLINE BACKUP PC-CLIENTS BASISP_ISI"/>
+<code key="88221380" value="EM_ONLINE BACKUP ZUSÄTZL.PC-CLIENTS_ISI"/>
+<code key="88221382" value="EM_ONL. BACKUP SERVER-CLIENTS BASISP_ISI"/>
+<code key="88221384" value="EM_ONL.BACKUP ZUSÄTZL.SERVER-CLIENTS_ISI"/>
+<code key="88221386" value="EM_ONLINE BACKUP ZUSÄTZL.SPEICHER_ISI"/>
+<code key="88221388" value="EM_MS OFFICE HOME &amp; BUSINESS 2012_ISI"/>
+<code key="88221390" value="EM_MS OFFICE PROFESSIONAL 2010_ISI"/>
+<code key="88221392" value="EM_IP-TV RUSSISCH_ISI"/>
+<code key="88221418" value="EM_ZUGABE HD START_ISI"/>
+<code key="88221424" value="EM_BVBTOTAL!"/>
+<code key="88221425" value="EM_HSVTOTAL!"/>
+<code key="88221426" value="EM_SCHALKE_TV"/>
+<code key="88221427" value="EM_FCB_TV"/>
+<code key="88221428" value="EM_LIGA_TV"/>
+<code key="88221483" value="EM_IP-TV MUSIK (2)"/>
+<code key="88221576" value="EM_ZUGABE HD OPTION_ISI"/>
+<code key="88221579" value="EM_VOIP_HYBRID_IP_1_ISI"/>
+<code key="88221583" value="EM_T-VORTEIL_SIPA_KOMPLETT_ISI"/>
+<code key="88221585" value="EM_ZZ_IP16_ISI"/>
+<code key="88221587" value="EM_ZZ_IP25_ISI"/>
+<code key="88221588" value="EM_ZZ_IP50_ISI"/>
+<code key="88221591" value="EM_ZZ_TV_ISI"/>
+<code key="88221593" value="EM_ZZ_INTERNET_ISP_ISI"/>
+<code key="88221595" value="EM_ZZ_TELEFONIE_ISI"/>
+<code key="88221597" value="EM_ZZ_NUTZER_ISI"/>
+<code key="88221602" value="EM_TDSV_KZ BEI PSTN-AS AN ABILIT"/>
+<code key="88221605" value="EM_SKY HD SPORT_ISI"/>
+<code key="88221608" value="EM_SKY HD SPORT 3-11_ISI"/>
+<code key="88221610" value="EM_SKY HD BUNDESLIGA_ISI"/>
+<code key="88221612" value="EM_SKY HD BUNDESLIGA 3-10_ISI"/>
+<code key="88221619" value="EM_ISPX_CALL_COMFORT_IP_(REGIO)_ISI"/>
+<code key="88221622" value="EM_ISPX_CALL_START_IP_(REGIO)_ISI"/>
+<code key="88221625" value="EM_VOIP_CALL_START_IP_(REGIO) _ISI"/>
+<code key="88221627" value="EM_VOIP_CALL_COMFORT_IP_(REGIO)_ISI"/>
+<code key="88221631" value="EM_SICHERHEITSPAKET_KOMPLETT_S_ISI"/>
+<code key="88221633" value="EM_SICHERHEITSPAKET_KOMPLETT_L_ISI"/>
+<code key="88221652" value="EM_VOIP_CALL_IP_BUSINESS_ISI"/>
+<code key="88221660" value="EM_IPTV_VOD_LOUNGE_ISI"/>
+<code key="88221661" value="EM_IPTV_VOD_LOUNGE_3MON_ISI"/>
+<code key="88221662" value="EM_IPTV_VOD_LOUNGE_6MON_ISI"/>
+<code key="88221663" value="EM_IPTV_VOD_MOVIE_SELECTION_ISI"/>
+<code key="88221694" value="EM_E2G_IPTV_ISI"/>
+<code key="88221695" value="EM_ZUGABE E2G_IPTV_ISI"/>
+<code key="88221697" value="EM_EROTIC LOUNGE CLUB_3 MONATE_PSNT_ISI"/>
+<code key="88221699" value="EM_EROTIC LOUNGE CLUB_6 MONATE_PSNT_ISI"/>
+<code key="88221701" value="EM_SKY_HD_FILM_ISI"/>
+<code key="88221704" value="EM_DEUTSCHLANDLAN_CONNECT_S(2)_ISI"/>
+<code key="88221706" value="EM_DEUTSCHLANDLAN_CONNECT_M(2)_ISI"/>
+<code key="88221708" value="EM_DEUTSCHLANDLAN_CONNECT_M_PRO 1_ISI"/>
+<code key="88221710" value="EM_DEUTSCHLANDLAN_CONNECT M_PRO 5_ISI"/>
+<code key="88221712" value="EM_DEUTSCHLAND_LANCONNECT M_PRO20_ISI"/>
+<code key="88221714" value="EM_DEUTSCHLANDLAN_O365_SBP 1_ISI"/>
+<code key="88221716" value="EM_DEUTSCHLANDLAN_O365_SBP 5_ISI"/>
+<code key="88221718" value="EM_DEUTSCHLANDLAN_O365_MB 20_ISI"/>
+<code key="88221720" value="EM_DEUTSCHLANDLAN_SYMANTEC_EP 1_ISI"/>
+<code key="88221722" value="EM_DEUTSCHLANDLAN_SYMANTEC_EP 5_ISI"/>
+<code key="88221724" value="EM_DEUTSCHLANDLAN_SYMANTEC_EP 20_ISI"/>
+<code key="88221726" value="EM_DEUTSCHLANDLAN_FESTPLATTE 1_ISI"/>
+<code key="88221728" value="EM_DEUTSCHLANDLAN_FESTPLATTE 5_ISI"/>
+<code key="88221730" value="EM_SPERRE_IPV6_ISI"/>
+<code key="88221744" value="EM_FESTE_IP_ISI"/>
+<code key="88221790" value="EM_FAMILY_CARD_SPECIAL_SIPA_ISI"/>
+<code key="88221795" value="EM_ISPX_IP_VOICE/DATA_S_ISI"/>
+<code key="88221797" value="EM_ISPX_IP_VOICE/DATA_M_ISI"/>
+<code key="88221799" value="EM_ISPX_IP_VOICE/DATA_L_ISI"/>
+<code key="88221801" value="EM_SIPA_KOMPLETT_M_DIREKT_ISI"/>
+<code key="88221841" value="EM_AKTIVIERUNG_VORHAN._SIM-KARTE_ISI"/>
+<code key="88221865" value="EM_SIPA_KOMPLETT_L_DIREKT_ISI"/>
+<code key="88221877" value="EM_ISPX_SURF_COMFORT_ALL-NET_ISI"/>
+<code key="88221879" value="EM_ISPX_SURF_COMFORT_ALL-NET_(SPEED)_ISI"/>
+<code key="88221881" value="EM_ISPX_SURF_COMFORT_ON-NET_(SPEED)_ISI"/>
+<code key="88221883" value="EM_ISPX_SURF_COMFORT_ON-NET_ISI"/>
+<code key="88221904" value="EM_DEUTSCHLANDLAN_BOX1_ISI"/>
+<code key="88221906" value="EM_DEUTSCHLANDLAN_BOX10_ISI"/>
+<code key="88221908" value="EM_DEUTSCHLANDLAN_BOX20_ISI"/>
+<code key="88221910" value="EM_DEUTSCHLANDLAN_BOX5_ISI"/>
+<code key="88221912" value="EM_DEUTSCHLANDLAN_CONNECT M PRO10_ISI"/>
+<code key="88221914" value="EM_DEUTSCHLANDLAN_CONNECT M PRO50_ISI"/>
+<code key="88221916" value="EM_DEUTSCHLANDLAN_DOKUMENTE3_ISI"/>
+<code key="88221918" value="EM_DEUTSCHLANDLAN_DOKUMENTE10_ISI"/>
+<code key="88221921" value="EM_DEUTSCHLANDLAN_DOKUMENTE5_ISI"/>
+<code key="88221923" value="EM_DEUTSCHLANDLAN_FESTPLATTE10_ISI"/>
+<code key="88221925" value="EM_DEUTSCHLANDLAN_COLLABORATION5_ISI"/>
+<code key="88221927" value="EM_DEUTSCHLANDLAN_COLLABORATION10_ISI"/>
+<code key="88221929" value="EM_DEUTSCHLANDLAN_COLLABORATION20_ISI"/>
+<code key="88221931" value="EM_DEUTSCHLANDLAN_O365_MB10_ISI"/>
+<code key="88221933" value="EM_DEUTSCHLANDLAN_O365_MB50_ISI"/>
+<code key="88221935" value="EM_DEUTSCHLANDLAN_SYMANTEC_EP10_ISI"/>
+<code key="88221937" value="EM_DEUTSCHLANDLAN_SYMANTEC_EP50_ISI"/>
+<code key="88221944" value="EM_VOIP_SOZIALTARIF 1_IP_ISI"/>
+<code key="88221946" value="EM_VOIP_SOZIALTARIF 2_IP_ISI"/>
+<code key="88222006" value="EM_VOIP_SURF_CALL_KÜNDIGER_IP_ISI"/>
+<code key="88222007" value="EM_CONTENT_COMPRESSION_HIGH_PSNT_ISI"/>
+<code key="88222008" value="EM_CONTENT_COMPRESSION_STANDARD_PSNT_ISI"/>
+<code key="88222019" value="EM_SPERRE_MASTERNUTZER_CVSE_KUNDENCE_ISI"/>
+<code key="88222024" value="EM_ZUSAETZLICHE SPRACHKANAELE"/>
+<code key="88222034" value="EM_ISPX_IP_VOICE_XS_ISI"/>
+<code key="88222036" value="EM_ISPX_IP_VOICE_L_ISI"/>
+<code key="88222038" value="EM_ISPX_IP_VOICE_M_ISI"/>
+<code key="88222041" value="EM_ISPX_IP_VOICE_S_ISI"/>
+<code key="88222044" value="EM_ISPX_IP_VOICE/DATA_ISI"/>
+<code key="88222050" value="EM_VOIP_ZUHAUSE_XS_ISI"/>
+<code key="88222052" value="EM_VOIP_ZUHAUSE_S_ISI"/>
+<code key="88222054" value="EM_VOIP_ZUHAUSE_M_ISI"/>
+<code key="88222057" value="EM_VOIP_ZUHAUSE_L_ISI"/>
+<code key="88222073" value="EM_ISPX_MAGE_ ZUH_M_ENTERT_PREMI_DSL_ISI"/>
+<code key="88222075" value="EM_ISPX_MAGE_ ZUH_S_ENTERT_PREMI_DSL_ISI"/>
+<code key="88222077" value="EM_ISPX_MAGE_ ZUH_L_ENTERT_PREMI_DSL_ISI"/>
+<code key="88222080" value="EM_ISPX_MAGEN_ ZUHAU_L_ENTERT_DSL_ISI"/>
+<code key="88222082" value="EM_ISPX_MAGEN_ ZUHAU_S_ENTERT_DSL_ISI"/>
+<code key="88222084" value="EM_ISPX_MAGEN_ ZUHAU_M_ENTERT_DSL_ISI"/>
+<code key="88222086" value="EM_ISPX_SURF_ZUHAUSE_L_ISI"/>
+<code key="88222088" value="EM_ISPX_SURF_ZUHAUSE_M_ISI"/>
+<code key="88222090" value="EM_ISPX_SURF_ZUHAUSE_S(1)_ISI"/>
+<code key="88222093" value="EM_ISPX_SURF_ZUHAUSE_S_ISI"/>
+<code key="88222097" value="EM_ISPX_SURF_ZUHAUSE_XS_ISI"/>
+<code key="88222099" value="EM_ISPX_MAGE_ZUH_S_ENTERT_SAT_DSL_ISI"/>
+<code key="88222102" value="EM_ISPX_MAGE_ZUH_S_ENTE_COMF_SAT_DSL_ISI"/>
+<code key="88222104" value="EM_ISPX_MAGE_ZUH_M_ENTE_COMF_SAT_DSL_ISI"/>
+<code key="88222107" value="EM_ISPX_MAGE_ZUH_L_ENTE_COMF_SAT_DSL_ISI"/>
+<code key="88222112" value="EM_COUNTRYFLAT_(1.5)_ISI"/>
+<code key="88222114" value="EM_COUNTRYFLAT_(2.5)_ISI"/>
+<code key="88222118" value="EM_VOIP_MSANPOTS_CALL_START_IP_ISI"/>
+<code key="88222120" value="EM_VOIP_MSANPOTS_CALL_BASIC_IP_ISI"/>
+<code key="88222122" value="EM_VOIP_MSANPOTS_CALL_COMFORT_IP_ISI"/>
+<code key="88222124" value="EM_VOIP_MSANPOTS_CALL_PLUS_IP_ISI"/>
+<code key="88222126" value="EM_VOIP_MSANPOTS_CALL_KÜNDIGER_IP_ISI"/>
+<code key="88222144" value="EM_SIP-TRUNK_PG_INKLUSIVE_ISI"/>
+<code key="88222146" value="EM_SIP-TRUNK_ZUSÄTZL_PG_BASISTARIF_ISI"/>
+<code key="88222148" value="EM_SIP-TRUNK_ZUSÄTZL_PG_BUSINESSPREM_ISI"/>
+<code key="88222156" value="EM_ISPX_DEU LAN SIP TRUNK PURE_ISI"/>
+<code key="88222158" value="EM_ISPX_DEU LAN SIP TRUNK PURE BASIC_ISI"/>
+<code key="88222160" value="EM_ISPX_DEU LAN SIP TRUNK COMPL_ISI"/>
+<code key="88222162" value="EM_ISPX_DEU LAN SIPTRUNK COMPL.BASIC_ISI"/>
+<code key="88222164" value="EM_SIP TRUNK CLIP_NO_ SCREENING_ISI"/>
+<code key="88222166" value="EM_VOIP_SIP_TRUNK_IP_ISI"/>
+<code key="88222168" value="EM_ISPX_MAGZUH S MIT TV DSL_ISI"/>
+<code key="88222170" value="EM_ISPX_MAGZUH M MIT TV DSL_ISI"/>
+<code key="88222172" value="EM_ISPX_MAGZUH L MIT TV DSL_ISI"/>
+<code key="88222174" value="EM_ISPX_MAGZUH S MIT TV PLUS DSL_ISI"/>
+<code key="88222176" value="EM_ISPX_MAGZUH M MIT TV PLUS DSL_ISI"/>
+<code key="88222179" value="EM_ISPX_MAGZUH L MIT TV PLUS DSL_ISI"/>
+<code key="88222181" value="EM_ISPX_MAGZUH S MIT TV 12 DSL_ISI"/>
+<code key="88222183" value="EM_ISP0_TESTKENNUNG TV_ISI"/>
+<code key="88222185" value="EM_ENTERTAINTV_MOBIL_ISI"/>
+<code key="88222187" value="EM_MAIL_&amp;_CLOUD_S_ISI"/>
+<code key="88222189" value="EM_ZUGABE_ENTERTAINTV_MOBIL_ISI"/>
+<code key="88222191" value="EM_ENTERTAINTV_MOBIL SPEICHER_ISI"/>
+<code key="88222193" value="EM_RESTART_ISI"/>
+<code key="88222197" value="EM_MAGEN_ZUHAU_S_ENTERT_DSL 2.0_HA_ISI"/>
+<code key="88222200" value="EM_MAG_ Z_S_ENT_COMF_SAT_DSL 2.0_HA_ISI"/>
+<code key="88222202" value="EM_MAG_Z_S_ENTERT_PREM_DSL 2.0_HA_ISI"/>
+<code key="88222204" value="EM_MAG_ZUHAU_S_ENT_SAT_DSL 2.0_HA_ISI"/>
+<code key="88222206" value="EM_MAGEN_ZUHAU_M_ENTERT_DSL 2.0_HA_ISI"/>
+<code key="88222208" value="EM_MAGEN_ZUHAU_L_ENTERT_DSL 2.0_HA_ISI"/>
+<code key="88222210" value="EM_MAG_Z_M_ENTERT_PREM_DSL 2.0_HA_ISI"/>
+<code key="88222212" value="EM_MAG_Z_L_ENTERT_PREM_DSL 2.0_HA_ISI"/>
+<code key="88222214" value="EM_MAG_ Z_M_ENT_COMF_SAT_DSL 2.0_HA_ISI"/>
+<code key="88222216" value="EM_MAG_ Z_L_ENT_COMF_SAT_DSL 2.0_HA_ISI"/>
+<code key="88222218" value="EM_BEKO_BBL-TV_ISI"/>
+<code key="88222248" value="EM_VOIP_MOVE_CALL_START_IP_ISI"/>
+<code key="88222250" value="EM_VOIP_MOVE_CALL_BASIC_IP_ISI"/>
+<code key="88222253" value="EM_VOIP_MOVE_CALL_COMFORT_IP_ISI"/>
+<code key="88222256" value="EM_VOIP_MOVE_CALL_PLUS_IP_ISI"/>
+<code key="88222292" value="EM_ISPX_START_STANDARD_ISI"/>
+<code key="88222295" value="EM_ISPX_BASIC_STANDARD_ISI"/>
+<code key="88222298" value="EM_ISPX_COMFORT_STANDARD_ISI"/>
+<code key="88222300" value="EM_ISPX_KUENDIGERANSCHLUSS_STANDARD_ISI"/>
+<code key="88222332" value="EM_TEAMLIKE_BUSINESS_ISI"/>
+<code key="88222334" value="EM_TEAMLIKE_BUSINESSPLUS_ISI"/>
+<code key="88222336" value="EM_TEAMLIKE_BUSINESS+10 LIZ_ISI"/>
+<code key="88222338" value="EM_TEAMLIKE_BUSINESS+25 LIZ_ISI"/>
+<code key="88222340" value="EM_TEAMLIKE_BUSINESS+100 LIZ_ISI"/>
+<code key="88222342" value="EM_TEAMLIKE_BUSINESS+10 GB_ISI"/>
+<code key="88222344" value="EM_TEAMLIKE_BUSINESSPLUS+10 LIZ_ISI"/>
+<code key="88222346" value="EM_TEAMLIKE_BUSINESSPLUS+25 LIZ_ISI"/>
+<code key="88222348" value="EM_TEAMLIKE_BUSINESSPLUS+100 LIZ_ISI"/>
+<code key="88222350" value="EM_TEAMLIKE_BUSINESSPLUS+10 GB_ISI"/>
+<code key="88222386" value="EM_IP500@SCRAT_PSNT_ISI"/>
+<code key="88222388" value="EM_IP1000@SCRAT_PSNT_ISI"/>
+<code key="88222397" value="EM_DEUTSCHLANDLAN_IMEET_BASIC_ISI"/>
+<code key="88222419" value="EM_VOIP_DLAN_START_ISI"/>
+<code key="88222423" value="EM_DSL_16000_RAM_O_SPLITTER_(1)_GK_ISI"/>
+<code key="88222424" value="EM_DSL_16000_RAM_O_SPLITTER_(2)_GK_ISI"/>
+<code key="88222425" value="EM_DSL_16000_RAM_O_SPLITTER_(3)_GK_ISI"/>
+<code key="88222426" value="EM_VDSL_25_DP_GK_FÜR_ISI"/>
+<code key="88222427" value="EM_VDSL_50_OHNE_SPLITTER_GK_FUER_ISI"/>
+<code key="88222428" value="EM_VDSL_VEC_DP_GK 100 FÜR ISI"/>
+<code key="88222445" value="EM_VOIP_MOVE_T-NET_IP_ISI"/>
+<code key="88222447" value="EM_VOIP_MOVE_CALLTIME_IP_ISI"/>
+<code key="88222452" value="EM_ANSCHRIFTEN_OR_THNF"/>
+<code key="88222462" value="EM_GK_INNO_COMPLETE_DDI"/>
+<code key="88222464" value="EM_GK_INNO_PURE_DDI"/>
+<code key="88222493" value="EM_ISPX_MAGZU_S_MIT_TV_SAT_START_DSL_ISI"/>
+<code key="88222495" value="EM_ISPX_MAGZUH_S_MIT_TV_SAT_DSL_ISI"/>
+<code key="88222497" value="EM_ISPX_MAGZUH_M_MIT_TV_SAT_DSL_ISI"/>
+<code key="88222499" value="EM_ISPX_MAGZUH_L_MIT_TV_SAT_DSL_ISI"/>
+<code key="88222501" value="EM_ISP0_TESTKENNUNG_TV_SAT_START_ISI"/>
+<code key="88222503" value="EM_ISP0_TESTKENNUNG_TV_SAT_ISI"/>
+<code key="88222512" value="EM_SURF_SP_IP_MSAN-OUTDOOR_ÖTK_ISI"/>
+<code key="88222514" value="EM_NGTV-PLATTFORMKENNER_ISI"/>
+<code key="88222538" value="EM_MSAN POTS ÖTK_VRE"/>
+<code key="88222553" value="EM_ISPX_STANDARD_(M)_ISI"/>
+<code key="88222555" value="EM_ISPX_TIME_STANDARD_(M)_ISI"/>
+<code key="88222557" value="EM_ISPX_PLUS_STANDARD_(M)_ISI"/>
+<code key="88222561" value="EM_ISPX_START_(4)_STANDARD_(M)_ISI"/>
+<code key="88222563" value="EM_ISPX_BASIC_STANDARD_(M)_ISI"/>
+<code key="88222565" value="EM_ISPX_COMFORT_STANDARD_(M)_ISI"/>
+<code key="88222566" value="EM_GENERIERUNG_TELEFONIE-PASSWORT_ISI"/>
+<code key="88222578" value="EM_ISPX_IP_START_ISI"/>
+<code key="88222637" value="EM_DSL_6000_RAM_O_SPLITTER_(3)_GK_FU ISI"/>
+<code key="88222703" value="EM_VOIP_MSAN_POTS_ÖTK_ISI"/>
+<code key="88222707" value="EM_ISPX_MSAN_POTS_ÖTK_ISI"/>
+<code key="88222709" value="EM_INKLUSIVVOLUMEN_ XS _THNF_ISI"/>
+<code key="88222711" value="EM_INKLUSIVVOLUMEN_ HYBRID_S _THNF_ISI"/>
+<code key="88222713" value="EM_SSD-BANDBREITE_XS_THNF_ISI"/>
+<code key="88222715" value="EM_SSD-BANDBREITE_HYBRID_S_THNF_ISI"/>
+<code key="88222717" value="EM_VOIP_FMC_BUSINESS_ISI"/>
+<code key="88222810" value="EM_ABUSESPERRE_E-MAIL VERSAND_ISI"/>
+<code key="88222811" value="EM_ISPX_DEUTSCHLANDLAN CPBX IP_ISI"/>
+<code key="88222812" value="EM_ISPX_DLAN CPBX POOLING IP_ISI"/>
+<code key="88222813" value="EM_ISPX_DLAN_CPBX_PURE_IP_ISI"/>
+<code key="88222814" value="EM_ISPX_DLAN CPBX POOLING PURE IP_ISI"/>
+<code key="88222815" value="EM_ISPX_DLAN CPBX MSN IP_ISI"/>
+<code key="88222816" value="EM_ISPX_DLAN CPBX POOLING MSN IP_ISI"/>
+<code key="88222817" value="EM_ISPX_DLAN CPBX MSN PURE IP_ISI"/>
+<code key="88222818" value="EM_ISPX_DLAN CPBX POOL MSN PURE IP_ISI"/>
+<code key="88222819" value="EM_ISPX_DLAN CPBX_FILIALE IP_ISI"/>
+<code key="88222820" value="EM_ISPX_DLAN CPBX_FILIALE PURE IP_ISI"/>
+<code key="88222821" value="EM_ISPX_DLAN CPBX_FILIALE MSN IP_ISI"/>
+<code key="88222822" value="EM_ISPX_DLAN CPBX_FILIALE MSN PUREIP_ISI"/>
+<code key="88222823" value="EM_ZWEI PARALLELE GESPRÄCHE INKL CC_ISI"/>
+<code key="88222824" value="EM_ZUSÄTZL.PARALLELE GESPRÄCHE CC_ISI"/>
+<code key="88222825" value="EM_ZUSÄTZL.PARALL.GESPRÄCHE POOL CC_ISI"/>
+<code key="88222835" value="EM_DUWA_THNF"/>
+<code key="88222852" value="EM_ISPX_IP_VOICE/DATA_X_ISI"/>
+<code key="88222859" value="EM_TEAM DISK 100 GB"/>
+<code key="88223018" value="EM_IPTV SKY WELT_ISI"/>
+<code key="88223019" value="EM_IPTV SKY FILM_ISI"/>
+<code key="88223020" value="EM_IPTV SKY SPORT_ISI"/>
+<code key="88223021" value="EM_IPTV SKY FUßBALL BUNDESLIGA_ISI"/>
+<code key="88223022" value="EM_IPTV SKY HD FILM (601)_ISI"/>
+<code key="88223023" value="EM_IPTV SKY HD SPORT (604)_ISI"/>
+<code key="88223024" value="EM_IPTV SKY HD SPORT 3-11 (605)_ISI"/>
+<code key="88223025" value="EM_IPTV SKY HD BUNDESLIGA (603)_ISI"/>
+<code key="88223026" value="EM_IPTV SKY HD BUNDESLIGA 3-10 (606)_ISI"/>
+<code key="88223027" value="EM_IPTV SKY SPERRE_ISI"/>
+<code key="88223029" value="EM_ISPM_PLUG_N_PLAY_HOTSPOT_SERVICE_ISI"/>
+<code key="88223032" value="EM_ANSCHLUSS-SPERRE_IP_ISI"/>
+<code key="88223034" value="EM_IPTV SKY STARTER_ISI"/>
+<code key="88223102" value="EM_ISPM_SMARTHOME_SERVICEPRODUKT_ISI"/>
+<code key="88223161" value="EM_ISPX_SURF_ZUHAUSE_XS_VOLUMEN_ISI"/>
+<code key="88223163" value="EM_ISPX_SURF_ZUHAUSE_XXS_VOLUMEN_ISI"/>
+<code key="88223165" value="EM_FILM (3)_ISI"/>
+<code key="88223167" value="EM_DOKU (3)_ISI"/>
+<code key="88223169" value="EM_LIFESTYLE (3)_ISI"/>
+<code key="88223172" value="EM_KINDER (3)_ISI"/>
+<code key="88223174" value="EM_SPORT (3)_ISI"/>
+<code key="88223176" value="EM_LOUNGE (3)_ISI"/>
+<code key="88223178" value="EM_BIG TV (3)_ISI"/>
+<code key="88223180" value="EM_ZUGABE BIG TV (3)_ISI"/>
+<code key="88223234" value="EM_ANSCHLUSS-SPERRE IP_ISI"/>
+<code key="88223255" value="EM_ISPX_SURF_ZUHAUSE_HYBRID_M_(2)_ISI"/>
+<code key="88223279" value="EM_ENTERTAIN TÜRK (2)_ISI"/>
+<code key="88223289" value="EM_ISPM_ZUHAUSE_L_START_ISI"/>
+<code key="88223291" value="EM_ISPM_ZUHAUSE_M_START_ISI"/>
+<code key="88223305" value="EM_IPTV KINDER (3)_ISI"/>
+<code key="88223307" value="EM_IPTV LIFESTYLE (3)_ISI"/>
+<code key="88223309" value="EM_IPTV LOUNGE (3)_ISI"/>
+<code key="88223311" value="EM_IPTV DOKU (3)_ISI"/>
+<code key="88223313" value="EM_IPTV BIG TV (3)_ISI"/>
+<code key="88223315" value="EM_IPTV SPORT (3)_ISI"/>
+<code key="88223317" value="EM_IPTV FILM (3)_ISI"/>
+<code key="88223326" value="EM_IPTV TÜRKISCH (2)_ISI"/>
+<code key="88223337" value="EM_SKY_STARTER_(510)_ISI"/>
+<code key="88223339" value="EM_SKY_ENTERTAINMENT_(515)_ISI"/>
+<code key="88223341" value="EM_SKY_CINEMA_(511)_ISI"/>
+<code key="88223343" value="EM_SKY_HD_CINEMA_(611)_ISI"/>
+<code key="88223355" value="EM_ISPX_IP_START_HYBRID_ISI"/>
+<code key="88223389" value="EM_DEUTSCHLANDLAN_SYMANTEC_EP 1_NEW_ISI"/>
+<code key="88223393" value="EM_IPTV SKY STARTER (510)_ISI"/>
+<code key="88223395" value="EM_IPTV SKY ENTERTAINMENT (515)_ISI"/>
+<code key="88223397" value="EM_IPTV SKY HD CINEMA (611)_ISI"/>
+<code key="88223399" value="EM_IPTV SKY CINEMA (511)_ISI"/>
+<code key="88223401" value="EM_MAZU_M_HY (2) MIT TV DSL_ISI"/>
+<code key="88223404" value="EM_MAZU_M_HY (2) MIT TV PLUS DSL_ISI"/>
+<code key="88223407" value="EM_MAZU_M_HY (2) MIT TV SAT START DSL_IS"/>
+<code key="88223409" value="EM_MAZU_M_HY (2) MIT TV SAT DSL_ISI"/>
+<code key="88223443" value="EM_IPTV NGTV_ISI"/>
+<code key="88223445" value="EM_IPTV RESTART_ISI"/>
+<code key="88223447" value="EM_IPTV ULTRAHD_ISI"/>
+<code key="88223449" value="EM_IPTV BASIS TV_ISI"/>
+<code key="88223451" value="EM_IPTV BASIS TV UPSELL_ISI"/>
+<code key="88223475" value="EM_ISPX_SURF_DP_ÖTK_VDSL_ISI"/>
+<code key="88223484" value="EM_IMEET_BASIC_ISI"/>
+<code key="88223486" value="EM_IMEET_SMALL_BUSINESS_ISI"/>
+<code key="88223488" value="EM_EXCHANGE_ONLINE_ISI"/>
+<code key="88223490" value="EM_O365_BUSINESS_ESSENTIALS_ISI"/>
+<code key="88223492" value="EM_O365_BUSINESS_ISI"/>
+<code key="88223505" value="EM_SHOP-STARTER"/>
+<code key="88223570" value="EM_ EISHOCKEY TV OPTION _ISI"/>
+<code key="88223600" value="EM_ISPX_MAZU S MIT STARTTV_DSL_ISI"/>
+<code key="88223601" value="EM_ISPX_MAZU M MIT STARTTV_DSL_ISI"/>
+<code key="88223602" value="EM_ISPX_MAZU L MIT STARTTV_DSL_ISI"/>
+<code key="88223603" value="EM_ISPX_MAZU S HYB MIT STARTTV_DSL_ISI"/>
+<code key="88223604" value="EM_ISPX_MAZU M HYB MIT STARTTV_DSL_ISI"/>
+<code key="88223605" value="EM_ISPX_MAZU L HYB MIT STARTTV_DSL_ISI"/>
+<code key="88223606" value="EM_ISPX_MAZU M HYB (2) MIT STARTTV_DSL_I"/>
+<code key="88223607" value="EM_UPSELL ENTERTAINTV_ISI"/>
+<code key="88223608" value="EM_UPSELL ENTERTAINTV PLUS_ISI"/>
+<code key="88223610" value="EM_ISPM_ZUHAUSE_M_START_25_ISI"/>
+<code key="88223630" value="EM_FC_BAYERN_TV_LIVE_ISI"/>
+<code key="88223636" value="EM_FTTH_500 FÜR ISI"/>
+<code key="88223638" value="EM_FTTH_1000 FÜR ISI"/>
+<code key="88223646" value="EM_IP_MIGRATION_GK_MASTERNUTZER_ISI"/>
+<code key="88223648" value="EM_IP_MIGRATION_GK_DEAKTIVIERUNG_VOICE_I"/>
+<code key="88223661" value="EM_PZT_IP_KONNEKT_ISI"/>
+<code key="88223662" value="EM_PZT_IP_KONEKT_IPV4_SCHMB_NICHT_ON_ISI"/>
+<code key="88223664" value="EM_PZT_IP_KONNEKT_VOLUMEN_ISI"/>
+<code key="88223665" value="EM_PZT_IP_KONNEKT_IPV4_SCHMB_ISI"/>
+<code key="88223666" value="EM_PZT_IP_KONNEKT_OHNE_PAYPERCLICK_ISI"/>
+<code key="88223667" value="EM_PZT_IP_KONNEKT_SCHMB_ISI"/>
+<code key="88223668" value="EM_PZT_IP_KONEKT_IPV4_OHNE_ON_KC_PPC_ISI"/>
+<code key="88223671" value="EM_PZT_OHNE_IP_KONNEKT_MIT_ANRUFBEAN_ISI"/>
+<code key="88223672" value="EM_PZT_OHNE_IP_KONNEKT_MIT_PPC_ISI"/>
+<code key="88223673" value="EM_PZT_OHNE_IP_KONNEKT_ANRUFBEAN_PPC_ISI"/>
+<code key="88223675" value="EM_PZT_FUNK_Z_HAUSE_ISI"/>
+<code key="88223676" value="EM_PZT_MAIL_CLOUD _M_INKLUSIVNUTZER_ISI"/>
+<code key="88223677" value="EM_PZT_VOIP_CALL_POTS_ISI"/>
+<code key="88223678" value="EM_PZT_VOIP_CALL_STANDARD_ISI"/>
+<code key="88223679" value="EM_PZT_VOIP_CALL_BUSINESS_ISI"/>
+<code key="88223680" value="EM_PZT_VOIP_CALL_SIP-TRUNK_ISI"/>
+<code key="88223681" value="EM_PZT_VOIP_CALL_SP_ÖTK_ISI"/>
+<code key="88223682" value="EM_PZT_VOIP_CALL_DLAN_PBX_TDS_ISI"/>
+<code key="88223683" value="EM_PZT_VOIP_CALL_DP_ÖTK_ISI"/>
+<code key="88223691" value="EM_DROSSELKLASSE_1_ISI"/>
+<code key="88223693" value="EM_DROSSELKLASSE_99_ISI"/>
+<code key="88223720" value="EM_PZT_MAIL_CLOUD _L_INKLUSIVNUTZER_ISI"/>
+<code key="88223721" value="EM_PZT_MAIL_CLOUD _L_ISI"/>
+<code key="88223722" value="EM_PZT_MAIL_CLOUD _M_ISI"/>
+<code key="88223729" value="EM_LEISTUNG M1 ETVM LIGHT_ISI"/>
+<code key="88223734" value="EM_PZT_GENERISCHE_BANDREITE_ISI"/>
+<code key="88223755" value="EM_PZT_ENTERTAIN_BASIC_ISI"/>
+<code key="88223756" value="EM_PZT_ENTERTAIN_COMFORT_ISI"/>
+<code key="88223757" value="EM_PZT_ENTERTAIN_COMFORT_SAT_ISI"/>
+<code key="88223758" value="EM_PZT_ENTERTAIN_SAT_ISI"/>
+<code key="88223759" value="EM_PZT_ENTERTAIN_ PUR_ISI"/>
+<code key="88223760" value="EM_PZT_ENTERTAIN_PREMIUM_4_ISI"/>
+<code key="88223761" value="EM_PZT_ENTERTAIN_PREMIUM_5_ISI"/>
+<code key="88223762" value="EM_PZT_ENTERTAIN_PREMIUM_6_ISI"/>
+<code key="88223763" value="EM_PZT_MAZU MIT TV_ISI"/>
+<code key="88223765" value="EM_PZT_MAZU_MIT_TV SAT_ISI"/>
+<code key="88223766" value="EM_PZT_MAZU_MIT_START_TV_ISI"/>
+<code key="88223767" value="EM_PZT_TESTACCOUNT_ENTERTAIN_COMFORT_ISI"/>
+<code key="88223768" value="EM_PZT_TESTACCOUNT_ENTERTAIN_COM SAT_ISI"/>
+<code key="88223769" value="EM_PZT_TESTACCOUNT_ENTERTAIN_SAT_ISI"/>
+<code key="88223770" value="EM_PZT_TESTACCOUNT_ENTERTAIN_PUR_ISI"/>
+<code key="88223771" value="EM_PZT_TESTACCOUNT_TV_ISI"/>
+<code key="88223772" value="EM_PZT_TESTACCOUNT_TV_SAT_ISI"/>
+<code key="88223773" value="EM_PZT_TARIFERWEITERUNG_ENTERTAINTV_ISI"/>
+<code key="88223774" value="EM_PZT_TARIFERWEIT_ENTERTAINTV PLUS_ISI"/>
+<code key="88223788" value="EM_PZT_VOIP_CALL_POTS_KÜNDIGER_ISI"/>
+<code key="88223837" value="EM_O365_BUSINESS_PREMIUM_ISI"/>
+<code key="88223839" value="EM_O365_BUSINESS_PREMIUM_TELEKOM+_ISI"/>
+<code key="88223840" value="EM_BONDING@SCRAT_PSNT_ISI"/>
+<code key="88223841" value="EM_FUP10@SCRAT_PSNT_ISI"/>
+<code key="88223844" value="EM_FUP50@SCRAT_PSNT_ISI"/>
+<code key="88223845" value="EM_FUP100@SCRAT_PSNT_ISI"/>
+<code key="88223846" value="EM_FUPXX@SCRAT_PSNT_ISI"/>
+<code key="88223864" value="EM_MUSIC_POWERED_BY_SPOTIFY_(0 FREI)_ISI"/>
+<code key="88223868" value="EM_ISPX_GIGABIT_DSL_ISI"/>
+<code key="88223972" value="EM_ISPX_IP_VOICE/DATA_FIBER_ISI"/>
+<code key="88223975" value="EM_ISPX_IP_START_FIBER_ISI"/>
+<code key="88224024" value="EM_VRG@SCRAT_PSNT_ISI"/>
+<code key="88224025" value="EM_MYFI@SCRAT_PSNT_ISI"/>
+<code key="88224026" value="EM_KINDERSCHUTZ@SCRAT_PSNT_ISI"/>
+<code key="88224027" value="EM_SECURITY@SCRAT_PSNT_ISI"/>
+<code key="88224098" value="EM_VOIP_DP_IP_ÖTK_ISI"/>
+<code key="88224099" value="EM_MAIL M_ISI"/>
+<code key="88224100" value="EM_MAIL L_ISI"/>
+<code key="88224101" value="EM_MAIL M INKLUSIVNUTZER_ISI"/>
+<code key="88224102" value="EM_MAIL L INKLUSIVNUTZER_ISI"/>
+<code key="88224103" value="EM_MAGENTACLOUD M_ISI"/>
+<code key="88224104" value="EM_MAGENTACLOUD L_ISI"/>
+<code key="88224105" value="EM_MAGENTACLOUD XL_ISI"/>
+<code key="88224106" value="EM_MAGENTACLOUD M INKLUSIVNUTZER_ISI"/>
+<code key="88224107" value="EM_MAGENTACLOUD INKLUSIVNUTZER_ISI"/>
+<code key="88224108" value="EM_MAGENTACLOUD XL INKLUSIVNUTZER_ISI"/>
+<code key="88224111" value="EM_SKY BUNDESLIGA KONFERENZ_ISI"/>
+<code key="88224112" value="EM_SKY HD BUNDESLIGA KONFERENZ_ISI"/>
+<code key="88224115" value="EM_ISPX_SURF_DP_IP_ÖTK_ISI"/>
+<code key="88224116" value="EM_ISPX_SURF_DP_IP_ÖTK-HS_ISI"/>
+<code key="88224137" value="EM_RANKING COACH_ISI"/>
+<code key="88224138" value="EM_VOIP_WHS_CHIMÄRA_ISI"/>
+<code key="88224289" value="EM_ISPX_ZUHAUSE_SURF_DSL_ISI"/>
+<code key="88224290" value="EM_ISPX_SURF_ONLY_ZU_HAUSE_M_ISI"/>
+<code key="88224302" value="EM_3. LIGA TV OPTION_ISI"/>
+<code key="88224303" value="EM_FIGHTING TV OPTION_ISI"/>
+<code key="88224304" value="EM_SPORT TV OPTION_ISI"/>
+<code key="88224305" value="EM_DAZN_ISI"/>
+<code key="88224306" value="EM_EUROSPORT PLAYER_ISI"/>
+<code key="88224310" value="EM_FESTE_UNTERDRÜCKUNG_RUFNUMMER_ISI"/>
+<code key="88224444" value="EM_FTTH_16_GK_FÜR ISI"/>
+<code key="88224446" value="EM_FTTH_50_GK_FÜR ISI"/>
+<code key="88224448" value="EM_FTTH_100_GK_FÜR ISI"/>
+<code key="88224450" value="EM_FTTH_200_GK_FÜR ISI"/>
+<code key="88224452" value="EM_FTTH_500_GK_FÜR ISI"/>
+<code key="88224454" value="EM_FTTH_1000_GK_FÜR ISI"/>
+<code key="88224457" value="EM_WEBSHOP_S_ISI"/>
+<code key="88224459" value="EM_WEBSHOP_M_ISI"/>
+<code key="88224461" value="EM_WEBSHOP_L_ISI"/>
+<code key="88224486" value="EM_SV_16_ISI"/>
+<code key="88224487" value="EM_SV_25_ISI"/>
+<code key="88224488" value="EM_SV_50_ISI"/>
+<code key="88224489" value="EM_SV_100_ISI"/>
+<code key="88224490" value="EM_SV_175_ISI"/>
+<code key="88224491" value="EM_SV_250_ISI"/>
+<code key="88224492" value="EM_SV_16_TV_ISI"/>
+<code key="88224493" value="EM_SV_25_TV_ISI"/>
+<code key="88224494" value="EM_SV_50_TV_ISI"/>
+<code key="88224495" value="EM_SV_100_TV_ISI"/>
+<code key="88224496" value="EM_SV_175_TV_ISI"/>
+<code key="88224497" value="EM_SV_250_TV_ISI"/>
+<code key="88224498" value="EM_SV_16_GK_ISI"/>
+<code key="88224499" value="EM_SV_25_GK_ISI"/>
+<code key="88224500" value="EM_SV_50_GK_ISI"/>
+<code key="88224501" value="EM_SV_100_GK_ISI"/>
+<code key="88224502" value="EM_SV_175_GK_ISI"/>
+<code key="88224503" value="EM_SV_250_GK_ISI"/>
+<code key="88224504" value="EM_SV_16_GK_INNO_ISI"/>
+<code key="88224505" value="EM_SV_25_GK_INNO_ISI"/>
+<code key="88224506" value="EM_SV_50_GK_INNO_ISI"/>
+<code key="88224507" value="EM_SV_100_GK_INNO_ISI"/>
+<code key="88224508" value="EM_SV_175_GK_INNO_ISI"/>
+<code key="88224509" value="EM_SV_250_GK_INNO_ISI"/>
+<code key="88224511" value="EM_SERIEN TV OPTIONN_ISI"/>
+<code key="88224514" value="EM_ISPX_KÜNDIGER_ISI"/>
+<code key="88224519" value="EM_VOIP_KÜNDIGER_NAH_IP_ISI"/>
+<code key="88224521" value="EM_ISPX_CALL_BASIC_IP_REGIO_ISI"/>
+<code key="88224523" value="EM_VOIP_CALL_BASIC_IP_REGIO _ISI"/>
+<code key="88224529" value="EM_INKLUSIV_HOMEPAGE_ISI"/>
+<code key="88224530" value="EM_INKLUSIV_HOMEPAGE_BUSINESS_ISI"/>
+<code key="88224531" value="EM_HOMEPAGE_S_ISI"/>
+<code key="88224532" value="EM_HOMEPAGE_M_ISI"/>
+<code key="88224533" value="EM_HOMEPAGE_L_ISI"/>
+<code key="88224539" value="EM_SMALL_BUSINESS_KONFERENZ_ISI"/>
+<code key="88224676" value="EM_ENTERTAIN_TV_MOBIL_ZUHAUSE_ISI"/>
+    </em:codes>
+
+    <xsl:key name="kCodeByName" match="code" use="@key"/>
+    <xsl:template match="node()|@*" mode="EM">
+            <tr>
+            <xsl:apply-templates select="node()|@*"  mode="EM" />
+            <xsl:apply-templates select="node()|@*"  mode="EMR" />                
+            </tr>
+    </xsl:template>
+
+    <xsl:template match="em_mat_nr/text()[substring(.,11) = document('')/*/em:codes/*/@key]" mode="EM">
+        <xsl:variable name="vCur" select="substring(.,11)"/>        
+        <xsl:variable name="vGF" select="../../../gf/node()"/>        
+        <xsl:variable name="vEGF" select="../../../egf/node()"/>
+        <xsl:variable name="cGF">
+            <xsl:choose>
+                <xsl:when test="$vGF=001">
+                    rgbGf001
+                </xsl:when>
+                <xsl:when test="$vGF=002">
+                    rgbGf002
+                </xsl:when>
+                <xsl:when test="$vGF=003">
+                    rgbGf003
+                </xsl:when>
+                <xsl:otherwise>
+                    rgbStd
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="cEGF">
+            <xsl:choose>
+                <xsl:when test="$vEGF=001">
+                    rgbEgf001
+                </xsl:when>
+                <xsl:when test="$vEGF=002">
+                    rgbEgf002
+                </xsl:when>
+                <xsl:otherwise>
+                    rgbStd
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:for-each select="document('')">
+            <td>
+                <xsl:attribute name="class"><xsl:value-of select="$cGF"/></xsl:attribute><xsl:value-of select="$vGF"/>
+            </td>
+            <td>
+                <xsl:attribute name="class"><xsl:value-of select="$cEGF"/></xsl:attribute><xsl:value-of select="$vEGF"/>
+            </td>
+            <td>
+                    <xsl:value-of select="$vCur"/>
+                </td>
+            <td >
+                    <xsl:value-of select="key('kCodeByName', $vCur)/@value"/>
+                </td>
+            </xsl:for-each> 
+    </xsl:template>
+
+</xsl:stylesheet>

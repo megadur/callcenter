@@ -1,0 +1,134 @@
+<div class="panel-body">
+    <form class="form-horizontal" role="form">
+        <div class="row">
+            <div class="col-md-6  col-lg-2">
+                <div class="form-group">
+                    <label for="dropdownStatus" class="col-md-4 control-label">Filter:</label>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownStatus" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="true">
+                                nicht abgeschlossen
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownStatus">
+                                <li>
+                                    <a href="#">nicht abgeschlossen</a>
+                                </li>
+                                <li>
+                                    <a href="#">aktiv</a>
+                                </li>
+                                <li>
+                                    <a href="#">abgeschlossen</a>
+                                </li>
+                                <li>
+                                    <a href="#">abgebrochen</a>
+                                </li>
+                                <li>
+                                    <a href="#">erstellt</a>
+                                </li>
+                                <li>
+                                    <a href="#">ausgesetzt</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+                <div class="form-group">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseEx" aria-expanded="false" aria-controls="collapseEx">
+                        Suchen
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-4 col-lg-4 bs-callout bs-callout-danger">
+                <label for="AlleKampagnen" class="col-md-4 control-label">Kampagnen global:</label>
+
+                <div class="form-group" id="AlleKampagnen">
+                    <button class="btn btn-primary" type="button">
+                        <span class="glyphicon glyphicon-stop" aria-hidden="true"></span> Stoppen!
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Starten!
+                    </button>
+                    <button class="btn btn-success" href="#collapseKampEditNeu" aria-controls="edit" role="tab" data-toggle="tab">
+                        <span class="glyphicon glyphicon-star"></span> Neu...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-6  col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">Kampagenliste</div>
+                <div class="panel-body">
+                    <table class="table " aria-labelledby="external-ids">
+                        <caption class="sr-only">Vorgangsnummern externer Systeme</caption>
+                        <thead>
+                            <tr>
+                                <th id="CAMPAIGN_ID">Name</th>
+                                <th>SERVICE</th>
+                                <th>TICKET</th>
+                                <th>TS_CREATION</th>
+                                <th>SP</th>
+                                <th>EM</th>
+                                <th>RNR</th>
+                                <th>PRM</th>
+                                <th>STATUS</th>
+                                <th>Fehler</th>
+                                <th>Erfolg</th>
+                                <th>Wartend</th>
+                                <th>ANZ</th>
+                                <th>DELAY</th>
+                                <th>Ändern</th>
+                                <th>Aktion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    TwTest
+                                </td>
+                                <td>StartStorno</td>
+                                <td>[NULL]</td>
+                                <td>2017-11-10 15:14:48</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>erstellt</td>
+                                <td>10</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>10</td>
+                                <td>
+                                    <a class="btn btn-primary" href="#collapseKampEditStopp" aria-controls="edit" role="tab" data-toggle="tab">Stopp!</a>
+                                    <a class="btn btn-primary" href="#collapseKampEditEinzel" aria-controls="edit" role="tab" data-toggle="tab">Einzel...</a>
+                                    <a class="btn btn-primary" href="#collapseKampEditListe" aria-controls="edit" role="tab" data-toggle="tab">Liste...</a>
+                                    <a class="btn btn-primary" href="#collapseKampEditError" aria-controls="edit" role="tab" data-toggle="tab">Error...</a>
+                                    <a class="btn btn-primary" href="#collapseKampEditStart" aria-controls="edit" role="tab" data-toggle="tab">Start!</a>
+                                </td>
+                                <td>
+                                    <div class="bs-callout bs-callout-warning">
+                                        <button class="btn btn-warning" href="#collapseKampEditMod" aria-controls="edit" role="tab" data-toggle="tab">
+                                            <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>Modifizieren...
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,9 +1,11 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Directive, Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 
 import { XAuftragExt } from '../../../../model/x_auftrag_ext';
 import { XMessage } from '../../../../model/x_message';
 import { XMessageService } from '../../../../service/xmessage.service';
+import { WindowRefService } from '../../../../service/window-ref.service';
 
+import { PrettyprintDirective } from '../../../../prettyprint.directive';
 import * as myGlobals from '../../../../globals'; //<==== this one
 
 @Component({
@@ -16,8 +18,11 @@ export class AuftragMsgListComponent implements OnInit {
     xauftragExt: XAuftragExt;
     xmessage: XMessage;
     xmessageList: XMessage[];
-
-    constructor(private aService: XMessageService) { }
+    xml: string;
+    nativeWindow: any
+    constructor(private aService: XMessageService, private winRef: WindowRefService) {
+        this.nativeWindow = winRef.getNativeWindow();
+    }
 
     ngOnInit() {
         this.dbgLevel = myGlobals.dbgLevel;
@@ -33,27 +38,27 @@ export class AuftragMsgListComponent implements OnInit {
         this.log('get xauftragExtIn');
         return this.xauftragExtIn;
     }
-    
-    setXAuftrag(x: XAuftragExt){
+
+    setXAuftrag(x: XAuftragExt) {
         this.xauftragExt = x;
-        this.getXMessageList_ByEoid(x.EO_ID );
+        this.getXMessageList_ByEoid(x.EO_ID);
     }
 
     getXMessageList_ByEoid(x: string) {
         this.log('getXMessageList_ByEoid for ' + x);
-        if(x){
+        if (x) {
             this.aService
-            .getXMessageListByEoId(x)
-            .subscribe(x => {if(x)this.setXMessageList(x);});
+                .findXMessageListByEoId(x)
+                .subscribe(x => { if (x) this.setXMessageList(x); });
         }
     }
-    setXMessageList(x:XMessage[]){
+    setXMessageList(x: XMessage[]) {
         if (x) {
             this.log('emit setXMessageList:' + x.length);
-            this.xmessageList=x;
+            this.xmessageList = x;
         }
     }
-    
+
     onSelect(m: XMessage): void {
         this.log('onSelect()' + m.SO_ID);
         this.setXMessage(m);
@@ -63,29 +68,112 @@ export class AuftragMsgListComponent implements OnInit {
 
     setXMessage(m: XMessage): void {
         this.log('setXMessage()' + m.ID);
-        this.xmessage=m;
+        this.xmessage = m;
     }
     getXAuftragExtList_BySoid(x: string) {
         this.aService
-            .getXMessageListBySoId(x)
+            .findXMessageListBySoId(x)
             .subscribe(x => this.setXMessageList(x));
     }
     getXMessageList_Prov(): XMessage[] {
         let xmessageList: XMessage[];
-        if (this.xmessageList){
+        if (this.xmessageList) {
             xmessageList = this.xmessageList.filter(
-            x => x.SO_ID === '');            
+                x => x.SO_ID === '');
         }
-        return  xmessageList;
-     }
-     getXMessageList_Cons(soid: string): XMessage[] {
+        return xmessageList;
+    }
+    getXMessageList_Cons(soid: string): XMessage[] {
         let xmessageList: XMessage[];
-        if (this.xmessageList){
+        if (this.xmessageList) {
             xmessageList = this.xmessageList.filter(
-            x => x.SO_ID === soid);            
+                x => x.SO_ID === soid);
         }
-        return  xmessageList;
-     }
+        return xmessageList;
+    }
+    getXMessage_ById(id: string) {
+        this.aService.getXMessageById(id)
+            .subscribe(x => this.sendMessage(x));
+    }
+    sendMessage(x) {
+        return x.xml;
+    }
+
+    getEoId() {
+        if (this.xauftragExt) {
+            return this.xauftragExt.EO_ID;
+        }
+    }
+    getElementByXpath(path) {
+        return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    }
+
+    assignActity(id: string): void {
+        this.log('assignActity:' + id);
+        if (id) {
+            //var newWindow = this.nativeWindow.open('/#');
+            this.aService.getXMessageById(id).subscribe(xml => {
+                //this.log('assignActity:' + JSON.stringify(res));
+                this.xml = xml;
+                this.showWnd(id, xml);
+                //newWindow.location = '/#/link/' + res;
+                //newWindow.location =  res;
+                // console.log('getElementById', xml);
+            })
+            /*
+*/
+        }
+        /*
+        */
+    }
+
+    showWnd(id: string, xml: string) {
+        /*
+*/
+        var node = document.getElementById(id);
+        ////*[@id="92441"]/td[2]/pre
+        ////*[@id="92441"]/td[2]/pre
+        var v;
+        v = this.getElementByXpath('*[@id="92441"]');
+        v = this.getElementByXpath('*[@id="92441"]/td[0]');
+        v = this.getElementByXpath('*[@id="92441"]/td[1]');
+        v = this.getElementByXpath('*[@id="92441"]/td[2]/pre');
+        var vv = node.children[1];
+        vv.innerHTML = xml;
+
+        var vvv = vv.children[1];
+        var xmlTextNode = document.createTextNode(xml);
+        //vv.appendChild(xmlTextNode);
+        //v.appendChild(xml);
+        //var textnode = document.createTextNode("Water");
+
+        //var xmlText = new XMLSerializer().serializeToString(textnode);
+        //var xmlTextNode = document.createTextNode(xmlText);
+        //var parentDiv = document.getElementById(id);
+        //parentDiv.appendChild(xmlTextNode);
+
+    }
+    hasCorrId(a: XMessage) {
+        //this.log('hasCorrId()' + a.EO_ID + ':' + a.CORRELATION_ID);
+        if (a.CORRELATION_ID)
+            return 'true';
+        else
+            return 'false';
+    }
+    isRes(a: XMessage) {
+        //this.log('hasCorrId()' + a.EO_ID + ':' + a.CORRELATION_ID);
+        if (a.CORRELATION_ID)
+            return '';
+        else
+            return 'hidden';
+    }
+    isReq(a: XMessage) {
+        //this.log('hasCorrId()' + a.EO_ID + ':' + a.CORRELATION_ID);
+        if (a.CORRELATION_ID)
+            return 'hidden';
+        else
+            return '';
+    }
     // TODO: Remove this when we're done
     get diagnostic() {
         let sRet = 'app-auftrag-msg-list';

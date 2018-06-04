@@ -13,14 +13,12 @@ import * as myGlobals from '../../../../globals'; //<==== this one
 export class AuftragExtListComponent implements OnInit {
     private _xauftragExtListIn: XAuftragExt[];
     @Output() xauftragExtOut = new EventEmitter<XAuftragExt>();
+    private xauftragExt: XAuftragExt;
 
-    //xauftragExt: XAuftragExt;
     // array of all items to be paged
-    // private allItems: any[];
     pagesize = 3;
     // pager object
     pager: any = {};
-    // items: XError[];
     // paged items
     pagedItems: any[];
     dbgLevel = 1;
@@ -45,12 +43,10 @@ export class AuftragExtListComponent implements OnInit {
         return this._xauftragExtListIn;
     }
 
-
     setPageSize(p: number) {
         this.pagesize = p;
         // initialize to page 1
         this.setPage(1);
-
     }
 
     setPage(page: number) {
@@ -67,19 +63,20 @@ export class AuftragExtListComponent implements OnInit {
     }
 
     onSelect(xa: XAuftragExt): void {
+        this.log('onSelect()' + xa.EO_ID);
 
         this.setxauftragExt(xa);
-        //this.xerrorOut.emit(this.xauftragExt);
-        this.log('onSelect()' + xa.EO_ID);
     }
     setxauftragExt(x: XAuftragExt) {
+        this.log('setxauftragExt()' + x.EO_ID);
+        this.xauftragExt=x;
         this.xauftragExtOut.emit(x);
     }
     // TODO: Remove this when we're done
     get diagnostic() {
         let sRet = 'app-auftrag-ext-list';
         sRet = sRet + '\r\n _xauftragExtListIn:'; if (this._xauftragExtListIn) { sRet = sRet + this._xauftragExtListIn.length; }
-        //sRet = sRet + '\r\n xauftragExt:'; if (this.xauftragExt) { sRet = sRet + this.xauftragExt.EO_ID; }
+        sRet = sRet + '\r\n xauftragExt:'; if (this.xauftragExt) { sRet = sRet + this.xauftragExt.EO_ID; }
 
         return sRet + ', \r\n';
     }

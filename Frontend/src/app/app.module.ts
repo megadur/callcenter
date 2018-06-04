@@ -27,6 +27,7 @@ import { KampagneService } from './service/kampagne.service';
 import { KatalogService } from './service/katalog.service';
 import { MessageService } from './service/message.service';
 import { PagerService } from './service/pager.service';
+import { WindowRefService } from './service/window-ref.service';
 import { XAccountService } from './service/xaccount.service';
 import { XAuftragService } from './service/xauftrag.service';
 import { XBestandService } from './service/xbestand.service';
@@ -91,6 +92,8 @@ import { SnEinzelComponent } from './comp/wrt/sn-einzel/sn-einzel.component';
 import { SnListeComponent } from './comp/wrt/sn-liste/sn-liste.component';
 import { SofortnutzungComponent } from './comp/wrt/sofortnutzung/sofortnutzung.component';
 import { AccountListComponent } from './comp/prm/account/account-list/account-list.component';
+import { VisComponent } from './comp/all/vis/vis.component';
+import { PrettyprintDirective } from './prettyprint.directive';
 // import { XBestandMock } from './model/x-bestand-mock';
 
 @NgModule({
@@ -154,6 +157,8 @@ import { AccountListComponent } from './comp/prm/account/account-list/account-li
         SnListeComponent,
         SofortnutzungComponent,
         AccountListComponent,
+        VisComponent,
+        PrettyprintDirective,
       ],
     imports: [
         BrowserModule,
@@ -173,7 +178,8 @@ import { AccountListComponent } from './comp/prm/account/account-list/account-li
         XBestandService,
         XErrorService,
         XMessageService,
-        PagerService
+        PagerService,
+        WindowRefService
     ],
     exports:[
         NavComponent,

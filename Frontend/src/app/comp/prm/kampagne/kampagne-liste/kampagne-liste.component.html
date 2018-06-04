@@ -7,32 +7,32 @@
     </div>
   </div>
 </div>
+
 <div class="panel-body">
 
   <div class="row">
-    <div class="col-sm-6  col-md-10">
+    <div class="xcol-sm-6  xcol-md-10">
       <div class="panel panel-default">
         <div class="panel-heading">Kampagenliste</div>
         <div class="panel-body">
-                <div class="row responsive-utilities-test visible-on"> <div class="col-xs-6"> <span class="hidden-xs hidden-sm">Extra small and small</span> <span class="visible-xs-block visible-sm-block">✔ Visible on x-small and small</span> </div> <div class="col-xs-6"> <span class="hidden-md hidden-lg">Medium and large</span> <span class="visible-md-block visible-lg-block">✔ Visible on medium and large</span> </div> <div class="clearfix visible-xs-block"></div> <div class="col-xs-6"> <span class="hidden-xs hidden-md">Extra small and medium</span> <span class="visible-xs-block visible-md-block">✔ Visible on x-small and medium</span> </div> <div class="col-xs-6"> <span class="hidden-sm hidden-lg">Small and large</span> <span class="visible-sm-block visible-lg-block">✔ Visible on small and large</span> </div> <div class="clearfix visible-xs-block"></div> <div class="col-xs-6"> <span class="hidden-xs hidden-lg">Extra small and large</span> <span class="visible-xs-block visible-lg-block">✔ Visible on x-small and large</span> </div> <div class="col-xs-6"> <span class="hidden-sm hidden-md">Small and medium</span> <span class="visible-sm-block visible-md-block">✔ Visible on small and medium</span> </div> </div>
           <table class="table " aria-labelledby="external-ids">
             <caption class="sr-only">Vorgangsnummern externer Systeme</caption>
             <thead>
               <tr>
-                <th >Name</th>
-                <th>SERVICE</th>
+                <th>Name</th>
+                <th class="visible-lg">SERVICE</th>
                 <th>TICKET</th>
-                <th class="hidden-xs ">TS_CREATION</th>
-                <th class="hidden-xs hidden-sm hidden-md ">SP</th>                
-                <th class="hidden-xs hidden-sm hidden-md">EM</th>
-                <th class="hidden-xs hidden-sm hidden-md">RNR</th>
-                <th class="hidden-xs hidden-sm hidden-md">PRM</th>
+                <th class="visible-lg">TS_CREATION</th>
+                <th class="visible-lg ">SP</th>
+                <th class="visible-lg">EM</th>
+                <th class="visible-lg">RNR</th>
+                <th class="visible-lg">PRM</th>
                 <th>STATUS</th>
-                <th class="visible-lg-block">F</th>
+                <th class="visible-lg">F</th>
                 <th class="visible-lg">E</th>
-                <th class="visible-lg-inline">W</th>
+                <th class="visible-lg">W</th>
                 <th>ANZ</th>
-                <th>DELAY</th>
+                <th class="visible-lg">DELAY</th>
                 <th>Ändern</th>
                 <th>Aktion</th>
               </tr>
@@ -42,19 +42,19 @@
 
               <tr *ngFor="let a of kampagneList()" [class.selected]="a === kampagne" (click)="onSelect(a)">
                 <td>{{a.CAMPAIGN_ID}}</td>
-                <td>{{a.SERVICE}}</td>
+                <td class="visible-lg">{{a.SERVICE}}</td>
                 <td>{{a.TICKET}}</td>
-                <td class="hidden-xs ">{{a.TS_CREATION}}</td>
-                <td class="hidden-xs hidden-sm hidden-md">{{a.REPRO_SPERRE}}</td>
-                <td class="hidden-xs hidden-sm hidden-md">{{a.REPRO_EM}}</td>
-                <td class="hidden-xs hidden-sm hidden-md">{{a.REPRO_RUFNR}}</td>
-                <td class="hidden-xs hidden-sm hidden-md">{{a.REPRO_PARAM}}</td>
+                <td class="visible-lg">{{a.TS_CREATION}}</td>
+                <td class="visible-lg">{{a.REPRO_SPERRE}}</td>
+                <td class="visible-lg">{{a.REPRO_EM}}</td>
+                <td class="visible-lg">{{a.REPRO_RUFNR}}</td>
+                <td class="visible-lg">{{a.REPRO_PARAM}}</td>
                 <td>{{a.STATUS}}</td>
-                <td class="hidden-xs hidden-sm">?</td>
-                <td class="hidden-xs hidden-sm">?</td>
-                <td class="hidden-xs hidden-sm">?</td>
+                <td class="visible-lg">?</td>
+                <td class="visible-lg">?</td>
+                <td class="visible-lg">?</td>
                 <td>{{a.ANZ_JOBS}}</td>
-                <td>{{a.DELAY}}</td>
+                <td class="visible-lg">{{a.DELAY}}</td>
                 <td>
                   <a class="btn btn-primary" href="#collapseKampEditStopp" aria-controls="edit" role="tab" data-toggle="tab" (click)="onEditStopp(a)">Stopp!</a>
                   <a class="btn btn-primary" href="#collapseKampEditEinzel" aria-controls="edit" role="tab" data-toggle="tab" (click)="onEditEinzel(a)">Einzel</a>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Konfiguration</title>
+  <link rel="stylesheet" type="text/css" href="res/default.css">
+  <link rel="stylesheet" type="text/css" href="res/bootstrap-select.css">
+  <link rel="stylesheet" type="text/css" href="res/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="res/a11ytheme.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="res/select2.css">
+
+  <script type="text/javascript" src="res/js/jquery.js"/>
+  </script>
+  <script type="text/javascript" src="res/js/bootstrap.js">
+  </script>
+  <script type="text/javascript" src="res/js/bootstrap-select.js">
+  </script>
+  <script type="text/javascript" src="res/js/application.js">
+  </script>
+  <script type="text/javascript" src="res/js/stockeditor.js">
+  </script>
+  <script type="text/javascript" src="res/js/select2.js">
+  </script>
+
+  <script type="text/javascript">
+    $(function () {
+      $('.selectpicker').selectpicker({
+        tickIcon: 'glyphicon-ok'
+      });
+    });
+  </script>
+    <script type="text/javascript">
+      $(function () {
+        $("#includedNavbar").load("navbar.html");
+      });
+    </script>
+  
+</head>
+
+<body>
+  <div id="includedNavbar"></div>
+
+
+  <div class="container-fluid" role="main" aria-labelledBy="konfig" id="content">
+
+    <div class="row">
+      <div class="col">
+        <H1 class="sr-only">
+          Konfiguration
+        </H1>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12  ">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#ZPI" aria-controls="ZPI" role="tab" data-toggle="tab">ZPI</a>
+          </li>
+          <li role="presentation">
+            <a href="#SLUP" aria-controls="SLUP" role="tab" data-toggle="tab">SLUP</a>
+          </li>
+          <li role="presentation">
+            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">...</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active bs-callout bs-callout-danger" id="ZPI">
+            <form class="form-horizontal">
+              <div class="row">
+                <div class="form-group">
+                  <div class="form-group">
+                    <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                    <label for="Menge" class="control-label col-md-2 ">Menge pro Intervall</label>
+                    <div class="col-md-2">
+                      <input type="text" class="form-control" id="Menge" placeholder="1...50">
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <div class="form-group">
+                    <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                    <label for="Intervall" class="control-label col-md-2 ">Intervall in sec.</label>
+                    <div class="col-md-2">
+                      <input type="text" class="form-control" id="Intervall" placeholder="-1...300">
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="form-group">
+                  <div class="form-group">
+                    <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                    <label for="Timeout" class="control-label col-md-2 ">Timeout in min.</label>
+                    <div class="col-md-2">
+                      <input type="text" class="form-control" id="Timeout" placeholder="1...360">
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col-md-offset-2  col-md-8">
+                    <!--New div, offset because there is no label -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane bs-callout bs-callout-danger" id="SLUP">
+            <form class="form-horizontal">
+              <div class="row">
+                <div class="form-group">
+                  <div class="form-group">
+                    <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                    <label for="SLUPMenge" class="control-label col-md-2 ">Menge pro Intervall</label>
+                    <div class="col-md-2">
+                      <input type="text" class="form-control" id="SLUPMenge" placeholder="5...120">
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <div class="form-group">
+                    <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                    <label for="SLUPIntervall" class="control-label col-md-2 ">Aufrufe pro sec.</label>
+                    <div class="col-md-2">
+                      <input type="text" class="form-control" id="SLUPIntervall" placeholder="1...50">
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col-md-offset-2  col-md-8">
+                    <!--New div, offset because there is no label -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="settings">...</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div id="jsseunrwnoeo" style="display: none;">
+    <div id="ocfipreoqlao" style="display: none;" class="simple_mutex" origin="smarttube">mutex/ocfipreoqlao/mutex</div>
+  </div>
+</body>
+
+</html>

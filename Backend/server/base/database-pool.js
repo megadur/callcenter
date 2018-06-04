@@ -87,7 +87,7 @@ function setPool(sAlias) {
     pools.forEach(function (item, index, array) {
         // console.log(item.poolAlias, index);
         if (item.poolAlias == sAlias) {
-            // console.log('setPool: ', sAlias, ' to ', item.poolAlias, index);
+            console.log('setPool: ', sAlias, ' to ', item.poolAlias, index);
             pool = item;
         }
     });
